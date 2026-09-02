@@ -1,0 +1,7 @@
+# never publish the untouched originals: one of them has a customer's
+# GPS coordinates and capture date burned into the image
+_assets/_originals/
+_screenshots/
+*.psd
+.DS_Store
+Thumbs.db
