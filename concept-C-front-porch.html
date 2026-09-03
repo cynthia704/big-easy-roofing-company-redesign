@@ -337,6 +337,15 @@ footer a:hover{color:var(--brass)}
   h1 .ln>span{transform:none}
   .kb .f i{animation:none}
 }
+
+/* ---------- real logo lockup from the live site ---------- */
+.logo{display:flex;align-items:center;gap:0;flex:0 0 auto}
+.logo img{display:block;height:70px;width:auto}
+.nav{min-height:92px}
+.logo .mk,.logo svg,.logo span{display:none !important}
+footer .logo img{height:80px}
+@media (max-width:820px){.logo img{height:56px}.nav{min-height:78px}}
+@media (max-width:480px){.logo img{height:48px}.nav{min-height:70px}}
 </style>
 </head>
 <body>
@@ -353,10 +362,7 @@ footer a:hover{color:var(--brass)}
 
 <header>
   <div class="wrap nav">
-    <a href="#" class="logo">
-      <svg width="38" height="38" viewBox="0 0 38 38" fill="none"><circle cx="19" cy="19" r="18" stroke="#1E3A2E" stroke-width="1.5"/><path d="M9 21l10-8 10 8" stroke="#C2582F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 21v7h14v-7" stroke="#1E3A2E" stroke-width="1.7" stroke-linecap="round"/></svg>
-      <span>Big Easy Roofing Company<small>Est. New Orleans</small></span>
-    </a>
+    <a href="#" class="logo"><img src="_assets/brand/logo-color@2x.png" alt="Big Easy Roofing Company" width="165" height="105"></a>
     <nav class="menu">
       <a href="#story">Our Story</a>
       <a href="#services">Services</a>
@@ -652,10 +658,7 @@ footer a:hover{color:var(--brass)}
   <div class="wrap">
     <div class="fgrid">
       <div>
-        <div class="logo" style="color:#FDFBF6;margin-bottom:18px">
-          <svg width="38" height="38" viewBox="0 0 38 38" fill="none"><circle cx="19" cy="19" r="18" stroke="#8FB09C" stroke-width="1.5"/><path d="M9 21l10-8 10 8" stroke="#C2582F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 21v7h14v-7" stroke="#8FB09C" stroke-width="1.7" stroke-linecap="round"/></svg>
-          <span>Big Easy Roofing Company<small style="color:#7E9787">Est. New Orleans</small></span>
-        </div>
+        <div class="logo" style="color:#FDFBF6;margin-bottom:18px"><img src="_assets/brand/logo-white@3x.png" alt="Big Easy Roofing Company" width="165" height="105"></div>
         <p>Residential and commercial roofing across New Orleans and Southeast Louisiana. Licensed and insured.</p>
         <p style="font-family:Fraunces;font-weight:700;font-size:21px;color:#FDFBF6"><a href="tel:5042293955">504-229-3955</a></p>
         <p style="font-size:13px">Mon–Fri 8:00 AM – 6:00 PM · Emergency line 24/7</p>
