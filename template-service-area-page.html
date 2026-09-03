@@ -902,7 +902,11 @@ footer a:hover{color:var(--amber)}
   addEventListener('scroll',function(){ if(!ticking){ requestAnimationFrame(par); ticking=true; } },{passive:true});
 
   /* ---- rain canvas ---- */
-  var c=document.getElementById('rain'), ctx=c.getContext('2d'), drops=[], W,H,raf,visible=true;
+  /* the rain canvas is homepage-only; the page templates reuse this script
+     without it, so bail out rather than throwing on a null element */
+  var c=document.getElementById('rain');
+  if(!c) return;
+  var ctx=c.getContext('2d'), drops=[], W,H,raf,visible=true;
   function size(){ W=c.width=c.offsetWidth; H=c.height=c.offsetHeight;
     var n=Math.min(150,Math.round(W/11));
     drops=[]; for(var i=0;i<n;i++) drops.push({x:Math.random()*W,y:Math.random()*H,l:6+Math.random()*16,v:4+Math.random()*7,o:.12+Math.random()*.3}); }

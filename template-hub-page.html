@@ -509,12 +509,62 @@ footer a:hover{color:var(--amber)}
   .cmprow{grid-template-columns:1fr}
 }
 
+/* ---------- hub: intro with a picture ---------- */
+.intro2{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+.introfig{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid #DCE3EE;aspect-ratio:4/5}
+.introfig i{position:absolute;inset:0;display:block;background-size:cover;background-position:center;transition:transform 1.3s var(--ease)}
+.introfig:hover i{transform:scale(1.06)}
+.introfig .cap{position:absolute;left:0;right:0;bottom:0;padding:18px;background:linear-gradient(transparent,rgba(8,14,25,.9));color:#fff;font:600 12px/1.5 Inter;letter-spacing:.1em;text-transform:uppercase}
+
+/* ---------- hub: what we handle ---------- */
+.hgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.hcard{background:linear-gradient(180deg,#16233A,#101A2B);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .4s var(--ease),border-color .3s,box-shadow .4s var(--ease)}
+.hcard:hover{transform:translateY(-6px);border-color:rgba(245,165,36,.5);box-shadow:0 30px 60px -34px #000}
+.hshot{position:relative;height:172px;overflow:hidden}
+.hshot i{position:absolute;inset:0;display:block;background-size:cover;background-position:center;transition:transform 1.2s var(--ease)}
+.hcard:hover .hshot i{transform:scale(1.08)}
+.hshot em{position:absolute;left:14px;top:12px;font-family:'Barlow Condensed';font-style:normal;font-weight:800;font-size:20px;color:#fff;background:rgba(8,14,25,.72);backdrop-filter:blur(6px);padding:4px 11px;border-radius:6px}
+.hbody{padding:24px;display:flex;flex-direction:column;flex:1}
+.hcard h3{font-size:20px;margin-bottom:9px}
+.hcard p{font-size:14.5px;color:var(--muted);margin:0 0 16px}
+.hcard .go{margin-top:auto;font:700 12.5px/1 Inter;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);display:inline-flex;gap:7px;align-items:center}
+.hcard .go span{transition:transform .3s var(--ease)}
+.hcard:hover .go span{transform:translateX(5px)}
+.hcard.hcta{background:linear-gradient(160deg,#1E2E4A,#16233A);border-color:rgba(245,165,36,.35)}
+.hcard.hcta .hbody{justify-content:center}
+
+/* ---------- hub: before you call ---------- */
+.warn{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+.wcard{background:linear-gradient(180deg,#1A2233,#121A28);border:1px solid var(--line);border-left:3px solid var(--amber);border-radius:var(--r);padding:28px 26px}
+.wcard.plain{border-left-color:var(--red)}
+.wnum{font-family:'Barlow Condensed';font-weight:800;font-size:30px;color:var(--amber);line-height:1;display:block;margin-bottom:12px}
+.wcard.plain .wnum{color:var(--red)}
+.wcard h3{font-size:20px;margin-bottom:12px}
+.wcard p{font-size:14.5px;color:var(--muted);margin:0 0 .9em}
+.wcard strong{color:#fff}
+.editnote{border-top:1px dashed var(--line);padding-top:12px;margin-top:14px !important;font-size:12.5px !important;color:#8A9BB2 !important}
+
+/* ---------- hub: dark process steps ---------- */
+.step.dk{background:linear-gradient(180deg,#16233A,#101A2B);border-color:var(--line)}
+.step.dk .b{background:#16233A;border-color:var(--line);color:var(--amber)}
+.step.dk p{color:var(--muted)}
+.steps::before{background:var(--line)}
+
+@media (max-width:1024px){
+  .intro2{grid-template-columns:1fr;gap:34px}
+  .introfig{aspect-ratio:16/9}
+  .hgrid,.warn{grid-template-columns:1fr 1fr}
+}
+@media (max-width:680px){
+  .hgrid,.warn{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body>
 
 <div class="note" id="note"><button onclick="document.getElementById('note').remove()">&times;</button>
-<b>Template</b>Hub page. Worked example: /residential/. The 6 hubs use this shape. The prose is lifted from 09-hub-page-content.md, which was already written and approved.</div>
+<b>Template</b>Reference template. This is the residential hub, built out in full from the approved copy. Every other page follows this section order and these components. Editor notes in the &ldquo;Before You Call&rdquo; block must be resolved before launch.</div>
 
 <!-- ============ UTILITY BAR ============ -->
 <div class="util">
@@ -562,7 +612,7 @@ footer a:hover{color:var(--amber)}
   </div>
 </nav>
 
-<!-- ============ PAGE HERO ============ -->
+<!-- ============ 1. PAGE HERO ============ -->
 <section class="phero">
   <div class="pbg" style="background-image:url(_assets/hero-aerial-hip.jpg)"></div>
   <div class="wrap pgrid2">
@@ -571,11 +621,16 @@ footer a:hover{color:var(--amber)}
       <h1>Residential Roofing Services in New Orleans</h1>
       <p class="sub">From a single lifted shingle to a full replacement after a named storm.
       Whatever brought you here, the first step is the same: someone gets on the roof,
-      photographs every slope, and tells you plainly what is wrong and what it costs to
-      put right.</p>
+      photographs every slope, and tells you plainly what is wrong and what it will cost
+      to put right.</p>
+      <ul class="ticks">
+        <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg></span><span><b>Free inspection</b> and a written report you keep</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg></span><span><b>19 residential services</b>, one in-house crew</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg></span><span><b>New Orleans and 13 nearby cities</b></span></li>
+      </ul>
       <div class="hero-actions">
         <a href="tel:5042293955" class="btn btn-amber">Call 504-229-3955</a>
-        <a href="#services" class="btn btn-ghost">See all services</a>
+        <a href="#services" class="btn btn-ghost">See all 19 services</a>
       </div>
     </div>
     <div class="formcard rv" id="estimate">
@@ -594,7 +649,7 @@ footer a:hover{color:var(--amber)}
   </div>
 </section>
 
-<!-- ============ TRUST STRIP ============ -->
+<!-- ============ 2. TRUST STRIP ============ -->
 <div class="strip">
   <div class="wrap">
     <div class="stat"><div class="n"><span class="cnt" data-to="19">0</span></div><div class="l">Residential Services</div></div>
@@ -620,48 +675,147 @@ footer a:hover{color:var(--amber)}
 </div>
 
 
-<!-- ============ WHAT WE HANDLE ============ -->
+<!-- ============ 3. INTRO ============ -->
 <section class="s light">
-  <div class="wrap railwrap">
-    <div class="prose rv">
-      <div class="head" style="margin-bottom:26px">
-        <span class="eyebrow">What we handle</span>
-        <h2>Five Things Most<br>Homeowners Call About</h2>
+  <div class="wrap intro2">
+    <figure class="introfig rv" style="margin:0">
+      <i style="background-image:url(_assets/tall-finished-house.jpg)"></i>
+      <span class="cap">Finished replacement, magnet swept before we left</span>
+    </figure>
+    <div class="prose rv d1">
+      <div class="head" style="margin-bottom:22px">
+        <span class="eyebrow">Why roofs fail here</span>
+        <h2>New Orleans Is<br>Hard on Roofs</h2>
       </div>
-      <h3>Repairs and Leak Detection</h3>
-      <p>A stain on the ceiling is rarely directly below the hole. We trace the actual entry
-      point rather than patching the nearest guess, so the repair only has to happen once.</p>
-      <h3>Roof Replacement</h3>
-      <p>When a roof is past repair, we walk you through the material options in plain terms,
-      put the scope in writing, and give you a schedule we intend to keep.</p>
-      <h3>Storm and Hail Damage</h3>
-      <p>We document the damage the way an insurance adjuster needs to see it: every slope
-      photographed, every impact mark noted, and a written scope of loss you can hand over
-      directly.</p>
-      <h3>Gutters, Soffit and Fascia</h3>
-      <p>The parts of the roof system people forget. Overflowing gutters push water into the
-      fascia and down into the foundation. Rotted soffit lets heat and moisture into the attic.</p>
-      <h3>Inspection and Maintenance</h3>
-      <p>A documented annual inspection catches the small things while they are still small,
-      and gives you a paper trail if you ever need to make a claim.</p>
+      <p>Between summer heat, heavy rain, and a hurricane season that runs half the year, a
+      roof here works harder than the same roof almost anywhere else in the country. Most
+      homeowners do not think about theirs until water shows up on a ceiling.</p>
+      <p>Big Easy Roofing Company handles residential roofing across New Orleans and 13
+      surrounding cities. Every one of the services below has its own page with more detail.
+      Start anywhere.</p>
     </div>
-    <aside class="rail rv d1">
-      <div class="railcard">
-        <h3>Not Sure Which You Need?</h3>
-        <p>That is what the free inspection is for. We look, we photograph, and we tell you which of these your roof actually needs.</p>
-        <a href="#estimate" class="btn btn-amber">Book an inspection</a>
-      </div>
-      <div class="railcard">
-        <h3>Leaking Right Now?</h3>
-        <p>Skip the form. Emergency tarping is available around the clock.</p>
-        <a href="tel:5042293955" class="btn btn-ghost">Call 504-229-3955</a>
-      </div>
-    </aside>
   </div>
 </section>
 
-<!-- ============ DIRECTORY ============ -->
-<section class="s" id="services">
+<!-- ============ 4. WHAT WE HANDLE ============ -->
+<section class="s">
+  <div class="wrap">
+    <div class="head ctr rv">
+      <span class="eyebrow">What we handle</span>
+      <h2>Five Things Most<br>Homeowners Call About</h2>
+    </div>
+    <div class="hgrid">
+      <a class="hcard rv" href="#">
+        <figure class="hshot" style="margin:0"><i style="background-image:url(_assets/sq-shingle-closeup.jpg)"></i><em>01</em></figure>
+        <div class="hbody">
+          <h3>Repairs and Leak Detection</h3>
+          <p>A stain on the ceiling is rarely directly below the hole. We trace the actual entry point rather than patching the nearest guess, so the repair only has to happen once.</p>
+          <span class="go">Roof repairs <span>&rarr;</span></span>
+        </div>
+      </a>
+      <a class="hcard rv d1" href="#">
+        <figure class="hshot" style="margin:0"><i style="background-image:url(_assets/sq-shingle-aerial.jpg)"></i><em>02</em></figure>
+        <div class="hbody">
+          <h3>Roof Replacement</h3>
+          <p>When a roof is past repair, we walk you through the material options in plain terms, put the scope in writing, and give you a schedule we intend to keep.</p>
+          <span class="go">Roof replacement <span>&rarr;</span></span>
+        </div>
+      </a>
+      <a class="hcard rv d2" href="#">
+        <figure class="hshot" style="margin:0"><i style="background-image:url(_assets/sq-aerial-hip.jpg)"></i><em>03</em></figure>
+        <div class="hbody">
+          <h3>Storm and Hail Damage</h3>
+          <p>We document the damage the way an insurance adjuster needs to see it: every slope photographed, every impact mark noted, and a written scope of loss you can hand over directly.</p>
+          <span class="go">Storm damage <span>&rarr;</span></span>
+        </div>
+      </a>
+      <a class="hcard rv d1" href="#">
+        <figure class="hshot" style="margin:0"><i style="background-image:url(_assets/sq-metal-detail.jpg)"></i><em>04</em></figure>
+        <div class="hbody">
+          <h3>Gutters, Soffit and Fascia</h3>
+          <p>The parts of the roof system people forget. Overflowing gutters push water into the fascia and down into the foundation. Rotted soffit lets heat and moisture into the attic.</p>
+          <span class="go">Gutters and soffit <span>&rarr;</span></span>
+        </div>
+      </a>
+      <a class="hcard rv d2" href="#">
+        <figure class="hshot" style="margin:0"><i style="background-image:url(_assets/sq-tool-in-hand.jpg)"></i><em>05</em></figure>
+        <div class="hbody">
+          <h3>Inspection and Maintenance</h3>
+          <p>A documented annual inspection catches small problems before hurricane season, and gives your insurer the maintenance record they increasingly ask for.</p>
+          <span class="go">Roof inspection <span>&rarr;</span></span>
+        </div>
+      </a>
+      <div class="hcard hcta rv">
+        <div class="hbody">
+          <h3>Not Sure Which One?</h3>
+          <p>That is what the free inspection is for. We look, we photograph, and we tell you which of these your roof actually needs. You keep the report either way.</p>
+          <a href="#estimate" class="btn btn-amber" style="width:100%">Book a free inspection</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. PHOTO BAND ============ -->
+<section class="pband">
+  <div class="pimg" data-par2="0.10" style="background-image:url(_assets/hero-metal-roof.jpg)"></div>
+  <div class="wrap">
+    <span class="eyebrow rv">On the roof, not in a call center</span>
+    <h2 class="rv d1" style="max-width:20ch">The Same Crew From First Look to Final Sweep</h2>
+  </div>
+</section>
+
+<!-- ============ 6. BEFORE YOU CALL ============ -->
+<section class="s">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Before you call</span>
+      <h2>Two Things About Louisiana<br>That Catch Homeowners Out</h2>
+      <p class="lead">Neither of these is about roofing. Both of them change what a storm-damaged roof ends up costing you.</p>
+    </div>
+    <div class="warn">
+      <article class="wcard rv">
+        <span class="wnum">01</span>
+        <h3>The Clock Starts at the Storm, Not at the Stain</h3>
+        <p>Louisiana puts a time limit on claims for storm damage, and it runs from the date
+        of the loss, not from the day you noticed the ceiling. <strong>The limit changed in
+        2024</strong>, so what applied to a storm three seasons ago is not what applies to
+        one this year.</p>
+        <p>If a named storm has been over your roof and nobody has been up there since, do
+        not assume the window has closed, and do not assume it is still open. Check your
+        policy and the current deadline before you decide either way.</p>
+        <p class="editnote"><em>[EDITOR: do not publish a specific number of years here.
+        Louisiana Civil Code art. 3493.12 moved damage to immovable property to a two-year
+        prescriptive period for losses on or after 1 July 2024; the old one-year rule still
+        applies before that date, and policy terms can differ again. Have a lawyer confirm
+        the exact wording before this goes live.]</em></p>
+      </article>
+      <article class="wcard rv d1">
+        <span class="wnum">02</span>
+        <h3>Older Roofs Are Often Paid at Actual Cash Value</h3>
+        <p>That means depreciation comes off the payout. A twenty-year-old roof can be fully
+        covered and still leave a gap between what the insurer pays and what the job costs.</p>
+        <p>Knowing which one your policy carries, actual cash value or replacement cost,
+        changes how you plan and what you should be putting aside. It is worth reading before
+        you file, not after.</p>
+        <p class="editnote"><em>[EDITOR: this describes how policies generally work and is
+        safe as written. Keep it general &mdash; do not name carriers or quote percentages.]</em></p>
+      </article>
+      <article class="wcard plain rv d2">
+        <span class="wnum">&#9888;</span>
+        <h3>We Are Not Adjusters, and We Will Not Pretend to Be</h3>
+        <p>We will not tell you your claim is guaranteed, and we will not negotiate it for
+        you. What we do is document the damage thoroughly enough that your adjuster has
+        everything they need to price it properly: every slope photographed, every impact
+        mark noted, and a written scope of loss in their hands.</p>
+        <a href="#estimate" class="btn btn-ghost" style="margin-top:6px">Get the documentation started</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. ALL SERVICES ============ -->
+<section class="s light" id="services">
   <div class="wrap">
     <div class="head ctr rv">
       <span class="eyebrow">All residential services</span>
@@ -692,56 +846,56 @@ footer a:hover{color:var(--amber)}
   </div>
 </section>
 
-<!-- ============ PHOTO BAND ============ -->
-<section class="pband">
-  <div class="pimg" data-par2="0.10" style="background-image:url(_assets/hero-metal-roof.jpg)"></div>
-  <div class="wrap">
-    <span class="eyebrow rv">On the roof, not in a call center</span>
-    <h2 class="rv d1" style="max-width:20ch">The Same Crew From First Look to Final Sweep</h2>
-  </div>
-</section>
-
-<!-- ============ PROCESS ============ -->
-<section class="s light">
-  <div class="wrap">
-    <div class="head ctr rv"><span class="eyebrow">How it goes</span><h2>Four Steps, No Surprises</h2></div>
-    <div class="steps rv" id="steps">
-      <span class="fill"></span>
-      <div class="step"><figure class="shot"><i style="background-image:url(_assets/sq-tool-in-hand.jpg)"></i></figure><div class="b" style="background:#fff;border-color:#DCE3EE">1</div><div class="sbody"><h3>We Look at It</h3><p style="color:#5A6980">Free inspection, every slope photographed, written condition report in your hands.</p></div></div>
-      <div class="step"><figure class="shot"><i style="background-image:url(_assets/sq-shingle-closeup.jpg)"></i></figure><div class="b" style="background:#fff;border-color:#DCE3EE">2</div><div class="sbody"><h3>You Get a Number</h3><p style="color:#5A6980">Line-item written estimate. If it is an insurance job, a scope of loss goes with it.</p></div></div>
-      <div class="step"><figure class="shot"><i style="background-image:url(_assets/sq-underlayment.jpg)"></i></figure><div class="b" style="background:#fff;border-color:#DCE3EE">3</div><div class="sbody"><h3>We Schedule Materials</h3><p style="color:#5A6980">Nothing is torn off until the materials are on site. That is what makes 24 hours possible.</p></div></div>
-      <div class="step"><figure class="shot"><i style="background-image:url(_assets/sq-shingle-aerial.jpg)"></i></figure><div class="b" style="background:#fff;border-color:#DCE3EE">4</div><div class="sbody"><h3>One Day on the Roof</h3><p style="color:#5A6980">Tear-off, decking check, underlayment, new roof, magnet sweep of your yard.</p></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FAQ ============ -->
+<!-- ============ 8. PROCESS ============ -->
 <section class="s">
   <div class="wrap">
-    <div class="head ctr rv"><span class="eyebrow">Before you call</span><h2>Straight Answers</h2></div>
-    <div class="faq rv d1">
-      <div class="q"><button>Do you charge for the inspection?</button><div class="a"><p>No. The inspection, the written condition report and the estimate all cost nothing, and there is no obligation afterward. If the roof has three good years left, we will tell you that.</p></div></div>
-      <div class="q"><button>How quickly can you get out here?</button><div class="a"><p>Emergency tarping is same day. A routine inspection is usually inside the week. We call you back the same business day either way.</p></div></div>
-      <div class="q"><button>Do you subcontract any of the work?</button><div class="a"><p>No. The crew that inspects your roof is the crew that works on it. No strangers arriving unannounced on your property.</p></div></div>
-      <div class="q"><button>Are you licensed and insured in Louisiana?</button><div class="a"><p>Yes. <em>[License number to be published here once confirmed.]</em> Ask any roofer for their number before they set foot on your property, especially after a storm.</p></div></div>
+    <div class="head ctr rv"><span class="eyebrow">How it goes</span><h2>Four Steps, No Surprises</h2></div>
+    <div class="steps rv" id="steps" style="--muted:#94A5BD">
+      <span class="fill"></span>
+      <div class="step dk"><figure class="shot"><i style="background-image:url(_assets/sq-tool-in-hand.jpg)"></i></figure><div class="b">1</div><div class="sbody"><h3>We Look at It</h3><p>Free inspection, every slope photographed, written condition report in your hands.</p></div></div>
+      <div class="step dk"><figure class="shot"><i style="background-image:url(_assets/sq-shingle-closeup.jpg)"></i></figure><div class="b">2</div><div class="sbody"><h3>You Get a Number</h3><p>Line-item written estimate. If it is an insurance job, a scope of loss goes with it.</p></div></div>
+      <div class="step dk"><figure class="shot"><i style="background-image:url(_assets/sq-underlayment.jpg)"></i></figure><div class="b">3</div><div class="sbody"><h3>We Schedule Materials</h3><p>Nothing is torn off until the materials are on site. That is what makes 24 hours possible.</p></div></div>
+      <div class="step dk"><figure class="shot"><i style="background-image:url(_assets/sq-shingle-aerial.jpg)"></i></figure><div class="b">4</div><div class="sbody"><h3>One Day on the Roof</h3><p>Tear-off, decking check, underlayment, new roof, magnet sweep of your yard.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- ============ AREA MARQUEE ============ -->
+<!-- ============ 9. FAQ ============ -->
+<section class="s light">
+  <div class="wrap">
+    <div class="head ctr rv"><span class="eyebrow">Questions</span><h2>Straight Answers</h2></div>
+    <div class="faqgrid">
+      <figure class="faqpic rv" style="margin:0"><i style="background-image:url(_assets/tall-metal-detail.jpg)"></i><span class="cap">Ask us anything before you sign</span></figure>
+      <div class="faq rv d1" style="max-width:none;margin:0">
+        <div class="q"><button>Do you charge for the inspection?</button><div class="a"><p>No. The inspection, the written condition report and the estimate all cost nothing, and there is no obligation afterward. If the roof has three good years left, we will tell you that.</p></div></div>
+        <div class="q"><button>How quickly can you get out here?</button><div class="a"><p>Emergency tarping is same day. A routine inspection is usually inside the week. We call you back the same business day either way.</p></div></div>
+        <div class="q"><button>Do you subcontract any of the work?</button><div class="a"><p>No. The crew that inspects your roof is the crew that works on it. No strangers arriving unannounced on your property.</p></div></div>
+        <div class="q"><button>Will you deal with my insurance company?</button><div class="a"><p>We meet your adjuster on the roof and hand over photographs, measurements and a scope of loss. We are roofers, not public adjusters, so we do not negotiate the claim itself and we will not promise you an outcome.</p></div></div>
+        <div class="q"><button>Are you licensed and insured in Louisiana?</button><div class="a"><p>Yes. <em>[License number to be published here once confirmed.]</em> Ask any roofer for their number before they set foot on your property, especially after a storm.</p></div></div>
+        <div class="faqcta rv d2">
+          <div><h3>Still Have a Question?</h3><p>Ask a roofer directly. No script, no call centre.</p></div>
+          <div class="bts"><a href="tel:5042293955" class="btn btn-amber">Call 504-229-3955</a><a href="#estimate" class="btn btn-ghost">Book an inspection</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. AREA MARQUEE ============ -->
 <div class="mq"><div class="mqtrack" id="mqt"></div></div>
 
-<!-- ============ CTA ============ -->
+<!-- ============ 11. CTA ============ -->
 <section class="cta">
   <div class="wrap">
     <div>
-      <span class="eyebrow">Free inspection</span>
-      <h2>Get Eyes on Your<br>Roof This Week</h2>
-      <p class="lead">No cost, no obligation. If it can wait, we will tell you it can wait.</p>
+      <span class="eyebrow">Free roof inspection</span>
+      <h2>No Cost, No Obligation,<br>and You Keep the Report</h2>
+      <p class="lead">We serve New Orleans, Metairie, Kenner, Slidell, Mandeville, Covington,
+      Baton Rouge and seven more Louisiana cities.</p>
     </div>
     <div style="display:grid;gap:12px">
       <a href="tel:5042293955" class="btn btn-amber" style="font-size:18px;padding:20px">Call 504-229-3955</a>
-      <a href="#estimate" class="btn btn-ghost" style="padding:20px">Book online instead</a>
+      <a href="#estimate" class="btn btn-ghost" style="padding:20px">Request an inspection online</a>
     </div>
   </div>
 </section>
@@ -885,7 +1039,11 @@ footer a:hover{color:var(--amber)}
   addEventListener('scroll',function(){ if(!ticking){ requestAnimationFrame(par); ticking=true; } },{passive:true});
 
   /* ---- rain canvas ---- */
-  var c=document.getElementById('rain'), ctx=c.getContext('2d'), drops=[], W,H,raf,visible=true;
+  /* the rain canvas is homepage-only; the page templates reuse this script
+     without it, so bail out rather than throwing on a null element */
+  var c=document.getElementById('rain');
+  if(!c) return;
+  var ctx=c.getContext('2d'), drops=[], W,H,raf,visible=true;
   function size(){ W=c.width=c.offsetWidth; H=c.height=c.offsetHeight;
     var n=Math.min(150,Math.round(W/11));
     drops=[]; for(var i=0;i<n;i++) drops.push({x:Math.random()*W,y:Math.random()*H,l:6+Math.random()*16,v:4+Math.random()*7,o:.12+Math.random()*.3}); }
