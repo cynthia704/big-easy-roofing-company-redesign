@@ -42,6 +42,14 @@ section.note{padding:36px 0 60px;border-top:1px solid var(--line)}
 .pill{display:inline-block;font:600 11px/1 Inter;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border-radius:999px;margin-right:6px}
 .pill.w{background:rgba(251,191,36,.14);color:var(--warn);border:1px solid rgba(251,191,36,.34)}
 footer{border-top:1px solid var(--line);padding:24px 0 50px;color:var(--muted);font-size:13px}
+.card.picked{border-color:var(--ok);box-shadow:0 0 0 1px var(--ok)}
+.card.picked .btn{background:var(--ok);color:#08240F}
+.card.picked .btn:hover{background:#6EE79B}
+.chosen{display:inline-flex;align-self:flex-start;align-items:center;gap:7px;background:rgba(74,222,128,.14);border:1px solid rgba(74,222,128,.4);color:var(--ok);padding:5px 11px;border-radius:999px;font:700 10.5px/1 Inter;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+.card.dim{opacity:.72}
+.card.dim:hover{opacity:1}
+.decided{background:rgba(74,222,128,.09);border:1px solid rgba(74,222,128,.28);border-radius:var(--r);padding:18px 22px;margin-top:34px;color:#CFEBD9;font-size:15px}
+.decided b{color:var(--ok)}
 @media(max-width:900px){.grid{grid-template-columns:1fr}.cols{grid-template-columns:1fr}}
 </style>
 </head>
@@ -51,18 +59,24 @@ footer{border-top:1px solid var(--line);padding:24px 0 50px;color:var(--muted);f
   <div class="wrap">
     <span class="tag">Infintech Designs · Internal review</span>
     <h1>Big Easy Roofing Company<br>Homepage Concepts</h1>
-    <p class="lede">Three directions for the homepage redesign. All three are working pages, not
-    flat mockups — scroll them, hover things, click the interactive bits. Open each one and tell
-    Cynthia which direction to build out.</p>
+    <p class="lede">Three directions for the homepage redesign, all working pages rather than flat
+    mockups. <strong>Concept A is the one going forward.</strong> B and C stay here so the
+    reasoning is still visible.</p>
   </div>
 </header>
 
 <div class="wrap">
+  <div class="decided">
+    <b>Decided:</b> the team narrowed it to A and C, and Cynthia picked
+    <b>Concept A — Storm Watch</b>. That is the direction being built out.
+    B and C stay up for reference.
+  </div>
   <div class="grid">
 
-    <article class="card">
+    <article class="card picked">
       <div class="shot"><img src="thumbs/A.jpg" alt="Concept A preview" loading="lazy"></div>
       <div class="body">
+        <span class="chosen">&#10003; Selected</span>
         <div class="letter">Concept A</div>
         <h2>Storm Watch</h2>
         <p>Dark, cinematic, built around the moment the roof fails. For owning emergency and storm-damage searches.</p>
@@ -75,7 +89,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 50px;color:var(--muted);f
       </div>
     </article>
 
-    <article class="card">
+    <article class="card dim">
       <div class="shot"><img src="thumbs/B.jpg" alt="Concept B preview" loading="lazy"></div>
       <div class="body">
         <div class="letter">Concept B</div>
@@ -90,7 +104,7 @@ footer{border-top:1px solid var(--line);padding:24px 0 50px;color:var(--muted);f
       </div>
     </article>
 
-    <article class="card">
+    <article class="card dim">
       <div class="shot"><img src="thumbs/C.jpg" alt="Concept C preview" loading="lazy"></div>
       <div class="body">
         <div class="letter">Concept C</div>
@@ -112,12 +126,11 @@ footer{border-top:1px solid var(--line);padding:24px 0 50px;color:var(--muted);f
   <div class="wrap">
     <div class="cols">
       <div class="box">
-        <h4>What to look at</h4>
+        <h4>Where this goes next</h4>
         <ol>
-          <li>Which direction fits a New Orleans roofer that competes on trust, not price?</li>
-          <li>Scroll the whole page — each section is designed differently on purpose.</li>
-          <li>Try the interactive bits: A's photo slider, B's roof layers, C's tilting cards.</li>
-          <li>Check it on your phone too.</li>
+          <li>Concept A is the build direction. The remaining page templates get designed to match it.</li>
+          <li>The open questions beside this still need answering before anything goes live.</li>
+          <li>Comments on A are still welcome — send them to Cynthia.</li>
         </ol>
       </div>
       <div class="box">
