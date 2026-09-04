@@ -997,6 +997,13 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   background:var(--amber);transform:rotate(45deg)}
 .icopy .lede{font-size:17.5px;margin-bottom:1.3em}
 
+/* ---- headings do not leave one word alone on the last line --------------
+   Eight headings across the interior templates were filling the first line
+   and dropping the last word on its own. Balancing evens the lines out. A
+   heading with a deliberate <br class="dtbr"> keeps it: a forced break wins
+   over balancing. */
+.i h2,.i h3,.ihero h1,.ibanner h2{text-wrap:balance}
+
 /* the enquiry card: small, sticky, one job */
 .iask{position:sticky;top:100px;display:grid;gap:14px}
 .askcard{background:linear-gradient(180deg,#16233A,#101A2B);border:1px solid var(--line);
@@ -2028,7 +2035,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 <body>
 
 <div class="note" id="note"><button onclick="document.getElementById('note').remove()">&times;</button>
-<b>Template</b>Reference interior template &mdash; the residential hub. Deliberately NOT shaped like the homepage: compact banner hero, one thin credential line, content-led prose with a small sticky enquiry card, flatter sections. Every other page follows this.</div>
+<b>Template</b>Reference interior template for the residential hub. Deliberately NOT shaped like the homepage: compact banner hero, one thin credential line, content-led prose with a small sticky enquiry card, flatter sections. Every other page follows this.</div>
 
 <!-- ============ UTILITY BAR ============ -->
 <div class="util">
@@ -2279,7 +2286,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
       <span class="eyebrow">Five things people call us about</span>
       <h2>What We Handle</h2>
       <p class="lead">Most calls land in one of these five. Pick the one that sounds like your
-      roof, or call and describe it &mdash; we will tell you which it is.</p>
+      roof. Or call and describe it, and we will tell you which it is.</p>
     </div>
     <div class="hxExp rv d1">
       <div class="hxLeft">
@@ -2614,8 +2621,9 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
       <h2>What Actually Goes <br class="dtbr">on Your Roof</h2>
       <p class="lead">A roof is not one product, it is four layers that have to be right in
       order. Most of them are also what GAF requires before the
-      <strong>WindProven Limited Wind Warranty</strong> applies &mdash; fifteen years, no
-      maximum wind speed, no named-storm exclusion. Leave one out and the roof still works.
+      <strong>WindProven Limited Wind Warranty</strong> applies. That warranty runs
+      fifteen years, with no maximum wind speed and no named-storm exclusion. Leave one
+      out and the roof still works.
       It just is not covered the same way.</p>
     </div>
     <div class="hxRows">
@@ -2628,7 +2636,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
           <span class="hxRow-n" aria-hidden="true">01</span>
           <h3>Starter Strip, Leak Barrier and Deck Protection</h3>
           <p>Three things go onto a bare deck before a single shingle does, and you will never see any of them again. Starter strip seals the eave edge so wind cannot get a finger under the first course. Leak barrier goes into the valleys and around every penetration. Deck protection covers everything else, and it is what keeps your ceilings dry between tear-off and the last nail.</p>
-          <div class="hxChips"><span>Eaves, valleys, chimneys, vents</span><span>Synthetic, not felt — it lays flat and stays put</span><span class="hxChip-w">Counts toward WindProven</span></div>
+          <div class="hxChips"><span>Eaves, valleys, chimneys, vents</span><span>Synthetic, not felt, so it lays flat and stays put</span><span class="hxChip-w">Counts toward WindProven</span></div>
           <a class="hxMore" href="/residential/weatherproofing/">More on this <i>&rarr;</i></a>
         </div>
       </article>
@@ -2795,7 +2803,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
         <p>Residential and commercial roofing across New Orleans and Southeast Louisiana. Licensed and insured.</p>
         <p style="color:#fff;font-weight:700;font-size:19px"><a href="tel:5042293955">504-229-3955</a></p>
         <p style="font-size:13px">Mon–Fri 8:00 AM – 6:00 PM<br>Emergency line answers 24/7</p>
-        <p style="font-size:13px;color:#F5A524">[Street address + email to be added — see CRO review item 4]</p>
+        <p style="font-size:13px;color:#F5A524">[Street address + email to be added. See CRO review item 4.]</p>
       </div>
       <div><h4>Residential</h4><ul><li><a href="/residential/replacement/">Roof replacement</a></li><li><a href="/residential/repairs/">Roof repairs</a></li><li><a href="/residential/emergency-roofing/">Emergency roofing</a></li><li><a href="/residential/leak-detection/">Leak detection</a></li><li><a href="/residential/gutters-downspouts-installation/">Gutters &amp; downspouts</a></li><li><a href="/residential/inspection/">Roof inspection</a></li></ul></div>
       <div><h4>Commercial</h4><ul><li><a href="/commercial/re-roofing/">Re-roofing</a></li><li><a href="/commercial/coating/">Roof coatings</a></li><li><a href="/commercial/elastomeric-coatings/">Elastomeric coatings</a></li><li><a href="/commercial/roofing-insulation/">Roofing insulation</a></li><li><a href="/commercial/roof-maintenance/">Maintenance</a></li><li><a href="/commercial/inspection/">Inspection</a></li></ul></div>

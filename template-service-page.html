@@ -997,6 +997,13 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   background:var(--amber);transform:rotate(45deg)}
 .icopy .lede{font-size:17.5px;margin-bottom:1.3em}
 
+/* ---- headings do not leave one word alone on the last line --------------
+   Eight headings across the interior templates were filling the first line
+   and dropping the last word on its own. Balancing evens the lines out. A
+   heading with a deliberate <br class="dtbr"> keeps it: a forced break wins
+   over balancing. */
+.i h2,.i h3,.ihero h1,.ibanner h2{text-wrap:balance}
+
 /* the enquiry card: small, sticky, one job */
 .iask{position:sticky;top:100px;display:grid;gap:14px}
 .askcard{background:linear-gradient(180deg,#16233A,#101A2B);border:1px solid var(--line);
@@ -2034,7 +2041,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 <body>
 
 <div class="note" id="note"><button onclick="document.getElementById('note').remove()">&times;</button>
-<b>Template</b>Service page, worked as roof replacement. Around 50 pages use this shape. Same interior system as the hub &mdash; swap the copy, keep the order.</div>
+<b>Template</b>Service page, worked as roof replacement. Around 50 pages use this shape. Same interior system as the hub. Swap the copy, keep the order.</div>
 
 <!-- ============ UTILITY BAR ============ -->
 <div class="util">
@@ -2343,7 +2350,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
         <p>Residential and commercial roofing across New Orleans and Southeast Louisiana. Licensed and insured.</p>
         <p style="color:#fff;font-weight:700;font-size:19px"><a href="tel:5042293955">504-229-3955</a></p>
         <p style="font-size:13px">Mon–Fri 8:00 AM – 6:00 PM<br>Emergency line answers 24/7</p>
-        <p style="font-size:13px;color:#F5A524">[Street address + email to be added — see CRO review item 4]</p>
+        <p style="font-size:13px;color:#F5A524">[Street address + email to be added. See CRO review item 4.]</p>
       </div>
       <div><h4>Residential</h4><ul><li><a href="/residential/replacement/">Roof replacement</a></li><li><a href="/residential/repairs/">Roof repairs</a></li><li><a href="/residential/emergency-roofing/">Emergency roofing</a></li><li><a href="/residential/leak-detection/">Leak detection</a></li><li><a href="/residential/gutters-downspouts-installation/">Gutters &amp; downspouts</a></li><li><a href="/residential/inspection/">Roof inspection</a></li></ul></div>
       <div><h4>Commercial</h4><ul><li><a href="/commercial/re-roofing/">Re-roofing</a></li><li><a href="/commercial/coating/">Roof coatings</a></li><li><a href="/commercial/elastomeric-coatings/">Elastomeric coatings</a></li><li><a href="/commercial/roofing-insulation/">Roofing insulation</a></li><li><a href="/commercial/roof-maintenance/">Maintenance</a></li><li><a href="/commercial/inspection/">Inspection</a></li></ul></div>
