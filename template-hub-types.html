@@ -575,7 +575,7 @@ footer .logo img{height:80px}
 .icrumbs a:hover{color:var(--amber)}
 .icrumbs i{font-style:normal;opacity:.5}
 .icrumbs span[aria-current]{color:#CBD6E5}
-.ihero h1{font-size:clamp(30px,4.2vw,52px);max-width:19ch}
+.ihero h1{font-size:clamp(28px,3.6vw,46px);max-width:none;text-wrap:balance}
 .icreds{font:500 14px/1.6 Inter;color:#A9B8CC;margin:12px 0 22px}
 .icreds b{color:#E9EEF6;font-weight:600}
 .iacts{display:flex;gap:12px;flex-wrap:wrap}
@@ -689,7 +689,9 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 .sgWrap{display:grid;gap:clamp(32px,4vw,52px)}
 .sgGroup{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,2.08fr);
   grid-template-rows:auto 1fr;gap:16px 18px}
-.sgGroup.narrow{grid-template-columns:minmax(0,.92fr) minmax(0,1.42fr)}
+/* the wide column follows the cards, so three cards are never squeezed
+   into the narrow one just because the photo moved to the right */
+.sgGroup.rev{grid-template-columns:minmax(0,2.08fr) minmax(0,.92fr)}
 
 /* group header spans the row */
 .sgHead{grid-column:1/-1;display:flex;align-items:center;gap:18px;padding-bottom:16px;
@@ -720,8 +722,10 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 .sgHero em{font-style:normal;font:700 11.5px/1 Inter;letter-spacing:.12em;text-transform:uppercase;color:var(--amber)}
 
 /* the compact cards beside it */
-.sgCards{grid-row:2;grid-column:2;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-content:start}
-.sgGroup.narrow .sgCards{grid-template-columns:repeat(2,1fr)}
+.sgCards{grid-row:2;grid-column:2;display:grid;grid-template-columns:repeat(6,1fr);
+  gap:14px;align-content:stretch;grid-auto-rows:1fr}
+.sgCard{display:flex;flex-direction:column}
+
 .sgCard{position:relative;background:#fff;border:1px solid #DCE3EE;border-radius:var(--r);
   padding:20px 20px 22px;display:flex;flex-direction:column;overflow:hidden;
   transition:transform .35s var(--ease),border-color .3s,box-shadow .35s var(--ease)}
@@ -737,10 +741,11 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 .sgCard p{font-size:13.5px;line-height:1.5;color:var(--muteddark);margin:0}
 
 @media (max-width:1100px){
-  .sgCards,.sgGroup.narrow .sgCards{grid-template-columns:repeat(2,1fr)}
+  .sgCards{grid-template-columns:repeat(2,1fr)}
+  .sgCards .sgCard{grid-column:span 1 !important}
 }
 @media (max-width:900px){
-  .sgGroup,.sgGroup.narrow{grid-template-columns:1fr}
+  .sgGroup,.sgGroup.rev{grid-template-columns:1fr}
   .sgHero,.sgHero.r,.sgCards,.sgHero.r ~ .sgCards{grid-column:1}
   .sgHero{grid-row:auto;min-height:230px}
   .sgCards{grid-row:auto}
@@ -748,7 +753,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   .sgCount{margin-left:0}
 }
 @media (max-width:560px){
-  .sgCards,.sgGroup.narrow .sgCards{grid-template-columns:1fr}
+  .sgCards{grid-template-columns:1fr}
 }
 
 /* editor notes, readable on either ground */
@@ -892,7 +897,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
    The process drawn as the piece of paper this company actually
    hands you. Nothing borrowed from anybody's carousel.
    ============================================================= */
-.hxJob{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.hxJob{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
 
 .hxTicket{background:#fff;border:1px solid #E4DED0;border-radius:4px;
   box-shadow:0 24px 50px rgba(58,48,30,.09);position:relative;overflow:hidden}
@@ -953,7 +958,13 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   color:#B4791A;letter-spacing:.01em}
 .hxTicket-f a:hover{color:#8A5F12}
 
-.hxStage2{position:relative;min-height:256px;padding-top:6px}
+.hxStage2{position:relative;min-height:256px}
+.hxJobside{display:flex;flex-direction:column;gap:22px}
+.hxJobcta{display:flex;align-items:center;justify-content:space-between;gap:18px;
+  flex-wrap:wrap;padding:18px 22px;border-radius:var(--r);background:#fff;
+  border:1px solid #E4DED0}
+.hxJobcta p{margin:0;font-size:14px;line-height:1.55;color:#6A6353;max-width:34ch}
+.hxJobcta .btn{padding:14px 22px}
 .hxStep[hidden]{display:none}
 .hxStep.on{animation:hxIn .5s var(--ease) both}
 .hxStep h3{font-size:clamp(26px,3vw,36px);margin:10px 0 14px;color:#16202F}
@@ -1745,7 +1756,8 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
           <a href="tel:5042293955">504-229-3955</a>
         </div>
       </div>
-      <div class="hxStage2">
+      <div class="hxJobside">
+        <div class="hxStage2">
         <div class="hxStep on" data-st="0">
           <span class="eyebrow">Stage &middot; 01</span>
           <h3>We Look at the Deck First</h3>
@@ -1770,6 +1782,11 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
           <p>Nothing is torn off until your material is on the property. Then it goes on to the manufacturer’s pattern, which is what keeps the wind rating and the warranty intact. On a standard shingle roof that is one working day.</p>
           <p class="hxStep-n">Installed to the pattern the rating depends on.</p>
         </div>
+        </div>
+        <div class="hxJobcta">
+          <p>We will walk your roof and tell you which materials genuinely suit it, and which ones we would not put on it.</p>
+          <a class="btn btn-amber" href="#ask">Get a free inspection</a>
+        </div>
       </div>
     </div>
   </div>
@@ -1784,7 +1801,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
       the engineering: whether water runs off your roof or sits on it.</p>
     </div>
     <div class="sgWrap">
-      <div class="sgGroup narrow">
+      <div class="sgGroup">
         <div class="sgHead rv">
           <span class="sgNum">01</span>
           <div><h3>Pitched Roofs</h3><p>What goes on a sloped roof, and what the slope lets you get away with.</p></div>
@@ -1800,29 +1817,29 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
           </span>
         </a>
         <div class="sgCards">
-          <a class="sgCard rv" href="/roofing-types/metal/">
+          <a class="sgCard rv" style="grid-column:span 3" href="/roofing-types/metal/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v9h14v-9"/><path d="M9 19v-5h6v5"/></svg></span>
             <h3>Metal</h3>
             <p>Standing seam, fewest edges for wind to lift</p>
           </a>
-          <a class="sgCard rv" href="/roofing-types/tile/">
+          <a class="sgCard rv" style="grid-column:span 3" href="/roofing-types/tile/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
             <h3>Tile</h3>
             <p>Long lived and heavy, so the deck comes first</p>
           </a>
-          <a class="sgCard rv" href="/roofing-types/slate/">
+          <a class="sgCard rv" style="grid-column:span 3" href="/roofing-types/slate/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span>
             <h3>Slate</h3>
             <p>Historic homes, usually repair and match</p>
           </a>
-          <a class="sgCard rv" href="/roofing-types/cedar-shake/">
+          <a class="sgCard rv" style="grid-column:span 3" href="/roofing-types/cedar-shake/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v9h14v-9"/><path d="M9 15a3 3 0 0 1 5-2"/><path d="M14 11v2.5h-2.5"/></svg></span>
             <h3>Cedar Shake</h3>
             <p>Distinctive, and demanding in this humidity</p>
           </a>
         </div>
       </div>
-      <div class="sgGroup">
+      <div class="sgGroup rev">
         <div class="sgHead rv">
           <span class="sgNum">02</span>
           <div><h3>Flat and Low-Slope Roofs</h3><p>Flat is a category, not a material. Five of them, and they fail differently.</p></div>
@@ -1838,27 +1855,27 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
           </span>
         </a>
         <div class="sgCards">
-          <a class="sgCard rv" href="/roofing-types/flat/">
+          <a class="sgCard rv" style="grid-column:span 2" href="/roofing-types/flat/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="10" height="5" rx="1"/><path d="M14 6.5h4v4h-6"/><path d="M11 10.5h2v3h-2z"/><path d="M12 13.5v6"/></svg></span>
             <h3>Flat Roofing</h3>
             <p>The whole category, and how to choose inside it</p>
           </a>
-          <a class="sgCard rv" href="/roofing-types/built-up/">
+          <a class="sgCard rv" style="grid-column:span 2" href="/roofing-types/built-up/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h18M3 12h18M3 16h18"/><path d="M6 8v8M12 8v8M18 8v8"/></svg></span>
             <h3>Built-Up</h3>
             <p>Layered felt and bitumen, often worth repairing</p>
           </a>
-          <a class="sgCard rv" href="/roofing-types/rubber/">
+          <a class="sgCard rv" style="grid-column:span 2" href="/roofing-types/rubber/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"/><path d="m9 12 2 2 4-4"/></svg></span>
             <h3>Rubber (EPDM)</h3>
             <p>Forgiving, long lived, dark unless coated</p>
           </a>
-          <a class="sgCard rv" href="/roofing-types/torch-down-roofing/">
+          <a class="sgCard rv" style="grid-column:span 3" href="/roofing-types/torch-down-roofing/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18 12 6l8 12"/><path d="M8 18v-4h8v4"/><path d="M12 6v8"/></svg></span>
             <h3>Torch-Down</h3>
             <p>Modified bitumen, tough underfoot</p>
           </a>
-          <a class="sgCard rv" href="/roofing-types/green/">
+          <a class="sgCard rv" style="grid-column:span 3" href="/roofing-types/green/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v9h14v-9"/><path d="M8 14h5a2 2 0 1 0-2-2"/><path d="M8 17h7a2 2 0 1 1-2 2"/></svg></span>
             <h3>Green Roofing</h3>
             <p>Planted assemblies, where the structure allows</p>

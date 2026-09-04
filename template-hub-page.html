@@ -575,7 +575,7 @@ footer .logo img{height:80px}
 .icrumbs a:hover{color:var(--amber)}
 .icrumbs i{font-style:normal;opacity:.5}
 .icrumbs span[aria-current]{color:#CBD6E5}
-.ihero h1{font-size:clamp(30px,4.2vw,52px);max-width:19ch}
+.ihero h1{font-size:clamp(28px,3.6vw,46px);max-width:none;text-wrap:balance}
 .icreds{font:500 14px/1.6 Inter;color:#A9B8CC;margin:12px 0 22px}
 .icreds b{color:#E9EEF6;font-weight:600}
 .iacts{display:flex;gap:12px;flex-wrap:wrap}
@@ -689,7 +689,9 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 .sgWrap{display:grid;gap:clamp(32px,4vw,52px)}
 .sgGroup{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,2.08fr);
   grid-template-rows:auto 1fr;gap:16px 18px}
-.sgGroup.narrow{grid-template-columns:minmax(0,.92fr) minmax(0,1.42fr)}
+/* the wide column follows the cards, so three cards are never squeezed
+   into the narrow one just because the photo moved to the right */
+.sgGroup.rev{grid-template-columns:minmax(0,2.08fr) minmax(0,.92fr)}
 
 /* group header spans the row */
 .sgHead{grid-column:1/-1;display:flex;align-items:center;gap:18px;padding-bottom:16px;
@@ -720,8 +722,10 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 .sgHero em{font-style:normal;font:700 11.5px/1 Inter;letter-spacing:.12em;text-transform:uppercase;color:var(--amber)}
 
 /* the compact cards beside it */
-.sgCards{grid-row:2;grid-column:2;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-content:start}
-.sgGroup.narrow .sgCards{grid-template-columns:repeat(2,1fr)}
+.sgCards{grid-row:2;grid-column:2;display:grid;grid-template-columns:repeat(6,1fr);
+  gap:14px;align-content:stretch;grid-auto-rows:1fr}
+.sgCard{display:flex;flex-direction:column}
+
 .sgCard{position:relative;background:#fff;border:1px solid #DCE3EE;border-radius:var(--r);
   padding:20px 20px 22px;display:flex;flex-direction:column;overflow:hidden;
   transition:transform .35s var(--ease),border-color .3s,box-shadow .35s var(--ease)}
@@ -737,10 +741,11 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 .sgCard p{font-size:13.5px;line-height:1.5;color:var(--muteddark);margin:0}
 
 @media (max-width:1100px){
-  .sgCards,.sgGroup.narrow .sgCards{grid-template-columns:repeat(2,1fr)}
+  .sgCards{grid-template-columns:repeat(2,1fr)}
+  .sgCards .sgCard{grid-column:span 1 !important}
 }
 @media (max-width:900px){
-  .sgGroup,.sgGroup.narrow{grid-template-columns:1fr}
+  .sgGroup,.sgGroup.rev{grid-template-columns:1fr}
   .sgHero,.sgHero.r,.sgCards,.sgHero.r ~ .sgCards{grid-column:1}
   .sgHero{grid-row:auto;min-height:230px}
   .sgCards{grid-row:auto}
@@ -748,7 +753,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   .sgCount{margin-left:0}
 }
 @media (max-width:560px){
-  .sgCards,.sgGroup.narrow .sgCards{grid-template-columns:1fr}
+  .sgCards{grid-template-columns:1fr}
 }
 
 /* editor notes, readable on either ground */
@@ -892,7 +897,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
    The process drawn as the piece of paper this company actually
    hands you. Nothing borrowed from anybody's carousel.
    ============================================================= */
-.hxJob{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.hxJob{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
 
 .hxTicket{background:#fff;border:1px solid #E4DED0;border-radius:4px;
   box-shadow:0 24px 50px rgba(58,48,30,.09);position:relative;overflow:hidden}
@@ -953,7 +958,13 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   color:#B4791A;letter-spacing:.01em}
 .hxTicket-f a:hover{color:#8A5F12}
 
-.hxStage2{position:relative;min-height:256px;padding-top:6px}
+.hxStage2{position:relative;min-height:256px}
+.hxJobside{display:flex;flex-direction:column;gap:22px}
+.hxJobcta{display:flex;align-items:center;justify-content:space-between;gap:18px;
+  flex-wrap:wrap;padding:18px 22px;border-radius:var(--r);background:#fff;
+  border:1px solid #E4DED0}
+.hxJobcta p{margin:0;font-size:14px;line-height:1.55;color:#6A6353;max-width:34ch}
+.hxJobcta .btn{padding:14px 22px}
 .hxStep[hidden]{display:none}
 .hxStep.on{animation:hxIn .5s var(--ease) both}
 .hxStep h3{font-size:clamp(26px,3vw,36px);margin:10px 0 14px;color:#16202F}
@@ -1777,7 +1788,8 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
           <a href="tel:5042293955">504-229-3955</a>
         </div>
       </div>
-      <div class="hxStage2">
+      <div class="hxJobside">
+        <div class="hxStage2">
         <div class="hxStep on" data-st="0">
           <span class="eyebrow">Line item &middot; 01</span>
           <h3>We Look at It</h3>
@@ -1801,6 +1813,11 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
           <h3>One Day on the Roof</h3>
           <p>Tear-off, decking checked and replaced anywhere it has gone soft, leak barrier, deck protection, starter strip, shingles, ridge cap. Then a magnet sweep of the yard and the driveway before anyone drives away.</p>
           <p class="hxStep-n">We only open what we can close again the same day.</p>
+        </div>
+        </div>
+        <div class="hxJobcta">
+          <p>The inspection, the written report and the estimate all cost nothing, and there is no obligation afterward.</p>
+          <a class="btn btn-amber" href="#ask">Book a free inspection</a>
         </div>
       </div>
     </div>
@@ -1831,39 +1848,39 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
           </span>
         </a>
         <div class="sgCards">
-          <a class="sgCard rv" href="/residential/repairs/">
+          <a class="sgCard rv" style="grid-column:span 2" href="/residential/repairs/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v9h14v-9"/><path d="m13.5 13.5 3 3"/><path d="M15 12a2.2 2.2 0 0 0 3 3l-3-3z"/></svg></span>
             <h3>Roof Repairs</h3>
             <p>The entry point traced, not the nearest guess</p>
           </a>
-          <a class="sgCard rv" href="/residential/roof-installation/">
+          <a class="sgCard rv" style="grid-column:span 2" href="/residential/roof-installation/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v9h14v-9"/><path d="m16.5 10.5 3 3-2 2-3-3z"/></svg></span>
             <h3>Roof Installation</h3>
             <p>New build and additions, flashed and vented properly</p>
           </a>
-          <a class="sgCard rv" href="/residential/emergency-roofing/">
+          <a class="sgCard rv" style="grid-column:span 2" href="/residential/emergency-roofing/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v9h14v-9"/><path d="m12 11-2 4h3l-1 4"/></svg></span>
             <h3>Emergency Roofing</h3>
             <p>Same-day tarping, around the clock in storm season</p>
           </a>
-          <a class="sgCard rv" href="/residential/hail-damage-roof-repair/">
+          <a class="sgCard rv" style="grid-column:span 2" href="/residential/hail-damage-roof-repair/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14a4 4 0 0 1 .6-8 5.5 5.5 0 0 1 10.5 1.2A3.6 3.6 0 0 1 19 14"/><path d="M8 18h.01M12 19h.01M16 18h.01M10 21h.01M14 21h.01"/></svg></span>
             <h3>Hail Damage Repair</h3>
             <p>Impact marks documented the way an adjuster needs</p>
           </a>
-          <a class="sgCard rv" href="/residential/restoration/">
+          <a class="sgCard rv" style="grid-column:span 2" href="/residential/restoration/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v9h14v-9"/><path d="M9 15a3 3 0 0 1 5-2"/><path d="M14 11v2.5h-2.5"/></svg></span>
             <h3>Roof Restoration</h3>
             <p>Bringing a tired roof back before it needs replacing</p>
           </a>
-          <a class="sgCard rv" href="/residential/asbestos-roof-removal/">
+          <a class="sgCard rv" style="grid-column:span 2" href="/residential/asbestos-roof-removal/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20h20z"/><path d="M12 9v5"/><path d="M12 17h.01"/></svg></span>
             <h3>Asbestos Roof Removal</h3>
             <p>Licensed handling and documented disposal</p>
           </a>
         </div>
       </div>
-      <div class="sgGroup narrow">
+      <div class="sgGroup rev">
         <div class="sgHead rv">
           <span class="sgNum">02</span>
           <div><h3>Water and Drainage</h3><p>Where roofs in this city actually fail. Rarely in the open field.</p></div>
@@ -1879,22 +1896,22 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
           </span>
         </a>
         <div class="sgCards">
-          <a class="sgCard rv" href="/residential/gutters-and-downspouts-repair/">
+          <a class="sgCard rv" style="grid-column:span 3" href="/residential/gutters-and-downspouts-repair/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v4H3z"/><path d="M17 11v6a2 2 0 0 1-2 2h-1"/><path d="m12 19 2 2 2-2"/></svg></span>
             <h3>Gutters &amp; Downspouts Repair</h3>
             <p>Re-hung, re-sealed and re-pitched to actually drain</p>
           </a>
-          <a class="sgCard rv" href="/residential/gutters-downspouts-installation/">
+          <a class="sgCard rv" style="grid-column:span 3" href="/residential/gutters-downspouts-installation/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v4H3z"/><path d="M7 11v9M17 11v6"/><path d="M17 17h4"/></svg></span>
             <h3>Gutters &amp; Downspouts Installation</h3>
             <p>Sized for the roof area, not for the truck</p>
           </a>
-          <a class="sgCard rv" href="/residential/flashing-repair/">
+          <a class="sgCard rv" style="grid-column:span 3" href="/residential/flashing-repair/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18 12 6l8 12"/><path d="M8 18v-4h8v4"/><path d="M12 6v8"/></svg></span>
             <h3>Flashing Repair</h3>
             <p>Chimneys, walls and valleys, never reused</p>
           </a>
-          <a class="sgCard rv" href="/residential/fascia-board-installation-repair/">
+          <a class="sgCard rv" style="grid-column:span 3" href="/residential/fascia-board-installation-repair/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="9" width="18" height="4" rx="1"/><path d="M3 13v4M21 13v4"/><path d="M7 9V6M17 9V6"/></svg></span>
             <h3>Fascia Board Repair</h3>
             <p>The board behind the gutter, where rot starts</p>
@@ -1917,32 +1934,32 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
           </span>
         </a>
         <div class="sgCards">
-          <a class="sgCard rv" href="/residential/coating/">
+          <a class="sgCard rv" style="grid-column:span 2" href="/residential/coating/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="10" height="5" rx="1"/><path d="M14 6.5h4v4h-6"/><path d="M11 10.5h2v3h-2z"/><path d="M12 13.5v6"/></svg></span>
             <h3>Roof Coating</h3>
             <p>Reflective and elastomeric systems for flat sections</p>
           </a>
-          <a class="sgCard rv" href="/residential/roof-insulation/">
+          <a class="sgCard rv" style="grid-column:span 2" href="/residential/roof-insulation/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h18M3 12h18M3 16h18"/><path d="M6 8v8M12 8v8M18 8v8"/></svg></span>
             <h3>Roof Insulation</h3>
             <p>Stops the attic cooking the deck from below</p>
           </a>
-          <a class="sgCard rv" href="/residential/ventilation/">
+          <a class="sgCard rv" style="grid-column:span 2" href="/residential/ventilation/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v9h14v-9"/><path d="M8 14h5a2 2 0 1 0-2-2"/><path d="M8 17h7a2 2 0 1 1-2 2"/></svg></span>
             <h3>Ventilation</h3>
             <p>Ridge and soffit airflow, checked on every job</p>
           </a>
-          <a class="sgCard rv" href="/residential/inspection/">
+          <a class="sgCard rv" style="grid-column:span 2" href="/residential/inspection/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg></span>
             <h3>Roof Inspection</h3>
             <p>Every slope photographed, written report you keep</p>
           </a>
-          <a class="sgCard rv" href="/residential/maintenance/">
+          <a class="sgCard rv" style="grid-column:span 2" href="/residential/maintenance/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v9h14v-9"/><circle cx="12" cy="14.5" r="2"/><path d="M12 11.5v-1M12 18.5v-1M9 14.5H8M16 14.5h-1"/></svg></span>
             <h3>Roof Maintenance</h3>
             <p>Annual checks that keep the warranty intact</p>
           </a>
-          <a class="sgCard rv" href="/residential/siding-installation/">
+          <a class="sgCard rv" style="grid-column:span 2" href="/residential/siding-installation/">
             <span class="sgCard-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 10h18M3 14h18M3 18h18"/><path d="M8 6v12M16 6v12"/></svg></span>
             <h3>Siding Installation</h3>
             <p>Fiber cement, vinyl and metal, installed in-house</p>

@@ -575,7 +575,7 @@ footer .logo img{height:80px}
 .icrumbs a:hover{color:var(--amber)}
 .icrumbs i{font-style:normal;opacity:.5}
 .icrumbs span[aria-current]{color:#CBD6E5}
-.ihero h1{font-size:clamp(30px,4.2vw,52px);max-width:19ch}
+.ihero h1{font-size:clamp(28px,3.6vw,46px);max-width:none;text-wrap:balance}
 .icreds{font:500 14px/1.6 Inter;color:#A9B8CC;margin:12px 0 22px}
 .icreds b{color:#E9EEF6;font-weight:600}
 .iacts{display:flex;gap:12px;flex-wrap:wrap}
@@ -689,7 +689,9 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 .sgWrap{display:grid;gap:clamp(32px,4vw,52px)}
 .sgGroup{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,2.08fr);
   grid-template-rows:auto 1fr;gap:16px 18px}
-.sgGroup.narrow{grid-template-columns:minmax(0,.92fr) minmax(0,1.42fr)}
+/* the wide column follows the cards, so three cards are never squeezed
+   into the narrow one just because the photo moved to the right */
+.sgGroup.rev{grid-template-columns:minmax(0,2.08fr) minmax(0,.92fr)}
 
 /* group header spans the row */
 .sgHead{grid-column:1/-1;display:flex;align-items:center;gap:18px;padding-bottom:16px;
@@ -720,8 +722,10 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 .sgHero em{font-style:normal;font:700 11.5px/1 Inter;letter-spacing:.12em;text-transform:uppercase;color:var(--amber)}
 
 /* the compact cards beside it */
-.sgCards{grid-row:2;grid-column:2;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-content:start}
-.sgGroup.narrow .sgCards{grid-template-columns:repeat(2,1fr)}
+.sgCards{grid-row:2;grid-column:2;display:grid;grid-template-columns:repeat(6,1fr);
+  gap:14px;align-content:stretch;grid-auto-rows:1fr}
+.sgCard{display:flex;flex-direction:column}
+
 .sgCard{position:relative;background:#fff;border:1px solid #DCE3EE;border-radius:var(--r);
   padding:20px 20px 22px;display:flex;flex-direction:column;overflow:hidden;
   transition:transform .35s var(--ease),border-color .3s,box-shadow .35s var(--ease)}
@@ -737,10 +741,11 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 .sgCard p{font-size:13.5px;line-height:1.5;color:var(--muteddark);margin:0}
 
 @media (max-width:1100px){
-  .sgCards,.sgGroup.narrow .sgCards{grid-template-columns:repeat(2,1fr)}
+  .sgCards{grid-template-columns:repeat(2,1fr)}
+  .sgCards .sgCard{grid-column:span 1 !important}
 }
 @media (max-width:900px){
-  .sgGroup,.sgGroup.narrow{grid-template-columns:1fr}
+  .sgGroup,.sgGroup.rev{grid-template-columns:1fr}
   .sgHero,.sgHero.r,.sgCards,.sgHero.r ~ .sgCards{grid-column:1}
   .sgHero{grid-row:auto;min-height:230px}
   .sgCards{grid-row:auto}
@@ -748,7 +753,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   .sgCount{margin-left:0}
 }
 @media (max-width:560px){
-  .sgCards,.sgGroup.narrow .sgCards{grid-template-columns:1fr}
+  .sgCards{grid-template-columns:1fr}
 }
 
 /* editor notes, readable on either ground */
@@ -892,7 +897,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
    The process drawn as the piece of paper this company actually
    hands you. Nothing borrowed from anybody's carousel.
    ============================================================= */
-.hxJob{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.hxJob{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
 
 .hxTicket{background:#fff;border:1px solid #E4DED0;border-radius:4px;
   box-shadow:0 24px 50px rgba(58,48,30,.09);position:relative;overflow:hidden}
@@ -953,7 +958,13 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   color:#B4791A;letter-spacing:.01em}
 .hxTicket-f a:hover{color:#8A5F12}
 
-.hxStage2{position:relative;min-height:256px;padding-top:6px}
+.hxStage2{position:relative;min-height:256px}
+.hxJobside{display:flex;flex-direction:column;gap:22px}
+.hxJobcta{display:flex;align-items:center;justify-content:space-between;gap:18px;
+  flex-wrap:wrap;padding:18px 22px;border-radius:var(--r);background:#fff;
+  border:1px solid #E4DED0}
+.hxJobcta p{margin:0;font-size:14px;line-height:1.55;color:#6A6353;max-width:34ch}
+.hxJobcta .btn{padding:14px 22px}
 .hxStep[hidden]{display:none}
 .hxStep.on{animation:hxIn .5s var(--ease) both}
 .hxStep h3{font-size:clamp(26px,3vw,36px);margin:10px 0 14px;color:#16202F}
@@ -1729,7 +1740,8 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
           <a href="tel:5042293955">504-229-3955</a>
         </div>
       </div>
-      <div class="hxStage2">
+      <div class="hxJobside">
+        <div class="hxStage2">
         <div class="hxStep on" data-st="0">
           <span class="eyebrow">Line item &middot; 01</span>
           <h3>We Find the Cause</h3>
@@ -1753,6 +1765,11 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
           <h3>Vented Panels, Sized Right</h3>
           <p>Panels go back vented and sized for the attic they serve, balanced against what the ridge is exhausting. Fascia repaired or replaced where it has gone soft, and the gutter re-hung to it properly rather than screwed back into rot.</p>
           <p class="hxStep-n">Undersized intake is the fault we find most often here.</p>
+        </div>
+        </div>
+        <div class="hxJobcta">
+          <p>We look at the whole eave and at whatever is causing the damage above it. The visit costs nothing.</p>
+          <a class="btn btn-amber" href="#ask">Book a free inspection</a>
         </div>
       </div>
     </div>
