@@ -797,12 +797,14 @@ footer .logo img{height:80px}
 }
 
 /* ---- section heads: the cap left half the row empty -------------------- */
-.s .head:not(.ctr){max-width:none}
-.s .head:not(.ctr):has(.lead){display:grid;
+.s > .wrap > .head:not(.ctr){max-width:none}
+/* only a head that is a direct child of the row. A head already inside a
+   column must not be split again - that is what squeezed the radar h2. */
+.s > .wrap > .head:not(.ctr):has(.lead){display:grid;
   grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:10px 56px;align-items:end}
-.s .head:not(.ctr):has(.lead) .eyebrow{grid-column:1;grid-row:1}
-.s .head:not(.ctr):has(.lead) h2{grid-column:1;grid-row:2;margin-bottom:0}
-.s .head:not(.ctr):has(.lead) .lead{grid-column:2;grid-row:2;margin:0;max-width:48ch;
+.s > .wrap > .head:not(.ctr):has(.lead) .eyebrow{grid-column:1;grid-row:1}
+.s > .wrap > .head:not(.ctr):has(.lead) h2{grid-column:1;grid-row:2;margin-bottom:0}
+.s > .wrap > .head:not(.ctr):has(.lead) .lead{grid-column:2;grid-row:2;margin:0;max-width:48ch;
   padding-bottom:8px}
 
 /* ---- photo band: the right half was empty ----------------------------- */
@@ -824,8 +826,8 @@ footer .logo img{height:80px}
 .hpRev.feat .hpRev-who{margin-top:auto}
 
 @media (max-width:1024px){
-  .s .head:not(.ctr):has(.lead){grid-template-columns:1fr;gap:10px}
-  .s .head:not(.ctr):has(.lead) .lead{grid-column:1;grid-row:3;max-width:62ch}
+  .s > .wrap > .head:not(.ctr):has(.lead){grid-template-columns:1fr;gap:10px}
+  .s > .wrap > .head:not(.ctr):has(.lead) .lead{grid-column:1;grid-row:3;max-width:62ch}
   .hpBand{grid-template-columns:1fr;gap:26px}
 }
 </style>
