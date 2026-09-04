@@ -2,15 +2,13 @@ Commercial photography for /commercial/.
 Source: Pexels. Pexels License - free to use, commercial use allowed,
 no attribution required. Ids kept so any image can be traced back.
 
-Pexels is thin on commercial roofing. Five search rounds produced these
-ten. Three are used on two slots each, always where the subject matches
-both. Real photography of the company's own commercial jobs would still
-beat all of it.
+Nine photographs across thirteen slots. Four are used twice, always on
+two slots that share a subject. Pexels is thin on commercial roofing;
+real photography of the company's own jobs would still beat all of it.
 
 com-aerial-flat.jpg pexels.com/photo/25461690  aerial of a white membrane roof with mechanical units
-com-complex.jpg    pexels.com/photo/5115940   aerial of a factory complex, large flat roofs
+com-complex.jpg    pexels.com/photo/5115940   aerial of a factory complex, large low-slope roofs
 com-facility.jpg   pexels.com/photo/6537735   industrial facility, large low-slope roof
-com-gravel.jpg     pexels.com/photo/10921738  gravel, the surface of a ballasted built-up roof
 com-industrial.jpg pexels.com/photo/33676905  industrial building with stacks
 com-inspect.jpg    pexels.com/photo/6961110   worker walking a large flat commercial roof
 com-rooftop-city.jpg pexels.com/photo/9653888   city rooftop with equipment and antenna
