@@ -1004,6 +1004,23 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
    over balancing. */
 .i h2,.i h3,.ihero h1,.ibanner h2{text-wrap:balance}
 
+/* ---- links inside body prose ------------------------------------------
+   The colour stays the text colour and the amber does the signalling from
+   the underline, because amber text on the near-white body ground does not
+   clear 4.5:1 at this size. */
+.icopy p a,.icopy li a{font-weight:600;color:var(--text);
+  border-bottom:2px solid rgba(245,165,36,.55);
+  transition:border-color .22s var(--ease),background .22s var(--ease)}
+.icopy p a:hover,.icopy li a:hover{border-bottom-color:var(--amber);
+  background:rgba(245,165,36,.10)}
+.i.light .icopy p a,.i.light .icopy li a{color:var(--textdark);
+  border-bottom-color:rgba(201,127,11,.55)}
+.i.light .icopy p a:hover,.i.light .icopy li a:hover{border-bottom-color:var(--amber-lo);
+  background:rgba(245,165,36,.14)}
+@media (prefers-reduced-motion:reduce){
+  .icopy p a,.icopy li a{transition:none}
+}
+
 /* the enquiry card: small, sticky, one job */
 .iask{position:sticky;top:100px;display:grid;gap:14px}
 .askcard{background:linear-gradient(180deg,#16233A,#101A2B);border:1px solid var(--line);
@@ -2093,7 +2110,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
     <div class="icopy rv">
       <span class="eyebrow">Commercial roofing &middot; New Orleans</span>
       <p class="hxLede">A commercial roof is a line item until the day it becomes a shutdown. Then it is the only thing anyone is talking about.</p>
-      <p>We work on flat and low-slope commercial property throughout the parish and thirteen cities beyond it: warehouses, retail strips, offices, restaurants and light industrial. The systems are different from a house, the failure modes are different, and so is the thing you are actually protecting, which is trading hours.</p>
+      <p><a href="/">Big Easy Roofing Company</a> works on flat and low-slope commercial property throughout the parish and thirteen cities beyond it: warehouses, retail strips, offices, restaurants and light industrial. The systems are different from a house, the failure modes are different, and so is the thing you are actually protecting, which is trading hours.</p>
       <p>We phase the work around your operation. Retail gets done before opening. Restaurants get done between services. Warehouses get sectioned so you keep running. Tell us the constraints before we quote, not after.</p>
 
       <div class="hxCreds">

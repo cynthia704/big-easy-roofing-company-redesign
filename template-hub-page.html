@@ -1004,6 +1004,23 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
    over balancing. */
 .i h2,.i h3,.ihero h1,.ibanner h2{text-wrap:balance}
 
+/* ---- links inside body prose ------------------------------------------
+   The colour stays the text colour and the amber does the signalling from
+   the underline, because amber text on the near-white body ground does not
+   clear 4.5:1 at this size. */
+.icopy p a,.icopy li a{font-weight:600;color:var(--text);
+  border-bottom:2px solid rgba(245,165,36,.55);
+  transition:border-color .22s var(--ease),background .22s var(--ease)}
+.icopy p a:hover,.icopy li a:hover{border-bottom-color:var(--amber);
+  background:rgba(245,165,36,.10)}
+.i.light .icopy p a,.i.light .icopy li a{color:var(--textdark);
+  border-bottom-color:rgba(201,127,11,.55)}
+.i.light .icopy p a:hover,.i.light .icopy li a:hover{border-bottom-color:var(--amber-lo);
+  background:rgba(245,165,36,.14)}
+@media (prefers-reduced-motion:reduce){
+  .icopy p a,.icopy li a{transition:none}
+}
+
 /* the enquiry card: small, sticky, one job */
 .iask{position:sticky;top:100px;display:grid;gap:14px}
 .askcard{background:linear-gradient(180deg,#16233A,#101A2B);border:1px solid var(--line);
@@ -2104,8 +2121,9 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
       <p class="hxLede">New Orleans is hard on roofs. Between summer heat, heavy rain and a
       hurricane season that runs half the year, a roof here works harder than the same roof
       almost anywhere else in the country.</p>
-      <p>Most homeowners do not think about theirs until water shows up on a ceiling. Big Easy
-      Roofing Company handles residential roofing across New Orleans and 13 surrounding cities,
+      <p>Most homeowners do not think about theirs until water shows up on a ceiling.
+      <a href="/">Big Easy Roofing Company</a> handles residential roofing across New
+      Orleans and 13 surrounding cities,
       from a single lifted shingle to a full replacement after a named storm. Whatever brought
       you here, the first step is the same: someone gets on the roof, photographs every slope,
       and tells you plainly what is wrong and what it will cost to put right.</p>
