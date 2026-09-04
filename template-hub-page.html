@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Residential Roofing in New Orleans | Big Easy Roofing Company</title>
-<meta name="description" content="Residential roofing across New Orleans and 13 nearby cities. Repairs, replacement, storm damage, gutters. Free inspection. Call 504-229-3955.">
+<title>Residential Roofing New Orleans | Big Easy Roofing Company</title>
+<meta name="description" content="Residential roofing across New Orleans and 13 nearby cities. Repairs, replacement, leak detection, gutters and storm damage. Get a free inspection.">
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -832,6 +832,11 @@ footer .logo img{height:80px}
   .hpBand{grid-template-columns:1fr;gap:26px}
 }
 
+/* the written alternative, under the closing call to action */
+.ctaalt{margin:2px 0 0;font-size:13.5px;line-height:1.6;color:var(--muted)}
+.ctaalt a{color:var(--amber);border-bottom:1px solid rgba(245,165,36,.35)}
+.ctaalt a:hover{border-bottom-color:var(--amber)}
+
 /* ============================================================
    TEMPLATE ADDITIONS - appended after Concept A's own rules
    ============================================================ */
@@ -1154,6 +1159,103 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 .askcard.lite .fineprint{color:var(--muteddark)}
 .i.light .askmini b{color:var(--textdark)}
 
+/* ---- the enquiry card carries the whole form now -------------------------
+   Fourteen fields at natural height would be roughly three screens in a
+   sticky sidebar. Fixed height, scrolling field area, header and submit bar
+   pinned. */
+.askcard{padding:0;display:flex;flex-direction:column;
+  /* 100px sticky offset + 14px gap + the emergency card + a little air */
+  max-height:calc(100vh - 360px);min-height:330px}
+.askcard .fm-head{padding:22px 24px 15px;border-bottom:1px solid var(--line);flex:none}
+.askcard .fm-head h3{margin-bottom:6px}
+.askcard .fm-head .fm-sub{margin:0;font-size:13.5px;line-height:1.55;color:var(--muted)}
+.askcard .fm{display:flex;flex-direction:column;min-height:0;flex:1}
+.askcard .fm-scroll{overflow-y:auto;overscroll-behavior:contain;padding:18px 24px 6px;
+  flex:1;min-height:0;scrollbar-width:thin;
+  scrollbar-color:rgba(245,165,36,.5) transparent;
+  mask-image:linear-gradient(180deg,#000 0,#000 calc(100% - 20px),transparent 100%)}
+.askcard .fm-scroll::-webkit-scrollbar{width:8px}
+.askcard .fm-scroll::-webkit-scrollbar-track{background:transparent}
+.askcard .fm-scroll::-webkit-scrollbar-thumb{background:rgba(245,165,36,.42);
+  border-radius:99px;border:2px solid transparent;background-clip:content-box}
+.askcard .fm-scroll::-webkit-scrollbar-thumb:hover{background:rgba(245,165,36,.7);
+  background-clip:content-box}
+.askcard .fm-foot{padding:14px 24px 20px;border-top:1px solid var(--line);flex:none}
+.askcard .fm-foot .btn{margin-top:0;width:100%}
+.askcard .fm-foot .fineprint{margin-top:10px}
+.askcard .fm-done{padding:32px 24px 36px;text-align:center}
+.askcard .fm-done h3{margin-bottom:8px}
+
+.askcard .fm-row{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.askcard .fm-row3{grid-template-columns:1.4fr .7fr .9fr}
+.askcard .field label i{font-style:normal;color:var(--amber)}
+.askcard .field textarea{resize:vertical;min-height:74px;font-family:Inter}
+
+.askcard .fm-file{display:flex;align-items:center;gap:12px;padding:12px 14px;margin:2px 0 13px;
+  border:1px dashed rgba(255,255,255,.22);border-radius:10px;cursor:pointer;
+  transition:border-color .25s var(--ease),background .25s var(--ease)}
+.askcard .fm-file:hover{border-color:rgba(245,165,36,.6);background:rgba(245,165,36,.06)}
+.askcard .fm-file input{display:none}
+.askcard .fm-file-i{display:flex;align-items:center;justify-content:center;width:34px;height:34px;
+  border-radius:9px;background:rgba(245,165,36,.14);color:var(--amber);flex:none}
+.askcard .fm-file-i svg{width:17px;height:17px}
+.askcard .fm-file b{display:block;font:600 13.5px/1.3 Inter;color:#E7EDF6}
+.askcard .fm-file small{display:block;font:400 12px/1.4 Inter;color:#8496AE;margin-top:2px}
+
+.askcard .fm-check{display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;cursor:pointer}
+.askcard .fm-check input{appearance:none;width:18px;height:18px;border:1px solid var(--line);
+  border-radius:5px;background:#0C1524;flex:none;margin-top:1px;cursor:pointer;
+  transition:background .2s,border-color .2s}
+.askcard .fm-check input:checked{background:var(--amber);border-color:var(--amber);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 12l6 6L20 6' stroke='%2320160A' stroke-width='3.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-size:12px;background-repeat:no-repeat;background-position:center}
+.askcard .fm-check span{font:400 12.5px/1.5 Inter;color:#9FB0C6}
+.askcard .fm-check i{font-style:normal;color:var(--amber)}
+
+/* ---- and the same card on a light ground -------------------------------- */
+.askcard.lite .fm-head{border-bottom-color:#DCE3EE}
+.askcard.lite .fm-head .fm-sub{color:var(--muteddark)}
+.askcard.lite .fm-foot{border-top-color:#DCE3EE;
+  background:linear-gradient(180deg,rgba(244,246,250,.65),#fff)}
+.askcard.lite .field textarea{background:var(--paper);border-color:#DCE3EE;color:var(--textdark)}
+.askcard.lite .field textarea::placeholder{color:#9AA7B8}
+.askcard.lite .field textarea:focus{background:#fff;border-color:var(--amber);outline:none;
+  box-shadow:0 0 0 3px rgba(245,165,36,.18)}
+.askcard.lite .fm-file{border-color:#D3DCE9}
+.askcard.lite .fm-file:hover{border-color:rgba(201,127,11,.65);background:rgba(245,165,36,.08)}
+.askcard.lite .fm-file-i{background:rgba(245,165,36,.16);color:var(--amber-lo)}
+.askcard.lite .fm-file b{color:var(--textdark)}
+.askcard.lite .fm-file small{color:var(--muteddark)}
+.askcard.lite .fm-check input{background:#fff;border-color:#DCE3EE}
+.askcard.lite .fm-check input:checked{background:var(--amber);border-color:var(--amber)}
+.askcard.lite .fm-check span{color:var(--muteddark)}
+.askcard.lite .fm-check i{color:var(--amber-lo)}
+
+/* the written alternative to the form, under the emergency card */
+.askalt{margin:14px 0 0 !important;font-size:13px;line-height:1.6;color:var(--muted)}
+.askalt a{color:var(--amber);border-bottom:1px solid rgba(245,165,36,.35)}
+.askalt a:hover{border-bottom-color:var(--amber)}
+.i.light .askalt{color:var(--muteddark)}
+.i.light .askalt a{color:var(--amber-lo);border-bottom-color:rgba(201,127,11,.35)}
+.i.light .askalt a:hover{border-bottom-color:var(--amber-lo)}
+
+@media (max-width:1024px){
+  .askcard{max-height:none;min-height:0}
+  .askcard .fm-scroll{overflow:visible;mask-image:none;padding-bottom:0}
+}
+/* below this there is no height left to hand the card, so the column
+   stops being sticky rather than hiding its own bottom */
+@media (max-height:740px){
+  .iask{position:static}
+  .askcard{max-height:520px}
+}
+@media (max-width:560px){
+  .askcard .fm-row,.askcard .fm-row3{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  .askcard .fm-file{transition:none}
+}
+
 /* FAQ on a dark section: the accordion was styled for light only, so the
    questions were rendering near-black on navy */
 .i:not(.light) .faq{border-top-color:var(--line)}
@@ -1223,6 +1325,8 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 .hxRail{max-width:100%;position:relative}
 /* a hard <br> in a heading forces a third line on a phone */
 @media (max-width:760px){br.dtbr{display:none}}
+/* the stack head is two columns until 1024px; below that the line fits */
+@media (max-width:1024px){#system .head h2 br.dtbr{display:none}}
 .hxPanel-img,.hxRow-img{max-width:100%}
 
 .hxExp{display:grid;grid-template-columns:302px 1fr;gap:44px;align-items:start;
@@ -2029,32 +2133,141 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
       </div>
 
       <div class="hxStats">
-        <div class="hxStat"><b data-to="19">19</b><span>Residential services,<br
+        <div class="hxStat"><b data-to="19">19</b><span>Residential services, <br
           class="dtbr">all in house</span></div>
-        <div class="hxStat"><b data-to="14">14</b><span>Louisiana cities<br
+        <div class="hxStat"><b data-to="14">14</b><span>Louisiana cities <br
           class="dtbr">we cover</span></div>
-        <div class="hxStat"><b data-to="1">1</b><span>Working day on a<br
+        <div class="hxStat"><b data-to="1">1</b><span>Working day on a <br
           class="dtbr">standard tear-off</span></div>
-        <div class="hxStat"><b data-to="15">15</b><span>Year wind warranty<br
+        <div class="hxStat"><b data-to="15">15</b><span>Year wind warranty <br
           class="dtbr">on qualifying roofs</span></div>
       </div>
     </div>
     <aside class="iask">
       <div class="askcard lite rv">
-        <h3>Free Roof Inspection</h3>
-        <p>Two fields. We call you back the same business day and book a time that suits you.</p>
-        <form onsubmit="event.preventDefault();this.innerHTML='<h3>Got It</h3><p class=\'fm-sub\'>A roofer will call you back today. If the ceiling is actively leaking, call 504-229-3955 now.</p>'">
-          <div class="field"><label for="q-n">Your name</label><input id="q-n" required placeholder="Jane Boudreaux"></div>
-          <div class="field"><label for="q-p">Phone</label><input id="q-p" type="tel" required placeholder="(504) 555-0134"></div>
-          <button class="btn btn-amber" type="submit">Request my inspection</button>
-          <p class="fineprint">Free, no obligation, no door-knocking afterward.</p>
+        <div class="fm-head">
+          <h3>Free Roof Inspection</h3>
+          <p class="fm-sub">Name and phone are enough to start. The rest of it just means we arrive with the right crew and the right materials.</p>
+        </div>
+        <form class="fm" onsubmit="event.preventDefault();this.innerHTML='<div class=\'fm-done\'><h3>Got It</h3><p class=\'fm-sub\'>A roofer will call you back today. If the ceiling is actively leaking, call 504-229-3955 now.</p></div>'">
+          <div class="fm-scroll">
+            <div class="field"><label for="k-n">Full name <i>*</i></label>
+              <input id="k-n" name="full_name" required placeholder="Jane Boudreaux"></div>
+            <div class="fm-row">
+              <div class="field"><label for="k-p">Phone <i>*</i></label>
+                <input id="k-p" name="phone" type="tel" required placeholder="(504) 555-0134"></div>
+              <div class="field"><label for="k-e">Email <i>*</i></label>
+                <input id="k-e" name="email" type="email" required placeholder="jane@email.com"></div>
+            </div>
+
+            <div class="field"><label for="k-s">Select service</label>
+              <select id="k-s" name="service">
+                <option value="">Choose one</option>
+                <option value="res">Residential roofing</option>
+                <option value="com">Commercial roofing</option>
+                <option value="type">Roofing types and materials</option>
+                <option value="soffit">Soffit services</option>
+                <option value="claim">Roof insurance claim</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+
+            <div class="field fm-when" data-when="res" hidden><label for="k-r">Residential service</label>
+              <select id="k-r" name="residential_service">
+                <option>Roof replacement</option><option>Roof repairs</option>
+                <option>Emergency roofing</option><option>Leak detection</option>
+                <option>Storm or hail damage</option><option>Gutters and downspouts</option>
+                <option>Roof inspection</option><option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="field fm-when" data-when="com" hidden><label for="k-c">Commercial service</label>
+              <select id="k-c" name="commercial_service">
+                <option>Leak tracing</option><option>Membrane repairs</option>
+                <option>Re-roofing</option><option>Full tear-off</option>
+                <option>Reflective coating</option><option>Maintenance program</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="field fm-when" data-when="type" hidden><label for="k-t">Roofing type</label>
+              <select id="k-t" name="roofing_type">
+                <option>Asphalt shingle</option><option>Metal</option><option>Tile</option>
+                <option>Slate</option><option>Cedar shake</option><option>Flat or low-slope</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="field fm-when" data-when="other" hidden><label for="k-o">Tell us what you need</label>
+              <input id="k-o" name="other_service" placeholder="In a few words"></div>
+
+            <div class="field"><label for="k-a">Property address</label>
+              <input id="k-a" name="address" placeholder="1234 Magazine St"></div>
+            <div class="fm-row fm-row3">
+              <div class="field"><label for="k-ci">City</label>
+                <input id="k-ci" name="city" placeholder="New Orleans"></div>
+              <div class="field"><label for="k-st">State</label>
+                <input id="k-st" name="state" value="LA"></div>
+              <div class="field"><label for="k-z">ZIP</label>
+                <input id="k-z" name="postal_code" inputmode="numeric" placeholder="70130"></div>
+            </div>
+
+            <div class="field"><label for="k-m">What is happening?</label>
+              <textarea id="k-m" name="message" rows="3"
+                placeholder="Water through the ceiling in the back bedroom since Tuesday"></textarea></div>
+
+            <label class="fm-file" for="k-f">
+              <span class="fm-file-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/>
+                <path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg></span>
+              <span><b>Add photos or a video</b><small>Optional, and it often saves a visit</small></span>
+              <input id="k-f" name="attachment" type="file" accept="image/*,video/*" multiple>
+            </label>
+
+            <label class="fm-check"><input type="checkbox" name="sms_optin">
+              <span>Text me updates about this job. Message rates may apply.</span></label>
+            <label class="fm-check"><input type="checkbox" name="consent" required>
+              <span>I agree to be contacted about this request. <i>*</i></span></label>
+          </div>
+
+          <div class="fm-foot">
+            <button class="btn btn-amber" type="submit">Request my inspection</button>
+            <p class="fineprint">Free, no obligation, no door-knocking afterward.</p>
+          </div>
         </form>
       </div>
       <div class="askmini rv d1">
         <b>Leaking right now?</b>
         <p>Skip the form. Emergency tarping is available around the clock, including during named storms.</p>
         <a href="tel:5042293955" class="btn btn-ghost" style="width:100%">Call 504-229-3955</a>
+        <p class="askalt">Rather put it in writing? Our <a href="/contact/">contact page</a> has
+        the form, the hours and the number in one place.</p>
       </div>
+      <script>
+      /* the conditional dropdowns, same behaviour as the live GoHighLevel form:
+         the follow-up question only appears once a service is chosen */
+      (function(){
+        var sel = document.getElementById('k-s');
+        if(!sel) return;
+        var conds = [].slice.call(document.querySelectorAll('.fm-when'));
+        function sync(){
+          conds.forEach(function(c){
+            var on = c.getAttribute('data-when') === sel.value;
+            c.hidden = !on;
+            var f = c.querySelector('input,select');
+            if(f) f.disabled = !on;
+          });
+        }
+        sel.addEventListener('change', sync);
+        sync();
+        /* name the chosen files, so the upload row confirms it worked */
+        var file = document.getElementById('k-f');
+        if(file) file.addEventListener('change', function(){
+          var b = file.closest('.fm-file').querySelector('small');
+          b.textContent = file.files.length
+            ? file.files.length + (file.files.length === 1 ? ' file attached' : ' files attached')
+            : 'Optional, and it often saves a visit';
+        });
+      })();
+      </script>
     </aside>
   </div>
 </section>
@@ -2252,7 +2465,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   <div class="wrap">
     <div class="head ctr rv" style="margin-bottom:38px">
       <span class="eyebrow">All residential services</span>
-      <h2>Nineteen Services,<br class="dtbr">One In-House Crew</h2>
+      <h2>Nineteen Services, <br class="dtbr">One In-House Crew</h2>
       <p class="lead" style="margin-inline:auto">Grouped by what they actually do, so you can find yours without reading all nineteen. Every one is handled by the same licensed team.</p>
     </div>
     <div class="sgWrap">
@@ -2398,7 +2611,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   <div class="wrap">
     <div class="head rv" style="margin-bottom:38px">
       <span class="eyebrow">The stack</span>
-      <h2>What Actually Goes on Your Roof</h2>
+      <h2>What Actually Goes <br class="dtbr">on Your Roof</h2>
       <p class="lead">A roof is not one product, it is four layers that have to be right in
       order. Most of them are also what GAF requires before the
       <strong>WindProven Limited Wind Warranty</strong> applies &mdash; fifteen years, no
@@ -2469,8 +2682,6 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
         roofing warranties leave in. It needs Timberline shingles with LayerLock plus at
         least four qualifying accessories. We tell you at the estimate whether your roof
         qualifies and what that costs.</p>
-        <p class="editnote"><em>[Confirm the company&rsquo;s GAF certification level before
-        publishing. WindProven requires a GAF certified or Master Elite contractor.]</em></p>
       </div>
     </div>
   </div>
@@ -2480,7 +2691,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   <div class="wrap">
     <div class="head ctr rv" style="margin-bottom:36px">
       <span class="eyebrow">Before you file</span>
-      <h2>Two Things About Louisiana<br class="dtbr">That Catch Homeowners Out</h2>
+      <h2>Two Things About Louisiana <br class="dtbr">That Catch Homeowners Out</h2>
       <p class="lead" style="margin-inline:auto">Neither of these is about roofing. Both change
       what a storm-damaged roof ends up costing you.</p>
     </div>
@@ -2488,7 +2699,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
       <article class="hxFact rv">
         <span class="hxFact-n" aria-hidden="true">01</span>
         <span class="hxFact-k">Timing</span>
-        <h3>The Clock Starts at the Storm,<br class="dtbr">Not at the Stain</h3>
+        <h3>The Clock Starts at the Storm, <br class="dtbr">Not at the Stain</h3>
         <p>Louisiana puts a time limit on claims for storm damage, and it runs from the date of
         the loss, not from the day you noticed the ceiling.</p>
 
@@ -2509,15 +2720,12 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
         up there since, do not assume the window has closed. Check the date of the storm
         against your policy before you decide it is too late. Your policy can set its own terms
         on top of the statute, so read it.</p>
-        <p class="editnote"><em>[Verified September 3, 2026 against Louisiana Civil Code art.
-        3493.12. Have the firm&rsquo;s attorney sign off on this wording before launch, and
-        re-check it annually.]</em></p>
       </article>
 
       <article class="hxFact rv d1">
         <span class="hxFact-n" aria-hidden="true">02</span>
         <span class="hxFact-k">Payout</span>
-        <h3>Older Roofs Are Often Paid<br class="dtbr">at Actual Cash Value</h3>
+        <h3>Older Roofs Are Often Paid <br class="dtbr">at Actual Cash Value</h3>
         <p>That means depreciation comes off the payout. A twenty-year-old roof can be fully
         covered and still leave a gap between what the insurer pays and what the job costs.
         Knowing which one your policy carries changes how you plan.</p>
