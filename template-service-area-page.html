@@ -354,6 +354,9 @@ footer a:hover{color:var(--amber)}
 .revsum .badges{margin-top:auto;display:grid;gap:10px}
 .revsum .badges{margin-top:auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .revsum .badges img{height:40px;width:auto;opacity:.95}
+/* the panel now carries a verifiable warranty claim, not a rating */
+.revsum .st{letter-spacing:.02em;font-size:20px;font-family:'Barlow Condensed';font-weight:700;text-transform:none;margin:2px 0 10px}
+.revsum .badges img{height:64px}
 
 /* ---------- faq closing card ---------- */
 .faqcta{margin-top:26px;padding:24px 26px;border:1px solid #DCE3EE;border-radius:var(--r);background:#fff;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap}
@@ -735,6 +738,224 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 .i.light .icopy strong{color:#16202F}
 
 </style>
+<!-- JSON-LD built to 05-schema-nap-spec.md. No street address, ZIP, geo,
+     priceRange or aggregateRating: none of those are confirmed, and the
+     live site's versions are hallucinated. Do not paste them back. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "RoofingContractor",
+      "@id": "https://www.bigeasyroofingcompany.com/#business",
+      "name": "Big Easy Roofing Company",
+      "url": "https://www.bigeasyroofingcompany.com/",
+      "telephone": "+1-504-229-3955",
+      "image": "https://www.bigeasyroofingcompany.com/wp-content/uploads/2023/09/logo.png",
+      "logo": "https://www.bigeasyroofingcompany.com/wp-content/uploads/2023/09/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "New Orleans",
+        "addressRegion": "LA",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "New Orleans",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Metairie",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Kenner",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Slidell",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Mandeville",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Covington",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Madisonville",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Hammond",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Baton Rouge",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Gretna",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Harahan",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "River Ridge",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Laplace",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "St. Rose",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.bigeasyroofingcompany.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Service Areas",
+          "item": "https://www.bigeasyroofingcompany.com/services-areas/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Metairie",
+          "item": "https://www.bigeasyroofingcompany.com/metairie/"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.bigeasyroofingcompany.com/metairie/#service",
+      "name": "Roofing Contractor in Metairie",
+      "description": "Residential and commercial roofing in Metairie and Jefferson Parish: same-day emergency tarping, free inspection and a written estimate with no travel surcharge.",
+      "serviceType": "Roofing Contractor in Metairie",
+      "provider": {
+        "@id": "https://www.bigeasyroofingcompany.com/#business"
+      },
+      "url": "https://www.bigeasyroofingcompany.com/metairie/",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Metairie",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How fast can you get to Metairie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Same day for an emergency tarp, and usually within the hour during business hours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you charge extra outside Orleans Parish?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Metairie is priced exactly the same as a New Orleans job. There is no travel surcharge on any of the fourteen cities we cover."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 

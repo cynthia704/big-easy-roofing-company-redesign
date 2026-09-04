@@ -354,6 +354,9 @@ footer a:hover{color:var(--amber)}
 .revsum .badges{margin-top:auto;display:grid;gap:10px}
 .revsum .badges{margin-top:auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
 .revsum .badges img{height:40px;width:auto;opacity:.95}
+/* the panel now carries a verifiable warranty claim, not a rating */
+.revsum .st{letter-spacing:.02em;font-size:20px;font-family:'Barlow Condensed';font-weight:700;text-transform:none;margin:2px 0 10px}
+.revsum .badges img{height:64px}
 
 /* ---------- faq closing card ---------- */
 .faqcta{margin-top:26px;padding:24px 26px;border:1px solid #DCE3EE;border-radius:var(--r);background:#fff;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap}
@@ -735,6 +738,338 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 .i.light .icopy strong{color:#16202F}
 
 </style>
+<!-- JSON-LD built to 05-schema-nap-spec.md. No street address, ZIP, geo,
+     priceRange or aggregateRating: none of those are confirmed, and the
+     live site's versions are hallucinated. Do not paste them back. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "RoofingContractor",
+      "@id": "https://www.bigeasyroofingcompany.com/#business",
+      "name": "Big Easy Roofing Company",
+      "url": "https://www.bigeasyroofingcompany.com/",
+      "telephone": "+1-504-229-3955",
+      "image": "https://www.bigeasyroofingcompany.com/wp-content/uploads/2023/09/logo.png",
+      "logo": "https://www.bigeasyroofingcompany.com/wp-content/uploads/2023/09/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "New Orleans",
+        "addressRegion": "LA",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "New Orleans",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Metairie",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Kenner",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Slidell",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Mandeville",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Covington",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Madisonville",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Hammond",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Baton Rouge",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Gretna",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Harahan",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "River Ridge",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Laplace",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "St. Rose",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.bigeasyroofingcompany.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Residential",
+          "item": "https://www.bigeasyroofingcompany.com/residential/"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.bigeasyroofingcompany.com/residential/#service",
+      "name": "Residential Roofing",
+      "description": "Residential roofing across New Orleans and 13 surrounding cities: repairs, replacement, storm and hail damage, gutters, soffit and fascia, inspection and maintenance.",
+      "serviceType": "Residential Roofing",
+      "provider": {
+        "@id": "https://www.bigeasyroofingcompany.com/#business"
+      },
+      "url": "https://www.bigeasyroofingcompany.com/residential/",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "New Orleans",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Metairie",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Kenner",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Slidell",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Mandeville",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Covington",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Madisonville",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Hammond",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Baton Rouge",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Gretna",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Harahan",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "River Ridge",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Laplace",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "St. Rose",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Louisiana"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you charge for the inspection?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The inspection, the written condition report and the estimate all cost nothing, and there is no obligation afterward."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How quickly can you get out here?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Emergency tarping is same day. A routine inspection is usually inside the week. We call you back the same business day either way."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you subcontract any of the work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The crew that inspects your roof is the crew that works on it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will you deal with my insurance company?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We meet your adjuster on the roof and hand over photographs, measurements and a scope of loss. We are roofers, not public adjusters, so we do not negotiate the claim itself."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -832,17 +1167,18 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
       <p>Neither of these is about roofing. Both change what a storm-damaged roof ends up
       costing you.</p>
       <h3>The Clock Starts at the Storm, Not at the Stain</h3>
-      <p>Louisiana puts a time limit on claims for storm damage, and it runs from the date of
-      the loss, not from the day you noticed the ceiling. <strong>The limit changed in
-      2024</strong>, so what applied to a storm three seasons ago is not what applies to one
-      this year. If a named storm has been over your roof and nobody has been up there since,
-      do not assume the window has closed, and do not assume it is still open. Check your
-      policy and the current deadline before you decide either way.</p>
-      <p class="editnote"><em>[EDITOR: do not publish a specific number of
-      years here. Louisiana Civil Code art. 3493.12 moved damage to immovable property to a
-      two-year prescriptive period for losses on or after 1 July 2024; the old one-year rule
-      still applies before that date, and policy terms can differ again. Have a lawyer confirm
-      the exact wording before this goes live.]</em></p>
+      <p>Louisiana puts a time limit on claims for storm damage, and it runs from the date
+      of the loss, not from the day you noticed the ceiling.</p>
+      <p><strong>The limit changed in 2024.</strong> For damage on or after July 1, 2024 the
+      period is <strong>two years</strong>. For damage before that date the old
+      <strong>one year</strong> rule still applies. Your policy can set its own terms on top
+      of that, so read it.</p>
+      <p>The practical version: if a named storm has been over your roof and nobody has been
+      up there since, do not assume the window has closed. Check the date of the storm against
+      your policy before you decide it is too late.</p>
+      <p class="editnote"><em>[Verified September 3, 2026 against Louisiana Civil Code art.
+      3493.12. Have the firm’s attorney sign off on this wording before launch, and re-check
+      it annually.]</em></p>
       <h3>Older Roofs Are Often Paid at Actual Cash Value</h3>
       <p>That means depreciation comes off the payout. A twenty-year-old roof can be fully
       covered and still leave a gap between what the insurer pays and what the job costs.
