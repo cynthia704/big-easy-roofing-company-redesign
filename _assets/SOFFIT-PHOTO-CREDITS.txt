@@ -1,0 +1,27 @@
+Soffit photography for /soffit-services/.
+Source: Pexels. Pexels License - free to use, commercial use allowed,
+no attribution required. Ids kept so any image can be traced back.
+
+Every one of these was opened and looked at before it was picked. The set it
+replaced was borrowed from the residential library and none of it showed
+soffit: a standing seam metal roof was captioned "Soffit Panel and Intake
+Vent", underlayment was captioned "Soffit Installation", and a pitch gauge on
+shingles was captioned "Fascia Board".
+
+Cropped to the slot rather than downloaded raw. Six of the ten sources are
+portrait and every slot on the page is landscape, so a raw file would have
+been centre cropped into a narrow band. On sof-panel-vent that band was plain
+timber with the vent cropped out.
+
+Ten sources, ten slots, no reuse.
+
+sof-attic-vents.jpg pexels.com/photo/18815467  center   two gable vents in the end wall of a house
+sof-banner-house.jpg pexels.com/photo/16750055  center   house gable and white soffit, wide
+sof-dripedge.jpg    pexels.com/photo/2663254   center   shingle roof edge with water running into the gutter
+sof-fascia-gable.jpg pexels.com/photo/30094566  center   gable fascia and soffit line against blue sky
+sof-fascia-gutter.jpg pexels.com/photo/18078684  top      cream fascia and soffit corner with the gutter running
+sof-hero-eave.jpg   pexels.com/photo/17316266  center   vented soffit panel over a gutter, rain, trees behind
+sof-install-crew.jpg pexels.com/photo/38407203  center   worker on a ladder at the eave of a dark green house
+sof-panel-vent.jpg  pexels.com/photo/8387985   top      perforated intake vent running along a timber soffit
+sof-repair-crew.jpg pexels.com/photo/38524264  center   worker drilling overhead into a timber soffit
+sof-ridge-vent.jpg  pexels.com/photo/22938256  center   two turbine vents, the exhaust end of the attic path
