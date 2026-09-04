@@ -583,11 +583,15 @@ footer .logo img{height:80px}
 
 /* --- one thin credential line, replaces the count-up strip --- */
 .credbar{background:#0F1725;border-bottom:1px solid var(--line)}
-.credbar .wrap{display:flex;flex-wrap:wrap;gap:8px 34px;padding:15px 0}
+.credbar .wrap{display:flex;flex-wrap:wrap;gap:8px 26px;padding:15px 0}
 .credbar span{display:inline-flex;align-items:center;gap:9px;font:600 12px/1 Inter;
   letter-spacing:.1em;text-transform:uppercase;color:#9DB0C6}
 .credbar svg{width:13px;height:13px;stroke:var(--amber);stroke-width:3;fill:none;flex:0 0 13px}
-@media (max-width:680px){.credbar .wrap{gap:10px 20px}.credbar span{font-size:11px;letter-spacing:.06em}}
+/* keep the five chips on one line as far down as they stay readable */
+@media (max-width:1180px){.credbar .wrap{gap:8px 18px}
+  .credbar span{font-size:11px;letter-spacing:.06em}}
+@media (max-width:680px){.credbar .wrap{gap:10px 16px}
+  .credbar span{font-size:10.5px;letter-spacing:.04em}}
 
 /* --- content-led body: prose + a small sticky enquiry card --- */
 section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
@@ -1477,11 +1481,11 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 
 <div class="credbar">
   <div class="wrap">
-    <span><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg>Licensed &amp; insured in Louisiana</span>
+    <span><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg>Licensed &amp; insured</span>
     <span><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg>30 years in the trade</span>
     <span><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg>New Orleans + 13 cities</span>
     <span><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg>No subcontracting</span>
-    <span><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg>GAF WindProven &mdash; no wind speed limit</span>
+    <span><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg>GAF WindProven warranty</span>
   </div>
 </div>
 
