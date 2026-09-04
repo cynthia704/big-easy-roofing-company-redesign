@@ -827,7 +827,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
    content (the tab rail, a photo) refuses to shrink and punches out of its
    column on narrow screens. This is the fix for all of it. */
 .hxExp>*,.hxLeft,.hxRailWrap,.hxRail,.hxStage,.hxPanel>*,.hxJob>*,.hxRow>*,.hxFacts>*,
-.hxTicket,.hxLines,.hxLine>*,.hxCreds>*,.hxStats>*,
+.hxTicket,.hxLines,.hxLine>*,.hxCreds>*,.hxStats>*,.hxSigns>*,
 .hxStage2,.hxSeal>*{min-width:0}
 .hxRail{max-width:100%;position:relative}
 /* a hard <br> in a heading forces a third line on a phone */
@@ -1006,6 +1006,33 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 .hxSeal p b{color:#FFD98A}
 
 /* =============================================================
+   6b. SIGNS  -  diagnostic tiles, for a hub with too few child
+   pages to justify the full grouped service grid
+   ============================================================= */
+.hxSigns{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.hxSign{background:#fff;border:1px solid #DFE6F0;border-radius:var(--r);padding:26px 24px 24px;
+  position:relative;overflow:hidden;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
+.hxSign::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
+  background:var(--amber);transform:scaleX(0);transform-origin:left;
+  transition:transform .4s var(--ease)}
+.hxSign:hover{transform:translateY(-5px);border-color:rgba(245,165,36,.5);
+  box-shadow:0 20px 38px rgba(11,18,32,.10)}
+.hxSign:hover::after{transform:scaleX(1)}
+.hxSign-i{display:flex;align-items:center;justify-content:center;width:44px;height:44px;
+  border-radius:12px;background:rgba(245,165,36,.14);color:#B4791A;margin-bottom:16px}
+.hxSign-i svg{width:23px;height:23px}
+.hxSign h3{font-size:18px;line-height:1.2;margin:0 0 9px;color:#16202F}
+.hxSign p{font-size:14px;line-height:1.62;color:#5A6A80;margin:0}
+.hxSigns-f{margin-top:30px;padding:22px 26px;border-radius:var(--r);background:#fff;
+  border:1px solid #DFE6F0;display:flex;align-items:center;justify-content:space-between;
+  gap:20px;flex-wrap:wrap}
+.hxSigns-f p{margin:0;font-size:15px;color:#4A5A70;max-width:52ch}
+
+/* the closing panel when there is no seal image to show */
+.hxSeal.nopic{grid-template-columns:1fr}
+
+/* =============================================================
    8. FACTS  -  two cards, one timeline, one bar pair
    ============================================================= */
 .hxFacts{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
@@ -1090,6 +1117,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   .hxRow-n{top:-12px;font-size:70px}
   .hxRow-b h3{padding-right:66px}
 
+  .hxSigns{grid-template-columns:1fr 1fr}
   .hxFacts{grid-template-columns:1fr}
 }
 @media (max-width:640px){
@@ -1106,6 +1134,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   .hxFact{padding:26px 22px 24px}
   .hxFact-n{font-size:78px;right:16px}
   .hxFact h3{padding-right:40px}
+  .hxSigns{grid-template-columns:1fr}
   .hxSeal{grid-template-columns:1fr;gap:16px}
   .hxSeal img{width:72px;height:72px}
 }
@@ -1116,7 +1145,8 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   .hxPanel-img img{animation:none}
   .hxRow-z,.hxFact{transition:none}
   .hxTab.on .hxTab-bar i{transition:none}
-  .hxLine,.hxLine-c,.hxLine-w,.hxCred{transition:none}
+  .hxLine,.hxLine-c,.hxLine-w,.hxCred,.hxSign{transition:none}
+  .hxSign::after{transition:none;transform:scaleX(1)}
   .rv.in .hxTime-bar i,.rv.in .hxAcv-bar i{transition:none}
 }
 
@@ -1519,7 +1549,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 <div class="credbar">
   <div class="wrap">
     <span><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg>Licensed &amp; insured in Louisiana</span>
-    <span><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg>30+ years in the trade</span>
+    <span><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg>30 years in the trade</span>
     <span><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg>New Orleans + 13 cities</span>
     <span><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg>No subcontracting</span>
     <span><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg>GAF WindProven &mdash; no wind speed limit</span>
@@ -1822,7 +1852,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 </script>
 <script>setTimeout(function(){var n=document.getElementById("note");if(n){n.style.opacity=0;n.style.transform="translateY(12px)";setTimeout(function(){n.remove()},700)}},9000)</script>
 <script>
-/* mobile menu. The burger had no behaviour before this. */
+/* mobile menu. The burger had no behavior before this. */
 (function(){
   var hdr=document.getElementById('hdr'); if(!hdr) return;
   var b=hdr.querySelector('.burger'), m=hdr.querySelector('.menu');

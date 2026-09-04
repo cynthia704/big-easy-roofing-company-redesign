@@ -54,6 +54,9 @@ footer{border-top:1px solid var(--line);padding:24px 0 50px;color:var(--muted);f
 .tpl h2{font-size:clamp(24px,3vw,34px);margin-bottom:10px}
 .tpl>.wrap>p{color:var(--muted);max-width:62ch;margin:0 0 26px}
 .tplgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.hubnote{margin:34px 0 0;padding:20px 22px;border:1px solid var(--line);border-radius:var(--r);
+  background:var(--panel);color:var(--muted);font-size:14px;line-height:1.65}
+.hubnote b{color:var(--text)}
 .tplcard{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;transition:transform .3s ease,border-color .3s}
 .tplcard:hover{transform:translateY(-5px);border-color:var(--accent)}
 .tplcard .cnt{font:600 10.5px/1 Inter;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
@@ -163,6 +166,47 @@ footer{border-top:1px solid var(--line);padding:24px 0 50px;color:var(--muted);f
         <a class="btn" href="template-hub-page.html">Open the hub template</a>
       </article>
     </div>
+  </div>
+</section>
+
+<section class="tpl">
+  <div class="wrap">
+    <h2>Hub Pages</h2>
+    <p>The residential hub set the shape. These three follow it &mdash; same nine sections, same
+    rhythm, and no two adjacent sections sharing a background. All the copy is different.</p>
+    <div class="tplgrid hubgrid">
+      <article class="tplcard">
+        <div class="cnt">14 child pages</div>
+        <h3>Commercial</h3>
+        <p>Written for a building owner, not a homeowner. The thing being protected is trading
+        hours, so the work order is phased around them.</p>
+        <div class="ex">Worked example: <strong>/commercial/</strong><br>Low-slope systems, coatings,
+        maintenance records</div>
+        <a class="btn" href="template-hub-commercial.html">Open the commercial hub</a>
+      </article>
+      <article class="tplcard">
+        <div class="cnt">11 child pages</div>
+        <h3>Roofing Types</h3>
+        <p>The explorer is sorted by the decision the reader is making rather than by service.
+        No lifespan or price numbers anywhere, because none are sourced.</p>
+        <div class="ex">Worked example: <strong>/roofing-types/</strong><br>Pitched and low-slope,
+        split by what changes the engineering</div>
+        <a class="btn" href="template-hub-types.html">Open the roofing types hub</a>
+      </article>
+      <article class="tplcard">
+        <div class="cnt">2 child pages</div>
+        <h3>Soffit Services</h3>
+        <p>Only two child pages, so the service grid slot carries a diagnostic tile grid instead
+        &mdash; the signs a homeowner can see from their own driveway.</p>
+        <div class="ex">Worked example: <strong>/soffit-services/</strong><br>Soffit, fascia, drip
+        edge and attic intake as one assembly</div>
+        <a class="btn" href="template-hub-soffit.html">Open the soffit hub</a>
+      </article>
+    </div>
+    <p class="hubnote"><b>One thing worth knowing.</b> The credential bar under the hero drops the
+    GAF WindProven line on the commercial and soffit hubs. WindProven is a Timberline shingle
+    warranty, so claiming it on a flat commercial roof would be false, and it contradicted the
+    panel further down that page. Each hub now carries only the claims that are true for it.</p>
   </div>
 </section>
 
