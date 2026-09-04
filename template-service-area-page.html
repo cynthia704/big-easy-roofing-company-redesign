@@ -66,6 +66,8 @@ header.solid{background:rgba(7,13,24,.97)}
 .navcta>.btn{white-space:nowrap;padding:15px 20px}
 .phone{font-family:'Barlow Condensed';font-weight:800;font-size:22px;letter-spacing:.01em;display:flex;align-items:center;gap:8px;white-space:nowrap}
 .phone small{display:block;font:600 10px/1 Inter;letter-spacing:.18em;color:var(--muted)}
+.tapcall{display:none}
+.menu-foot{display:none}  /* panel-only: phone + CTA live in the desktop bar */
 .burger{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:9px;background:none;cursor:pointer;flex-direction:column;gap:5px;align-items:center;justify-content:center}
 .burger i{width:18px;height:2px;background:#fff;display:block}
 
@@ -375,7 +377,44 @@ footer a:hover{color:var(--amber)}
   .steps{grid-template-columns:1fr 1fr;gap:40px 0}
   .steps::before,.steps .fill{display:none}
   .fgrid{grid-template-columns:1fr 1fr}
-  .menu{display:none}.burger{display:flex}
+  /* ---- mobile menu: the burger used to do nothing at all ---- */
+  .burger{display:flex}
+  .tapcall{display:flex;align-items:center;justify-content:center;width:44px;height:44px;
+    border-radius:9px;background:var(--amber);flex:none}
+  .menu{position:absolute;top:100%;left:0;right:0;display:flex;flex-direction:column;
+    align-items:stretch;gap:0;padding:8px 20px 20px;background:#0E1A2C;
+    border-top:1px solid var(--line);border-bottom:1px solid rgba(245,165,36,.35);
+    box-shadow:0 26px 44px rgba(0,0,0,.45);white-space:normal;
+    opacity:0;visibility:hidden;transform:translateY(-14px);pointer-events:none;
+    transition:opacity .28s var(--ease),transform .28s var(--ease),visibility 0s linear .28s;
+    max-height:calc(100vh - 100%);overflow-y:auto}
+  #hdr.navopen .menu{opacity:1;visibility:visible;transform:none;pointer-events:auto;
+    transition:opacity .28s var(--ease),transform .28s var(--ease),visibility 0s}
+  .menu>a{font-size:16.5px;padding:15px 2px;border-bottom:1px solid rgba(255,255,255,.07);
+    color:#E7EDF6;opacity:0;transform:translateY(-8px);
+    transition:opacity .3s var(--ease),transform .3s var(--ease)}
+  #hdr.navopen .menu>a{opacity:1;transform:none}
+  #hdr.navopen .menu>a:nth-child(1){transition-delay:.05s}
+  #hdr.navopen .menu>a:nth-child(2){transition-delay:.09s}
+  #hdr.navopen .menu>a:nth-child(3){transition-delay:.13s}
+  #hdr.navopen .menu>a:nth-child(4){transition-delay:.17s}
+  #hdr.navopen .menu>a:nth-child(5){transition-delay:.21s}
+  #hdr.navopen .menu>a:nth-child(6){transition-delay:.25s}
+  .menu a::after{display:none}
+  .menu-foot{display:grid;gap:12px;padding-top:18px}
+  .menu-phone{font-family:'Barlow Condensed';font-weight:700;font-size:26px;line-height:1.05;
+    color:var(--amber);display:block;padding:0}
+  .menu-phone small{display:block;font:500 12px/1.4 Inter;color:var(--muted);letter-spacing:.01em}
+  .menu-foot .btn{justify-content:center;text-align:center;padding:16px 26px}
+  .burger i{transition:transform .28s var(--ease),opacity .2s linear}
+  #hdr.navopen .burger i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  #hdr.navopen .burger i:nth-child(2){opacity:0}
+  #hdr.navopen .burger i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  body.navlock{overflow:hidden}
+  @media (prefers-reduced-motion:reduce){
+    .menu,.menu>a,.burger i{transition:none !important}
+    .menu>a{opacity:1;transform:none}
+  }
   .note{display:none}
 }
 @media (max-width:680px){
@@ -907,20 +946,20 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
           "@type": "ListItem",
           "position": 3,
           "name": "Metairie",
-          "item": "https://www.bigeasyroofingcompany.com/metairie/"
+          "item": "https://www.bigeasyroofingcompany.com/services-areas/metairie/"
         }
       ]
     },
     {
       "@type": "Service",
-      "@id": "https://www.bigeasyroofingcompany.com/metairie/#service",
+      "@id": "https://www.bigeasyroofingcompany.com/services-areas/metairie/#service",
       "name": "Roofing Contractor in Metairie",
       "description": "Residential and commercial roofing in Metairie and Jefferson Parish: same-day emergency tarping, free inspection and a written estimate with no travel surcharge.",
       "serviceType": "Roofing Contractor in Metairie",
       "provider": {
         "@id": "https://www.bigeasyroofingcompany.com/#business"
       },
-      "url": "https://www.bigeasyroofingcompany.com/metairie/",
+      "url": "https://www.bigeasyroofingcompany.com/services-areas/metairie/",
       "areaServed": [
         {
           "@type": "City",
@@ -973,22 +1012,26 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 <!-- ============ HEADER ============ -->
 <header id="hdr">
   <div class="wrap nav">
-    <a href="#" class="logo"><img src="_assets/brand/logo-white@3x.png" alt="Big Easy Roofing Company" width="165" height="105"></a>
-    <nav class="menu">
-      <a href="#triage">Roof Problems</a>
-      <a href="#services">Services</a>
-      <a href="#warranty">Wind Warranty</a>
-      <a href="#proof">Our Work</a>
-      <a href="#areas">Service Areas</a>
-      <a href="#faq">FAQ</a>
+    <a href="/" class="logo"><img src="_assets/brand/logo-white@3x.png" alt="Big Easy Roofing Company" width="165" height="105"></a>
+    <nav class="menu" id="menu">
+      <a href="/residential/">Residential</a>
+      <a href="/commercial/">Commercial</a>
+      <a href="/roofing-types/">Roofing Types</a>
+      <a href="/services-areas/">Service Areas</a>
+      <a href="/gallery/">Gallery</a>
+      <a href="/faqs/">FAQs</a>
+      <div class="menu-foot">
+        <a href="tel:5042293955" class="menu-phone">504-229-3955<small>Mon&ndash;Fri 8:00 AM &ndash; 6:00 PM</small></a>
+        <a href="#ask" class="btn btn-amber">Free Inspection</a>
+      </div>
     </nav>
     <div class="navcta">
       <a href="tel:5042293955" class="phone">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F5A524" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
         <span>504-229-3955<small>Talk to a roofer</small></span>
       </a>
-      <a href="#estimate" class="btn btn-amber">Free Inspection</a>
-      <button class="burger" aria-label="Menu"><i></i><i></i><i></i></button>
+      <a href="#ask" class="btn btn-amber">Free Inspection</a>
+      <a href="tel:5042293955" class="tapcall" aria-label="Call 504-229-3955"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0B1220" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg></a><button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
     </div>
   </div>
 </header>
@@ -997,7 +1040,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 <section class="ihero">
   <div class="ibg" style="background-image:url(_assets/hero-finished-house.jpg)"></div>
   <div class="wrap">
-    <nav class="icrumbs" aria-label="Breadcrumb"><a href="#">Home</a><i>&rsaquo;</i><a href="#">Service Areas</a><i>&rsaquo;</i><span aria-current="page">Metairie</span></nav>
+    <nav class="icrumbs" aria-label="Breadcrumb"><a href="/">Home</a><i>&rsaquo;</i><a href="/services-areas/">Service Areas</a><i>&rsaquo;</i><span aria-current="page">Metairie</span></nav>
     <h1>Roofing Contractor in Metairie</h1>
     <p class="icreds"><b>Jefferson Parish, on call 24/7.</b> Same crew, same warranty and the same written estimate you would get in Orleans Parish. No travel surcharge.</p>
     <div class="iacts">
@@ -1027,7 +1070,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 
       <h2>Re-Roofing Metairie's Post-War Ranches</h2>
       <p>Most of Metairie went up after the war, which means block after block of low, wide
-      single-storey homes with shallow pitches and deep eaves. Shallow pitch is unforgiving:
+      single-story homes with shallow pitches and deep eaves. Shallow pitch is unforgiving:
       water moves off it slowly, so a lifted shingle or a tired valley has time to find a way
       in rather than being flushed away.</p>
       <p>That changes where we look first. On a Metairie roof the valleys and the soffit are
@@ -1053,7 +1096,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
         <li>We meet your adjuster on the roof, not in the driveway.</li>
         <li>No travel surcharge. Metairie is priced exactly the same as a New Orleans job.</li>
       </ul>
-      <p style="font-size:14px;color:#8A9BB2"><em>[EDITOR: neighbourhood names, permit handling
+      <p style="font-size:14px;color:#8A9BB2"><em>[EDITOR: neighborhood names, permit handling
       in Jefferson Parish and the local ZIP all still need confirming against the Business
       Profile before this page goes live.]</em></p>
     </div>
@@ -1085,10 +1128,10 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
       <p class="lead">Residential and commercial, the full list. Nothing is subcontracted out to a crew you have not met.</p>
     </div>
     <div class="ilinks rv d1">
-      <a href="#">Roof Replacement <i>&rarr;</i></a><a href="#">Roof Repairs <i>&rarr;</i></a>
-      <a href="#">Emergency Roofing <i>&rarr;</i></a><a href="#">Storm &amp; Hail Damage <i>&rarr;</i></a>
-      <a href="#">Leak Detection <i>&rarr;</i></a><a href="#">Roof Inspection <i>&rarr;</i></a>
-      <a href="#">Gutters &amp; Downspouts <i>&rarr;</i></a><a href="#">Commercial Roofing <i>&rarr;</i></a>
+      <a href="/residential/replacement/">Roof Replacement <i>&rarr;</i></a><a href="/residential/repairs/">Roof Repairs <i>&rarr;</i></a>
+      <a href="/residential/emergency-roofing/">Emergency Roofing <i>&rarr;</i></a><a href="/roof-repair/storm-damage/">Storm &amp; Hail Damage <i>&rarr;</i></a>
+      <a href="/residential/leak-detection/">Leak Detection <i>&rarr;</i></a><a href="/residential/inspection/">Roof Inspection <i>&rarr;</i></a>
+      <a href="/residential/gutters-downspouts-installation/">Gutters &amp; Downspouts <i>&rarr;</i></a><a href="/commercial/">Commercial Roofing <i>&rarr;</i></a>
     </div>
   </div>
 </section>
@@ -1122,10 +1165,10 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   <div class="wrap">
     <div class="head rv" style="margin-bottom:22px"><span class="eyebrow">Also nearby</span><h2>Other Areas We Cover</h2></div>
     <div class="ilinks rv d1">
-      <a href="#">New Orleans <i>&rarr;</i></a><a href="#">Kenner <i>&rarr;</i></a>
-      <a href="#">Harahan <i>&rarr;</i></a><a href="#">River Ridge <i>&rarr;</i></a>
-      <a href="#">Gretna <i>&rarr;</i></a><a href="#">Slidell <i>&rarr;</i></a>
-      <a href="#">Mandeville <i>&rarr;</i></a><a href="#">Covington <i>&rarr;</i></a>
+      <a href="/services-areas/">New Orleans <i>&rarr;</i></a><a href="/services-areas/kenner/">Kenner <i>&rarr;</i></a>
+      <a href="/services-areas/harahan/">Harahan <i>&rarr;</i></a><a href="/services-areas/river-ridge/">River Ridge <i>&rarr;</i></a>
+      <a href="/services-areas/gretna/">Gretna <i>&rarr;</i></a><a href="/services-areas/slidell/">Slidell <i>&rarr;</i></a>
+      <a href="/services-areas/mandeville/">Mandeville <i>&rarr;</i></a><a href="/services-areas/covington/">Covington <i>&rarr;</i></a>
     </div>
   </div>
 </section>
@@ -1149,19 +1192,19 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   <div class="wrap">
     <div class="fgrid">
       <div>
-        <a href="#" class="logo" style="margin-bottom:18px"><img src="_assets/brand/logo-white@3x.png" alt="Big Easy Roofing Company" width="165" height="105"></a>
+        <a href="/" class="logo" style="margin-bottom:18px"><img src="_assets/brand/logo-white@3x.png" alt="Big Easy Roofing Company" width="165" height="105"></a>
         <p>Residential and commercial roofing across New Orleans and Southeast Louisiana. Licensed and insured.</p>
         <p style="color:#fff;font-weight:700;font-size:19px"><a href="tel:5042293955">504-229-3955</a></p>
         <p style="font-size:13px">Mon–Fri 8:00 AM – 6:00 PM<br>Emergency line answers 24/7</p>
         <p style="font-size:13px;color:#F5A524">[Street address + email to be added — see CRO review item 4]</p>
       </div>
-      <div><h4>Residential</h4><ul><li><a href="#">Roof replacement</a></li><li><a href="#">Roof repairs</a></li><li><a href="#">Emergency roofing</a></li><li><a href="#">Leak detection</a></li><li><a href="#">Gutters &amp; downspouts</a></li><li><a href="#">Roof inspection</a></li></ul></div>
-      <div><h4>Commercial</h4><ul><li><a href="#">Re-roofing</a></li><li><a href="#">Roof coatings</a></li><li><a href="#">Elastomeric coatings</a></li><li><a href="#">Roofing insulation</a></li><li><a href="#">Maintenance</a></li><li><a href="#">Inspection</a></li></ul></div>
-      <div><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#">Insurance claims</a></li><li><a href="#">Unlimited Wind Warranty</a></li><li><a href="#">Gallery</a></li><li><a href="#">Blog</a></li><li><a href="#">Contact</a></li></ul></div>
+      <div><h4>Residential</h4><ul><li><a href="/residential/replacement/">Roof replacement</a></li><li><a href="/residential/repairs/">Roof repairs</a></li><li><a href="/residential/emergency-roofing/">Emergency roofing</a></li><li><a href="/residential/leak-detection/">Leak detection</a></li><li><a href="/residential/gutters-downspouts-installation/">Gutters &amp; downspouts</a></li><li><a href="/residential/inspection/">Roof inspection</a></li></ul></div>
+      <div><h4>Commercial</h4><ul><li><a href="/commercial/re-roofing/">Re-roofing</a></li><li><a href="/commercial/coating/">Roof coatings</a></li><li><a href="/commercial/elastomeric-coatings/">Elastomeric coatings</a></li><li><a href="/commercial/roofing-insulation/">Roofing insulation</a></li><li><a href="/commercial/roof-maintenance/">Maintenance</a></li><li><a href="/commercial/inspection/">Inspection</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="/about/">About</a></li><li><a href="/roof-insurance-claims/">Insurance claims</a></li><li><a href="/unlimited-wind-warranty/">GAF WindProven Warranty</a></li><li><a href="/gallery/">Gallery</a></li><li><a href="/blog/">Blog</a></li><li><a href="/contact/">Contact</a></li></ul></div>
     </div>
     <div class="fbot">
       <span>© 2026 Big Easy Roofing Company · New Orleans, Louisiana</span>
-      <span><a href="#">Privacy Policy</a> · <a href="#">Sitemap</a></span>
+      <span><a href="/privacy-policy/">Privacy Policy</a> · <a href="/sitemap/">Sitemap</a></span>
     </div>
   </div>
 </footer>
@@ -1309,5 +1352,26 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 })();
 </script>
 <script>setTimeout(function(){var n=document.getElementById("note");if(n){n.style.opacity=0;n.style.transform="translateY(12px)";setTimeout(function(){n.remove()},700)}},9000)</script>
+<script>
+/* mobile menu. The burger had no behaviour before this. */
+(function(){
+  var hdr=document.getElementById('hdr'); if(!hdr) return;
+  var b=hdr.querySelector('.burger'), m=hdr.querySelector('.menu');
+  if(!b||!m) return;
+  function set(open){
+    hdr.classList.toggle('navopen',open);
+    document.body.classList.toggle('navlock',open);
+    b.setAttribute('aria-expanded',open?'true':'false');
+    b.setAttribute('aria-label',open?'Close menu':'Open menu');
+  }
+  b.addEventListener('click',function(e){e.stopPropagation();set(!hdr.classList.contains('navopen'));});
+  m.addEventListener('click',function(e){if(e.target.closest('a')) set(false);});
+  document.addEventListener('click',function(e){
+    if(hdr.classList.contains('navopen')&&!hdr.contains(e.target)) set(false);
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape') set(false);});
+  addEventListener('resize',function(){if(innerWidth>1024) set(false);});
+})();
+</script>
 </body>
 </html>
