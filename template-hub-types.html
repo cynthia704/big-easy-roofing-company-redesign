@@ -377,9 +377,16 @@ section.s{padding:clamp(72px,9vw,128px) 0;position:relative}
 
 /* ---------- footer ---------- */
 footer{background:#070D18;border-top:1px solid var(--line);padding:64px 0 28px;font-size:14.5px;color:var(--muted)}
-.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:44px}
+.fgrid{display:grid;grid-template-columns:1.35fr 1.5fr 1.35fr;gap:40px;margin-bottom:38px}
+/* the second footer row: the rest of what the live site links site-wide */
+.fgrid2{display:grid;grid-template-columns:1.15fr 1.15fr .78fr;gap:40px;margin-bottom:44px;align-items:start}
+footer .fgrid2 h4+ul+h4{margin-top:26px}
+footer ul.ftwo{grid-template-columns:1fr 1fr;gap:1px 26px}
+footer .fgrid2 h4{margin-top:0}
 footer h4{font:700 12px/1 Inter;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin:0 0 18px}
-footer ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:1px}
+/* the tappable box, not just the text. 74 links in a thumb-sized footer */
+footer li a{display:block;padding:5px 0;line-height:1.35}
 footer a:hover{color:var(--amber)}
 .fbot{border-top:1px solid var(--line);padding-top:24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px}
 
@@ -442,7 +449,7 @@ footer a:hover{color:var(--amber)}
   .faqpic{position:static;aspect-ratio:16/9}
   .steps{grid-template-columns:1fr 1fr;gap:40px 0}
   .steps::before,.steps .fill{display:none}
-  .fgrid{grid-template-columns:1fr 1fr}
+  .fgrid,.fgrid2{grid-template-columns:1fr 1fr}
   /* ---- mobile menu: the burger used to do nothing at all ---- */
   .burger{display:flex}
   .tapcall{display:flex;align-items:center;justify-content:center;width:44px;height:44px;
@@ -485,7 +492,8 @@ footer a:hover{color:var(--amber)}
 }
 @media (max-width:680px){
   body{font-size:16px}
-  .triage,.svc,.revs,.strip .wrap,.steps,.fgrid{grid-template-columns:1fr}
+  .triage,.svc,.revs,.strip .wrap,.steps,.fgrid,.fgrid2{grid-template-columns:1fr}
+  footer ul.ftwo{grid-template-columns:1fr 1fr}
   .arealist{grid-template-columns:1fr}
   .stat{border-right:none;border-bottom:1px solid var(--line);padding-bottom:16px}
   .stat:last-child{border-bottom:none}
@@ -2062,6 +2070,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
       <a href="/residential/">Residential</a>
       <a href="/commercial/">Commercial</a>
       <a href="/roofing-types/">Roofing Types</a>
+      <a href="/soffit-services/">Soffit</a>
       <a href="/services-areas/">Service Areas</a>
       <a href="/gallery/">Gallery</a>
       <a href="/faqs/">FAQs</a>
@@ -2719,13 +2728,17 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
         <p style="font-size:13px">Mon–Fri 8:00 AM – 6:00 PM<br>Emergency line answers 24/7</p>
         <p style="font-size:13px;color:#F5A524">[Street address + email to be added. See CRO review item 4.]</p>
       </div>
-      <div><h4>Residential</h4><ul><li><a href="/residential/replacement/">Roof replacement</a></li><li><a href="/residential/repairs/">Roof repairs</a></li><li><a href="/residential/emergency-roofing/">Emergency roofing</a></li><li><a href="/residential/leak-detection/">Leak detection</a></li><li><a href="/residential/gutters-downspouts-installation/">Gutters &amp; downspouts</a></li><li><a href="/residential/inspection/">Roof inspection</a></li></ul></div>
-      <div><h4>Commercial</h4><ul><li><a href="/commercial/re-roofing/">Re-roofing</a></li><li><a href="/commercial/coating/">Roof coatings</a></li><li><a href="/commercial/elastomeric-coatings/">Elastomeric coatings</a></li><li><a href="/commercial/roofing-insulation/">Roofing insulation</a></li><li><a href="/commercial/roof-maintenance/">Maintenance</a></li><li><a href="/commercial/inspection/">Inspection</a></li></ul></div>
-      <div><h4>Company</h4><ul><li><a href="/about/">About</a></li><li><a href="/roof-insurance-claims/">Insurance claims</a></li><li><a href="/unlimited-wind-warranty/">GAF WindProven Warranty</a></li><li><a href="/gallery/">Gallery</a></li><li><a href="/blog/">Blog</a></li><li><a href="/contact/">Contact</a></li></ul></div>
+      <div><h4>Residential Roofing</h4><ul class="ftwo"><li><a href="/residential/inspection/">Roof Inspection</a></li><li><a href="/residential/repairs/">Roof Repairs</a></li><li><a href="/residential/replacement/">Roof Replacement</a></li><li><a href="/residential/roof-installation/">Roof Installation</a></li><li><a href="/residential/restoration/">Restoration</a></li><li><a href="/residential/emergency-roofing/">Emergency Roofing</a></li><li><a href="/residential/leak-detection/">Leak Detection</a></li><li><a href="/residential/maintenance/">Maintenance</a></li><li><a href="/residential/coating/">Coating</a></li><li><a href="/residential/asbestos-roof-removal/">Asbestos Roof Removal</a></li><li><a href="/residential/fascia-board-installation-repair/">Fascia Board Repair</a></li><li><a href="/residential/flashing-repair/">Flashing Repair</a></li><li><a href="/residential/gutters-and-downspouts-repair/">Gutter Repair</a></li><li><a href="/residential/gutters-downspouts-installation/">Gutter Installation</a></li><li><a href="/residential/hail-damage-roof-repair/">Hail Damage Repair</a></li><li><a href="/residential/roof-insulation/">Roof Insulation</a></li><li><a href="/residential/siding-installation/">Siding Installation</a></li><li><a href="/residential/ventilation/">Ventilation</a></li><li><a href="/residential/weatherproofing/">Weatherproofing</a></li></ul></div>
+      <div><h4>Commercial Roofing</h4><ul class="ftwo"><li><a href="/commercial/replacement/">Roof Replacement</a></li><li><a href="/commercial/roof-installation/">Roof Installation</a></li><li><a href="/commercial/re-roofing/">Re-Roofing</a></li><li><a href="/commercial/repairs/">Repairs</a></li><li><a href="/commercial/inspection/">Inspection</a></li><li><a href="/commercial/leak-detection/">Leak Detection</a></li><li><a href="/commercial/roof-maintenance/">Roof Maintenance</a></li><li><a href="/commercial/coating/">Coating</a></li><li><a href="/commercial/elastomeric-coatings/">Elastomeric Coatings</a></li><li><a href="/commercial/flashing-repair/">Flashing Repair</a></li><li><a href="/commercial/hail-damage-roof-repair/">Hail Damage Repair</a></li><li><a href="/commercial/roofing-insulation/">Roofing Insulation</a></li><li><a href="/commercial/siding-installation/">Siding Installation</a></li><li><a href="/commercial/ventilation/">Ventilation</a></li></ul></div>
+    </div>
+    <div class="fgrid2">
+      <div><h4>Roofing Types</h4><ul class="ftwo"><li><a href="/roofing-types/shingle/">Shingle</a></li><li><a href="/roofing-types/metal/">Metal</a></li><li><a href="/roofing-types/slate/">Slate</a></li><li><a href="/roofing-types/tile/">Tile</a></li><li><a href="/roofing-types/cedar-shake/">Cedar Shake</a></li><li><a href="/roofing-types/flat/">Flat</a></li><li><a href="/roofing-types/built-up/">Built Up</a></li><li><a href="/roofing-types/single-ply/">Single Ply</a></li><li><a href="/roofing-types/torch-down-roofing/">Torch Down</a></li><li><a href="/roofing-types/rubber/">Rubber</a></li><li><a href="/roofing-types/green/">Green</a></li></ul><h4>Soffit Services</h4><ul><li><a href="/soffit-services/">All Soffit Services</a></li><li><a href="/soffit-services/installation/">Soffit Installation</a></li><li><a href="/soffit-services/repair/">Soffit Repair</a></li></ul></div>
+      <div><h4>Service Areas</h4><ul class="ftwo"><li><a href="/services-areas/">All Service Areas</a></li><li><a href="/services-areas/baton-rouge/">Baton Rouge</a></li><li><a href="/services-areas/covington/">Covington</a></li><li><a href="/services-areas/gretna/">Gretna</a></li><li><a href="/services-areas/hammond/">Hammond</a></li><li><a href="/services-areas/harahan/">Harahan</a></li><li><a href="/services-areas/kenner/">Kenner</a></li><li><a href="/services-areas/laplace/">Laplace</a></li><li><a href="/services-areas/madisonville/">Madisonville</a></li><li><a href="/services-areas/mandeville/">Mandeville</a></li><li><a href="/services-areas/metairie/">Metairie</a></li><li><a href="/services-areas/river-ridge/">River Ridge</a></li><li><a href="/services-areas/slidell/">Slidell</a></li><li><a href="/services-areas/st-rose/">St. Rose</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="/about/">About</a></li><li><a href="/roof-insurance-claims/">Roof Insurance Claims</a></li><li><a href="/roof-repair/storm-damage/">Storm Damage Repair</a></li><li><a href="/unlimited-wind-warranty/">GAF WindProven Warranty</a></li><li><a href="/gallery/">Gallery</a></li><li><a href="/blog/">Blog</a></li><li><a href="/faqs/">FAQs</a></li><li><a href="/contact/">Contact</a></li></ul></div>
     </div>
     <div class="fbot">
       <span>© 2026 Big Easy Roofing Company · New Orleans, Louisiana</span>
-      <span><a href="/privacy-policy/">Privacy Policy</a> · <a href="/sitemap/">Sitemap</a></span>
+      <span><a href="/privacy-policy/">Privacy Policy</a> · <a href="/terms-and-conditions/">Terms and Conditions</a> · <a href="/sitemap/">Sitemap</a></span>
     </div>
   </div>
 </footer>
