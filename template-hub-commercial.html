@@ -1016,6 +1016,44 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 .hxSeal p{color:var(--muted);font-size:14.5px;line-height:1.7;margin:0 0 8px}
 .hxSeal p b{color:#FFD98A}
 
+
+/* =============================================================
+   SECTION HEADS AND THE FAQ
+   `.head` was capped at 760px, so most of the row sat empty
+   beside every section heading on a wide screen.
+   ============================================================= */
+.i .head:not(.ctr){max-width:none}
+/* when there is a lead paragraph, put it beside the heading rather than
+   under it. Heads with no lead stay single column, or the second column
+   would be the same hole in a different place. */
+.i .head:not(.ctr):has(.lead){display:grid;
+  grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);
+  gap:10px 56px;align-items:end}
+.i .head:not(.ctr):has(.lead) .eyebrow{grid-column:1;grid-row:1}
+.i .head:not(.ctr):has(.lead) h2{grid-column:1;grid-row:2;margin-bottom:0}
+.i .head:not(.ctr):has(.lead) .lead{grid-column:2;grid-row:2;margin:0;
+  max-width:48ch;padding-bottom:8px}
+
+/* the FAQ: heading column on the left, questions on the right */
+.hxFaqWrap{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);
+  gap:54px;align-items:start}
+.hxFaqSide{position:sticky;top:118px}
+.hxFaqSide .head{margin-bottom:16px}
+.hxFaqNote{font-size:14.5px;line-height:1.65;color:#5A6A80;margin:0 0 18px;
+  max-width:34ch}
+.hxCall.lite{background:#fff;border-color:#DFE6F0}
+.hxCall.lite:hover{background:#fff;border-color:rgba(245,165,36,.6)}
+.hxCall.lite span{color:#6B7A90}
+.hxCall.lite b{color:#B4791A}
+.i .ifaq{max-width:none}
+
+@media (max-width:1024px){
+  .i .head:not(.ctr):has(.lead){grid-template-columns:1fr;gap:10px}
+  .i .head:not(.ctr):has(.lead) .lead{grid-column:1;grid-row:3;max-width:62ch}
+  .hxFaqWrap{grid-template-columns:1fr;gap:24px}
+  .hxFaqSide{position:static}
+}
+
 /* =============================================================
    6b. SIGNS  -  diagnostic tiles, for a hub with too few child
    pages to justify the full grouped service grid
@@ -2029,14 +2067,20 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 </section>
 
 <section class="i light hxBlue" id="faq">
-  <div class="wrap">
-    <div class="head rv" style="margin-bottom:26px"><span class="eyebrow">Questions</span><h2>Questions Building Owners Ask</h2></div>
+  <div class="wrap hxFaqWrap">
+    <div class="hxFaqSide">
+      <div class="head rv"><span class="eyebrow">Questions</span><h2>Questions Building Owners Ask</h2></div>
+      <p class="hxFaqNote rv d1">Not on the list? Ask us directly. Somebody who has actually been on a roof will answer.</p>
+      <a class="hxCall lite rv d1" href="tel:5042293955">
+        <span>Talk to a roofer</span><b>504-229-3955</b>
+      </a>
+    </div>
     <div class="faq ifaq rv d1">
-      <div class="q"><button>Can you work without shutting us down?</button><div class="a"><p>That is the normal case, not the exception. We phase the work section by section and only open as much roof as we can make watertight the same day. Retail gets done before opening, restaurants between services, warehouses in sections. Tell us the hours you cannot lose before we quote.</p></div></div>
-      <div class="q"><button>Do we need a full replacement or will a coating do?</button><div class="a"><p>That depends on whether what is under the membrane is dry. If the insulation is wet, a coating seals the problem in and we will not recommend one. If the deck and insulation are sound, coating is very often the right answer and costs a fraction of replacement.</p></div></div>
-      <div class="q"><button>How fast can you get out after a storm?</button><div class="a"><p>Emergency tarping is same day, including overnight in storm season. A full documented survey is usually inside the week. Either way somebody rings you back before close of business.</p></div></div>
-      <div class="q"><button>Do you handle the insurance side?</button><div class="a"><p>We walk the roof with your adjuster and give them elevations, measurements and a scope of loss in the format they work in. What we will not do is negotiate the claim or tell you what it will settle at. Estimating a loss is the adjuster’s job and negotiating it is a public adjuster’s. We do neither, and we would be suspicious of a roofer who offered to.</p></div></div>
-      <div class="q"><button>What paperwork do you carry?</button><div class="a"><p>Yes, and for commercial work you will also want the certificate of insurance and the additional-insured endorsement before anyone mobilizes. We send both with the scope. <em>[License number, COI and endorsement wording to be added once ownership confirms them.]</em></p></div></div>
+        <div class="q"><button>Can you work without shutting us down?</button><div class="a"><p>That is the normal case, not the exception. We phase the work section by section and only open as much roof as we can make watertight the same day. Retail gets done before opening, restaurants between services, warehouses in sections. Tell us the hours you cannot lose before we quote.</p></div></div>
+        <div class="q"><button>Do we need a full replacement or will a coating do?</button><div class="a"><p>That depends on whether what is under the membrane is dry. If the insulation is wet, a coating seals the problem in and we will not recommend one. If the deck and insulation are sound, coating is very often the right answer and costs a fraction of replacement.</p></div></div>
+        <div class="q"><button>How fast can you get out after a storm?</button><div class="a"><p>Emergency tarping is same day, including overnight in storm season. A full documented survey is usually inside the week. Either way somebody rings you back before close of business.</p></div></div>
+        <div class="q"><button>Do you handle the insurance side?</button><div class="a"><p>We walk the roof with your adjuster and give them elevations, measurements and a scope of loss in the format they work in. What we will not do is negotiate the claim or tell you what it will settle at. Estimating a loss is the adjuster’s job and negotiating it is a public adjuster’s. We do neither, and we would be suspicious of a roofer who offered to.</p></div></div>
+        <div class="q"><button>What paperwork do you carry?</button><div class="a"><p>Yes, and for commercial work you will also want the certificate of insurance and the additional-insured endorsement before anyone mobilizes. We send both with the scope. <em>[License number, COI and endorsement wording to be added once ownership confirms them.]</em></p></div></div>
     </div>
   </div>
 </section>

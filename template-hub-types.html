@@ -1016,6 +1016,44 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 .hxSeal p{color:var(--muted);font-size:14.5px;line-height:1.7;margin:0 0 8px}
 .hxSeal p b{color:#FFD98A}
 
+
+/* =============================================================
+   SECTION HEADS AND THE FAQ
+   `.head` was capped at 760px, so most of the row sat empty
+   beside every section heading on a wide screen.
+   ============================================================= */
+.i .head:not(.ctr){max-width:none}
+/* when there is a lead paragraph, put it beside the heading rather than
+   under it. Heads with no lead stay single column, or the second column
+   would be the same hole in a different place. */
+.i .head:not(.ctr):has(.lead){display:grid;
+  grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);
+  gap:10px 56px;align-items:end}
+.i .head:not(.ctr):has(.lead) .eyebrow{grid-column:1;grid-row:1}
+.i .head:not(.ctr):has(.lead) h2{grid-column:1;grid-row:2;margin-bottom:0}
+.i .head:not(.ctr):has(.lead) .lead{grid-column:2;grid-row:2;margin:0;
+  max-width:48ch;padding-bottom:8px}
+
+/* the FAQ: heading column on the left, questions on the right */
+.hxFaqWrap{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);
+  gap:54px;align-items:start}
+.hxFaqSide{position:sticky;top:118px}
+.hxFaqSide .head{margin-bottom:16px}
+.hxFaqNote{font-size:14.5px;line-height:1.65;color:#5A6A80;margin:0 0 18px;
+  max-width:34ch}
+.hxCall.lite{background:#fff;border-color:#DFE6F0}
+.hxCall.lite:hover{background:#fff;border-color:rgba(245,165,36,.6)}
+.hxCall.lite span{color:#6B7A90}
+.hxCall.lite b{color:#B4791A}
+.i .ifaq{max-width:none}
+
+@media (max-width:1024px){
+  .i .head:not(.ctr):has(.lead){grid-template-columns:1fr;gap:10px}
+  .i .head:not(.ctr):has(.lead) .lead{grid-column:1;grid-row:3;max-width:62ch}
+  .hxFaqWrap{grid-template-columns:1fr;gap:24px}
+  .hxFaqSide{position:static}
+}
+
 /* =============================================================
    6b. SIGNS  -  diagnostic tiles, for a hub with too few child
    pages to justify the full grouped service grid
@@ -2015,14 +2053,20 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 </section>
 
 <section class="i light hxBlue" id="faq">
-  <div class="wrap">
-    <div class="head rv" style="margin-bottom:26px"><span class="eyebrow">Questions</span><h2>Before You Choose</h2></div>
+  <div class="wrap hxFaqWrap">
+    <div class="hxFaqSide">
+      <div class="head rv"><span class="eyebrow">Questions</span><h2>Before You Choose</h2></div>
+      <p class="hxFaqNote rv d1">Not on the list? Ask us directly. Somebody who has actually been on a roof will answer.</p>
+      <a class="hxCall lite rv d1" href="tel:5042293955">
+        <span>Talk to a roofer</span><b>504-229-3955</b>
+      </a>
+    </div>
     <div class="faq ifaq rv d1">
-      <div class="q"><button>Which roofing material is best for New Orleans?</button><div class="a"><p>There is no single answer, and anyone giving you one has not seen your roof. For most homes a correctly installed architectural shingle system is the sensible balance. For the longest life and the best wind behavior it is standing seam metal. On a historic property with original slate, the best material is usually the one already up there.</p></div></div>
-      <div class="q"><button>Is metal really better than shingle in a hurricane?</button><div class="a"><p>Standing seam metal has fewer edges for wind to lift, so in principle yes. But the gap between a well-installed shingle roof and a badly installed one is wider than the gap between shingle and metal. Installation quality decides more than material choice does.</p></div></div>
-      <div class="q"><button>Can my house take a tile or slate roof?</button><div class="a"><p>Only your structure can answer that, and it is the first thing we check rather than the last. Both are heavy. If the framing and deck cannot carry the load, the honest answer is that the material is not an option, and we would rather tell you before you have chosen a color.</p></div></div>
-      <div class="q"><button>Do you install flat roofing on houses?</button><div class="a"><p>Yes, and a lot of New Orleans homes have a flat or low-slope section somewhere, usually over an addition or a porch. It gets specified as its own system rather than treated as an afterthought on the shingle quote.</p></div></div>
-      <div class="q"><button>Why will you not tell me how many years a roof lasts?</button><div class="a"><p>Because the same material on two houses in the same street will not last the same length of time. Ventilation, install quality, exposure and how the roof gets maintained all move it. We would rather look at your actual roof and tell you what we think it has left.</p></div></div>
+        <div class="q"><button>Which roofing material is best for New Orleans?</button><div class="a"><p>There is no single answer, and anyone giving you one has not seen your roof. For most homes a correctly installed architectural shingle system is the sensible balance. For the longest life and the best wind behavior it is standing seam metal. On a historic property with original slate, the best material is usually the one already up there.</p></div></div>
+        <div class="q"><button>Is metal really better than shingle in a hurricane?</button><div class="a"><p>Standing seam metal has fewer edges for wind to lift, so in principle yes. But the gap between a well-installed shingle roof and a badly installed one is wider than the gap between shingle and metal. Installation quality decides more than material choice does.</p></div></div>
+        <div class="q"><button>Can my house take a tile or slate roof?</button><div class="a"><p>Only your structure can answer that, and it is the first thing we check rather than the last. Both are heavy. If the framing and deck cannot carry the load, the honest answer is that the material is not an option, and we would rather tell you before you have chosen a color.</p></div></div>
+        <div class="q"><button>Do you install flat roofing on houses?</button><div class="a"><p>Yes, and a lot of New Orleans homes have a flat or low-slope section somewhere, usually over an addition or a porch. It gets specified as its own system rather than treated as an afterthought on the shingle quote.</p></div></div>
+        <div class="q"><button>Why will you not tell me how many years a roof lasts?</button><div class="a"><p>Because the same material on two houses in the same street will not last the same length of time. Ventilation, install quality, exposure and how the roof gets maintained all move it. We would rather look at your actual roof and tell you what we think it has left.</p></div></div>
     </div>
   </div>
 </section>

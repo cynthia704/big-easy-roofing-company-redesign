@@ -1,16 +1,19 @@
-Commercial photography for /commercial/ and the low-slope sections.
+Commercial photography for /commercial/.
 Source: Pexels. Pexels License - free to use, commercial use allowed,
 no attribution required. Ids kept so any image can be traced back.
 
-com-aerial-flat.jpg  pexels.com/photo/25461690   aerial of a large white flat commercial roof with mechanical units
-com-building.jpg     pexels.com/photo/4534504   modern commercial building exterior
-com-complex.jpg      pexels.com/photo/5115940   aerial of a factory complex, large flat roofs
-com-deck.jpg         pexels.com/photo/11565004   crew working on a concrete deck with rebar
-com-facility.jpg     pexels.com/photo/6537735   industrial facility exterior, large low-slope roof
-com-industrial.jpg   pexels.com/photo/33676905   industrial building with stacks
-com-mechanical.jpg   pexels.com/photo/3818947   rooftop pipework and mechanical plant on an industrial building
-com-office.jpg       pexels.com/photo/7314547   modern commercial building, glazed
+Pexels is thin on commercial roofing. Five search rounds produced these
+ten. Three are used on two slots each, always where the subject matches
+both. Real photography of the company's own commercial jobs would still
+beat all of it.
+
+com-aerial-flat.jpg pexels.com/photo/25461690  aerial of a white membrane roof with mechanical units
+com-complex.jpg    pexels.com/photo/5115940   aerial of a factory complex, large flat roofs
+com-facility.jpg   pexels.com/photo/6537735   industrial facility, large low-slope roof
+com-gravel.jpg     pexels.com/photo/10921738  gravel, the surface of a ballasted built-up roof
+com-industrial.jpg pexels.com/photo/33676905  industrial building with stacks
+com-inspect.jpg    pexels.com/photo/6961110   worker walking a large flat commercial roof
 com-rooftop-city.jpg pexels.com/photo/9653888   city rooftop with equipment and antenna
-com-structure.jpg    pexels.com/photo/12314551   structural steel and scaffold under a deck
-com-torchdown.jpg    pexels.com/photo/38510717   roofer applying a torch-down membrane roll, flame visible
-com-warehouse.jpg    pexels.com/photo/4115457   aerial of long warehouse roofs
+com-torchdown.jpg  pexels.com/photo/38510717  roofer running a torch along a bitumen roll
+com-warehouse.jpg  pexels.com/photo/4115457   aerial of long ribbed low-slope roofs
+com-weather.jpg    pexels.com/photo/37136429  storm front building over open water
