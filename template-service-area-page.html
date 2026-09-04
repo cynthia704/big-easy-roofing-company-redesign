@@ -790,15 +790,35 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 .hxDark-glow{position:absolute;inset:auto -10% -40% 40%;height:70%;pointer-events:none;
   background:radial-gradient(60% 60% at 50% 50%,rgba(245,165,36,.10),transparent 70%)}
 
-/* ---- intro bullets ---------------------------------------------------- */
-.hxpoints{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px}
-.hxpoints li{position:relative;padding-left:34px;font-size:15.5px;line-height:1.65;
-  color:var(--muteddark)}
-.hxpoints li b{color:var(--textdark)}
-.hxpoints li::before{content:"";position:absolute;left:0;top:3px;width:22px;height:22px;
-  border-radius:50%;background:rgba(245,165,36,.16);
-  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B4791A' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12l6 6L20 6'/%3E%3C/svg%3E");
-  background-size:13px;background-repeat:no-repeat;background-position:center}
+/* ---- intro: lede, credential cards, stat strip ------------------------- */
+.hxpaper{position:relative;overflow:hidden}
+/* a very faint course pattern, so the lightest section is not a blank sheet */
+.hxWeave{position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:
+    repeating-linear-gradient(0deg,rgba(11,18,32,.045) 0 1px,transparent 1px 88px),
+    repeating-linear-gradient(90deg,rgba(11,18,32,.045) 0 1px,transparent 1px 88px),
+    radial-gradient(48% 42% at 88% 4%,rgba(245,165,36,.13),transparent 70%)}
+.hxpaper>.wrap{position:relative;z-index:1}
+
+.icopy .hxLede{font-size:clamp(20px,2.1vw,25px);line-height:1.5;color:#16202F;
+  font-weight:500;margin:14px 0 20px;padding-left:22px;border-left:3px solid var(--amber)}
+
+.hxCreds{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0 0}
+.hxCred{background:#fff;border:1px solid #E3E9F2;border-radius:var(--r);padding:22px 20px 20px;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
+.hxCred:hover{transform:translateY(-4px);border-color:rgba(245,165,36,.5);
+  box-shadow:0 18px 34px rgba(11,18,32,.09)}
+.hxCred-i{display:flex;align-items:center;justify-content:center;width:40px;height:40px;
+  border-radius:10px;background:rgba(245,165,36,.14);color:#B4791A;margin-bottom:14px}
+.hxCred-i svg{width:21px;height:21px}
+.hxCred h3{font-size:16.5px;line-height:1.22;margin:0 0 8px;color:#16202F;min-height:40px}
+.hxCred p{font-size:13.5px;line-height:1.6;color:#5A6A80;margin:0}
+
+.hxStats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:26px;
+  padding-top:24px;border-top:1px solid #DFE6F0}
+.hxStat b{display:block;font-family:'Barlow Condensed';font-weight:800;
+  font-size:clamp(34px,3.4vw,44px);line-height:1;color:var(--amber);letter-spacing:.01em}
+.hxStat span{display:block;margin-top:7px;font-size:12.5px;line-height:1.45;color:#6B7A90}
 
 /* =============================================================
    4. EXPLORER  -  rail + stage
@@ -806,8 +826,9 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 /* Grid and flex children default to min-width:auto, so anything with wide
    content (the tab rail, a photo) refuses to shrink and punches out of its
    column on narrow screens. This is the fix for all of it. */
-.hxExp>*,.hxLeft,.hxRailWrap,.hxRail,.hxStage,.hxPanel>*,.hxSteps>*,.hxRow>*,.hxFacts>*,
-.hxNums,.hxStage2,.hxSeal>*{min-width:0}
+.hxExp>*,.hxLeft,.hxRailWrap,.hxRail,.hxStage,.hxPanel>*,.hxJob>*,.hxRow>*,.hxFacts>*,
+.hxTicket,.hxLines,.hxLine>*,.hxCreds>*,.hxStats>*,
+.hxStage2,.hxSeal>*{min-width:0}
 .hxRail{max-width:100%;position:relative}
 /* a hard <br> in a heading forces a third line on a phone */
 @media (max-width:760px){br.dtbr{display:none}}
@@ -867,42 +888,76 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   line-height:1;color:var(--amber);letter-spacing:.01em}
 
 /* =============================================================
-   5. STEPS  -  the numeral that fills
+   5. THE WORK ORDER
+   The process drawn as the piece of paper this company actually
+   hands you. Nothing borrowed from anybody's carousel.
    ============================================================= */
-.hxSteps{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}
-.hxNums{text-align:center}
-.hxNum-stack{position:relative;height:210px;display:flex;align-items:center;
-  justify-content:center}
-.hxNum{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  font-family:'Barlow Condensed';font-weight:800;font-size:190px;line-height:1;
-  opacity:0;transition:opacity .45s var(--ease);pointer-events:none}
-.hxNum.on{opacity:1}
-.hxNum-in{position:relative;display:inline-block}
-.hxNum-o{display:block;color:transparent;-webkit-text-stroke:2px rgba(11,18,32,.30)}
-.hxNum-f{position:absolute;left:0;right:0;bottom:0;height:0;overflow:hidden;
-  display:flex;align-items:flex-end;justify-content:center}
-.hxNum-f>span{position:absolute;left:0;bottom:0;white-space:nowrap;
-  color:var(--amber);-webkit-text-stroke:2px var(--amber);line-height:1;display:block}
-.hxNum-f::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;
-  background:rgba(245,165,36,.85)}
-.hxNum.on.go .hxNum-f{height:100%;transition:height 4.4s linear}
-.hxSteps.paused .hxNum.on.go .hxNum-f{transition:none}
+.hxJob{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
 
-.hxNums-cap{font:600 10.5px/1 Inter;letter-spacing:.16em;text-transform:uppercase;
-  color:#9A8B6C;margin:16px 0 20px}
-.hxDots{display:flex;gap:10px;justify-content:center}
-.hxDot{appearance:none;cursor:pointer;width:44px;height:44px;border-radius:50%;
-  border:1px solid #D8D0BE;background:transparent;color:#8A806B;
-  font:700 12px/1 Inter;letter-spacing:.04em;
-  transition:background .3s var(--ease),color .3s,border-color .3s,transform .3s}
-.hxDot:hover{transform:translateY(-2px);border-color:var(--amber)}
-.hxDot.on{background:var(--amber);border-color:var(--amber);color:#20160A}
+.hxTicket{background:#fff;border:1px solid #E4DED0;border-radius:4px;
+  box-shadow:0 24px 50px rgba(58,48,30,.09);position:relative;overflow:hidden}
+/* the perforated strip down the left, like a torn-off carbon copy */
+.hxTicket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;
+  background:repeating-linear-gradient(180deg,var(--amber) 0 9px,transparent 9px 17px)}
 
-.hxStage2{position:relative;min-height:274px}
+.hxTicket-h{display:flex;align-items:baseline;justify-content:space-between;gap:14px;
+  padding:20px 24px 14px 30px;border-bottom:1px solid #EFE9DC}
+.hxTicket-b{font-family:'Barlow Condensed';font-weight:800;font-size:19px;line-height:1;
+  letter-spacing:.01em;color:#16202F}
+.hxTicket-t{font:700 10.5px/1 Inter;letter-spacing:.2em;text-transform:uppercase;
+  color:#A08544;border:1px solid #E4DED0;border-radius:3px;padding:7px 10px}
+
+.hxTicket-meta{display:grid;grid-template-columns:auto 1fr auto 1fr;gap:6px 12px;
+  align-items:baseline;padding:14px 24px 16px 30px;border-bottom:1px dashed #E4DED0}
+.hxTicket-meta span{font:600 9.5px/1 Inter;letter-spacing:.16em;text-transform:uppercase;
+  color:#A79C86}
+.hxTicket-meta b{font:600 13px/1.2 Inter;color:#3C4658}
+
+.hxLines{display:flex;flex-direction:column}
+.hxLine{appearance:none;background:none;border:0;cursor:pointer;text-align:left;
+  display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;
+  column-gap:14px;padding:17px 24px 17px 30px;border-bottom:1px solid #F1ECE1;
+  position:relative;transition:background .3s var(--ease)}
+.hxLine:last-child{border-bottom:0}
+.hxLine::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:transparent;transition:background .3s var(--ease)}
+.hxLine:hover{background:#FCFAF5}
+.hxLine.on{background:#FFFAF0}
+.hxLine.on::before{background:var(--amber)}
+.hxLine.done::before{background:rgba(245,165,36,.4)}
+
+.hxLine-n{font:700 11px/1 Inter;letter-spacing:.12em;color:#B9AE96;transition:color .3s}
+.hxLine.on .hxLine-n,.hxLine.done .hxLine-n{color:#B4791A}
+.hxLine-l{font-family:'Barlow Condensed';font-weight:700;font-size:20px;line-height:1.12;
+  letter-spacing:.01em;color:#5E6878;transition:color .3s var(--ease)}
+.hxLine.on .hxLine-l{color:#16202F}
+.hxLine.done .hxLine-l{color:#3C4658}
+.hxLine-w{font:600 11px/1 Inter;letter-spacing:.05em;text-transform:uppercase;
+  color:#A79C86;border:1px solid #EDE6D8;border-radius:999px;padding:6px 10px;
+  white-space:nowrap;transition:color .3s,border-color .3s,background .3s}
+.hxLine.on .hxLine-w{color:#8A5F12;border-color:rgba(245,165,36,.45);
+  background:rgba(245,165,36,.12)}
+.hxLine-c{width:22px;height:22px;border-radius:50%;border:1px solid #E4DED0;
+  display:flex;align-items:center;justify-content:center;color:transparent;
+  transition:background .3s var(--ease),border-color .3s,color .3s}
+.hxLine-c svg{width:12px;height:12px}
+.hxLine.done .hxLine-c{background:var(--amber);border-color:var(--amber);color:#20160A}
+.hxLine.on .hxLine-c{border-color:var(--amber);
+  box-shadow:0 0 0 4px rgba(245,165,36,.16)}
+
+.hxTicket-f{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  flex-wrap:wrap;padding:16px 24px 18px 30px;border-top:1px dashed #E4DED0;
+  background:#FBF8F1}
+.hxTicket-f span{font-size:12.5px;line-height:1.5;color:#8A806B;max-width:34ch}
+.hxTicket-f a{font-family:'Barlow Condensed';font-weight:800;font-size:23px;line-height:1;
+  color:#B4791A;letter-spacing:.01em}
+.hxTicket-f a:hover{color:#8A5F12}
+
+.hxStage2{position:relative;min-height:256px;padding-top:6px}
 .hxStep[hidden]{display:none}
 .hxStep.on{animation:hxIn .5s var(--ease) both}
 .hxStep h3{font-size:clamp(26px,3vw,36px);margin:10px 0 14px;color:#16202F}
-.hxStep>p{font-size:16.5px;line-height:1.72;color:#4A5A70;margin:0 0 14px;max-width:52ch}
+.hxStep>p{font-size:16.5px;line-height:1.72;color:#4A5A70;margin:0 0 16px;max-width:52ch}
 .hxStep-n{font-size:14px !important;color:#8A806B !important;border-left:2px solid var(--amber);
   padding-left:14px;margin:0 !important}
 .hxCream .eyebrow{color:#B4791A}
@@ -1025,12 +1080,10 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   .hxPanel{grid-template-columns:1fr;gap:20px}
   .hxPanel-img{aspect-ratio:16/10}
 
-  .hxSteps{grid-template-columns:1fr;gap:32px}
-  .hxNum-stack{height:150px}
-  .hxNum{font-size:132px}
-  .hxStage2{min-height:0;text-align:center}
-  .hxStep>p{margin-inline:auto}
-  .hxStep-n{display:inline-block;text-align:left}
+  .hxJob{grid-template-columns:1fr;gap:30px}
+  .hxStage2{min-height:0;padding-top:0}
+  .hxCreds{grid-template-columns:1fr}
+  .hxStats{grid-template-columns:1fr 1fr;gap:20px}
 
   .hxRow,.hxRow.r{grid-template-columns:1fr;gap:22px;padding:34px 0}
   .hxRow.r .hxRow-img{order:0}
@@ -1041,9 +1094,13 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 }
 @media (max-width:640px){
   .hxPanel-b h3{font-size:23px}
-  .hxNum-stack{height:120px}
-  .hxNum{font-size:106px}
-  .hxDot{width:44px;height:44px}
+  .hxTicket-h,.hxTicket-meta,.hxLine,.hxTicket-f{padding-left:22px;padding-right:18px}
+  /* the ticket's phone number was a 23px tap target */
+  .hxTicket-f a{padding:11px 0;display:inline-block}
+  .hxTicket-meta{grid-template-columns:auto 1fr}
+  .hxLine{grid-template-columns:auto 1fr auto;row-gap:8px}
+  .hxLine-w{grid-column:2/4;justify-self:start}
+  .hxLine-c{grid-row:1;grid-column:3}
   .hxAcv{grid-template-columns:1fr 1fr;gap:12px;padding:16px}
   .hxAcv-bar{height:52px}
   .hxFact{padding:26px 22px 24px}
@@ -1058,8 +1115,8 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   .hxPanel.on,.hxStep.on{animation:none}
   .hxPanel-img img{animation:none}
   .hxRow-z,.hxFact{transition:none}
-  .hxTab.on .hxTab-bar i,.hxNum.on.go .hxNum-f{transition:none}
-  .hxNum.on.go .hxNum-f{height:100%}
+  .hxTab.on .hxTab-bar i{transition:none}
+  .hxLine,.hxLine-c,.hxLine-w,.hxCred{transition:none}
   .rv.in .hxTime-bar i,.rv.in .hxAcv-bar i{transition:none}
 }
 

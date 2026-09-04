@@ -790,15 +790,35 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 .hxDark-glow{position:absolute;inset:auto -10% -40% 40%;height:70%;pointer-events:none;
   background:radial-gradient(60% 60% at 50% 50%,rgba(245,165,36,.10),transparent 70%)}
 
-/* ---- intro bullets ---------------------------------------------------- */
-.hxpoints{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px}
-.hxpoints li{position:relative;padding-left:34px;font-size:15.5px;line-height:1.65;
-  color:var(--muteddark)}
-.hxpoints li b{color:var(--textdark)}
-.hxpoints li::before{content:"";position:absolute;left:0;top:3px;width:22px;height:22px;
-  border-radius:50%;background:rgba(245,165,36,.16);
-  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B4791A' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12l6 6L20 6'/%3E%3C/svg%3E");
-  background-size:13px;background-repeat:no-repeat;background-position:center}
+/* ---- intro: lede, credential cards, stat strip ------------------------- */
+.hxpaper{position:relative;overflow:hidden}
+/* a very faint course pattern, so the lightest section is not a blank sheet */
+.hxWeave{position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:
+    repeating-linear-gradient(0deg,rgba(11,18,32,.045) 0 1px,transparent 1px 88px),
+    repeating-linear-gradient(90deg,rgba(11,18,32,.045) 0 1px,transparent 1px 88px),
+    radial-gradient(48% 42% at 88% 4%,rgba(245,165,36,.13),transparent 70%)}
+.hxpaper>.wrap{position:relative;z-index:1}
+
+.icopy .hxLede{font-size:clamp(20px,2.1vw,25px);line-height:1.5;color:#16202F;
+  font-weight:500;margin:14px 0 20px;padding-left:22px;border-left:3px solid var(--amber)}
+
+.hxCreds{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0 0}
+.hxCred{background:#fff;border:1px solid #E3E9F2;border-radius:var(--r);padding:22px 20px 20px;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
+.hxCred:hover{transform:translateY(-4px);border-color:rgba(245,165,36,.5);
+  box-shadow:0 18px 34px rgba(11,18,32,.09)}
+.hxCred-i{display:flex;align-items:center;justify-content:center;width:40px;height:40px;
+  border-radius:10px;background:rgba(245,165,36,.14);color:#B4791A;margin-bottom:14px}
+.hxCred-i svg{width:21px;height:21px}
+.hxCred h3{font-size:16.5px;line-height:1.22;margin:0 0 8px;color:#16202F;min-height:40px}
+.hxCred p{font-size:13.5px;line-height:1.6;color:#5A6A80;margin:0}
+
+.hxStats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:26px;
+  padding-top:24px;border-top:1px solid #DFE6F0}
+.hxStat b{display:block;font-family:'Barlow Condensed';font-weight:800;
+  font-size:clamp(34px,3.4vw,44px);line-height:1;color:var(--amber);letter-spacing:.01em}
+.hxStat span{display:block;margin-top:7px;font-size:12.5px;line-height:1.45;color:#6B7A90}
 
 /* =============================================================
    4. EXPLORER  -  rail + stage
@@ -806,8 +826,9 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 /* Grid and flex children default to min-width:auto, so anything with wide
    content (the tab rail, a photo) refuses to shrink and punches out of its
    column on narrow screens. This is the fix for all of it. */
-.hxExp>*,.hxLeft,.hxRailWrap,.hxRail,.hxStage,.hxPanel>*,.hxSteps>*,.hxRow>*,.hxFacts>*,
-.hxNums,.hxStage2,.hxSeal>*{min-width:0}
+.hxExp>*,.hxLeft,.hxRailWrap,.hxRail,.hxStage,.hxPanel>*,.hxJob>*,.hxRow>*,.hxFacts>*,
+.hxTicket,.hxLines,.hxLine>*,.hxCreds>*,.hxStats>*,
+.hxStage2,.hxSeal>*{min-width:0}
 .hxRail{max-width:100%;position:relative}
 /* a hard <br> in a heading forces a third line on a phone */
 @media (max-width:760px){br.dtbr{display:none}}
@@ -867,42 +888,76 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   line-height:1;color:var(--amber);letter-spacing:.01em}
 
 /* =============================================================
-   5. STEPS  -  the numeral that fills
+   5. THE WORK ORDER
+   The process drawn as the piece of paper this company actually
+   hands you. Nothing borrowed from anybody's carousel.
    ============================================================= */
-.hxSteps{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:center}
-.hxNums{text-align:center}
-.hxNum-stack{position:relative;height:210px;display:flex;align-items:center;
-  justify-content:center}
-.hxNum{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  font-family:'Barlow Condensed';font-weight:800;font-size:190px;line-height:1;
-  opacity:0;transition:opacity .45s var(--ease);pointer-events:none}
-.hxNum.on{opacity:1}
-.hxNum-in{position:relative;display:inline-block}
-.hxNum-o{display:block;color:transparent;-webkit-text-stroke:2px rgba(11,18,32,.30)}
-.hxNum-f{position:absolute;left:0;right:0;bottom:0;height:0;overflow:hidden;
-  display:flex;align-items:flex-end;justify-content:center}
-.hxNum-f>span{position:absolute;left:0;bottom:0;white-space:nowrap;
-  color:var(--amber);-webkit-text-stroke:2px var(--amber);line-height:1;display:block}
-.hxNum-f::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;
-  background:rgba(245,165,36,.85)}
-.hxNum.on.go .hxNum-f{height:100%;transition:height 4.4s linear}
-.hxSteps.paused .hxNum.on.go .hxNum-f{transition:none}
+.hxJob{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
 
-.hxNums-cap{font:600 10.5px/1 Inter;letter-spacing:.16em;text-transform:uppercase;
-  color:#9A8B6C;margin:16px 0 20px}
-.hxDots{display:flex;gap:10px;justify-content:center}
-.hxDot{appearance:none;cursor:pointer;width:44px;height:44px;border-radius:50%;
-  border:1px solid #D8D0BE;background:transparent;color:#8A806B;
-  font:700 12px/1 Inter;letter-spacing:.04em;
-  transition:background .3s var(--ease),color .3s,border-color .3s,transform .3s}
-.hxDot:hover{transform:translateY(-2px);border-color:var(--amber)}
-.hxDot.on{background:var(--amber);border-color:var(--amber);color:#20160A}
+.hxTicket{background:#fff;border:1px solid #E4DED0;border-radius:4px;
+  box-shadow:0 24px 50px rgba(58,48,30,.09);position:relative;overflow:hidden}
+/* the perforated strip down the left, like a torn-off carbon copy */
+.hxTicket::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;
+  background:repeating-linear-gradient(180deg,var(--amber) 0 9px,transparent 9px 17px)}
 
-.hxStage2{position:relative;min-height:274px}
+.hxTicket-h{display:flex;align-items:baseline;justify-content:space-between;gap:14px;
+  padding:20px 24px 14px 30px;border-bottom:1px solid #EFE9DC}
+.hxTicket-b{font-family:'Barlow Condensed';font-weight:800;font-size:19px;line-height:1;
+  letter-spacing:.01em;color:#16202F}
+.hxTicket-t{font:700 10.5px/1 Inter;letter-spacing:.2em;text-transform:uppercase;
+  color:#A08544;border:1px solid #E4DED0;border-radius:3px;padding:7px 10px}
+
+.hxTicket-meta{display:grid;grid-template-columns:auto 1fr auto 1fr;gap:6px 12px;
+  align-items:baseline;padding:14px 24px 16px 30px;border-bottom:1px dashed #E4DED0}
+.hxTicket-meta span{font:600 9.5px/1 Inter;letter-spacing:.16em;text-transform:uppercase;
+  color:#A79C86}
+.hxTicket-meta b{font:600 13px/1.2 Inter;color:#3C4658}
+
+.hxLines{display:flex;flex-direction:column}
+.hxLine{appearance:none;background:none;border:0;cursor:pointer;text-align:left;
+  display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;
+  column-gap:14px;padding:17px 24px 17px 30px;border-bottom:1px solid #F1ECE1;
+  position:relative;transition:background .3s var(--ease)}
+.hxLine:last-child{border-bottom:0}
+.hxLine::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:transparent;transition:background .3s var(--ease)}
+.hxLine:hover{background:#FCFAF5}
+.hxLine.on{background:#FFFAF0}
+.hxLine.on::before{background:var(--amber)}
+.hxLine.done::before{background:rgba(245,165,36,.4)}
+
+.hxLine-n{font:700 11px/1 Inter;letter-spacing:.12em;color:#B9AE96;transition:color .3s}
+.hxLine.on .hxLine-n,.hxLine.done .hxLine-n{color:#B4791A}
+.hxLine-l{font-family:'Barlow Condensed';font-weight:700;font-size:20px;line-height:1.12;
+  letter-spacing:.01em;color:#5E6878;transition:color .3s var(--ease)}
+.hxLine.on .hxLine-l{color:#16202F}
+.hxLine.done .hxLine-l{color:#3C4658}
+.hxLine-w{font:600 11px/1 Inter;letter-spacing:.05em;text-transform:uppercase;
+  color:#A79C86;border:1px solid #EDE6D8;border-radius:999px;padding:6px 10px;
+  white-space:nowrap;transition:color .3s,border-color .3s,background .3s}
+.hxLine.on .hxLine-w{color:#8A5F12;border-color:rgba(245,165,36,.45);
+  background:rgba(245,165,36,.12)}
+.hxLine-c{width:22px;height:22px;border-radius:50%;border:1px solid #E4DED0;
+  display:flex;align-items:center;justify-content:center;color:transparent;
+  transition:background .3s var(--ease),border-color .3s,color .3s}
+.hxLine-c svg{width:12px;height:12px}
+.hxLine.done .hxLine-c{background:var(--amber);border-color:var(--amber);color:#20160A}
+.hxLine.on .hxLine-c{border-color:var(--amber);
+  box-shadow:0 0 0 4px rgba(245,165,36,.16)}
+
+.hxTicket-f{display:flex;align-items:center;justify-content:space-between;gap:16px;
+  flex-wrap:wrap;padding:16px 24px 18px 30px;border-top:1px dashed #E4DED0;
+  background:#FBF8F1}
+.hxTicket-f span{font-size:12.5px;line-height:1.5;color:#8A806B;max-width:34ch}
+.hxTicket-f a{font-family:'Barlow Condensed';font-weight:800;font-size:23px;line-height:1;
+  color:#B4791A;letter-spacing:.01em}
+.hxTicket-f a:hover{color:#8A5F12}
+
+.hxStage2{position:relative;min-height:256px;padding-top:6px}
 .hxStep[hidden]{display:none}
 .hxStep.on{animation:hxIn .5s var(--ease) both}
 .hxStep h3{font-size:clamp(26px,3vw,36px);margin:10px 0 14px;color:#16202F}
-.hxStep>p{font-size:16.5px;line-height:1.72;color:#4A5A70;margin:0 0 14px;max-width:52ch}
+.hxStep>p{font-size:16.5px;line-height:1.72;color:#4A5A70;margin:0 0 16px;max-width:52ch}
 .hxStep-n{font-size:14px !important;color:#8A806B !important;border-left:2px solid var(--amber);
   padding-left:14px;margin:0 !important}
 .hxCream .eyebrow{color:#B4791A}
@@ -1025,12 +1080,10 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   .hxPanel{grid-template-columns:1fr;gap:20px}
   .hxPanel-img{aspect-ratio:16/10}
 
-  .hxSteps{grid-template-columns:1fr;gap:32px}
-  .hxNum-stack{height:150px}
-  .hxNum{font-size:132px}
-  .hxStage2{min-height:0;text-align:center}
-  .hxStep>p{margin-inline:auto}
-  .hxStep-n{display:inline-block;text-align:left}
+  .hxJob{grid-template-columns:1fr;gap:30px}
+  .hxStage2{min-height:0;padding-top:0}
+  .hxCreds{grid-template-columns:1fr}
+  .hxStats{grid-template-columns:1fr 1fr;gap:20px}
 
   .hxRow,.hxRow.r{grid-template-columns:1fr;gap:22px;padding:34px 0}
   .hxRow.r .hxRow-img{order:0}
@@ -1041,9 +1094,13 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 }
 @media (max-width:640px){
   .hxPanel-b h3{font-size:23px}
-  .hxNum-stack{height:120px}
-  .hxNum{font-size:106px}
-  .hxDot{width:44px;height:44px}
+  .hxTicket-h,.hxTicket-meta,.hxLine,.hxTicket-f{padding-left:22px;padding-right:18px}
+  /* the ticket's phone number was a 23px tap target */
+  .hxTicket-f a{padding:11px 0;display:inline-block}
+  .hxTicket-meta{grid-template-columns:auto 1fr}
+  .hxLine{grid-template-columns:auto 1fr auto;row-gap:8px}
+  .hxLine-w{grid-column:2/4;justify-self:start}
+  .hxLine-c{grid-row:1;grid-column:3}
   .hxAcv{grid-template-columns:1fr 1fr;gap:12px;padding:16px}
   .hxAcv-bar{height:52px}
   .hxFact{padding:26px 22px 24px}
@@ -1058,8 +1115,8 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   .hxPanel.on,.hxStep.on{animation:none}
   .hxPanel-img img{animation:none}
   .hxRow-z,.hxFact{transition:none}
-  .hxTab.on .hxTab-bar i,.hxNum.on.go .hxNum-f{transition:none}
-  .hxNum.on.go .hxNum-f{height:100%}
+  .hxTab.on .hxTab-bar i{transition:none}
+  .hxLine,.hxLine-c,.hxLine-w,.hxCred{transition:none}
   .rv.in .hxTime-bar i,.rv.in .hxAcv-bar i{transition:none}
 }
 
@@ -1464,25 +1521,58 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 </div>
 
 <section class="i light hxpaper" id="ask">
+  <span class="hxWeave" aria-hidden="true"></span>
   <div class="wrap ibody">
     <div class="icopy rv">
-      <p class="lede">New Orleans is hard on roofs. Between summer heat, heavy rain, and a
+      <span class="eyebrow">Residential roofing &middot; New Orleans</span>
+      <p class="hxLede">New Orleans is hard on roofs. Between summer heat, heavy rain and a
       hurricane season that runs half the year, a roof here works harder than the same roof
-      almost anywhere else in the country. Most homeowners do not think about theirs until
-      water shows up on a ceiling.</p>
-      <p>Big Easy Roofing Company handles residential roofing across New Orleans and 13
-      surrounding cities, from a single lifted shingle to a full replacement after a named
-      storm. Whatever brought you here, the first step is the same: someone gets on the roof,
-      photographs every slope, and tells you plainly what is wrong and what it will cost to
-      put right.</p>
-      <ul class="hxpoints">
-        <li><b>Free inspection, written report.</b> Every slope photographed. The report is
-        yours to keep, whoever ends up doing the work.</li>
-        <li><b>One crew, start to finish.</b> Nothing is subcontracted. The people who
-        inspect your roof are the people who work on it.</li>
-        <li><b>GAF WindProven on qualifying systems.</b> Fifteen years, no maximum wind
-        speed, no named-storm exclusion.</li>
-      </ul>
+      almost anywhere else in the country.</p>
+      <p>Most homeowners do not think about theirs until water shows up on a ceiling. Big Easy
+      Roofing Company handles residential roofing across New Orleans and 13 surrounding cities,
+      from a single lifted shingle to a full replacement after a named storm. Whatever brought
+      you here, the first step is the same: someone gets on the roof, photographs every slope,
+      and tells you plainly what is wrong and what it will cost to put right.</p>
+
+      <div class="hxCreds">
+        <article class="hxCred">
+          <span class="hxCred-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+            stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/>
+            <path d="M8 8h8M8 12h8M8 16h4"/></svg></span>
+          <h3>Free Inspection, Written Report</h3>
+          <p>Every slope photographed. The report is yours to keep, whoever ends up doing
+          the work.</p>
+        </article>
+        <article class="hxCred">
+          <span class="hxCred-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+            stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></span>
+          <h3>One Crew, Start to Finish</h3>
+          <p>Nothing is subcontracted. The people who inspect your roof are the people who
+          work on it.</p>
+        </article>
+        <article class="hxCred">
+          <span class="hxCred-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+            stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M9 12l2 2 4-4"/></svg></span>
+          <h3>GAF WindProven on Qualifying Systems</h3>
+          <p>Fifteen years, no maximum wind speed, no named-storm exclusion.</p>
+        </article>
+      </div>
+
+      <div class="hxStats">
+        <div class="hxStat"><b data-to="19">19</b><span>Residential services,<br
+          class="dtbr">all in house</span></div>
+        <div class="hxStat"><b data-to="14">14</b><span>Louisiana cities<br
+          class="dtbr">we cover</span></div>
+        <div class="hxStat"><b data-to="1">1</b><span>Working day on a<br
+          class="dtbr">standard tear-off</span></div>
+        <div class="hxStat"><b data-to="15">15</b><span>Year wind warranty<br
+          class="dtbr">on qualifying roofs</span></div>
+      </div>
     </div>
     <aside class="iask">
       <div class="askcard lite rv">
@@ -1610,44 +1700,74 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 
 <section class="i hxCream" id="process">
   <div class="wrap">
-    <div class="head ctr rv" style="margin-bottom:40px">
+    <div class="head rv" style="margin-bottom:38px">
       <span class="eyebrow">How it goes</span>
       <h2>Four Steps, No Surprises</h2>
-      <p class="lead" style="margin-inline:auto">From the first phone call to the magnet sweep.
-      Nothing in here happens without you knowing the price first.</p>
+      <p class="lead">We put the whole job on paper before anybody climbs anything. This is
+      that piece of paper, and there is nothing on it you will not have seen first.</p>
     </div>
-    <div class="hxSteps rv d1">
-      <div class="hxNums">
-        <div class="hxNum-stack" aria-hidden="true">
-          <span class="hxNum on" data-st="0"><span class="hxNum-in"><span class="hxNum-o">01</span><span class="hxNum-f"><span>01</span></span></span></span>
-          <span class="hxNum" data-st="1"><span class="hxNum-in"><span class="hxNum-o">02</span><span class="hxNum-f"><span>02</span></span></span></span>
-          <span class="hxNum" data-st="2"><span class="hxNum-in"><span class="hxNum-o">03</span><span class="hxNum-f"><span>03</span></span></span></span>
-          <span class="hxNum" data-st="3"><span class="hxNum-in"><span class="hxNum-o">04</span><span class="hxNum-f"><span>04</span></span></span></span>
+    <div class="hxJob rv d1">
+      <div class="hxTicket">
+        <div class="hxTicket-h">
+          <span class="hxTicket-b">Big Easy Roofing Company</span>
+          <span class="hxTicket-t">Work Order</span>
         </div>
-        <p class="hxNums-cap">The number fills as the step completes</p>
-        <div class="hxDots"><button class="hxDot on" type="button" data-st="0" aria-label="Step 1">01</button><button class="hxDot" type="button" data-st="1" aria-label="Step 2">02</button><button class="hxDot" type="button" data-st="2" aria-label="Step 3">03</button><button class="hxDot" type="button" data-st="3" aria-label="Step 4">04</button></div>
+        <div class="hxTicket-meta">
+          <span>Property</span><b>New Orleans, LA</b>
+          <span>Scope</span><b>Residential roofing</b>
+        </div>
+        <div class="hxLines" role="tablist" aria-label="How the job runs">
+          <button class="hxLine on" type="button" data-st="0" aria-selected="true">
+            <span class="hxLine-n">01</span>
+            <span class="hxLine-l">We Look at It</span>
+            <span class="hxLine-w">No charge</span>
+            <span class="hxLine-c" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6 6L20 6"/></svg></span>
+          </button>
+          <button class="hxLine" type="button" data-st="1" aria-selected="false">
+            <span class="hxLine-n">02</span>
+            <span class="hxLine-l">You Get a Number</span>
+            <span class="hxLine-w">In writing</span>
+            <span class="hxLine-c" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6 6L20 6"/></svg></span>
+          </button>
+          <button class="hxLine" type="button" data-st="2" aria-selected="false">
+            <span class="hxLine-n">03</span>
+            <span class="hxLine-l">Materials Land First</span>
+            <span class="hxLine-w">Before tear-off</span>
+            <span class="hxLine-c" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6 6L20 6"/></svg></span>
+          </button>
+          <button class="hxLine" type="button" data-st="3" aria-selected="false">
+            <span class="hxLine-n">04</span>
+            <span class="hxLine-l">One Day on the Roof</span>
+            <span class="hxLine-w">One day</span>
+            <span class="hxLine-c" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6 6L20 6"/></svg></span>
+          </button>
+        </div>
+        <div class="hxTicket-f">
+          <span>Nothing on this list starts before you have seen the price</span>
+          <a href="tel:5042293955">504-229-3955</a>
+        </div>
       </div>
       <div class="hxStage2">
         <div class="hxStep on" data-st="0">
-          <span class="eyebrow">Step &middot; 01</span>
+          <span class="eyebrow">Line item &middot; 01</span>
           <h3>We Look at It</h3>
           <p>A roofer gets on the roof, not just in the driveway. Every slope photographed, every flashing and penetration checked, and the attic looked at from the inside wherever we can get to it. You get a written condition report before anybody says a number.</p>
           <p class="hxStep-n">Usually inside the week. Same day if it is actively leaking.</p>
         </div>
         <div class="hxStep" data-st="1" hidden>
-          <span class="eyebrow">Step &middot; 02</span>
+          <span class="eyebrow">Line item &middot; 02</span>
           <h3>You Get a Number</h3>
           <p>A line-item written estimate, not a range on the back of a card. You can see the materials, the labor, and what is optional. If it is an insurance job a scope of loss goes with it, in the format your adjuster actually wants.</p>
           <p class="hxStep-n">No pressure, no expiring discount, no second visit to close you.</p>
         </div>
         <div class="hxStep" data-st="2" hidden>
-          <span class="eyebrow">Step &middot; 03</span>
+          <span class="eyebrow">Line item &middot; 03</span>
           <h3>Materials Land First</h3>
           <p>Nothing comes off your roof until your materials are sitting on the property. That is the whole reason a one-day tear-off is possible, and it is why we will not start a job on a supplier’s promise that the shingles are on a truck somewhere.</p>
           <p class="hxStep-n">You will see the delivery before you see the crew.</p>
         </div>
         <div class="hxStep" data-st="3" hidden>
-          <span class="eyebrow">Step &middot; 04</span>
+          <span class="eyebrow">Line item &middot; 04</span>
           <h3>One Day on the Roof</h3>
           <p>Tear-off, decking checked and replaced anywhere it has gone soft, leak barrier, deck protection, starter strip, shingles, ridge cap. Then a magnet sweep of the yard and the driveway before anyone drives away.</p>
           <p class="hxStep-n">We only open what we can close again the same day.</p>
@@ -2168,11 +2288,12 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 })();
 </script>
 <script>
-/* ---- hub: "What We Handle" explorer, and the step numeral that fills ---- */
+/* ---- hub: explorer, work order, stat counters ---- */
 (function(){
   var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function carousel(root, tabSel, panelSel, onClass, ms){
+  /* ---------------------------------------------------------------- 1 ---- */
+  function carousel(root, tabSel, panelSel, ms, onShow){
     if(!root) return;
     var tabs = [].slice.call(root.querySelectorAll(tabSel));
     var panels = [].slice.call(root.querySelectorAll(panelSel));
@@ -2182,22 +2303,22 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
     function show(n, restart){
       i = (n + tabs.length) % tabs.length;
       tabs.forEach(function(t, k){
-        t.classList.toggle(onClass, k === i);
+        t.classList.toggle('on', k === i);
         t.setAttribute('aria-selected', k === i ? 'true' : 'false');
       });
       panels.forEach(function(p, k){
-        if(k === i){ p.hidden = false; p.classList.add(onClass); }
-        else { p.hidden = true; p.classList.remove(onClass); }
+        if(k === i){ p.hidden = false; p.classList.add('on'); }
+        else { p.hidden = true; p.classList.remove('on'); }
       });
+      if(onShow) onShow(tabs, i);
       if(restart) tick();
     }
     function tick(){
       clearTimeout(timer);
       if(still || !running) return;
-      // let the bar restart from empty before it refills
-      var on = root.querySelector(tabSel + '.' + onClass);
+      var on = root.querySelector(tabSel + '.on');
       if(on){
-        var bar = on.querySelector('i');
+        var bar = on.querySelector('.hxTab-bar i');
         if(bar){ bar.style.transition = 'none'; bar.style.height = ''; bar.style.width = '';
                  void bar.offsetWidth; bar.style.transition = ''; }
       }
@@ -2227,58 +2348,42 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
     show(0, false);
   }
 
-  carousel(document.querySelector('.hxExp'), '.hxTab', '.hxPanel', 'on', 5600);
+  carousel(document.querySelector('.hxExp'), '.hxTab', '.hxPanel', 5600);
 
-  /* the steps share the carousel, plus the numeral fill */
-  var st = document.querySelector('.hxSteps');
-  if(st){
-    var nums = [].slice.call(st.querySelectorAll('.hxNum'));
-    function paint(n){
-      nums.forEach(function(el, k){
-        el.classList.toggle('on', k === n);
-        el.classList.remove('go');
-        if(k === n){
-          // reflow so the fill animates from empty every time
-          void el.offsetWidth;
-          el.classList.add('go');
-        }
-      });
-    }
-    var dots = [].slice.call(st.querySelectorAll('.hxDot'));
-    var steps = [].slice.call(st.querySelectorAll('.hxStep'));
-    var j = 0, t2 = null, run2 = false;
-    function show2(n, restart){
-      j = (n + dots.length) % dots.length;
-      dots.forEach(function(d, k){ d.classList.toggle('on', k === j); });
-      steps.forEach(function(p, k){
-        if(k === j){ p.hidden = false; p.classList.add('on'); }
-        else { p.hidden = true; p.classList.remove('on'); }
-      });
-      paint(j);
-      if(restart) tick2();
-    }
-    function tick2(){
-      clearTimeout(t2);
-      if(still || !run2) return;
-      t2 = setTimeout(function(){ show2(j + 1, true); }, 4600);
-    }
-    dots.forEach(function(d, k){ d.addEventListener('click', function(){ show2(k, true); }); });
-    st.addEventListener('mouseenter', function(){
-      run2 = false; clearTimeout(t2); st.classList.add('paused');
+  /* ---------------------------------------------------------------- 2 ----
+     the work order. Same driver, plus every line above the current one gets
+     stamped done, so the ticket reads as a job moving through it. */
+  carousel(document.querySelector('.hxJob'), '.hxLine', '.hxStep', 5200,
+    function(lines, i){
+      lines.forEach(function(l, k){ l.classList.toggle('done', k < i); });
     });
-    st.addEventListener('mouseleave', function(){
-      if(still) return;
-      run2 = true; st.classList.remove('paused'); tick2();
-    });
+
+  /* ---------------------------------------------------------------- 3 ---- */
+  var stats = [].slice.call(document.querySelectorAll('.hxStat b[data-to]'));
+  if(stats.length){
+    function run(el){
+      var to = parseInt(el.getAttribute('data-to'), 10) || 0;
+      if(still || to <= 1){ el.textContent = to; return; }
+      // the markup already holds the real number, so a page with no JS shows
+      // the truth. Only zero it at the moment the count actually starts.
+      el.textContent = '0';
+      var t0 = null, ms = 900;
+      function frame(t){
+        if(t0 === null) t0 = t;
+        var k = Math.min(1, (t - t0) / ms);
+        el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3)));
+        if(k < 1) requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    }
     if('IntersectionObserver' in window){
-      new IntersectionObserver(function(es){
+      var io = new IntersectionObserver(function(es){
         es.forEach(function(e){
-          if(e.isIntersecting){ if(!still){ run2 = true; tick2(); } }
-          else { run2 = false; clearTimeout(t2); }
+          if(e.isIntersecting){ run(e.target); io.unobserve(e.target); }
         });
-      }, {threshold: .25}).observe(st);
-    } else if(!still){ run2 = true; tick2(); }
-    show2(0, false);
+      }, {threshold: .6});
+      stats.forEach(function(el){ io.observe(el); });
+    } else { stats.forEach(run); }
   }
 })();
 </script>
