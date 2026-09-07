@@ -1104,6 +1104,21 @@ body.modal-on{overflow:hidden}
     transition:none}
 }
 
+/* ---- the four social profiles ------------------------------------------
+   The live site carries these in its footer. The five redesigned pages had
+   none, which is the same gap the chrome links had and was found the same
+   way, by reading the live site instead of guessing. */
+.fsocial{display:flex;gap:10px;margin-top:18px}
+.fsocial a{display:flex;align-items:center;justify-content:center;width:38px;height:38px;
+  border-radius:10px;border:1px solid var(--line);color:var(--muted);
+  background:rgba(255,255,255,.03);
+  transition:color .22s var(--ease),border-color .22s var(--ease),
+  background .22s var(--ease),transform .22s var(--ease)}
+.fsocial a:hover{color:var(--amber);border-color:rgba(245,165,36,.5);
+  background:rgba(245,165,36,.08);transform:translateY(-2px)}
+.fsocial svg{width:17px;height:17px}
+@media (prefers-reduced-motion:reduce){ .fsocial a{transition:none} }
+
 /* ============================================================
    TEMPLATE ADDITIONS - appended after Concept A's own rules
    ============================================================ */
@@ -3038,6 +3053,12 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
         <p style="color:#fff;font-weight:700;font-size:19px"><a href="tel:5042293955">504-229-3955</a></p>
         <p style="font-size:13px">Mon–Fri 8:00 AM – 6:00 PM<br>Emergency line answers 24/7</p>
         <p style="font-size:13px;color:#F5A524">[Street address + email to be added. See CRO review item 4.]</p>
+        <div class="fsocial">
+          <a href="https://www.facebook.com/bigeasyroofingcompany" aria-label="Big Easy Roofing Company on Facebook" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.instagram.com/bigeasyroofingcompany/" aria-label="Big Easy Roofing Company on Instagram" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4A4 4 0 1 1 12.6 8 4 4 0 0 1 16 11.4z"/><path d="M17.5 6.5h.01"/></svg></a>
+          <a href="https://www.linkedin.com/company/big-easy-roofing-company/" aria-label="Big Easy Roofing Company on LinkedIn" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://x.com/beroofcompany" aria-label="Big Easy Roofing Company on X" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h3l-7.5 8.6L22 22h-6.8l-5.3-6.9L3.8 22H.8l8-9.2L.5 2h7l4.8 6.3z"/></svg></a>
+        </div>
       </div>
       <div><h4>Residential Roofing</h4><ul class="ftwo"><li><a href="https://www.bigeasyroofingcompany.com/residential/inspection/">Roof Inspection</a></li><li><a href="https://www.bigeasyroofingcompany.com/residential/repairs/">Roof Repairs</a></li><li><a href="https://www.bigeasyroofingcompany.com/residential/replacement/">Roof Replacement</a></li><li><a href="https://www.bigeasyroofingcompany.com/residential/roof-installation/">Roof Installation</a></li><li><a href="https://www.bigeasyroofingcompany.com/residential/restoration/">Restoration</a></li><li><a href="https://www.bigeasyroofingcompany.com/residential/emergency-roofing/">Emergency Roofing</a></li><li><a href="https://www.bigeasyroofingcompany.com/residential/leak-detection/">Leak Detection</a></li><li><a href="https://www.bigeasyroofingcompany.com/residential/maintenance/">Maintenance</a></li><li><a href="https://www.bigeasyroofingcompany.com/residential/coating/">Coating</a></li><li><a href="https://www.bigeasyroofingcompany.com/residential/asbestos-roof-removal/">Asbestos Roof Removal</a></li><li><a href="https://www.bigeasyroofingcompany.com/residential/fascia-board-installation-repair/">Fascia Board Repair</a></li><li><a href="https://www.bigeasyroofingcompany.com/residential/flashing-repair/">Flashing Repair</a></li><li><a href="https://www.bigeasyroofingcompany.com/residential/gutters-and-downspouts-repair/">Gutter Repair</a></li><li><a href="https://www.bigeasyroofingcompany.com/residential/gutters-downspouts-installation/">Gutter Installation</a></li><li><a href="https://www.bigeasyroofingcompany.com/residential/hail-damage-roof-repair/">Hail Damage Repair</a></li><li><a href="https://www.bigeasyroofingcompany.com/residential/roof-insulation/">Roof Insulation</a></li><li><a href="https://www.bigeasyroofingcompany.com/residential/siding-installation/">Siding Installation</a></li><li><a href="https://www.bigeasyroofingcompany.com/residential/ventilation/">Ventilation</a></li><li><a href="https://www.bigeasyroofingcompany.com/residential/weatherproofing/">Weatherproofing</a></li></ul></div>
       <div><h4>Commercial Roofing</h4><ul class="ftwo"><li><a href="https://www.bigeasyroofingcompany.com/commercial/replacement/">Roof Replacement</a></li><li><a href="https://www.bigeasyroofingcompany.com/commercial/roof-installation/">Roof Installation</a></li><li><a href="https://www.bigeasyroofingcompany.com/commercial/re-roofing/">Re-Roofing</a></li><li><a href="https://www.bigeasyroofingcompany.com/commercial/repairs/">Repairs</a></li><li><a href="https://www.bigeasyroofingcompany.com/commercial/inspection/">Inspection</a></li><li><a href="https://www.bigeasyroofingcompany.com/commercial/leak-detection/">Leak Detection</a></li><li><a href="https://www.bigeasyroofingcompany.com/commercial/roof-maintenance/">Roof Maintenance</a></li><li><a href="https://www.bigeasyroofingcompany.com/commercial/coating/">Coating</a></li><li><a href="https://www.bigeasyroofingcompany.com/commercial/elastomeric-coatings/">Elastomeric Coatings</a></li><li><a href="https://www.bigeasyroofingcompany.com/commercial/flashing-repair/">Flashing Repair</a></li><li><a href="https://www.bigeasyroofingcompany.com/commercial/hail-damage-roof-repair/">Hail Damage Repair</a></li><li><a href="https://www.bigeasyroofingcompany.com/commercial/roofing-insulation/">Roofing Insulation</a></li><li><a href="https://www.bigeasyroofingcompany.com/commercial/siding-installation/">Siding Installation</a></li><li><a href="https://www.bigeasyroofingcompany.com/commercial/ventilation/">Ventilation</a></li></ul></div>
