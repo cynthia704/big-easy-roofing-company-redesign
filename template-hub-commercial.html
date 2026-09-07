@@ -1050,6 +1050,60 @@ body.modal-on{overflow:hidden}
 }
 @media (prefers-reduced-motion:reduce){ .cta2-num{transition:none} }
 
+/* ---- the same dropdown, on wp_nav_menu() markup -------------------------
+   The WordPress menu for this site is intact: Top Menu id 5, 54 children.
+   The theme just stopped calling it. These rules mean the dev team can swap
+   the hard-coded links for wp_nav_menu() and paste this, with no custom
+   walker: WordPress's own li.menu-item-has-children and ul.sub-menu behave
+   exactly like our .mi and .mpanel. */
+.menu ul{list-style:none;margin:0;padding:0}
+.menu li{position:static}
+.menu li.menu-item-has-children>a{display:inline-flex;align-items:center;gap:5px}
+.menu li.menu-item-has-children>a::after{content:"";width:8px;height:8px;
+  border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+  transform:rotate(45deg) translate(-2px,-2px);opacity:.62;
+  transition:transform .25s var(--ease),opacity .25s}
+
+@media (min-width:1025px){
+  .menu>li{display:inline-flex;align-items:center}
+  .menu li.menu-item-has-children:hover>a::after,
+  .menu li.menu-item-has-children:focus-within>a::after{opacity:1;
+    transform:rotate(-135deg) translate(-3px,-3px)}
+  .menu .sub-menu{position:absolute;left:0;top:100%;margin-top:16px;
+    width:max-content;max-width:min(760px,calc(100vw - 48px));
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px 26px;
+    background:linear-gradient(180deg,#16233A,#101A2B);border:1px solid var(--line);
+    border-radius:16px;padding:22px 24px;box-shadow:0 40px 80px -34px #000;
+    opacity:0;visibility:hidden;pointer-events:none;transform:translateY(8px);
+    transition:opacity .22s var(--ease),transform .22s var(--ease),visibility .22s;
+    z-index:60}
+  .menu li.menu-item-has-children:hover>.sub-menu,
+  .menu li.menu-item-has-children:focus-within>.sub-menu,
+  .menu li.menu-item-has-children.open>.sub-menu{opacity:1;visibility:visible;
+    pointer-events:auto;transform:translateY(0)}
+}
+.menu .sub-menu a{display:block;padding:7px 0;font:500 14px/1.35 Inter;color:#C6D2E2;
+  transition:color .2s var(--ease)}
+.menu .sub-menu a:hover{color:var(--amber)}
+
+@media (max-width:1024px){
+  .menu>li{display:grid;grid-template-columns:1fr auto;align-items:center;
+    border-bottom:1px solid var(--line)}
+  .menu>li>.sub-menu{grid-column:1/-1;display:none;grid-template-columns:1fr 1fr;
+    gap:0 14px;padding:0 0 12px 6px}
+  .menu>li.open>.sub-menu{display:grid}
+  .menu li.menu-item-has-children>a::after{display:none}
+  .menu>li>.wpmi-tog{display:inline-flex;align-items:center;justify-content:center;
+    width:44px;height:44px;background:none;border:0;color:var(--muted);cursor:pointer;
+    transition:transform .25s var(--ease)}
+  .menu>li.open>.wpmi-tog{transform:rotate(180deg);color:var(--amber)}
+  .menu>li>.wpmi-tog svg{width:15px;height:15px}
+}
+@media (prefers-reduced-motion:reduce){
+  .menu .sub-menu,.menu li.menu-item-has-children>a::after,.menu>li>.wpmi-tog{
+    transition:none}
+}
+
 /* ============================================================
    TEMPLATE ADDITIONS - appended after Concept A's own rules
    ============================================================ */
@@ -3393,6 +3447,56 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
       });
     }, {passive:true});
   }
+})();
+</script>
+<script>
+/* Companion to the dropdown script, for wp_nav_menu() markup.
+   WordPress does not emit a toggle button, so on a phone this adds one to each
+   li.menu-item-has-children. On desktop the panel opens on hover and on focus
+   through CSS alone, so nothing here runs. Harmless on the preview, which has
+   no such list items. */
+(function(){
+  var lis = [].slice.call(document.querySelectorAll('.menu li.menu-item-has-children'));
+  if(!lis.length) return;
+  var CHEV = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+    'stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">' +
+    '<path d="m6 9 6 6 6-6"/></svg>';
+
+  lis.forEach(function(li){
+    var sub = li.querySelector(':scope > .sub-menu');
+    if(!sub) return;
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'wpmi-tog';
+    btn.setAttribute('aria-expanded','false');
+    var label = (li.querySelector(':scope > a') || {}).textContent || 'this';
+    btn.setAttribute('aria-label','Open the ' + label.trim() + ' menu');
+    btn.innerHTML = CHEV;
+    li.insertBefore(btn, sub);
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      var open = li.classList.contains('open');
+      lis.forEach(function(o){
+        if(o !== li){
+          o.classList.remove('open');
+          var b = o.querySelector(':scope > .wpmi-tog');
+          if(b) b.setAttribute('aria-expanded','false');
+        }
+      });
+      li.classList.toggle('open', !open);
+      btn.setAttribute('aria-expanded', String(!open));
+    });
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key !== 'Escape') return;
+    lis.forEach(function(li){
+      li.classList.remove('open');
+      var b = li.querySelector(':scope > .wpmi-tog');
+      if(b) b.setAttribute('aria-expanded','false');
+    });
+  });
 })();
 </script>
 <script>
