@@ -1,0 +1,27 @@
+Material photography for /roofing-types/.
+Source: Pexels. Pexels License - free to use, commercial use allowed,
+no attribution required. Ids kept so any image can be traced back.
+
+The set this replaced was borrowed whole from the residential library, nine
+images out of nine. On a page whose job is telling shingle from metal from
+slate from flat, that is worse than duplication.
+
+Thirteen sources, thirteen slots, no reuse, and nothing shared with the
+residential, commercial or soffit sets. Checked: com-torchdown is 38510717, so
+the flat-roof picks here are 38781399 and 38781400.
+
+Cropped to each slot's measured ratio rather than downloaded raw.
+
+typ-banner.jpg         pexels.com/photo/12660749  a whole house, wide, roof and siding together
+typ-card-shingle.jpg   pexels.com/photo/237907    asphalt granules in macro
+typ-card-singleply.jpg pexels.com/photo/38781400  single ply membrane being laid
+typ-existing.jpg       pexels.com/photo/28954790  aged cedar shake roof with dormers, a roof already up there
+typ-flat.jpg           pexels.com/photo/38781399  worker rolling membrane out on a low-slope roof
+typ-heat.jpg           pexels.com/photo/3621348   weathered clay tile baking in the sun
+typ-hero.jpg           pexels.com/photo/36491092  shingle roof and dormer, high contrast, holds up under the overlay
+typ-metal.jpg          pexels.com/photo/11557060  dark standing seam metal roof on a red house
+typ-shingle-cost.jpg   pexels.com/photo/4334097   asphalt shingle field, tight
+typ-shingle-wind.jpg   pexels.com/photo/37677394  roofer laying shingles over underlayment
+typ-slate.jpg          pexels.com/photo/20764049  blue grey slate with a dormer window
+typ-weight.jpg         pexels.com/photo/38629153  dark scalloped slate, the heaviest thing a deck carries
+typ-wind.jpg           pexels.com/photo/14615663  storm damaged roof, timbers open to the sky
