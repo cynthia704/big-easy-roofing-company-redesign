@@ -1,0 +1,20 @@
+Photography for /roof-insurance-claims/.
+Source: Pexels. Pexels License, free to use, commercial use allowed,
+no attribution required. Ids kept so any image can be traced back.
+
+Nothing here is shared with the residential, commercial, soffit or roofing
+types sets. Every id was checked against the other credits files before
+download, and the download script refuses to run on a collision.
+
+Cropped to each slot's measured ratio rather than downloaded raw.
+
+ins-banner.jpg         pexels.com/photo/1029599   house exterior, wide
+ins-hail.jpg           pexels.com/photo/36237047  damaged house exterior, roof and wall damage
+ins-hero.jpg           pexels.com/photo/4170461   village houses damaged by a thunderstorm
+ins-row-cause.jpg      pexels.com/photo/38524253  roofer working on a house roof against clear sky
+ins-row-deductible.jpg pexels.com/photo/618158    signing a document
+ins-row-grade.jpg      pexels.com/photo/7735699   reviewing a document with a pen
+ins-row-upgrade.jpg    pexels.com/photo/9431615   roofer laying new roof tiles
+ins-storm.jpg          pexels.com/photo/34680655  aerial view of a hurricane damaged area
+ins-water.jpg          pexels.com/photo/14032089  water damaged ceiling in a room corner
+ins-wind.jpg           pexels.com/photo/37704246  worker repairing a roof on a brick house

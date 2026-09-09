@@ -1,0 +1,20 @@
+Photography for /about/.
+Source: Pexels. Pexels License, free to use, commercial use allowed,
+no attribution required. Ids kept so any image can be traced back.
+
+Nothing here is shared with the residential, commercial, soffit or roofing
+types sets. Every id was checked against the other credits files before
+download, and the download script refuses to run on a collision.
+
+Cropped to each slot's measured ratio rather than downloaded raw.
+
+abt-banner.jpg         pexels.com/photo/1914833   white and red painted house, wide
+abt-com.jpg            pexels.com/photo/39238311  roofing contractors working on a flat roof
+abt-hero.jpg           pexels.com/photo/5264807   people repairing a house roof
+abt-res.jpg            pexels.com/photo/37704237  workers repairing a chimney on a rooftop
+abt-row-adjuster.jpg   pexels.com/photo/39238315  roofer working on an urban roof in daylight
+abt-row-crew.jpg       pexels.com/photo/37623624  workers repairing a roof with safety gear
+abt-row-warranty.jpg   pexels.com/photo/7567600   signing a paper
+abt-row-written.jpg    pexels.com/photo/7681200   people working through paperwork together
+abt-soffit.jpg         pexels.com/photo/17274402  the underside of an overhanging eave, seen from below
+abt-types.jpg          pexels.com/photo/31161400  red and blue tiled roofs, close
