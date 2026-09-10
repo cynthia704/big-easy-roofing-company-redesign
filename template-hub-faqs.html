@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>About Our New Orleans Roofing Team | Big Easy Roofing Company</title>
-<meta name="description" content="Big Easy Roofing Company serves New Orleans and 13 nearby cities, residential and commercial roofing. Call 504-229-3955 for a free inspection.">
+<title>New Orleans Roofing FAQs | Big Easy Roofing Company</title>
+<meta name="description" content="Answers to common New Orleans roofing questions: repair or replace, how long a roof takes, and how often to inspect. Call 504-229-3955 to ask yours.">
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2065,155 +2065,60 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 
 .hxBlue{background:#EDF1F7}
 
-/* ===== /about/ ==========================================================
-   These rules exist so the About page stops looking like a service page.
-   Everything below the page header uses its own components. Colours, fonts
-   and spacing come from the tokens already in this sheet. */
+/* ===== /faqs/ ============================================================
+   Grouped, everything open, a jump list at the top. The hub pages use an
+   accordion, which is right for a footnote FAQ and wrong for a page that is
+   nothing but questions: it hides all the content behind clicks and gives a
+   reader no way to scan for their own question. */
+.faqSec{background:var(--paper)}
 
-/* ---- 1. the story: full width, no sidebar ---------------------------- */
-.abtStory{background:var(--paper)}
-/* two columns so nothing sits alone on a row. The hub intro puts a sticky
-   enquiry card in this right hand space; here it is the prose, which is the
-   difference between asking for a job and explaining who you are. */
-.abtStoryWrap{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);
-  column-gap:60px;row-gap:32px;align-items:start}
-.abtLede{font-family:'Barlow Condensed',sans-serif;font-weight:800;
-  font-size:clamp(30px,3.9vw,52px);line-height:1.05;letter-spacing:-.01em;
-  color:#0E1726;margin:0;text-wrap:balance}
-.abtCols p{margin:0 0 18px;font-size:16px;line-height:1.75;
+.faqJump{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  margin:0 0 44px}
+.faqJump a{display:inline-flex;align-items:center;gap:9px;padding:11px 16px;
+  border-radius:999px;border:1px solid rgba(20,30,50,.14);background:#fff;
+  font:700 13.5px/1 Inter;color:#1F3350;
+  transition:border-color .25s var(--ease),transform .25s var(--ease)}
+.faqJump a span{font:700 11px/1 Inter;color:#7B4A05;background:rgba(245,165,36,.22);
+  border-radius:999px;padding:4px 7px}
+.faqJump a:hover{border-color:rgba(245,165,36,.6);transform:translateY(-2px)}
+
+.faqGroup{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);
+  column-gap:52px;row-gap:20px;padding:34px 0;
+  border-top:1px solid rgba(20,30,50,.1);scroll-margin-top:96px}
+.faqGroup:first-of-type{border-top:0;padding-top:6px}
+.faqGroup-h{position:sticky;top:96px;align-self:start}
+.faqGroup-h h2{margin:0 0 12px;font-size:clamp(22px,2.4vw,30px);line-height:1.12;
+  color:#0E1726}
+.faqGroup-h p{margin:0 0 14px;font-size:14.5px;line-height:1.7;
   color:var(--muteddark)}
-.abtCols p:last-child{margin-bottom:0}
-.abtCols p a{color:#1F3350;font-weight:600;
-  text-decoration:underline;text-decoration-color:rgba(245,165,36,.85);
-  text-underline-offset:3px;text-decoration-thickness:2px}
-.abtCols p a:hover{color:var(--amber-lo)}
-.abtPull{margin:30px 0 0;padding:24px 0 0;border-top:2px solid rgba(20,30,50,.12);
-  font-family:'Barlow Condensed',sans-serif;font-weight:700;
-  font-size:clamp(19px,2vw,26px);line-height:1.32;color:#26364E}
-/* a call block appended into this section lands inside the grid, so it has to
-   be told to span. Without this it becomes a third column and sits under the
-   statement alone, which is exactly how the radar calls went wrong on the
-   homepage. */
-.abtStoryWrap .secta{grid-column:1/-1;margin-top:16px}
-@media (max-width:900px){ .abtStoryWrap{grid-template-columns:1fr} }
-
-/* ---- 2. the numbers band --------------------------------------------- */
-.abtNums{background:var(--ink);padding:clamp(34px,4vw,52px) 0}
-.abtNums .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
-.abtNum{border-left:2px solid rgba(245,165,36,.55);padding-left:18px}
-.abtNum b{display:block;font-family:'Barlow Condensed',sans-serif;font-weight:800;
-  font-size:clamp(38px,4.6vw,60px);line-height:1;color:var(--amber);
-  letter-spacing:-.02em}
-.abtNum span{display:block;margin-top:8px;font-size:13.5px;line-height:1.5;
-  color:var(--muted)}
-@media (max-width:820px){ .abtNums .wrap{grid-template-columns:1fr 1fr;gap:22px} }
-@media (max-width:460px){ .abtNums .wrap{grid-template-columns:1fr} }
-
-/* ---- 3. what we do: four cards, all visible --------------------------- */
-.abtDo{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.abtCard{position:relative;display:block;border-radius:16px;overflow:hidden;
-  min-height:340px;isolation:isolate;
-  transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
-.abtCard-z{position:absolute;inset:0;background-size:cover;background-position:center;
-  transition:transform .5s var(--ease)}
-.abtCard::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(6,12,22,.15) 30%,rgba(6,12,22,.88) 100%)}
-.abtCard-b{position:relative;z-index:1;display:flex;flex-direction:column;
-  height:100%;justify-content:flex-end;padding:22px 20px 20px;gap:6px}
-.abtCard-c{align-self:flex-start;font:700 11px/1 Inter;letter-spacing:.1em;
-  text-transform:uppercase;color:#20160A;background:var(--amber);
-  padding:6px 9px;border-radius:999px;margin-bottom:auto}
-.abtCard h3{margin:0;color:#fff;font-size:20px;line-height:1.15}
-.abtCard-p{font-size:13.5px;line-height:1.6;color:#C6D2E2}
-.abtCard-go{margin-top:6px;font:700 12px/1 Inter;letter-spacing:.08em;
-  text-transform:uppercase;color:var(--amber);display:inline-flex;
-  align-items:center;gap:7px}
-.abtCard-go i{font-style:normal;transition:transform .25s var(--ease)}
-.abtCard:hover{transform:translateY(-4px);box-shadow:0 22px 44px -22px rgba(6,12,22,.6)}
-.abtCard:hover .abtCard-z{transform:scale(1.06)}
-.abtCard:hover .abtCard-go i{transform:translateX(4px)}
-@media (max-width:1080px){ .abtDo{grid-template-columns:1fr 1fr} }
-@media (max-width:560px){ .abtDo{grid-template-columns:1fr} .abtCard{min-height:280px} }
-
-/* ---- 4. how a job runs: a timeline, not a widget ---------------------- */
-.abtFlowSec{background:var(--ink)}
-.abtFlowSec h2,.abtFlowSec .lead{color:#fff}
-.abtFlowSec .lead{color:#C6D2E2}
-.abtFlow{list-style:none;margin:0;padding:0;display:grid;
-  grid-template-columns:repeat(5,1fr);gap:20px;position:relative}
-/* the line the numerals sit on. Behind them, hence the negative z-index. */
-.abtFlow::before{content:"";position:absolute;left:0;right:0;top:19px;height:2px;
-  background:linear-gradient(90deg,rgba(245,165,36,.5),rgba(245,165,36,.08));
-  z-index:0}
-.abtStep{position:relative;z-index:1;padding-right:8px}
-.abtStep-n{display:flex;align-items:center;justify-content:center;
-  width:40px;height:40px;border-radius:50%;background:var(--ink);
-  border:2px solid rgba(245,165,36,.6);color:var(--amber);
-  font:800 15px/1 'Barlow Condensed',sans-serif;margin-bottom:16px}
-.abtStep-w{display:block;font:700 11px/1 Inter;letter-spacing:.09em;
-  text-transform:uppercase;color:var(--amber);margin-bottom:9px}
-.abtStep h3{margin:0 0 8px;color:#fff;font-size:17px;line-height:1.2}
-.abtStep p{margin:0;font-size:13.5px;line-height:1.65;color:#B7C5D8}
-@media (max-width:1080px){
-  .abtFlow{grid-template-columns:repeat(2,1fr);gap:30px}
-  .abtFlow::before{display:none}
-}
-@media (max-width:560px){ .abtFlow{grid-template-columns:1fr} }
-
-/* ---- 5. promises: numbered panels, no photography --------------------- */
-.abtHoldSec{background:#fff}
-.abtHolds{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-.abtHold{display:flex;gap:18px;padding:26px 24px;border-radius:16px;
-  border:1px solid rgba(20,30,50,.1);background:var(--paper);
-  transition:border-color .3s var(--ease),transform .3s var(--ease)}
-.abtHold:hover{border-color:rgba(245,165,36,.5);transform:translateY(-3px)}
-.abtHold-n{flex:none;font-family:'Barlow Condensed',sans-serif;font-weight:800;
-  font-size:34px;line-height:1;color:rgba(201,127,11,.35)}
-.abtHold h3{margin:0 0 10px;font-size:19px;line-height:1.22;color:#0E1726}
-.abtHold p{margin:0 0 14px;font-size:14.5px;line-height:1.7;color:var(--muteddark)}
-.abtHold-c{display:flex;flex-wrap:wrap;gap:8px}
-.abtHold-c span{font:600 12px/1 Inter;color:#3B4C66;background:rgba(20,30,50,.06);
-  border-radius:999px;padding:7px 11px}
-/* not var(--amber-lo): that measures 2.98:1 on this card and the link needs
-   4.5:1. This one measures 4.78:1 and stays in the amber family. */
-.abtHold-go{display:inline-flex;align-items:center;gap:7px;margin-top:14px;
+.faqGroup-go{display:inline-flex;align-items:center;gap:8px;
   font:700 12px/1 Inter;letter-spacing:.07em;text-transform:uppercase;
   color:#9A6108}
-.abtHold-go i{font-style:normal;transition:transform .25s var(--ease)}
-.abtHold-go:hover i{transform:translateX(4px)}
-.abtNote{margin-top:24px;padding:24px 26px;border-radius:16px;
-  border:1px dashed rgba(20,30,50,.22);background:rgba(245,165,36,.05)}
-.abtNote h3{margin:0 0 10px;font-size:18px;color:#0E1726}
-.abtNote p{margin:0 0 10px;font-size:14.5px;line-height:1.7;color:var(--muteddark)}
-.abtNote p:last-child{margin-bottom:0}
-@media (max-width:820px){ .abtHolds{grid-template-columns:1fr} }
+.faqGroup-go i{font-style:normal;transition:transform .25s var(--ease)}
+.faqGroup-go:hover i{transform:translateX(4px)}
 
-/* ---- 6. coverage, with the form beside it ----------------------------- */
-.abtWhereWrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
-  column-gap:56px;row-gap:40px;align-items:start}
-.abtWhere h2,.abtWhere .lead{color:#fff}
-.abtWhere .lead{color:#C6D2E2}
-.abtGeos{display:grid;grid-template-columns:1fr 1fr;gap:26px 32px}
-.abtGeo h3{margin:0 0 12px;font-size:13px;letter-spacing:.09em;
-  text-transform:uppercase;color:var(--amber)}
-.abtGeo-l{display:flex;flex-direction:column}
-.abtGeo-l a{padding:7px 0;font-size:14.5px;color:#C6D2E2;
-  border-bottom:1px solid rgba(255,255,255,.08);
-  transition:color .2s var(--ease),padding-left .2s var(--ease)}
-.abtGeo-l a:last-child{border-bottom:0}
-.abtGeo-l a:hover{color:var(--amber);padding-left:6px}
-.abtGeo-n{margin:26px 0 0;font-size:13.5px;line-height:1.7;color:var(--muted);
-  max-width:52ch}
-@media (max-width:980px){
-  .abtWhereWrap{grid-template-columns:1fr}
-  .abtGeos{grid-template-columns:repeat(4,1fr)}
+.faqQs{display:grid;gap:14px}
+.faqQ{padding:20px 22px;border-radius:14px;background:#fff;
+  border:1px solid rgba(20,30,50,.09);
+  transition:border-color .25s var(--ease)}
+.faqQ:hover{border-color:rgba(245,165,36,.4)}
+.faqQ h3{margin:0 0 9px;font-size:16.5px;line-height:1.3;color:#0E1726}
+.faqQ p{margin:0;font-size:14.5px;line-height:1.72;color:var(--muteddark)}
+.faqQ p a{color:#1F3350;font-weight:600;text-decoration:underline;
+  text-decoration-color:rgba(245,165,36,.85);text-underline-offset:3px;
+  text-decoration-thickness:2px}
+.faqQ p a:hover{color:#9A6108}
+
+.faqNote{margin:30px 0 0;text-align:center;font-size:13.5px;line-height:1.7;
+  color:var(--muteddark);max-width:66ch;margin-inline:auto}
+
+@media (max-width:900px){
+  .faqGroup{grid-template-columns:1fr}
+  .faqGroup-h{position:static}
 }
-@media (max-width:760px){ .abtGeos{grid-template-columns:1fr 1fr} }
-
 @media (prefers-reduced-motion:reduce){
-  .abtCard,.abtCard-z,.abtCard-go i,.abtHold,.abtHold-go i,.abtGeo-l a{transition:none}
-  .abtCard:hover,.abtHold:hover{transform:none}
-  .abtCard:hover .abtCard-z{transform:none}
+  .faqJump a,.faqGroup-go i,.faqQ{transition:none}
+  .faqJump a:hover{transform:none}
 }
 
 /* ---- keyword highlighting in headings -----------------------------------
@@ -2399,46 +2304,116 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "About",
-          "item": "https://www.bigeasyroofingcompany.com/about/"
+          "name": "FAQs",
+          "item": "https://www.bigeasyroofingcompany.com/faqs/"
         }
       ]
-    },
-    {
-      "@type": "AboutPage",
-      "@id": "https://www.bigeasyroofingcompany.com/about/#page",
-      "url": "https://www.bigeasyroofingcompany.com/about/",
-      "name": "About Big Easy Roofing Company",
-      "description": "Residential and commercial roofing contractor covering New Orleans and 13 surrounding cities with one in-house crew.",
-      "mainEntity": {
-        "@id": "https://www.bigeasyroofingcompany.com/#business"
-      }
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "How do I know if my roof needs replacing or if it can just be repaired?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It comes down to the age of the roof, how far the damage has spread, and whether repairs cost enough to be worth putting toward a replacement instead. A roof past twenty years with damage across several slopes is usually a replacement. A roof with one bad valley usually is not. We walk it and tell you which one you have, and we will say repair when it is a repair."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a roof replacement take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On a standard house, one working day once the materials are on site. Bigger or more complicated roofs take longer and we will say so before we start. The point of the single day is that your house is never open to the sky overnight."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I put a new roof over the existing one?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sometimes, and it is usually a false economy. A second layer hides whatever is wrong with the decking underneath, adds weight the structure was not designed for, and traps heat that shortens the life of the new shingles. Local code also limits how many layers are allowed. We will tell you honestly whether your roof is a candidate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should my roof be inspected?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Once a year, and again after any storm that brought hail or high wind. Most of what an inspection finds is cheap to fix at that point and expensive to fix a year later."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What can I do to make the roof last longer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Keep the gutters and downspouts clear, cut back branches that touch or overhang it, deal with moss and algae before they spread, and make sure the attic is actually ventilated. Most roofs we replace early failed from heat and trapped moisture rather than from the weather on top."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you handle the insurance claim for me?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, and it is worth knowing why. Only a licensed public adjuster is allowed to negotiate on your behalf. Our part is the evidence: dated photographs, a scope written out line by line, and somebody standing on the roof when your adjuster inspects it. The filing and the settlement stay in your name."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you cover my deductible?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Anybody offering to is proposing fraud in your name rather than theirs, which is reason enough to end the conversation there. Every estimate we write breaks your share out on its own line so it is never buried in a total."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I call you or my insurer first?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Call a roofer first if you can. An inspection tells you whether you have storm damage or wear, and a claim filed on wear still goes on your record when it is refused. If water is coming in right now, tarp first and worry about the order afterward."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why was my neighbor approved and I was refused?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually the file rather than the roof. Hail does not hit two houses on the same street evenly, and two estimates of the same damage can record completely different things. If you think a refusal was wrong, get the roof documented properly and ask about a reinspection."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How fast can you get here after a storm?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tarping is a twenty four hour service right through hurricane season, and somebody picks up the emergency line outside office hours. If the roof is not actively letting water in, expect an inspection the same day or the next working one."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Are you licensed and insured?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes to both. Ask every contractor who quotes you the same question, and check the license number before you sign anything."
+            "text": "Both, and you should make every bidder prove it rather than say it. A license number takes a minute to look up. That minute matters most right after a storm, when the city fills with trucks that were somewhere else last week."
           }
         },
         {
           "@type": "Question",
-          "name": "What area do you cover?",
+          "name": "Do you want money up front?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "New Orleans and 13 surrounding cities, from Gretna and Harahan out to Slidell, Mandeville, Covington, Hammond, Laplace and Baton Rouge. No travel surcharge on any of them."
+            "text": "Nothing changes hands before your job has a date on the calendar. The estimate comes first, itemized down to quantities and labor so you can see how the total was arrived at, and you sign off on it before any material is ordered."
           }
         },
         {
           "@type": "Question",
-          "name": "Do you ask for money up front?",
+          "name": "Do you subcontract the work?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No deposit before the work is scheduled. You see a line-item estimate first and nothing starts until you have agreed to it."
+            "text": "No. The people who climb up on inspection day are the same people who tear the roof off and rebuild it. Nobody gets handed along to a third party halfway through, so there is never a question about who answers for the result."
           }
         },
         {
@@ -2446,7 +2421,55 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
           "name": "Do you knock on doors after storms?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. If somebody turns up at your door claiming to be us, they are not."
+            "text": "Never. Every visit we make begins with your phone call. If a stranger is on your porch using our name after a storm, it is not us, and you are well within your rights to ask for identification and send them on their way."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the inspection cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nothing, and you keep the photographs and the written estimate whether or not you use us for the work."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What area do you cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fourteen cities. New Orleans plus thirteen more, reaching east to Slidell, north over the lake to Mandeville and Covington, and west through Laplace as far as Baton Rouge. How far we drive does not change what you pay. The full list is on the service areas page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What roofing material should I use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the pitch, what the deck can carry and what is already up there. Shingle suits most houses here, metal lasts longest and costs more up front, and a low-slope roof needs a membrane rather than either. We will tell you which of the eleven we would rule out for your roof and why."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who actually provides the warranty?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Two separate promises, and they are worth telling apart. Shingles and membranes are covered by whoever manufactured them, which is why the brand going on your roof matters. The installation is covered by us. Ask anyone quoting you which of the two they mean, because a guarantee on workmanship is only ever as good as the business standing behind it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the GAF WindProven warranty?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The one shingle warranty we know of that puts no ceiling on wind speed and does not carve out named storms, which is the exclusion most policies quietly keep. Qualifying is specific: Timberline shingles with LayerLock, plus four or more GAF accessories on the same roof. Whether yours can reach it is something we answer at the estimate, in writing. Full terms sit on our warranty page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you do commercial roofs as well as houses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, and it is a real half of the business rather than a sideline. Fourteen services built for flat and low-slope buildings, scheduled around the hours you are open so the doors stay unlocked while the work goes on overhead. One crew and one number, whichever kind of roof you have."
           }
         }
       ]
@@ -2458,7 +2481,7 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
 <body>
 
 <div class="note" id="note"><button onclick="document.getElementById('note').remove()">&times;</button>
-<b>Template</b><strong>/about/</strong>, on its own layout rather than the service hub kit. The live page has no H1, carries another company name and the wrong phone number. None of its body copy carries over.</div>
+<b>Template</b><strong>/faqs/</strong>, grouped and open rather than the accordion the hub pages use. The live page has no headings at all, only five questions and no FAQPage markup. All five carry over, twelve more are added, and every added answer comes from something already established on this site.</div>
 
 <!-- ============ UTILITY BAR ============ -->
 <div class="util">
@@ -2549,11 +2572,11 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
 </header>
 
 <section class="ihero">
-  <div class="ibg" style="background-image:url(_assets/abt-hero.jpg)"></div>
+  <div class="ibg" style="background-image:url(_assets/faq-hero.jpg)"></div>
   <div class="wrap">
-    <nav class="icrumbs" aria-label="Breadcrumb"><a href="https://www.bigeasyroofingcompany.com/">Home</a><i>&rsaquo;</i><span aria-current="page">About</span></nav>
-    <h1>A <strong class="hl-amber">New Orleans Roofing Company</strong>, <br class="dtbr">Not a Storm Chaser</h1>
-    <p class="icreds">One in-house crew · 14 cities · Free inspection, and we say if it can wait</p>
+    <nav class="icrumbs" aria-label="Breadcrumb"><a href="https://www.bigeasyroofingcompany.com/">Home</a><i>&rsaquo;</i><span aria-current="page">FAQs</span></nav>
+    <h1>Twenty Questions, <br class="dtbr">Answered Without the Sales Pitch</h1>
+    <p class="icreds">Free inspection · No deposit before scheduling · We say if it can wait</p>
     <div class="iacts">
       <a href="#ask" class="btn btn-amber">Get a free inspection</a>
       <a href="tel:5042293955" class="btn btn-ghost">504-229-3955</a>
@@ -2567,378 +2590,148 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
     <span><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg>30 years in the trade</span>
     <span><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg>New Orleans + 13 cities</span>
     <span><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg>No subcontracting</span>
-    <span><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg>One in-house crew</span>
+    <span><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg>Straight answers, no sales visit</span>
   </div>
 </div>
 
-<section class="i light abtStory" id="story">
-  <div class="wrap abtStoryWrap">
-    <div class="abtStoryL">
-      <div class="head rv"><span class="eyebrow">Who you are calling</span></div>
-      <p class="abtLede rv d1">After a storm, this city fills up with roofers who were not here last year and will not be here next year. We are the other kind.</p>
-      <blockquote class="abtPull rv d2">Every roofer in this city says trusted, local and reliable. None of those are things you can check. The rest of this page is things you can.</blockquote>
-    </div>
-    <div class="abtCols rv d1">
-        <p>We are a residential and commercial roofing contractor working across New Orleans and thirteen surrounding cities. The same in-house crew handles the whole job, from the inspection to the last nail, which is why there is one number to call and one company answering for the result.</p>
-        <p>We do not knock on doors after a storm and we do not ask for money before the work starts. If a roof can last another season we would rather say so and be the people you call when it cannot.</p>
-        <p>Most of what we do is unglamorous. Flashing that was never sealed properly, a valley that has been patched twice already, decking that went soft under a roof somebody sold as new four years ago. That is the work.</p>
-        <p>You can see the full range on the <a href="https://www.bigeasyroofingcompany.com/">Big Easy Roofing Company</a> homepage, or reach a roofer directly through the <a href="https://www.bigeasyroofingcompany.com/contact/">contact page</a>.</p>
-    </div>
-    <div class="secta rv d2">
-      <button class="btn btn-amber" type="button" data-open-modal>Talk to a roofer</button>
-      <a class="btn btn-ghost" href="tel:5042293955">Call 504-229-3955</a>
-      <p>You will get somebody who has been on a roof this week, not a call center.</p>
-    </div>
-  </div>
-</section>
-
-<section class="i abtNums">
+<section class="i light faqSec" id="questions">
   <div class="wrap">
-      <div class="abtNum rv"><b>14</b><span>cities across Southeast Louisiana, with no travel surcharge on any</span></div>
-      <div class="abtNum rv d1"><b>47</b><span>services across residential, commercial, roofing types and soffit</span></div>
-      <div class="abtNum rv d2"><b>24</b><span>hours from tear-off to finished roof, once the materials are on site</span></div>
-      <div class="abtNum rv d3"><b>0</b><span>cost for the inspection, the photographs and the written estimate</span></div>
-  </div>
-</section>
-
-<section class="i light hxBlue abtDoSec" id="what-we-do">
-  <div class="wrap">
-    <div class="head ctr rv" style="margin-bottom:38px">
-      <span class="eyebrow">What we actually do</span>
-      <h2>Four Sides of the <strong class="hl-amber">Same Business</strong></h2>
-      <p class="lead" style="margin-inline:auto">Not a list of everything a roof could ever need. These are the four things this crew is set up to do, and every one of them is handled in house.</p>
+    <div class="head ctr rv" style="margin-bottom:26px">
+      <span class="eyebrow">Straight answers</span>
+      <h2>The Questions People Actually <strong class="hl-amber">Ask a Roofer</strong></h2>
+      <p class="lead" style="margin-inline:auto">Grouped so you can find yours, and every answer is open. If the one you want is not here, the phone is answered by somebody who has been on a roof.</p>
     </div>
-    <div class="abtDo">
-      <a class="abtCard rv" href="https://www.bigeasyroofingcompany.com/residential/">
-        <span class="abtCard-z" style="background-image:url(_assets/abt-res.jpg)"></span>
-        <span class="abtCard-b">
-          <span class="abtCard-c">19 services</span>
-          <h3>Residential Roofing</h3>
-          <span class="abtCard-p">Replacement, repair, leak detection, gutters, fascia, flashing, insulation and ventilation, on houses across the metro and across the lake.</span>
-          <span class="abtCard-go">See what is covered <i>&rarr;</i></span>
-        </span>
-      </a>
-      <a class="abtCard rv d1" href="https://www.bigeasyroofingcompany.com/commercial/">
-        <span class="abtCard-z" style="background-image:url(_assets/abt-com.jpg)"></span>
-        <span class="abtCard-b">
-          <span class="abtCard-c">14 services</span>
-          <h3>Commercial Roofing</h3>
-          <span class="abtCard-p">Flat and low-slope work phased around your trading hours, including maintenance programs that keep a roof going rather than replacing it early.</span>
-          <span class="abtCard-go">See what is covered <i>&rarr;</i></span>
-        </span>
-      </a>
-      <a class="abtCard rv d2" href="https://www.bigeasyroofingcompany.com/roofing-types/">
-        <span class="abtCard-z" style="background-image:url(_assets/abt-types.jpg)"></span>
-        <span class="abtCard-b">
-          <span class="abtCard-c">11 materials</span>
-          <h3>Roofing Types</h3>
-          <span class="abtCard-p">Shingle, metal, slate, tile, cedar shake and the five low-slope systems, with a straight answer about which ones we would rule out for your roof.</span>
-          <span class="abtCard-go">See what is covered <i>&rarr;</i></span>
-        </span>
-      </a>
-      <a class="abtCard rv d3" href="https://www.bigeasyroofingcompany.com/soffit-services/">
-        <span class="abtCard-z" style="background-image:url(_assets/abt-soffit.jpg)"></span>
-        <span class="abtCard-b">
-          <span class="abtCard-c">3 pages</span>
-          <h3>Soffit and Fascia</h3>
-          <span class="abtCard-p">The part of a roof people notice once something is nesting in it. Intake ventilation gets checked at the same visit, because they fail together.</span>
-          <span class="abtCard-go">See what is covered <i>&rarr;</i></span>
-        </span>
-      </a>
+    <nav class="faqJump rv d1" aria-label="Question topics"><a href="#repair-or-replace">Repair or Replace <span>5</span></a><a href="#storm-and-claims">Storms and Insurance <span>5</span></a><a href="#working-with-us">Working With Us <span>6</span></a><a href="#materials-warranty">Materials and Warranty <span>4</span></a></nav>
+  <section class="faqGroup" id="repair-or-replace">
+    <div class="faqGroup-h">
+      <h2>Repair or Replace</h2>
+      <p>The question almost everybody opens with, and the one where a second opinion is worth most.</p>
+      <a class="faqGroup-go" href="https://www.bigeasyroofingcompany.com/residential/">All residential services <i>&rarr;</i></a>
     </div>
-    <div class="secta rv d2">
-      <button class="btn btn-amber" type="button" data-open-modal>Book a free inspection</button>
-      <a class="btn btn-ghost" href="tel:5042293955">Call 504-229-3955</a>
-      <p>One crew covers every one of these, so nobody hands your job to another trade halfway through.</p>
-    </div>
-  </div>
-</section>
-
-<section class="i abtFlowSec" id="how-it-runs">
-  <div class="wrap">
-    <div class="head rv" style="margin-bottom:40px">
-      <span class="eyebrow">How a job runs</span>
-      <h2>Five Steps, and You See <br class="dtbr"><strong class="hl-amber">the Price</strong> Before Step Four</h2>
-      <p class="lead">This is what happens between your first phone call and the dumpster pulling off your driveway. Nothing costs you anything until step three.</p>
-    </div>
-    <ol class="abtFlow">
-      <li class="abtStep rv">
-        <span class="abtStep-n">01</span>
-        <span class="abtStep-w">Same or next day</span>
-        <h3>You Call, We Come and Look</h3>
-        <p>Straight away if the ceiling is already wet. We walk the roof rather than looking at it from the driveway, and the inspection is free either way.</p>
-      </li>
-      <li class="abtStep rv d1">
-        <span class="abtStep-n">02</span>
-        <span class="abtStep-w">Within 48 hours</span>
-        <h3>You Get Photographs and a Written Estimate</h3>
-        <p>Every slope photographed, and a line-item estimate showing materials, quantities and labor rather than one number at the bottom.</p>
-      </li>
-      <li class="abtStep rv d2">
-        <span class="abtStep-n">03</span>
-        <span class="abtStep-w">Your timing</span>
-        <h3>You Decide, in Your Own Time</h3>
-        <p>No deposit before the work is scheduled and no pressure to sign on the day. We do not come back uninvited.</p>
-      </li>
-      <li class="abtStep rv d3">
-        <span class="abtStep-n">04</span>
-        <span class="abtStep-w">24 hours</span>
-        <h3>We Do the Work, Mostly Inside a Day</h3>
-        <p>Once materials are on site the tear-off and the new roof happen in the same day on a normal house. Your home is not open to the sky overnight.</p>
-      </li>
-      <li class="abtStep rv d3">
-        <span class="abtStep-n">05</span>
-        <span class="abtStep-w">Same day</span>
-        <h3>We Clean Up and Walk It With You</h3>
-        <p>Magnet swept across the drive and the lawn, and the warranty paperwork handed over on the day rather than posted later.</p>
-      </li>
-    </ol>
-    <div class="secta rv d2">
-      <button class="btn btn-amber" type="button" data-open-modal>Start at step one</button>
-      <a class="btn btn-ghost" href="tel:5042293955">Call 504-229-3955</a>
-      <p>Step one is a phone call and a look at the roof, and it costs nothing.</p>
-    </div>
-  </div>
-</section>
-
-<section class="i light abtHoldSec" id="promises">
-  <div class="wrap">
-    <div class="head rv" style="margin-bottom:38px">
-      <span class="eyebrow">What we will put in writing</span>
-      <h2>Four Things You Can <strong class="hl-amber">Hold Us To</strong></h2>
-      <p class="lead">Every roofer in this city says trusted and reliable. These four are checkable, and all of them go in the paperwork before you sign anything.</p>
-    </div>
-    <div class="abtHolds">
-      <article class="abtHold rv">
-        <span class="abtHold-n" aria-hidden="true">01</span>
-        <div>
-          <h3>A Whole Roof in One Working Day</h3>
-          <p>Once your materials are on site, the tear-off and the new roof happen in the same day on a normal house. That is a crew size and a scheduling promise, and it matters because a roof half off overnight is a roof that is open when the next squall arrives.</p>
-          <div class="abtHold-c"><span>Materials land first, then the roof comes off</span><span>Not open to the sky overnight</span></div>
-          <a class="abtHold-go" href="https://www.bigeasyroofingcompany.com/residential/replacement/">See the process <i>&rarr;</i></a>
-        </div>
-      </article>
-      <article class="abtHold rv d1">
-        <span class="abtHold-n" aria-hidden="true">02</span>
-        <div>
-          <h3>The Warranty Belongs to the Manufacturer</h3>
-          <p>The warranty covering a roof we install is written by the manufacturer, not by us. That matters because a contractor guarantee lasts exactly as long as the contractor, and this city has watched a lot of roofing companies come and go. We tell you at the estimate which warranty your roof qualifies for and what it excludes.</p>
-          <div class="abtHold-c"><span>The manufacturer carries it, not us</span><span>Exclusions explained before you sign</span></div>
-          <a class="abtHold-go" href="https://www.bigeasyroofingcompany.com/unlimited-wind-warranty/">Read the warranty terms <i>&rarr;</i></a>
-        </div>
-      </article>
-      <article class="abtHold rv d2">
-        <span class="abtHold-n" aria-hidden="true">03</span>
-        <div>
-          <h3>Your Adjuster Meets a Roofer, Not a Photograph</h3>
-          <p>On an insurance job we meet your adjuster on the roof rather than sending photographs and hoping. We will not promise your claim gets approved, because nobody honest can. What we will do is make sure the person deciding it is looking at test squares and creased tabs in person.</p>
-          <div class="abtHold-c"><span>Photographs taken before anything is tarped</span><span>A line-item scope of loss, not a single total</span></div>
-          <a class="abtHold-go" href="https://www.bigeasyroofingcompany.com/roof-insurance-claims/">How claims work <i>&rarr;</i></a>
-        </div>
-      </article>
-      <article class="abtHold rv d3">
-        <span class="abtHold-n" aria-hidden="true">04</span>
-        <div>
-          <h3>We Will Tell You If It Can Wait</h3>
-          <p>Not every roof that looks tired needs replacing this year. If an inspection finds a repair where somebody else found a replacement, that is what the report will say. It is a slower way to run a roofing company and it is the reason most of our work arrives by recommendation.</p>
-          <div class="abtHold-c"><span>A repair gets quoted as a repair</span><span>No deposit before the work is scheduled</span></div>
-          <a class="abtHold-go" href="https://www.bigeasyroofingcompany.com/contact/">Ask us to look <i>&rarr;</i></a>
-        </div>
-      </article>
-    </div>
-    <aside class="abtNote rv d2">
-      <h3>What You Will Not Find on This Page</h3>
-      <p>No award badges we cannot source, no team headcount that changes with the season, and no star rating pulled from somewhere you cannot click through to.</p><p>The warranty terms are GAF’s own, published on their site rather than ours, and the reviews on this site are reprinted word for word.</p>
-    </aside>
-    <div class="secta rv d2">
-      <button class="btn btn-amber" type="button" data-open-modal>Hold us to it</button>
-      <a class="btn btn-ghost" href="tel:5042293955">Call 504-229-3955</a>
-      <p>Ask for any of these in writing before you sign anything, and it goes in writing.</p>
-    </div>
-  </div>
-</section>
-
-<section class="i hxDeep abtWhere" id="coverage">
-  <div class="wrap abtWhereWrap">
-    <div class="abtWhereL">
-      <div class="head rv"><span class="eyebrow">Where we work</span><h2><strong class="hl-amber">New Orleans</strong> and Thirteen More</h2>
-      <p class="lead">Same crew, same warranty and the same response time whether you are in the Bywater or across the lake in Mandeville.</p></div>
-      <div class="abtGeos rv d1">
-        <div class="abtGeo">
-          <h3>Orleans and the West Bank</h3>
-          <div class="abtGeo-l"><a href="https://www.bigeasyroofingcompany.com/services-areas/">New Orleans</a><a href="https://www.bigeasyroofingcompany.com/services-areas/gretna/">Gretna</a><a href="https://www.bigeasyroofingcompany.com/services-areas/harahan/">Harahan</a></div>
-        </div>
-        <div class="abtGeo">
-          <h3>Jefferson Parish</h3>
-          <div class="abtGeo-l"><a href="https://www.bigeasyroofingcompany.com/services-areas/metairie/">Metairie</a><a href="https://www.bigeasyroofingcompany.com/services-areas/kenner/">Kenner</a><a href="https://www.bigeasyroofingcompany.com/services-areas/river-ridge/">River Ridge</a><a href="https://www.bigeasyroofingcompany.com/services-areas/st-rose/">St. Rose</a></div>
-        </div>
-        <div class="abtGeo">
-          <h3>Across the Lake</h3>
-          <div class="abtGeo-l"><a href="https://www.bigeasyroofingcompany.com/services-areas/slidell/">Slidell</a><a href="https://www.bigeasyroofingcompany.com/services-areas/mandeville/">Mandeville</a><a href="https://www.bigeasyroofingcompany.com/services-areas/covington/">Covington</a><a href="https://www.bigeasyroofingcompany.com/services-areas/madisonville/">Madisonville</a></div>
-        </div>
-        <div class="abtGeo">
-          <h3>Further Out</h3>
-          <div class="abtGeo-l"><a href="https://www.bigeasyroofingcompany.com/services-areas/hammond/">Hammond</a><a href="https://www.bigeasyroofingcompany.com/services-areas/laplace/">Laplace</a><a href="https://www.bigeasyroofingcompany.com/services-areas/baton-rouge/">Baton Rouge</a></div>
-        </div>
+    <div class="faqQs">
+      <div class="faqQ rv">
+        <h3>How do I know if my roof needs replacing or if it can just be repaired?</h3>
+        <p>It comes down to the age of the roof, how far the damage has spread, and whether repairs cost enough to be worth putting toward a replacement instead. A roof past twenty years with damage across several slopes is usually a replacement. A roof with one bad valley usually is not. We walk it and tell you which one you have, and we will say repair when it is a repair.</p>
       </div>
-      <p class="abtGeo-n rv d2">There is no travel surcharge on any of the fourteen. If your city is not on the list it is still worth calling, and you will get a straight yes or no rather than a maybe.</p>
-    </div>
-    <div class="abtWhereR rv d1">
-      <aside class="iask">
-      <div class="askcard lite rv">
-        <div class="fm-head">
-          <h3>Free Roof Inspection</h3>
-          <p class="fm-sub">Name and phone are enough to start. We walk the roof, photograph every slope, and tell you honestly whether it can wait.</p>
-        </div>
-        <form class="fm" onsubmit="event.preventDefault();this.innerHTML='<div class=\'fm-done\'><h3>Got It</h3><p class=\'fm-sub\'>A roofer will call you back today. If the ceiling is actively leaking, call 504-229-3955 now.</p></div>'">
-          <div class="fm-scroll">
-            <div class="field"><label for="k-n">Full name <i>*</i></label>
-              <input id="k-n" name="full_name" required placeholder="Jane Boudreaux"></div>
-            <div class="fm-row">
-              <div class="field"><label for="k-p">Phone <i>*</i></label>
-                <input id="k-p" name="phone" type="tel" required placeholder="(504) 555-0134"></div>
-              <div class="field"><label for="k-e">Email <i>*</i></label>
-                <input id="k-e" name="email" type="email" required placeholder="jane@email.com"></div>
-            </div>
-
-            <div class="field"><label for="k-s">Select service</label>
-              <select id="k-s" name="service">
-                <option value="">Choose one</option>
-                <option value="res">Residential roofing</option>
-                <option value="com">Commercial roofing</option>
-                <option value="type">Roofing types and materials</option>
-                <option value="soffit">Soffit services</option>
-                <option value="claim">Roof insurance claim</option>
-                <option value="other">Something else</option>
-              </select>
-            </div>
-
-            <div class="field fm-when" data-when="res" hidden><label for="k-r">Residential service</label>
-              <select id="k-r" name="residential_service">
-                <option>Roof replacement</option><option>Roof repairs</option>
-                <option>Emergency roofing</option><option>Leak detection</option>
-                <option>Storm or hail damage</option><option>Gutters and downspouts</option>
-                <option>Roof inspection</option><option>Not sure yet</option>
-              </select>
-            </div>
-            <div class="field fm-when" data-when="com" hidden><label for="k-c">Commercial service</label>
-              <select id="k-c" name="commercial_service">
-                <option>Leak tracing</option><option>Membrane repairs</option>
-                <option>Re-roofing</option><option>Full tear-off</option>
-                <option>Reflective coating</option><option>Maintenance program</option>
-                <option>Not sure yet</option>
-              </select>
-            </div>
-            <div class="field fm-when" data-when="type" hidden><label for="k-t">Roofing type</label>
-              <select id="k-t" name="roofing_type">
-                <option>Asphalt shingle</option><option>Metal</option><option>Tile</option>
-                <option>Slate</option><option>Cedar shake</option><option>Flat or low-slope</option>
-                <option>Not sure yet</option>
-              </select>
-            </div>
-            <div class="field fm-when" data-when="other" hidden><label for="k-o">Tell us what you need</label>
-              <input id="k-o" name="other_service" placeholder="In a few words"></div>
-
-            <div class="field"><label for="k-a">Property address</label>
-              <input id="k-a" name="address" placeholder="1234 Magazine St"></div>
-            <div class="fm-row fm-row3">
-              <div class="field"><label for="k-ci">City</label>
-                <input id="k-ci" name="city" placeholder="New Orleans"></div>
-              <div class="field"><label for="k-st">State</label>
-                <input id="k-st" name="state" value="LA"></div>
-              <div class="field"><label for="k-z">ZIP</label>
-                <input id="k-z" name="postal_code" inputmode="numeric" placeholder="70130"></div>
-            </div>
-
-            <div class="field"><label for="k-m">What is happening?</label>
-              <textarea id="k-m" name="message" rows="3"
-                placeholder="Water through the ceiling in the back bedroom since Tuesday"></textarea></div>
-
-            <label class="fm-file" for="k-f">
-              <span class="fm-file-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                stroke-linejoin="round"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/>
-                <path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg></span>
-              <span><b>Add photos or a video</b><small>Optional, and it often saves a visit</small></span>
-              <input id="k-f" name="attachment" type="file" accept="image/*,video/*" multiple>
-            </label>
-
-            <label class="fm-check"><input type="checkbox" name="sms_optin">
-              <span>Text me updates about this job. Message rates may apply.</span></label>
-            <label class="fm-check"><input type="checkbox" name="consent" required>
-              <span>I agree to be contacted about this request. <i>*</i></span></label>
-          </div>
-
-          <div class="fm-foot">
-            <button class="btn btn-amber" type="submit">Request my inspection</button>
-            <p class="fineprint">Free, no obligation, no door-knocking afterward.</p>
-          </div>
-        </form>
+      <div class="faqQ rv d2">
+        <h3>How long does a roof replacement take?</h3>
+        <p>On a standard house, one working day once the materials are on site. Bigger or more complicated roofs take longer and we will say so before we start. The point of the single day is that your house is never open to the sky overnight.</p>
       </div>
-      <div class="askmini rv d1">
-        <b>Leaking right now?</b>
-        <p>Skip the form. Emergency tarping is available around the clock, including during named storms.</p>
-        <a href="tel:5042293955" class="btn btn-ghost" style="width:100%">Call 504-229-3955</a>
-        <p class="askalt">Rather put it in writing? Our <a href="https://www.bigeasyroofingcompany.com/contact/">contact page</a> has
-        the form, the hours and the number in one place.</p>
+      <div class="faqQ rv d3">
+        <h3>Can I put a new roof over the existing one?</h3>
+        <p>Sometimes, and it is usually a false economy. A second layer hides whatever is wrong with the decking underneath, adds weight the structure was not designed for, and traps heat that shortens the life of the new shingles. Local code also limits how many layers are allowed. We will tell you honestly whether your roof is a candidate.</p>
       </div>
-      <script>
-      /* the conditional dropdowns, same behaviour as the live GoHighLevel form:
-         the follow-up question only appears once a service is chosen */
-      (function(){
-        var sel = document.getElementById('k-s');
-        if(!sel) return;
-        var conds = [].slice.call(document.querySelectorAll('.fm-when'));
-        function sync(){
-          conds.forEach(function(c){
-            var on = c.getAttribute('data-when') === sel.value;
-            c.hidden = !on;
-            var f = c.querySelector('input,select');
-            if(f) f.disabled = !on;
-          });
-        }
-        sel.addEventListener('change', sync);
-        sync();
-        /* name the chosen files, so the upload row confirms it worked */
-        var file = document.getElementById('k-f');
-        if(file) file.addEventListener('change', function(){
-          var b = file.closest('.fm-file').querySelector('small');
-          b.textContent = file.files.length
-            ? file.files.length + (file.files.length === 1 ? ' file attached' : ' files attached')
-            : 'Optional, and it often saves a visit';
-        });
-      })();
-      </script>
-    </aside>
+      <div class="faqQ rv d3">
+        <h3>How often should my roof be inspected?</h3>
+        <p>Once a year, and again after any storm that brought hail or high wind. Most of what an inspection finds is cheap to fix at that point and expensive to fix a year later.</p>
+      </div>
+      <div class="faqQ rv d3">
+        <h3>What can I do to make the roof last longer?</h3>
+        <p>Keep the gutters and downspouts clear, cut back branches that touch or overhang it, deal with moss and algae before they spread, and make sure the attic is actually ventilated. Most roofs we replace early failed from heat and trapped moisture rather than from the weather on top.</p>
+      </div>
     </div>
-  </div>
-</section>
-
-<section class="i light hxBlue" id="faq">
-  <div class="wrap hxFaqWrap">
-    <div class="hxFaqSide">
-      <div class="head rv"><span class="eyebrow">Straight answers</span><h2>Questions People Ask Before They Call</h2></div>
-      <p class="hxFaqNote rv d1">Not on the list? Ask us directly. Somebody who has actually been on a roof will answer.</p>
-      <a class="hxCall lite rv d1" href="tel:5042293955">
-        <span>Talk to a roofer</span><b>504-229-3955</b>
-      </a>
+  </section>
+  <section class="faqGroup" id="storm-and-claims">
+    <div class="faqGroup-h">
+      <h2>Storms and Insurance</h2>
+      <p>What we can do on a claim, and the parts that are between you and your carrier.</p>
+      <a class="faqGroup-go" href="https://www.bigeasyroofingcompany.com/roof-insurance-claims/">How claims work <i>&rarr;</i></a>
     </div>
-    <div class="faq ifaq rv d1">
-        <div class="q"><button>Are you licensed and insured?</button><div class="a"><p>Yes to both, and you should ask every contractor who quotes you the same question. A license number is a thing you can check in about a minute, and after a storm that minute is the cheapest protection you have.</p></div></div>
-        <div class="q"><button>Do you do commercial as well as houses?</button><div class="a"><p>Yes. Fourteen commercial services on flat and low-slope buildings, phased around your trading hours so the business keeps running. Same crew, same number.</p></div></div>
-        <div class="q"><button>How fast can you get here after a storm?</button><div class="a"><p>Emergency tarping runs around the clock during hurricane season and the emergency line answers after hours. For a normal inspection it is usually same or next business day.</p></div></div>
-        <div class="q"><button>Do you ask for money up front?</button><div class="a"><p>No deposit before the work is scheduled. You see a line-item estimate first, and nothing starts until you have agreed to it.</p></div></div>
-        <div class="q"><button>Do you knock on doors after storms?</button><div class="a"><p>No. If somebody turns up at your door claiming to be us, they are not. We come out because you called, and we do not come back uninvited afterward.</p></div></div>
-        <div class="q"><button>What area do you cover?</button><div class="a"><p>New Orleans and thirteen surrounding cities, from Gretna and Harahan out to Slidell, Mandeville, Covington, Hammond, Laplace and Baton Rouge. No travel surcharge on any of them.</p></div></div>
+    <div class="faqQs">
+      <div class="faqQ rv">
+        <h3>Do you handle the insurance claim for me?</h3>
+        <p>No, and it is worth knowing why. Only a licensed public adjuster is allowed to negotiate on your behalf. Our part is the evidence: dated photographs, a scope written out line by line, and somebody standing on the roof when your adjuster inspects it. The filing and the settlement stay in your name.</p>
+      </div>
+      <div class="faqQ rv d2">
+        <h3>Can you cover my deductible?</h3>
+        <p>No. Anybody offering to is proposing fraud in your name rather than theirs, which is reason enough to end the conversation there. Every estimate we write breaks your share out on its own line so it is never buried in a total.</p>
+      </div>
+      <div class="faqQ rv d3">
+        <h3>Should I call you or my insurer first?</h3>
+        <p>Call a roofer first if you can. An inspection tells you whether you have storm damage or wear, and a claim filed on wear still goes on your record when it is refused. If water is coming in right now, tarp first and worry about the order afterward.</p>
+      </div>
+      <div class="faqQ rv d3">
+        <h3>Why was my neighbor approved and I was refused?</h3>
+        <p>Usually the file rather than the roof. Hail does not hit two houses on the same street evenly, and two estimates of the same damage can record completely different things. If you think a refusal was wrong, get the roof documented properly and ask about a reinspection.</p>
+      </div>
+      <div class="faqQ rv d3">
+        <h3>How fast can you get here after a storm?</h3>
+        <p>Tarping is a twenty four hour service right through hurricane season, and somebody picks up the emergency line outside office hours. If the roof is not actively letting water in, expect an inspection the same day or the next working one.</p>
+      </div>
+    </div>
+  </section>
+  <section class="faqGroup" id="working-with-us">
+    <div class="faqGroup-h">
+      <h2>Working With Us</h2>
+      <p>What it costs, how long it takes, and who is actually standing on your roof.</p>
+      <a class="faqGroup-go" href="https://www.bigeasyroofingcompany.com/about/">More about the company <i>&rarr;</i></a>
+    </div>
+    <div class="faqQs">
+      <div class="faqQ rv">
+        <h3>Are you licensed and insured?</h3>
+        <p>Both, and you should make every bidder prove it rather than say it. A license number takes a minute to look up. That minute matters most right after a storm, when the city fills with trucks that were somewhere else last week.</p>
+      </div>
+      <div class="faqQ rv d2">
+        <h3>Do you want money up front?</h3>
+        <p>Nothing changes hands before your job has a date on the calendar. The estimate comes first, itemized down to quantities and labor so you can see how the total was arrived at, and you sign off on it before any material is ordered.</p>
+      </div>
+      <div class="faqQ rv d3">
+        <h3>Do you subcontract the work?</h3>
+        <p>No. The people who climb up on inspection day are the same people who tear the roof off and rebuild it. Nobody gets handed along to a third party halfway through, so there is never a question about who answers for the result.</p>
+      </div>
+      <div class="faqQ rv d3">
+        <h3>Do you knock on doors after storms?</h3>
+        <p>Never. Every visit we make begins with your phone call. If a stranger is on your porch using our name after a storm, it is not us, and you are well within your rights to ask for identification and send them on their way.</p>
+      </div>
+      <div class="faqQ rv d3">
+        <h3>What does the inspection cost?</h3>
+        <p>Nothing, and you keep the photographs and the written estimate whether or not you use us for the work.</p>
+      </div>
+      <div class="faqQ rv d3">
+        <h3>What area do you cover?</h3>
+        <p>Fourteen cities. New Orleans plus thirteen more, reaching east to Slidell, north over the lake to Mandeville and Covington, and west through Laplace as far as Baton Rouge. How far we drive does not change what you pay. The full list is on the <a href="https://www.bigeasyroofingcompany.com/services-areas/">service areas page</a>.</p>
+      </div>
+    </div>
+  </section>
+  <section class="faqGroup" id="materials-warranty">
+    <div class="faqGroup-h">
+      <h2>Materials and Warranty</h2>
+      <p>What goes on the roof, and who stands behind it afterward.</p>
+      <a class="faqGroup-go" href="https://www.bigeasyroofingcompany.com/roofing-types/">Compare all 11 materials <i>&rarr;</i></a>
+    </div>
+    <div class="faqQs">
+      <div class="faqQ rv">
+        <h3>What roofing material should I use?</h3>
+        <p>It depends on the pitch, what the deck can carry and what is already up there. Shingle suits most houses here, metal lasts longest and costs more up front, and a low-slope roof needs a membrane rather than either. We will tell you which of the eleven we would rule out for your roof and why.</p>
+      </div>
+      <div class="faqQ rv d2">
+        <h3>Who actually provides the warranty?</h3>
+        <p>Two separate promises, and they are worth telling apart. Shingles and membranes are covered by whoever manufactured them, which is why the brand going on your roof matters. The installation is covered by us. Ask anyone quoting you which of the two they mean, because a guarantee on workmanship is only ever as good as the business standing behind it.</p>
+      </div>
+      <div class="faqQ rv d3">
+        <h3>What is the GAF WindProven warranty?</h3>
+        <p>The one shingle warranty we know of that puts no ceiling on wind speed and does not carve out named storms, which is the exclusion most policies quietly keep. Qualifying is specific: Timberline shingles with LayerLock, plus four or more GAF accessories on the same roof. Whether yours can reach it is something we answer at the estimate, in writing. Full terms sit on <a href="https://www.bigeasyroofingcompany.com/unlimited-wind-warranty/">our warranty page</a>.</p>
+      </div>
+      <div class="faqQ rv d3">
+        <h3>Do you do commercial roofs as well as houses?</h3>
+        <p>Yes, and it is a real half of the business rather than a sideline. Fourteen services built for flat and low-slope buildings, scheduled around the hours you are open so the doors stay unlocked while the work goes on overhead. One crew and one number, whichever kind of roof you have.</p>
+      </div>
+    </div>
+  </section>
+    <p class="faqNote rv d2">Nothing on this page has a price in it, because a price depends on the roof and we would rather measure yours than guess. Ask through the <a href="https://www.bigeasyroofingcompany.com/contact/">contact page</a> and you will get a real number in writing.</p>
+    <div class="secta rv d2">
+      <button class="btn btn-amber" type="button" data-open-modal>Ask us yours</button>
+      <a class="btn btn-ghost" href="tel:5042293955">Call 504-229-3955</a>
+      <p>If it is not on this page, the phone is answered by somebody who works on roofs.</p>
     </div>
   </div>
 </section>
 
 <section class="ibanner">
-  <div class="ibg" style="background-image:url(_assets/abt-banner.jpg)"></div>
+  <div class="ibg" style="background-image:url(_assets/faq-banner.jpg)"></div>
   <div class="wrap">
     <div>
-      <h2>Talk to Somebody Who Has Been on a Roof Today</h2>
+      <h2>Still Not Answered? Ask a Roofer Directly</h2>
       <p>Free inspection across New Orleans, Metairie, Kenner, Slidell, Mandeville, Covington, Baton Rouge and seven more Louisiana cities.</p>
     </div>
     <div class="bts">

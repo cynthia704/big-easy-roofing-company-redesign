@@ -1,0 +1,9 @@
+Photography for /faqs/.
+Source: Pexels. Pexels License, free to use, commercial use allowed,
+no attribution required. Ids kept so any image can be traced back.
+
+Two slots only, the page header and the closing banner. The page itself is
+text. Checked against every other credits file on this site before download.
+
+faq-banner.jpg         pexels.com/photo/37623616  roofers repairing a roof, clear sky behind
+faq-hero.jpg           pexels.com/photo/36884223  roofer working on a rooftop under a blue sky
