@@ -2085,6 +2085,11 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 .abtPull{margin:30px 0 0;padding:24px 0 0;border-top:2px solid rgba(20,30,50,.12);
   font-family:'Barlow Condensed',sans-serif;font-weight:700;
   font-size:clamp(19px,2vw,26px);line-height:1.32;color:#26364E}
+/* a call block appended into this section lands inside the grid, so it has to
+   be told to span. Without this it becomes a third column and sits under the
+   statement alone, which is exactly how the radar calls went wrong on the
+   homepage. */
+.abtStoryWrap .secta{grid-column:1/-1;margin-top:16px}
 @media (max-width:900px){ .abtStoryWrap{grid-template-columns:1fr} }
 
 /* ---- 2. the numbers band --------------------------------------------- */
@@ -2572,6 +2577,11 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
         <p>Most of what we do is unglamorous. Flashing that was never sealed properly, a valley that has been patched twice already, decking that went soft under a roof somebody sold as new four years ago. That is the work.</p>
         <p>You can see the full range on the <a href="https://www.bigeasyroofingcompany.com/">Big Easy Roofing Company</a> homepage, or reach a roofer directly through the <a href="https://www.bigeasyroofingcompany.com/contact/">contact page</a>.</p>
     </div>
+    <div class="secta rv d2">
+      <button class="btn btn-amber" type="button" data-open-modal>Talk to a roofer</button>
+      <a class="btn btn-ghost" href="tel:5042293955">Call 504-229-3955</a>
+      <p>You will get somebody who has been on a roof this week, not a call centre.</p>
+    </div>
   </div>
 </section>
 
@@ -2676,6 +2686,11 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
         <p>Magnet swept across the drive and the lawn, and the warranty paperwork handed over on the day rather than posted later.</p>
       </li>
     </ol>
+    <div class="secta rv d2">
+      <button class="btn btn-amber" type="button" data-open-modal>Start at step one</button>
+      <a class="btn btn-ghost" href="tel:5042293955">Call 504-229-3955</a>
+      <p>Step one is a phone call and a look at the roof, and it costs nothing.</p>
+    </div>
   </div>
 </section>
 
