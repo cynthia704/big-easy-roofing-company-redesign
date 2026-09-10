@@ -44,6 +44,11 @@ img{max-width:100%;display:block}
 .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:var(--amber)}
 .btn:hover{transform:translateY(-2px)}
 .light .btn-ghost{border-color:rgba(0,0,0,.18);color:var(--textdark);background:rgba(0,0,0,.03)}
+/* hxCream and hxWhite are light grounds that do not carry .light, so the
+   ghost button kept its dark ground styling and rendered white on white.
+   Same gap that hid the heading highlight on those two sections. */
+.hxCream .btn-ghost,.hxWhite .btn-ghost{border-color:rgba(0,0,0,.18);color:var(--textdark);background:rgba(0,0,0,.03)}
+.hxCream .btn-ghost:hover,.hxWhite .btn-ghost:hover{background:rgba(0,0,0,.06);border-color:var(--amber-lo)}
 
 /* ---------- header ---------- */
 .util{background:#070D18;border-bottom:1px solid var(--line);font-size:13.5px}
@@ -2169,9 +2174,11 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 .abtHold-c{display:flex;flex-wrap:wrap;gap:8px}
 .abtHold-c span{font:600 12px/1 Inter;color:#3B4C66;background:rgba(20,30,50,.06);
   border-radius:999px;padding:7px 11px}
+/* not var(--amber-lo): that measures 2.98:1 on this card and the link needs
+   4.5:1. This one measures 4.78:1 and stays in the amber family. */
 .abtHold-go{display:inline-flex;align-items:center;gap:7px;margin-top:14px;
   font:700 12px/1 Inter;letter-spacing:.07em;text-transform:uppercase;
-  color:var(--amber-lo)}
+  color:#9A6108}
 .abtHold-go i{font-style:normal;transition:transform .25s var(--ease)}
 .abtHold-go:hover i{transform:translateX(4px)}
 .abtNote{margin-top:24px;padding:24px 26px;border-radius:16px;

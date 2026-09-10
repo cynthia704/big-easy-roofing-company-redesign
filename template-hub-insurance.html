@@ -44,6 +44,11 @@ img{max-width:100%;display:block}
 .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:var(--amber)}
 .btn:hover{transform:translateY(-2px)}
 .light .btn-ghost{border-color:rgba(0,0,0,.18);color:var(--textdark);background:rgba(0,0,0,.03)}
+/* hxCream and hxWhite are light grounds that do not carry .light, so the
+   ghost button kept its dark ground styling and rendered white on white.
+   Same gap that hid the heading highlight on those two sections. */
+.hxCream .btn-ghost,.hxWhite .btn-ghost{border-color:rgba(0,0,0,.18);color:var(--textdark);background:rgba(0,0,0,.03)}
+.hxCream .btn-ghost:hover,.hxWhite .btn-ghost:hover{background:rgba(0,0,0,.06);border-color:var(--amber-lo)}
 
 /* ---------- header ---------- */
 .util{background:#070D18;border-bottom:1px solid var(--line);font-size:13.5px}
