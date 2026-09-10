@@ -2060,6 +2060,26 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 
 .hxBlue{background:#EDF1F7}
 
+/* ---- keyword highlighting in headings -----------------------------------
+   .hl-amber is the class the homepage H1 already uses, so this is the site's
+   existing highlight rather than a second one. Two things are added.
+
+   1. <strong> is used instead of <span>, so the emphasis is semantic as well
+      as visual. Headings are already 800 weight, so the weight is inherited
+      and the highlight reads as colour, not as extra bold.
+
+   2. Amber text on the light grounds measures about 3:1, under the 4.5:1 that
+      body-size text needs. The same trap cost us the branded homepage link on
+      the hub pages earlier. On light sections the word keeps the heading's own
+      colour and takes an amber marker band behind it, so the contrast is the
+      heading's contrast. */
+h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
+.light .hl-amber, .hxCream .hl-amber, .hxWhite .hl-amber{
+  color:inherit;
+  background-image:linear-gradient(180deg,transparent 62%,rgba(245,165,36,.45) 62%);
+  padding:0 .05em;
+  border-radius:2px}
+
 </style>
 <!-- JSON-LD built to 05-schema-nap-spec.md. No street address, ZIP, geo,
      priceRange or aggregateRating: none of those are confirmed, and the
@@ -2491,7 +2511,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   <div class="ibg" style="background-image:url(_assets/ins-hero.jpg)"></div>
   <div class="wrap">
     <nav class="icrumbs" aria-label="Breadcrumb"><a href="https://www.bigeasyroofingcompany.com/">Home</a><i>&rsaquo;</i><span aria-current="page">Roof Insurance Claims</span></nav>
-    <h1>Your Claim Is Won or Lost <br class="dtbr">on the Documentation</h1>
+    <h1>Your <strong class="hl-amber">Claim</strong> Is Won or Lost <br class="dtbr">on the Documentation</h1>
     <p class="icreds">Free inspection · We meet your adjuster on the roof · Written scope of loss</p>
     <div class="iacts">
       <a href="#ask" class="btn btn-amber">Get a free inspection</a>
@@ -2678,13 +2698,13 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   <div class="wrap">
     <div class="head rv" style="margin-bottom:34px">
       <span class="eyebrow">Where claims go wrong</span>
-      <h2>Four Reasons a Real Claim <br class="dtbr">Still Gets Underpaid</h2>
+      <h2>Four Reasons a Real Claim <br class="dtbr">Still Gets <strong class="hl-amber">Underpaid</strong></h2>
       <p class="lead">None of these are about whether your roof is damaged. They are about what the file looks like by the time somebody decides.</p>
     </div>
     <div class="hxExp rv d1">
       <div class="hxLeft">
         <div class="hxRailWrap">
-          <div class="hxRail" role="tablist" aria-label="Four Reasons a Real Claim <br class="dtbr">Still Gets Underpaid">
+          <div class="hxRail" role="tablist" aria-label="Four Reasons a Real Claim Still Gets Underpaid">
         <button class="hxTab on" type="button" data-hx="0" aria-selected="true">
           <span class="hxTab-n">01</span>
           <span class="hxTab-t">Nobody Photographed It First</span>
@@ -2769,7 +2789,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   <div class="wrap">
     <div class="head rv" style="margin-bottom:38px">
       <span class="eyebrow">How a claim runs</span>
-      <h2>Five Steps, and You See <br class="dtbr">Every Document</h2>
+      <h2>Five Steps, and You See <br class="dtbr"><strong class="hl-amber">Every Document</strong></h2>
       <p class="lead">This is the whole sequence, from the first phone call to the last inspection. Nothing on it costs you anything until you accept a scope.</p>
     </div>
     <div class="hxJob rv d1">
@@ -2865,7 +2885,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   <div class="wrap">
     <div class="head rv" style="margin-bottom:38px">
       <span class="eyebrow">Before you file</span>
-      <h2>What a Policy Usually Covers, <br class="dtbr">and What It Does Not</h2>
+      <h2>What a <strong class="hl-amber">Policy</strong> Usually Covers, <br class="dtbr">and What It Does Not</h2>
       <p class="lead">Coverage varies by policy and by carrier, so read yours. These are the patterns we see most often on New Orleans roofs, and the ones worth checking before you pick up the phone.</p>
     </div>
     <div class="hxRows">
@@ -2944,7 +2964,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   <div class="wrap">
     <div class="head ctr rv" style="margin-bottom:36px">
       <span class="eyebrow">Two things people get wrong</span>
-      <h2>The Deductible and the Supplement</h2>
+      <h2>The <strong class="hl-amber">Deductible</strong> and the Supplement</h2>
       <p class="lead" style="margin-inline:auto">These two account for most of the surprises we see after a claim is already under way.</p>
     </div>
     <div class="hxFacts">

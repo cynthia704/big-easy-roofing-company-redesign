@@ -2204,6 +2204,26 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   .abtCard:hover .abtCard-z{transform:none}
 }
 
+/* ---- keyword highlighting in headings -----------------------------------
+   .hl-amber is the class the homepage H1 already uses, so this is the site's
+   existing highlight rather than a second one. Two things are added.
+
+   1. <strong> is used instead of <span>, so the emphasis is semantic as well
+      as visual. Headings are already 800 weight, so the weight is inherited
+      and the highlight reads as colour, not as extra bold.
+
+   2. Amber text on the light grounds measures about 3:1, under the 4.5:1 that
+      body-size text needs. The same trap cost us the branded homepage link on
+      the hub pages earlier. On light sections the word keeps the heading's own
+      colour and takes an amber marker band behind it, so the contrast is the
+      heading's contrast. */
+h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
+.light .hl-amber, .hxCream .hl-amber, .hxWhite .hl-amber{
+  color:inherit;
+  background-image:linear-gradient(180deg,transparent 62%,rgba(245,165,36,.45) 62%);
+  padding:0 .05em;
+  border-radius:2px}
+
 </style>
 <!-- JSON-LD built to 05-schema-nap-spec.md. No street address, ZIP, geo,
      priceRange or aggregateRating: none of those are confirmed, and the
@@ -2520,7 +2540,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   <div class="ibg" style="background-image:url(_assets/abt-hero.jpg)"></div>
   <div class="wrap">
     <nav class="icrumbs" aria-label="Breadcrumb"><a href="https://www.bigeasyroofingcompany.com/">Home</a><i>&rsaquo;</i><span aria-current="page">About</span></nav>
-    <h1>A New Orleans Roofing Company, <br class="dtbr">Not a Storm Chaser</h1>
+    <h1>A <strong class="hl-amber">New Orleans Roofing Company</strong>, <br class="dtbr">Not a Storm Chaser</h1>
     <p class="icreds">One in-house crew · 14 cities · Free inspection, and we say if it can wait</p>
     <div class="iacts">
       <a href="#ask" class="btn btn-amber">Get a free inspection</a>
@@ -2568,7 +2588,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   <div class="wrap">
     <div class="head ctr rv" style="margin-bottom:38px">
       <span class="eyebrow">What we actually do</span>
-      <h2>Four Sides of the Same Business</h2>
+      <h2>Four Sides of the <strong class="hl-amber">Same Business</strong></h2>
       <p class="lead" style="margin-inline:auto">Not a list of everything a roof could ever need. These are the four things this crew is set up to do, and every one of them is handled in house.</p>
     </div>
     <div class="abtDo">
@@ -2621,7 +2641,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   <div class="wrap">
     <div class="head rv" style="margin-bottom:40px">
       <span class="eyebrow">How a job runs</span>
-      <h2>Five Steps, and You See <br class="dtbr">the Price Before Step Four</h2>
+      <h2>Five Steps, and You See <br class="dtbr"><strong class="hl-amber">the Price</strong> Before Step Four</h2>
       <p class="lead">This is what happens between your first phone call and the skip leaving your driveway. Nothing costs you anything until step three.</p>
     </div>
     <ol class="abtFlow">
@@ -2663,7 +2683,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   <div class="wrap">
     <div class="head rv" style="margin-bottom:38px">
       <span class="eyebrow">What we will put in writing</span>
-      <h2>Four Things You Can Hold Us To</h2>
+      <h2>Four Things You Can <strong class="hl-amber">Hold Us To</strong></h2>
       <p class="lead">Every roofer in this city says trusted and reliable. These four are checkable, and all of them go in the paperwork before you sign anything.</p>
     </div>
     <div class="abtHolds">
@@ -2719,7 +2739,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 <section class="i hxDeep abtWhere" id="coverage">
   <div class="wrap abtWhereWrap">
     <div class="abtWhereL">
-      <div class="head rv"><span class="eyebrow">Where we work</span><h2>New Orleans and Thirteen More</h2>
+      <div class="head rv"><span class="eyebrow">Where we work</span><h2><strong class="hl-amber">New Orleans</strong> and Thirteen More</h2>
       <p class="lead">Same crew, same warranty and the same response time whether you are in the Bywater or across the lake in Mandeville.</p></div>
       <div class="abtGeos rv d1">
         <div class="abtGeo">
