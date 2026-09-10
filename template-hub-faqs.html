@@ -2094,6 +2094,10 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   column-gap:30px;row-gap:8px;
   padding:22px 0 14px;margin:0 0 20px;
   border-bottom:1px solid rgba(20,30,50,.09)}
+/* The group number, from data-n. Decorative, and it gives the band something
+   to look at other than a line of text. */
+.faqGroup-h::before{content:attr(data-n);flex:0 0 auto;align-self:center;
+  font:800 30px/1 Inter;color:rgba(245,165,36,.55);letter-spacing:-.02em}
 .faqGroup-h h2{flex:0 0 auto;margin:0;font-size:clamp(21px,2.1vw,27px);
   line-height:1.14;color:#0E1726}
 .faqGroup-h p{flex:1 1 280px;margin:0;font-size:14px;line-height:1.62;
@@ -2123,6 +2127,33 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   text-decoration-thickness:2px}
 .faqQ p a:hover{color:#9A6108}
 
+/* The photograph tile. Twenty white cards in a row was the plain part, so
+   every group carries one of the company's own pictures. The caption sits on a
+   scrim rather than under the picture, because in the odd cell the tile has to
+   stretch to whatever height the row is and a caption underneath would fight
+   that. */
+.faqPic{position:relative;margin:0;border-radius:14px;overflow:hidden;
+  min-height:230px;background:#E8EDF4;
+  border:1px solid rgba(20,30,50,.09)}
+.faqPic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.faqPic.wide{grid-column:1/-1;min-height:0;height:264px}
+/* a landscape photograph in a short strip crops to the middle by default,
+   which on a house puts the driveway in frame and the roof out of it */
+.faqPic.wide img{object-position:center 42%}
+/* The caption sits on a SOLID bar, not on a gradient. It was a gradient
+   first, and sampling the rendered pixels behind the words showed the top line
+   landing at 1.08:1 where the scrim was still thin and the photograph behind
+   it was bright siding. A gradient cannot promise a contrast ratio, because
+   the ratio depends on the photograph. A solid bar can: white on this is
+   15.1:1 even if every pixel behind it is pure white. The gradient survives as
+   a fade ABOVE the bar, where no text ever sits. */
+.faqPic figcaption{position:absolute;left:0;right:0;bottom:0;z-index:1;
+  padding:13px 18px 15px;color:#fff;font-size:13.5px;line-height:1.55;
+  background:rgba(9,14,24,.9)}
+.faqPic figcaption::before{content:'';position:absolute;left:0;right:0;
+  bottom:100%;height:48px;pointer-events:none;
+  background:linear-gradient(to top,rgba(9,14,24,.9),rgba(9,14,24,0))}
+
 .faqNote{margin:30px 0 0;text-align:center;font-size:13.5px;line-height:1.7;
   color:var(--muteddark);max-width:66ch;margin-inline:auto}
 
@@ -2132,6 +2163,8 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
      survived down to 390px and ran off the side of the screen. */
   .faqQs{grid-template-columns:1fr}
   .faqQs > .faqQ:last-child:nth-child(odd){grid-column:auto}
+  .faqPic,.faqPic.wide{height:220px;min-height:0;grid-column:auto}
+  .faqGroup-h::before{font-size:24px}
   .faqGroup-h{position:static;display:block}
   .faqGroup-h h2{margin:0 0 8px}
   .faqGroup-h p{margin:0 0 12px}
@@ -2623,7 +2656,7 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
     </div>
     <nav class="faqJump rv d1" aria-label="Question topics"><a href="#repair-or-replace">Repair or Replace <span>5</span></a><a href="#storm-and-claims">Storms and Insurance <span>5</span></a><a href="#working-with-us">Working With Us <span>6</span></a><a href="#materials-warranty">Materials and Warranty <span>4</span></a></nav>
   <section class="faqGroup" id="repair-or-replace">
-    <div class="faqGroup-h">
+    <div class="faqGroup-h" data-n="01">
       <h2>Repair or Replace</h2>
       <p>The question almost everybody opens with, and the one where a second opinion is worth most.</p>
       <a class="faqGroup-go" href="https://www.bigeasyroofingcompany.com/residential/">All residential services <i>&rarr;</i></a>
@@ -2649,10 +2682,14 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
         <h3>What can I do to make the roof last longer?</h3>
         <p>Keep the gutters and downspouts clear, cut back branches that touch or overhang it, deal with moss and algae before they spread, and make sure the attic is actually ventilated. Most roofs we replace early failed from heat and trapped moisture rather than from the weather on top.</p>
       </div>
+      <figure class="faqPic rv d2">
+        <img src="https://www.bigeasyroofingcompany.com/wp-content/uploads/2025/07/gallery-images1-768x1024.jpeg" alt="Cracked rubber pipe boot on a weathered asphalt shingle roof with heavy granule loss" loading="lazy" decoding="async">
+        <figcaption>A split pipe boot with the granules washed off around it. Wear rather than storm damage, and one bad detail like this is a repair.</figcaption>
+      </figure>
     </div>
   </section>
   <section class="faqGroup" id="storm-and-claims">
-    <div class="faqGroup-h">
+    <div class="faqGroup-h" data-n="02">
       <h2>Storms and Insurance</h2>
       <p>What we can do on a claim, and the parts that are between you and your carrier.</p>
       <a class="faqGroup-go" href="https://www.bigeasyroofingcompany.com/roof-insurance-claims/">How claims work <i>&rarr;</i></a>
@@ -2678,10 +2715,14 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
         <h3>How fast can you get here after a storm?</h3>
         <p>Tarping is a twenty four hour service right through hurricane season, and somebody picks up the emergency line outside office hours. If the roof is not actively letting water in, expect an inspection the same day or the next working one.</p>
       </div>
+      <figure class="faqPic rv d2">
+        <img src="https://www.bigeasyroofingcompany.com/wp-content/uploads/2025/07/756748262-unnamed-1-1024x768.jpeg" alt="Aerial photograph of a completed hipped shingle roof on a house" loading="lazy" decoding="async">
+        <figcaption>Every slope photographed from the air. When a claim comes down to what the roof actually looked like, this is the record that settles it.</figcaption>
+      </figure>
     </div>
   </section>
   <section class="faqGroup" id="working-with-us">
-    <div class="faqGroup-h">
+    <div class="faqGroup-h" data-n="03">
       <h2>Working With Us</h2>
       <p>What it costs, how long it takes, and who is actually standing on your roof.</p>
       <a class="faqGroup-go" href="https://www.bigeasyroofingcompany.com/about/">More about the company <i>&rarr;</i></a>
@@ -2711,10 +2752,14 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
         <h3>What area do you cover?</h3>
         <p>Fourteen cities. New Orleans plus thirteen more, reaching east to Slidell, north over the lake to Mandeville and Covington, and west through Laplace as far as Baton Rouge. How far we drive does not change what you pay. The full list is on the <a href="https://www.bigeasyroofingcompany.com/services-areas/">service areas page</a>.</p>
       </div>
+      <figure class="faqPic wide rv d2">
+        <img src="https://www.bigeasyroofingcompany.com/wp-content/uploads/2025/07/gallery-image8-1024x768.jpg" alt="Finished two story house with a dark standing seam porch roof and a clear driveway" loading="lazy" decoding="async">
+        <figcaption>Standing seam over the porch, and a driveway you can park on the same afternoon. That is what the last day looks like.</figcaption>
+      </figure>
     </div>
   </section>
   <section class="faqGroup" id="materials-warranty">
-    <div class="faqGroup-h">
+    <div class="faqGroup-h" data-n="04">
       <h2>Materials and Warranty</h2>
       <p>What goes on the roof, and who stands behind it afterward.</p>
       <a class="faqGroup-go" href="https://www.bigeasyroofingcompany.com/roofing-types/">Compare all 11 materials <i>&rarr;</i></a>
@@ -2736,6 +2781,10 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
         <h3>Do you do commercial roofs as well as houses?</h3>
         <p>Yes, and it is a real half of the business rather than a sideline. Fourteen services built for flat and low-slope buildings, scheduled around the hours you are open so the doors stay unlocked while the work goes on overhead. One crew and one number, whichever kind of roof you have.</p>
       </div>
+      <figure class="faqPic wide rv d2">
+        <img src="https://www.bigeasyroofingcompany.com/wp-content/uploads/2025/07/gallery-imag-1-1024x768.jpeg" alt="Standing seam metal roof section meeting a sided wall on a house" loading="lazy" decoding="async">
+        <figcaption>Standing seam metal running up to the wall, with the flashing carried behind the cladding rather than caulked to the face of it.</figcaption>
+      </figure>
     </div>
   </section>
     <p class="faqNote rv d2">Nothing on this page has a price in it, because a price depends on the roof and we would rather measure yours than guess. Ask through the <a href="https://www.bigeasyroofingcompany.com/contact/">contact page</a> and you will get a real number in writing.</p>
