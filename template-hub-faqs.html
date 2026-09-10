@@ -2082,22 +2082,36 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   border-radius:999px;padding:4px 7px}
 .faqJump a:hover{border-color:rgba(245,165,36,.6);transform:translateY(-2px)}
 
-.faqGroup{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);
-  column-gap:52px;row-gap:20px;padding:34px 0;
-  border-top:1px solid rgba(20,30,50,.1);scroll-margin-top:96px}
-.faqGroup:first-of-type{border-top:0;padding-top:6px}
-.faqGroup-h{position:sticky;top:96px;align-self:start}
-.faqGroup-h h2{margin:0 0 12px;font-size:clamp(22px,2.4vw,30px);line-height:1.12;
-  color:#0E1726}
-.faqGroup-h p{margin:0 0 14px;font-size:14.5px;line-height:1.7;
+/* The heading is a band across the full width rather than a column down the
+   left. As a rail it left 680px of empty page beside the first group, measured
+   in Chrome at 1440, and the six question group was worse. It still sticks, so
+   the topic stays on screen while you read the group. The header is 93px, so
+   the band parks directly under it. */
+.faqGroup{padding:0 0 14px;scroll-margin-top:104px}
+.faqGroup + .faqGroup{border-top:1px solid rgba(20,30,50,.1)}
+.faqGroup-h{position:sticky;top:93px;z-index:3;background:var(--paper);
+  display:flex;align-items:baseline;flex-wrap:wrap;
+  column-gap:30px;row-gap:8px;
+  padding:22px 0 14px;margin:0 0 20px;
+  border-bottom:1px solid rgba(20,30,50,.09)}
+.faqGroup-h h2{flex:0 0 auto;margin:0;font-size:clamp(21px,2.1vw,27px);
+  line-height:1.14;color:#0E1726}
+.faqGroup-h p{flex:1 1 280px;margin:0;font-size:14px;line-height:1.62;
   color:var(--muteddark)}
-.faqGroup-go{display:inline-flex;align-items:center;gap:8px;
+.faqGroup-go{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;
   font:700 12px/1 Inter;letter-spacing:.07em;text-transform:uppercase;
   color:#9A6108}
 .faqGroup-go i{font-style:normal;transition:transform .25s var(--ease)}
 .faqGroup-go:hover i{transform:translateX(4px)}
 
-.faqQs{display:grid;gap:14px}
+/* Two columns as a grid rather than as `columns`, and the rows stretch. A
+   masonry flow balances the two columns by height, which leaves a hole in the
+   page wherever a group divides unevenly: five questions split 2 and 3 and the
+   short column stopped 155px early. Stretched rows put that space inside the
+   shorter card, where it reads as a card rather than as a gap. An odd last
+   question spans the full width so the final row is never half empty. */
+.faqQs{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.faqQs > .faqQ:last-child:nth-child(odd){grid-column:1/-1}
 .faqQ{padding:20px 22px;border-radius:14px;background:#fff;
   border:1px solid rgba(20,30,50,.09);
   transition:border-color .25s var(--ease)}
@@ -2113,8 +2127,14 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   color:var(--muteddark);max-width:66ch;margin-inline:auto}
 
 @media (max-width:900px){
-  .faqGroup{grid-template-columns:1fr}
-  .faqGroup-h{position:static}
+  /* .faqQs is a grid, so this has to be grid-template-columns. It was left as
+     `columns:1` from the masonry version and did nothing, so the two columns
+     survived down to 390px and ran off the side of the screen. */
+  .faqQs{grid-template-columns:1fr}
+  .faqQs > .faqQ:last-child:nth-child(odd){grid-column:auto}
+  .faqGroup-h{position:static;display:block}
+  .faqGroup-h h2{margin:0 0 8px}
+  .faqGroup-h p{margin:0 0 12px}
 }
 @media (prefers-reduced-motion:reduce){
   .faqJump a,.faqGroup-go i,.faqQ{transition:none}
