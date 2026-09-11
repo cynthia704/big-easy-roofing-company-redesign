@@ -455,6 +455,13 @@ footer a:hover{color:var(--amber)}
   .steps{grid-template-columns:1fr 1fr;gap:40px 0}
   .steps::before,.steps .fill{display:none}
   .fgrid,.fgrid2{grid-template-columns:1fr 1fr}
+  .note{display:none}
+}
+/* The header collapses to the burger below 1200px, not at 1024 and under. The
+   desktop row needs about 1,129px for logo, menu and call block, so between
+   1025 and 1185 it ran off the right edge and cut off Free Inspection.
+   Layout breakpoints stay at 1024; only the header moved. */
+@media (max-width:1199px){
   /* ---- mobile menu: the burger used to do nothing at all ---- */
   .burger{display:flex}
   .tapcall{display:flex;align-items:center;justify-content:center;width:44px;height:44px;
@@ -493,7 +500,6 @@ footer a:hover{color:var(--amber)}
     .menu,.menu>a,.burger i{transition:none !important}
     .menu>a{opacity:1;transform:none}
   }
-  .note{display:none}
 }
 @media (max-width:680px){
   body{font-size:16px}
@@ -861,7 +867,7 @@ footer .logo img{height:80px}
 .mi-tog{display:none;background:none;border:0;padding:0;color:inherit;cursor:pointer}
 .mi-tog svg{width:15px;height:15px;display:block}
 
-@media (min-width:1025px){
+@media (min-width:1200px){
   /* The panel anchors to the nav, not to the item. Anchored to the item and
      centred, the Residential panel ran off the left of the screen and ate the
      first word of every link in the first column. */
@@ -896,7 +902,7 @@ footer .logo img{height:80px}
 .mpanel-all i{font-style:normal;transition:transform .25s var(--ease)}
 .mpanel-all:hover i{transform:translateX(4px)}
 
-@media (max-width:1024px){
+@media (max-width:1199px){
   .menu .mi{display:grid;grid-template-columns:1fr auto;align-items:center;
     border-bottom:1px solid var(--line)}
   .mi-tog{display:inline-flex;align-items:center;justify-content:center;
@@ -965,13 +971,17 @@ body.modal-on{overflow:hidden}
    screenshot was taken on. The number replaces the icon-only call button
    rather than sitting beside it, which is where the room comes from. */
 .tapnum,.tapquote{display:none}
-@media (max-width:1024px){
+@media (max-width:1199px){
   .tapcall{display:none}
   .tapnum{display:inline-flex;align-items:center;gap:6px;
     font:800 17px/1 'Barlow Condensed',sans-serif;color:#fff;white-space:nowrap}
   .tapquote{display:inline-flex;padding:11px 15px;font-size:13px;white-space:nowrap}
   header .logo img{height:50px;width:auto}
   .navcta{gap:10px}
+  /* The compact tap pair replaces the full phone and button whenever it shows.
+     Without this the header carried both pairs side by side, which is what
+     the 1100px screenshot showed once the burger took over there. */
+  .navcta>.phone,.navcta>.btn:not(.tapquote){display:none}
 }
 @media (max-width:560px){
   .tapnum{font-size:15.5px}
@@ -1132,7 +1142,7 @@ body.modal-on{overflow:hidden}
   transform:rotate(45deg) translate(-2px,-2px);opacity:.62;
   transition:transform .25s var(--ease),opacity .25s}
 
-@media (min-width:1025px){
+@media (min-width:1200px){
   .menu>li{display:inline-flex;align-items:center}
   .menu li.menu-item-has-children:hover>a::after,
   .menu li.menu-item-has-children:focus-within>a::after{opacity:1;
@@ -1154,7 +1164,7 @@ body.modal-on{overflow:hidden}
   transition:color .2s var(--ease)}
 .menu .sub-menu a:hover{color:var(--amber)}
 
-@media (max-width:1024px){
+@media (max-width:1199px){
   .menu>li{display:grid;grid-template-columns:1fr auto;align-items:center;
     border-bottom:1px solid var(--line)}
   .menu>li>.sub-menu{grid-column:1/-1;display:none;grid-template-columns:1fr 1fr;
@@ -3328,7 +3338,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
     if(hdr.classList.contains('navopen')&&!hdr.contains(e.target)) set(false);
   });
   document.addEventListener('keydown',function(e){if(e.key==='Escape') set(false);});
-  addEventListener('resize',function(){if(innerWidth>1024) set(false);});
+  addEventListener('resize',function(){if(innerWidth>1199) set(false);});
 })();
 </script>
 <script>
@@ -3379,7 +3389,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
    panel opens on hover and on keyboard focus, and Escape closes it. The parent
    link is never hijacked, so Residential still goes to /residential/. */
 (function(){
-  var mq = window.matchMedia('(max-width:1024px)');
+  var mq = window.matchMedia('(max-width:1199px)');
   var items = [].slice.call(document.querySelectorAll('.menu .mi'));
   if(!items.length) return;
 
