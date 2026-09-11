@@ -1,0 +1,15 @@
+Photography for /services-areas/.
+Source: Pexels. Pexels License, free to use, commercial use allowed,
+no attribution required. Ids kept so any image can be traced back.
+Checked against every other credits file on this site before download.
+
+areas-hero.jpg    pexels.com/photo/38720292  New Orleans skyline at night across the Mississippi
+areas-banner.jpg  pexels.com/photo/14016445  Victorian house with a two-story porch, no house number in frame
+
+Passed over: 33782024 and 39256359 (Creole cottages) and 30725674 (a new
+two-story home). All three show a readable house number. On a roofing
+company's page a real street address reads as a client's house, so none of
+them is used.
+
+The map on this page is drawn in SVG from approximate coordinates; it is not
+a photograph or a third-party map tile.
