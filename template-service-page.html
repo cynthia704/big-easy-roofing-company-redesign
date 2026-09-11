@@ -2065,6 +2065,88 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 
 .hxBlue{background:#EDF1F7}
 
+/* ===== residential service pages ========================================
+   The three sections hub_kit does not have. Everything else on a service
+   page is a hub_kit component, so the service pages and the hubs share one
+   visual language without sharing one layout. */
+
+/* ---- cost factors, on white ---- */
+.svFactors{display:flex;flex-wrap:wrap;gap:16px}
+.svFactor{flex:1 1 210px;position:relative;padding:24px 22px 22px;border-radius:14px;
+  background:var(--paper);border:1px solid rgba(20,30,50,.09);
+  transition:border-color .25s var(--ease),transform .25s var(--ease)}
+.svFactor:hover{border-color:rgba(245,165,36,.5);transform:translateY(-3px)}
+.svFactor-n{display:block;margin:0 0 14px;font:800 34px/1 Inter;letter-spacing:-.02em;
+  color:rgba(245,165,36,.6)}
+.svFactor h3{margin:0 0 8px;font-size:17px;line-height:1.25;color:#0E1726}
+.svFactor p{margin:0;font-size:14px;line-height:1.65;color:var(--muteddark)}
+.svNote{max-width:70ch;margin:26px auto 0;text-align:center;font-size:14px;
+  line-height:1.7;color:var(--muteddark)}
+.svNote a{color:#1F3350;font-weight:600;text-decoration:underline;
+  text-decoration-color:rgba(245,165,36,.85);text-underline-offset:3px;
+  text-decoration-thickness:2px}
+
+/* ---- quote checks, on dark ---- */
+.svChecks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.svCheck{position:relative;padding:22px 22px 22px 62px;border-radius:14px;
+  background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09)}
+.svCheck-i{position:absolute;left:20px;top:21px;width:28px;height:28px;border-radius:50%;
+  display:grid;place-items:center;background:rgba(245,165,36,.16);color:#F5A524}
+.svCheck-i svg{width:14px;height:14px}
+.svCheck b{display:block;margin:0 0 7px;font:700 16px/1.32 Inter;color:#fff}
+.svCheck p{margin:0;font-size:14px;line-height:1.66;color:#B8C3D4}
+
+/* ---- related services, on paper ---- */
+.svRel-h{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;
+  column-gap:40px;row-gap:12px;margin:0 0 26px}
+.svRel-h p{margin:0;max-width:48ch;font-size:14.5px;line-height:1.65;color:var(--muteddark)}
+.svRel-all{display:inline-flex;align-items:center;gap:6px;margin-left:4px;font-weight:700;
+  color:#1F3350;text-decoration:underline;text-decoration-color:rgba(245,165,36,.85);
+  text-underline-offset:3px;text-decoration-thickness:2px}
+.svRel-all i{font-style:normal}
+.svRels{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.svRel{position:relative;display:flex;flex-direction:column;gap:5px;
+  padding:18px 44px 18px 20px;border-radius:12px;background:#fff;
+  border:1px solid rgba(20,30,50,.1);
+  transition:border-color .25s var(--ease),transform .25s var(--ease)}
+.svRel b{font:700 15px/1.25 Inter;color:#0E1726}
+.svRel span{font-size:13px;line-height:1.5;color:var(--muteddark)}
+.svRel i{position:absolute;right:18px;top:18px;font-style:normal;color:#9A6108;
+  transition:transform .25s var(--ease)}
+.svRel:hover{border-color:rgba(245,165,36,.55);transform:translateY(-2px)}
+.svRel:hover i{transform:translateX(4px)}
+
+@media (max-width:980px){
+  .svChecks,.svRels{grid-template-columns:1fr 1fr}
+}
+@media (max-width:620px){
+  .svChecks,.svRels{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  .svFactor,.svRel,.svRel i{transition:none}
+  .svFactor:hover,.svRel:hover{transform:none}
+}
+
+/* ---- keyword highlighting in headings -----------------------------------
+   .hl-amber is the class the homepage H1 already uses, so this is the site's
+   existing highlight rather than a second one. Two things are added.
+
+   1. <strong> is used instead of <span>, so the emphasis is semantic as well
+      as visual. Headings are already 800 weight, so the weight is inherited
+      and the highlight reads as colour, not as extra bold.
+
+   2. Amber text on the light grounds measures about 3:1, under the 4.5:1 that
+      body-size text needs. The same trap cost us the branded homepage link on
+      the hub pages earlier. On light sections the word keeps the heading's own
+      colour and takes an amber marker band behind it, so the contrast is the
+      heading's contrast. */
+h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
+.light .hl-amber, .hxCream .hl-amber, .hxWhite .hl-amber{
+  color:inherit;
+  background-image:linear-gradient(180deg,transparent 62%,rgba(245,165,36,.45) 62%);
+  padding:0 .05em;
+  border-radius:2px}
+
 </style>
 <!-- JSON-LD built to 05-schema-nap-spec.md. No street address, ZIP, geo,
      priceRange or aggregateRating: none of those are confirmed, and the
@@ -2372,7 +2454,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
           "name": "How long does a roof replacement take?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "One working day on a standard residential roof, once the materials are already on site."
+            "text": "One working day on a standard residential roof, once the materials are already on site. The inspection, the estimate and the material order all happen before that. We do not tear off a roof we cannot finish the same day."
           }
         },
         {
@@ -2380,7 +2462,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
           "name": "Do I have to move out or take a day off work?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Move cars off the driveway and take anything fragile off the walls in rooms directly under the roof."
+            "text": "No. Move cars off the driveway and take anything fragile off the walls in rooms directly under the roof. You do not need to be home, though most people like to be there at the start and the end."
           }
         },
         {
@@ -2393,10 +2475,26 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
         },
         {
           "@type": "Question",
+          "name": "Will my insurance pay for a new roof?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If a storm caused the damage, the policy often covers a large part of it. We do not negotiate claims, because that is a licensed public adjuster’s job. Our side is the evidence: the damage photographed, the roof measured, and a scope your adjuster can price from, handed over while they are up there with us. The insurance claims page covers the rest."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "What does the warranty actually cover?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We cover our own workmanship. The wind coverage is GAF's WindProven Limited Wind Warranty: a 15-year warranty with no maximum wind speed limit and no named-storm exclusion. It applies when GAF Timberline shingles with LayerLock Technology are installed with at least four qualifying GAF accessories."
+            "text": "Two separate things. The installation is covered by us. The wind cover comes from GAF: the WindProven Limited Wind Warranty runs 15 years with no wind speed cap and no named-storm exclusion , the two gaps most roofing warranties leave open. It has to be earned. The roof needs GAF Timberline shingles with LayerLock Technology and at least four qualifying GAF accessories: starter strips, roof deck protection, ridge cap shingles, and a leak barrier or attic ventilation. Your estimate says in writing whether your roof can get it, and what it adds to the price."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long will a new roof last in New Orleans?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Architectural shingle runs 25 to 30 years here and standing seam metal 40 to 50. What shortens either one is heat trapped in a badly ventilated attic, which is why ventilation is a line on every replacement estimate we write."
           }
         }
       ]
@@ -2408,7 +2506,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 <body>
 
 <div class="note" id="note"><button onclick="document.getElementById('note').remove()">&times;</button>
-<b>Template</b>Service page, worked as roof replacement. Around 50 pages use this shape. Same interior system as the hub. Swap the copy, keep the order.</div>
+<b>Template</b><strong>/residential/replacement/</strong>, the master for all nineteen residential service pages. Keep the section order, change the words. The live page has a generic H1, the wrong phone number and seven images with empty alt text.</div>
 
 <!-- ============ UTILITY BAR ============ -->
 <div class="util">
@@ -2498,13 +2596,12 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   </div>
 </header>
 
-
 <section class="ihero">
   <div class="ibg" style="background-image:url(_assets/hero-aerial-shingle.jpg)"></div>
   <div class="wrap">
     <nav class="icrumbs" aria-label="Breadcrumb"><a href="https://www.bigeasyroofingcompany.com/">Home</a><i>&rsaquo;</i><a href="https://www.bigeasyroofingcompany.com/residential/">Residential</a><i>&rsaquo;</i><span aria-current="page">Roof Replacement</span></nav>
-    <h1>Roof Replacement in New Orleans</h1>
-    <p class="icreds"><b>One working day on the roof</b>, once your materials are on site. Free inspection first, written line-item estimate second, and the GAF WindProven wind warranty on qualifying systems.</p>
+    <h1>Residential Roof Replacement <br class="dtbr">in New Orleans</h1>
+    <p class="icreds"><b>One working day on the roof</b> once your materials are on site. Free inspection first, a written line-item estimate second, and the GAF WindProven wind warranty on qualifying systems.</p>
     <div class="iacts">
       <a href="#ask" class="btn btn-amber">Get a free inspection</a>
       <a href="tel:5042293955" class="btn btn-ghost">504-229-3955</a>
@@ -2522,46 +2619,39 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   </div>
 </div>
 
-<section class="i" id="ask">
+<section class="i light hxpaper" id="ask">
+  <span class="hxWeave" aria-hidden="true"></span>
   <div class="wrap ibody">
     <div class="icopy rv">
-      <p class="lede">A replacement is the one roofing job where the cheap quote and the honest
-      quote look identical on paper. The difference is what happens after the old roof comes
-      off, and whether that was priced before you signed.</p>
+      <span class="eyebrow">Residential roof replacement</span>
+      <p class="hxLede">A replacement is the one roofing job where the cheap quote and the honest quote look identical on paper. The difference is what happens after the old roof comes off, and whether that was priced before you signed.</p>
+      <p>At <a href="https://www.bigeasyroofingcompany.com/">Big Easy Roofing Company</a>, a replacement starts with a free inspection of every slope and finishes the same day the old roof comes off. Between the two is a written estimate you can lay next to anybody else’s and compare line by line.</p>
+      <p>Not every roof we are called out to replace needs replacing. If yours can be repaired and last, that is what the estimate will say, and we will quote the <a href="https://www.bigeasyroofingcompany.com/residential/repairs/">roof repair</a> instead.</p>
 
-      <h2>When a Repair Will Not Hold Any Longer</h2>
-      <p>If two or more of these describe your roof, replacing it is usually cheaper over five
-      years than repeat repairs:</p>
-      <ul>
-        <li>The roof is over 20 years old. Asphalt shingle in this climate rarely makes 25.</li>
-        <li>Granules are collecting in the gutters. That is the shingle's sunscreen washing off.</li>
-        <li>You have patched the same slope more than twice, which usually means the underlayment has failed rather than the shingle.</li>
-        <li>The deck feels soft underfoot, so water has been sitting in the structure.</li>
-        <li>Daylight shows through the attic boards.</li>
-        <li>A named storm went over it and nobody has been up since.</li>
-      </ul>
+      <div class="hxCreds">
+        <article class="hxCred">
+          <span class="hxCred-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <h3>One Day on the Roof</h3>
+          <p>Materials arrive first. The tear-off starts in the morning and the house is dried in before the crew leaves.</p>
+        </article>
+        <article class="hxCred">
+          <span class="hxCred-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></svg></span>
+          <h3>Priced Line by Line</h3>
+          <p>Every material, quantity and labor charge is written down before you agree to anything.</p>
+        </article>
+        <article class="hxCred">
+          <span class="hxCred-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <h3>Both Warranties in Writing</h3>
+          <p>The manufacturer covers the materials and we cover the installation, and you get both on paper.</p>
+        </article>
+      </div>
 
-      <h2>What a Replacement Actually Covers</h2>
-      <p>Every line below is in the written estimate before anyone climbs a ladder. Nothing
-      here is an add-on discovered halfway through.</p>
-      <ul>
-        <li><strong>Full tear-off</strong> to the deck. No layering over the existing roof.</li>
-        <li><strong>Decking inspection</strong>, with soft sheets replaced at a per-sheet rate quoted up front.</li>
-        <li><strong>Ice and water barrier</strong> at valleys, eaves and every penetration.</li>
-        <li><strong>Synthetic underlayment</strong> across the full deck.</li>
-        <li><strong>New flashing</strong> at chimneys, walls, valleys and vents. Reusing old flashing is where cheap quotes save money.</li>
-        <li><strong>Ridge ventilation</strong>, because bad ventilation cooks a roof from the inside and voids most manufacturer warranties.</li>
-        <li><strong>Shingles and ridge cap</strong> in the color and profile you picked.</li>
-        <li><strong>Cleanup and magnet sweep</strong> of the yard, beds and driveway.</li>
-      </ul>
-
-      <h2>Why Nobody Can Quote Your Roof Over the Phone</h2>
-      <p>Anyone who gives you a number before seeing the roof is guessing, and the guess gets
-      corrected once the tear-off starts. Five things set the price: square footage and pitch,
-      decking condition, material choice, the number of penetrations and detail areas, and how
-      many layers have to come off.</p>
-      <p>The inspection is free and the estimate is line-itemed, so you can hold it next to
-      any other quote in New Orleans and see exactly where they differ.</p>
+      <div class="hxStats">
+        <div class="hxStat"><b data-to="1">1</b><span>Working day <br class="dtbr">on the roof</span></div>
+        <div class="hxStat"><b data-to="14">14</b><span>Cities, no <br class="dtbr">travel surcharge</span></div>
+        <div class="hxStat"><b data-to="0">0</b><span>Dollars for <br class="dtbr">the inspection</span></div>
+        <div class="hxStat"><b data-to="15">15</b><span>Year WindProven cover <br class="dtbr">on qualifying roofs</span></div>
+      </div>
     </div>
     <aside class="iask">
       <div class="askcard lite rv">
@@ -2692,57 +2782,413 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   </div>
 </section>
 
-<section class="i light">
+<section class="i light hxBlue" id="services">
   <div class="wrap">
-    <div class="head rv" style="margin-bottom:26px">
+    <div class="head ctr rv" style="margin-bottom:36px">
+      <span class="eyebrow">Repair or replace</span>
+      <h2>Six Signs Your Roof <br class="dtbr"><strong class="hl-amber">Needs Replacing</strong></h2>
+      <p class="lead" style="margin-inline:auto">If two or more of these describe your roof, replacing it usually costs less over five years than paying for the same repair again and again.</p>
+    </div>
+    <div class="hxSigns">
+      <article class="hxSign rv d0">
+        <span class="hxSign-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M8 14h3"/></svg></span>
+        <h3>It Is Past Twenty Years Old</h3>
+        <p>Asphalt shingle in this heat rarely makes twenty five. Age alone is not a verdict, but it changes what a repair is worth.</p>
+      </article>
+      <article class="hxSign rv d1">
+        <span class="hxSign-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/></svg></span>
+        <h3>Granules in the Gutters</h3>
+        <p>That grit is the shingle’s sunscreen washing off. Once it goes, the sun works straight on the asphalt.</p>
+      </article>
+      <article class="hxSign rv d2">
+        <span class="hxSign-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.4 6 10a6 6 0 0 1-12 0c0-3.6 6-10 6-10z"/></svg></span>
+        <h3>The Same Leak, Patched Twice</h3>
+        <p>A slope that has been patched more than twice usually has failed underlayment under it, not one bad shingle.</p>
+      </article>
+      <article class="hxSign rv d3">
+        <span class="hxSign-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 6 13h5l-2 9 9-13h-5l2-7z"/></svg></span>
+        <h3>A Soft Deck Underfoot</h3>
+        <p>Give in the decking means water has been sitting in the wood. That is the structure, not the surface.</p>
+      </article>
+      <article class="hxSign rv d3">
+        <span class="hxSign-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></span>
+        <h3>Daylight Through the Attic</h3>
+        <p>If you can see sky from the attic, rain can find the attic too. Nothing short of new decking and underlayment fixes that.</p>
+      </article>
+      <article class="hxSign rv d3">
+        <span class="hxSign-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h11a3 3 0 1 0-3-3"/><path d="M3 14h14a3 3 0 1 1-3 3"/><path d="M3 11h7"/></svg></span>
+        <h3>A Named Storm Went Over It</h3>
+        <p>And nobody has been up since. Wind breaks the seal on a shingle without taking it off, which you cannot see from the yard.</p>
+      </article>
+    </div>
+    <div class="hxSigns-f rv d2">
+      <p>Any one of these is worth a look. The inspection is free either way.</p>
+      <a class="btn btn-amber" href="#ask">Book a free inspection</a>
+    </div>
+  </div>
+</section>
+
+<section class="i hxCream" id="process">
+  <div class="wrap">
+    <div class="head rv" style="margin-bottom:38px">
+      <span class="eyebrow">What the price includes</span>
+      <h2>What a <strong class="hl-amber">Full Replacement</strong> <br class="dtbr">Actually Includes</h2>
+      <p class="lead">Every line below is on the written estimate before anybody climbs a ladder. None of it is an extra we find halfway through.</p>
+    </div>
+    <div class="hxJob rv d1">
+      <div class="hxTicket">
+        <div class="hxTicket-h">
+          <span class="hxTicket-b">Big Easy Roofing Company</span>
+          <span class="hxTicket-t">Replacement Scope</span>
+        </div>
+        <div class="hxTicket-meta">
+          <span>Property</span><b>New Orleans, LA</b>
+          <span>Scope</span><b>Residential roof replacement</b>
+        </div>
+        <div class="hxLines" role="tablist" aria-label="How the job runs">
+          <button class="hxLine on" type="button" data-st="0" aria-selected="true">
+            <span class="hxLine-n">01</span>
+            <span class="hxLine-l">Full Tear-Off to the Deck</span>
+            <span class="hxLine-w">Morning</span>
+            <span class="hxLine-c" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6 6L20 6"/></svg></span>
+          </button>
+          <button class="hxLine" type="button" data-st="1" aria-selected="false">
+            <span class="hxLine-n">02</span>
+            <span class="hxLine-l">Decking Inspection</span>
+            <span class="hxLine-w">Morning</span>
+            <span class="hxLine-c" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6 6L20 6"/></svg></span>
+          </button>
+          <button class="hxLine" type="button" data-st="2" aria-selected="false">
+            <span class="hxLine-n">03</span>
+            <span class="hxLine-l">Ice and Water Barrier</span>
+            <span class="hxLine-w">Midday</span>
+            <span class="hxLine-c" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6 6L20 6"/></svg></span>
+          </button>
+          <button class="hxLine" type="button" data-st="3" aria-selected="false">
+            <span class="hxLine-n">04</span>
+            <span class="hxLine-l">Synthetic Underlayment</span>
+            <span class="hxLine-w">Midday</span>
+            <span class="hxLine-c" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6 6L20 6"/></svg></span>
+          </button>
+          <button class="hxLine" type="button" data-st="4" aria-selected="false">
+            <span class="hxLine-n">05</span>
+            <span class="hxLine-l">New Flashing Throughout</span>
+            <span class="hxLine-w">Afternoon</span>
+            <span class="hxLine-c" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6 6L20 6"/></svg></span>
+          </button>
+          <button class="hxLine" type="button" data-st="5" aria-selected="false">
+            <span class="hxLine-n">06</span>
+            <span class="hxLine-l">Ridge Ventilation</span>
+            <span class="hxLine-w">Afternoon</span>
+            <span class="hxLine-c" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6 6L20 6"/></svg></span>
+          </button>
+          <button class="hxLine" type="button" data-st="6" aria-selected="false">
+            <span class="hxLine-n">07</span>
+            <span class="hxLine-l">Shingles and Ridge Cap</span>
+            <span class="hxLine-w">Afternoon</span>
+            <span class="hxLine-c" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6 6L20 6"/></svg></span>
+          </button>
+          <button class="hxLine" type="button" data-st="7" aria-selected="false">
+            <span class="hxLine-n">08</span>
+            <span class="hxLine-l">Cleanup and Magnet Sweep</span>
+            <span class="hxLine-w">Evening</span>
+            <span class="hxLine-c" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6 6L20 6"/></svg></span>
+          </button>
+        </div>
+        <div class="hxTicket-f">
+          <span>Every line is priced before you sign</span>
+          <a href="tel:5042293955">504-229-3955</a>
+        </div>
+      </div>
+      <div class="hxJobside">
+        <div class="hxStage2">
+        <div class="hxStep on" data-st="0">
+          <span class="eyebrow">Scope line &middot; 01</span>
+          <h3>Full Tear-Off to the Deck</h3>
+          <p>Every layer comes off. We do not lay a new roof over an old one, because the second layer hides whatever is wrong with the wood underneath.</p>
+          <p class="hxStep-n">Nothing is laid over an old layer.</p>
+        </div>
+        <div class="hxStep" data-st="1" hidden>
+          <span class="eyebrow">Scope line &middot; 02</span>
+          <h3>Decking Inspection</h3>
+          <p>With the deck bare, every sheet gets walked and checked. Soft or rotten sheets are replaced at a per-sheet price that is on the estimate before we start.</p>
+          <p class="hxStep-n">Priced per sheet, on the estimate.</p>
+        </div>
+        <div class="hxStep" data-st="2" hidden>
+          <span class="eyebrow">Scope line &middot; 03</span>
+          <h3>Ice and Water Barrier</h3>
+          <p>Self-adhering membrane at the valleys, the eaves and around every pipe and vent, which is where water tries to get in first.</p>
+          <p class="hxStep-n">Part of the GAF accessory set for WindProven.</p>
+        </div>
+        <div class="hxStep" data-st="3" hidden>
+          <span class="eyebrow">Scope line &middot; 04</span>
+          <h3>Synthetic Underlayment</h3>
+          <p>A synthetic layer across the rest of the deck. It stays waterproof even if the shingles above it are torn away.</p>
+          <p class="hxStep-n">It replaces the old felt paper.</p>
+        </div>
+        <div class="hxStep" data-st="4" hidden>
+          <span class="eyebrow">Scope line &middot; 05</span>
+          <h3>New Flashing Throughout</h3>
+          <p>New metal at chimneys, walls, valleys and vents. Reusing the old flashing is where cheap quotes quietly save their money.</p>
+          <p class="hxStep-n">The line cheap quotes most often leave out.</p>
+        </div>
+        <div class="hxStep" data-st="5" hidden>
+          <span class="eyebrow">Scope line &middot; 06</span>
+          <h3>Ridge Ventilation</h3>
+          <p>Air in at the soffit and out at the ridge. A hot attic cooks shingles from underneath and voids most manufacturer warranties.</p>
+          <p class="hxStep-n">Sized to your attic, not guessed.</p>
+        </div>
+        <div class="hxStep" data-st="6" hidden>
+          <span class="eyebrow">Scope line &middot; 07</span>
+          <h3>Shingles and Ridge Cap</h3>
+          <p>The color and profile you picked, fastened to the manufacturer’s pattern so the warranty holds.</p>
+          <p class="hxStep-n">Installed to the manufacturer’s written instructions.</p>
+        </div>
+        <div class="hxStep" data-st="7" hidden>
+          <span class="eyebrow">Scope line &middot; 08</span>
+          <h3>Cleanup and Magnet Sweep</h3>
+          <p>The yard, the beds and the driveway get swept with a rolling magnet for nails before the crew leaves.</p>
+          <p class="hxStep-n">You can park on the drive that evening.</p>
+        </div>
+        </div>
+        <div class="hxJobcta">
+          <p>The inspection and the written scope cost nothing, and you are under no obligation once you have them.</p>
+          <a class="btn btn-amber" href="#ask">Book a free inspection</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="i hxDeep" id="system">
+  <div class="wrap">
+    <div class="head rv" style="margin-bottom:38px">
       <span class="eyebrow">Material options</span>
-      <h2>What Goes on the Roof</h2>
-      <p class="lead">Four systems cover almost every replacement we do in this city. We walk you through them on the inspection, not over the phone.</p>
+      <h2>Four <strong class="hl-amber">Roofing Materials</strong> <br class="dtbr">Made for New Orleans</h2>
+      <p class="lead">Four systems cover almost every replacement we do in this city. Which one suits yours comes down to the pitch, the budget and how long you plan to stay.</p>
     </div>
-    <div class="cmp rv d1">
-      <div class="cmprow h"><span>System</span><span>Typical life</span><span>Wind rating</span><span>Best for</span></div>
-      <div class="cmprow"><b>Architectural Shingle</b><span>25&ndash;30 years</span><span>Up to 130 mph</span><span>Most New Orleans homes. The default unless something argues against it.</span></div>
-      <div class="cmprow"><b>Standing Seam Metal</b><span>40&ndash;50 years</span><span><em>Highest</em></span><span>Coastal exposure, low slopes, and owners who want to do this once.</span></div>
-      <div class="cmprow"><b>Slate or Tile</b><span>50+ years</span><span>Varies by fixing</span><span>Historic districts where the roofline is part of the architecture.</span></div>
-      <div class="cmprow"><b>Modified Bitumen</b><span>15&ndash;20 years</span><span>Adhered system</span><span>Flat and low-slope sections, porches and additions.</span></div>
+    <div class="hxRows">
+      <article class="hxRow rv d0">
+        <div class="hxRow-img">
+          <span class="hxRow-z" style="background-image:url(_assets/typ-card-shingle.jpg)"></span>
+          <span class="hxRow-tag">System 01</span>
+        </div>
+        <div class="hxRow-b">
+          <span class="hxRow-n" aria-hidden="true">01</span>
+          <h3>Architectural Shingle</h3>
+          <p>The default on most New Orleans houses, and the right choice unless something about the roof argues against it. It is also the only system here that can carry the GAF WindProven warranty.</p>
+          <div class="hxChips"><span>25 to 30 years</span><span>Up to 130 mph</span><span class="hxChip-w">Most common</span></div>
+          <a class="hxMore" href="https://www.bigeasyroofingcompany.com/roofing-types/shingle/">More on this <i>&rarr;</i></a>
+        </div>
+      </article>
+      <article class="hxRow r rv d1">
+        <div class="hxRow-img">
+          <span class="hxRow-z" style="background-image:url(_assets/typ-metal.jpg)"></span>
+          <span class="hxRow-tag">System 02</span>
+        </div>
+        <div class="hxRow-b">
+          <span class="hxRow-n" aria-hidden="true">02</span>
+          <h3>Standing Seam Metal</h3>
+          <p>Costs more up front and lasts the longest. Concealed fasteners, panels that shed wind well, and a roof you are unlikely to replace again.</p>
+          <div class="hxChips"><span>40 to 50 years</span><span>Highest wind rating</span></div>
+          <a class="hxMore" href="https://www.bigeasyroofingcompany.com/roofing-types/metal/">More on this <i>&rarr;</i></a>
+        </div>
+      </article>
+      <article class="hxRow rv d2">
+        <div class="hxRow-img">
+          <span class="hxRow-z" style="background-image:url(_assets/typ-slate.jpg)"></span>
+          <span class="hxRow-tag">System 03</span>
+        </div>
+        <div class="hxRow-b">
+          <span class="hxRow-n" aria-hidden="true">03</span>
+          <h3>Slate or Tile</h3>
+          <p>For historic districts where the roofline is part of the house. Both are heavy, so the structure is checked before either one is quoted.</p>
+          <div class="hxChips"><span>50 years and up</span><span>Depends on fixing</span></div>
+          <a class="hxMore" href="https://www.bigeasyroofingcompany.com/roofing-types/slate/">More on this <i>&rarr;</i></a>
+        </div>
+      </article>
+      <article class="hxRow r rv d3">
+        <div class="hxRow-img">
+          <span class="hxRow-z" style="background-image:url(_assets/typ-flat.jpg)"></span>
+          <span class="hxRow-tag">System 04</span>
+        </div>
+        <div class="hxRow-b">
+          <span class="hxRow-n" aria-hidden="true">04</span>
+          <h3>Flat and Low-Slope Sections</h3>
+          <p>Porches, additions and rear sections too shallow for shingle take a membrane instead. Plenty of New Orleans houses have both on one roof.</p>
+          <div class="hxChips"><span>15 to 20 years</span><span>Fully adhered</span></div>
+          <a class="hxMore" href="https://www.bigeasyroofingcompany.com/roofing-types/flat/">More on this <i>&rarr;</i></a>
+        </div>
+      </article>
     </div>
-    <p class="fineprint" style="margin-top:14px;color:var(--muteddark)">Life spans are industry ranges for this climate, not a warranty. Your written estimate carries the actual manufacturer terms.</p>
+    <div class="hxSeal nopic rv d2">
+      
+      <div>
+        <h3>Life Spans Are Ranges, Not Promises</h3>
+        <p>These are industry ranges for this climate. Your written estimate carries the actual manufacturer terms for the material you choose.</p>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
-<section class="i">
+<section class="i hxWhite" id="cost">
   <div class="wrap">
-    <div class="head rv" style="margin-bottom:26px"><span class="eyebrow">What a replacement involves</span><h2>What a Replacement Looks Like</h2></div>
-    <div class="icards rv d1">
-      <div class="icard"><span class="z" style="background-image:url(_assets/sq-shingle-aerial.jpg)"></span><span class="tagp">Full replacement</span><b>Architectural Shingle</b><span>Complete tear-off to the decking</span></div>
-      <div class="icard"><span class="z" style="background-image:url(_assets/sq-finished-house.jpg)"></span><b>Finished and Cleared</b><span>A magnet sweep before the crew leaves</span></div>
-      <div class="icard"><span class="z" style="background-image:url(_assets/sq-underlayment.jpg)"></span><b>Underlayment Down</b><span>The layer that keeps you dry</span></div>
-      <div class="icard"><span class="z" style="background-image:url(_assets/sq-metal-detail.jpg)"></span><b>Standing Seam Metal</b><span>No exposed fasteners</span></div>
+    <div class="head ctr rv" style="margin-bottom:34px">
+      <span class="eyebrow">Roof replacement cost</span>
+      <h2>What Sets the Cost of a <br class="dtbr"><strong class="hl-amber">Roof Replacement</strong></h2>
+      <p class="lead" style="margin-inline:auto">Anyone who gives you a number before seeing the roof is guessing, and the guess gets corrected once the tear-off starts. These five things set the price.</p>
+    </div>
+    <div class="svFactors">
+      <article class="svFactor rv d0">
+        <span class="svFactor-n" aria-hidden="true">01</span>
+        <h3>Size and Pitch</h3>
+        <p>Measured in squares of a hundred square feet. A steep roof takes longer to work safely and needs more material to cover the same footprint.</p>
+      </article>
+      <article class="svFactor rv d1">
+        <span class="svFactor-n" aria-hidden="true">02</span>
+        <h3>What the Deck Looks Like</h3>
+        <p>Nobody knows until the old roof is off. That is why replaced sheets are priced per sheet on the estimate instead of arriving as a surprise.</p>
+      </article>
+      <article class="svFactor rv d2">
+        <span class="svFactor-n" aria-hidden="true">03</span>
+        <h3>The Material You Choose</h3>
+        <p>Shingle, metal, slate or membrane. The spread between them is wider than any other line on the estimate.</p>
+      </article>
+      <article class="svFactor rv d3">
+        <span class="svFactor-n" aria-hidden="true">04</span>
+        <h3>Penetrations and Details</h3>
+        <p>Every chimney, skylight, vent, valley and wall joint takes flashing and time. Two roofs the same size can price very differently.</p>
+      </article>
+      <article class="svFactor rv d3">
+        <span class="svFactor-n" aria-hidden="true">05</span>
+        <h3>Layers Coming Off</h3>
+        <p>One layer of old shingle is a normal tear-off. Two or three layers mean more labor and more weight to haul away.</p>
+      </article>
+    </div>
+    <p class="svNote rv d2">The inspection is free and the estimate is line-itemed, so you can hold it next to any other quote in New Orleans and see exactly where the two differ. Would rather start in writing? The <a href="https://www.bigeasyroofingcompany.com/contact/">contact page</a> has the form and the hours.</p>
+    <div class="secta rv d2">
+      <button class="btn btn-amber" type="button" data-open-modal>Get my written estimate</button>
+      <a class="btn btn-ghost" href="tel:5042293955">Call 504-229-3955</a>
+      <p>Free, and yours to keep whether or not we do the work.</p>
     </div>
   </div>
 </section>
 
-<section class="i light">
+<section class="i hxDark" id="compare">
+  <div class="hxDark-glow" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="head rv" style="margin-bottom:26px"><span class="eyebrow">Before you call</span><h2>Roof Replacement Questions</h2></div>
+    <div class="head rv" style="margin-bottom:34px">
+      <span class="eyebrow">Before you sign</span>
+      <h2>How to Compare <br class="dtbr">Roof <strong class="hl-amber">Replacement Quotes</strong></h2>
+      <p class="lead">Put two quotes side by side and ask each one these six questions. A quote that cannot answer one of them is cheaper for a reason.</p>
+    </div>
+    <div class="svChecks">
+      <div class="svCheck rv d0">
+        <span class="svCheck-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6 6L20 6"/></svg></span>
+        <b>Is it a tear-off or an overlay?</b>
+        <p>You want a full tear-off, written as one. An overlay is cheaper because it skips the part where anybody looks at the deck.</p>
+      </div>
+      <div class="svCheck rv d1">
+        <span class="svCheck-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6 6L20 6"/></svg></span>
+        <b>Is the flashing new?</b>
+        <p>New metal at every wall, chimney and valley, listed as its own line. Keeping the old flashing is the most common saving hidden inside a low bid.</p>
+      </div>
+      <div class="svCheck rv d2">
+        <span class="svCheck-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6 6L20 6"/></svg></span>
+        <b>How are rotten deck sheets priced?</b>
+        <p>Look for a price per sheet on the quote itself. Without one, the final bill is whatever it turns out to be.</p>
+      </div>
+      <div class="svCheck rv d3">
+        <span class="svCheck-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6 6L20 6"/></svg></span>
+        <b>Whose warranty is it?</b>
+        <p>The manufacturer named on the materials, and the contractor’s own terms for the labor. Both should be on paper before work starts.</p>
+      </div>
+      <div class="svCheck rv d3">
+        <span class="svCheck-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6 6L20 6"/></svg></span>
+        <b>Can you check the license?</b>
+        <p>A license number you can look up yourself, and a certificate of insurance in your hand before anyone unloads a truck.</p>
+      </div>
+      <div class="svCheck rv d3">
+        <span class="svCheck-i" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l6 6L20 6"/></svg></span>
+        <b>Who will be on your roof?</b>
+        <p>The company whose name is on the contract, or a crew you have never met. Ask, and ask for the answer in writing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="i light hxBlue" id="faq">
+  <div class="wrap hxFaqWrap">
+    <div class="hxFaqSide">
+      <div class="head rv"><span class="eyebrow">Before you call</span><h2>Roof Replacement Questions</h2></div>
+      <p class="hxFaqNote rv d1">Something about your own roof that is not covered here? Call and ask. The person who picks up works on replacements.</p>
+      <a class="hxCall lite rv d1" href="tel:5042293955">
+        <span>Talk to a roofer</span><b>504-229-3955</b>
+      </a>
+    </div>
     <div class="faq ifaq rv d1">
-      <div class="q"><button>How long does a roof replacement take?</button><div class="a"><p>One working day on a standard residential roof, once the materials are already on site. The inspection, the estimate and the material order all happen before that. We do not tear off a roof we cannot finish the same day.</p></div></div>
-      <div class="q"><button>Do I have to move out or take a day off work?</button><div class="a"><p>No. Move cars off the driveway and take anything fragile off the walls in rooms directly under the roof. You do not need to be home, though most people like to be there at the start and the end.</p></div></div>
-      <div class="q"><button>What happens if it rains mid-job?</button><div class="a"><p>We only tear off what we can dry in that day, and the crew carries tarps for the rest. Nothing is left open overnight.</p></div></div>
-      <div class="q"><button>Will my insurance pay for it?</button><div class="a"><p>If the damage is storm related, often yes. We are roofers, not public adjusters, so we do not negotiate the claim. What we do is meet your adjuster on the roof and hand over photographs, measurements and a scope of loss they can work from.</p></div></div>
-      <div class="q"><button>What does the warranty actually cover?</button><div class="a"><p>Two separate things. We cover our own workmanship. The wind coverage is <strong>GAF’s WindProven Limited Wind Warranty</strong>: a 15-year warranty with <strong>no maximum wind speed limit and no named-storm exclusion</strong>, which is exactly what most standard roofing warranties leave out.</p><p>It is not automatic on every roof. It applies when we install GAF Timberline shingles with LayerLock Technology plus at least four qualifying GAF accessories: starter strips, roof deck protection, ridge cap shingles, and either a leak barrier or attic ventilation. We tell you at the estimate whether your roof qualifies and what that costs.</p></div></div>
+        <div class="q"><button>How long does a roof replacement take?</button><div class="a"><p>One working day on a standard residential roof, once the materials are already on site. The inspection, the estimate and the material order all happen before that. We do not tear off a roof we cannot finish the same day.</p></div></div>
+        <div class="q"><button>Do I have to move out or take a day off work?</button><div class="a"><p>No. Move cars off the driveway and take anything fragile off the walls in rooms directly under the roof. You do not need to be home, though most people like to be there at the start and the end.</p></div></div>
+        <div class="q"><button>What happens if it rains mid-job?</button><div class="a"><p>We only tear off what we can dry in that day, and the crew carries tarps for the rest. Nothing is left open overnight.</p></div></div>
+        <div class="q"><button>Will my insurance pay for a new roof?</button><div class="a"><p>If a storm caused the damage, the policy often covers a large part of it. We do not negotiate claims, because that is a licensed public adjuster’s job. Our side is the evidence: the damage photographed, the roof measured, and a scope your adjuster can price from, handed over while they are up there with us. The <a href="https://www.bigeasyroofingcompany.com/roof-insurance-claims/">insurance claims page</a> covers the rest.</p></div></div>
+        <div class="q"><button>What does the warranty actually cover?</button><div class="a"><p>Two separate things. The installation is covered by us. The wind cover comes from GAF: the <strong>WindProven Limited Wind Warranty</strong> runs 15 years with <strong>no wind speed cap and no named-storm exclusion</strong>, the two gaps most roofing warranties leave open.</p><p>It has to be earned. The roof needs GAF Timberline shingles with LayerLock Technology and at least four qualifying GAF accessories: starter strips, roof deck protection, ridge cap shingles, and a leak barrier or attic ventilation. Your estimate says in writing whether your roof can get it, and what it adds to the price.</p></div></div>
+        <div class="q"><button>How long will a new roof last in New Orleans?</button><div class="a"><p>Architectural shingle runs 25 to 30 years here and standing seam metal 40 to 50. What shortens either one is heat trapped in a badly ventilated attic, which is why ventilation is a line on every replacement estimate we write.</p></div></div>
     </div>
   </div>
 </section>
 
-<section class="i">
+<section class="i light hxpaper" id="related">
   <div class="wrap">
-    <div class="head rv" style="margin-bottom:22px"><span class="eyebrow">Related services</span><h2>What Else We Handle</h2></div>
-    <div class="ilinks rv d1">
-      <a href="https://www.bigeasyroofingcompany.com/residential/repairs/">Roof Repairs <i>&rarr;</i></a><a href="https://www.bigeasyroofingcompany.com/residential/emergency-roofing/">Emergency Roofing <i>&rarr;</i></a>
-      <a href="https://www.bigeasyroofingcompany.com/residential/leak-detection/">Leak Detection <i>&rarr;</i></a><a href="https://www.bigeasyroofingcompany.com/residential/hail-damage-roof-repair/">Hail Damage Repair <i>&rarr;</i></a>
-      <a href="https://www.bigeasyroofingcompany.com/residential/inspection/">Roof Inspection <i>&rarr;</i></a><a href="https://www.bigeasyroofingcompany.com/residential/gutters-downspouts-installation/">Gutters &amp; Downspouts <i>&rarr;</i></a>
-      <a href="https://www.bigeasyroofingcompany.com/residential/flashing-repair/">Flashing Repair <i>&rarr;</i></a><a href="https://www.bigeasyroofingcompany.com/residential/ventilation/">Ventilation <i>&rarr;</i></a>
+    <div class="svRel-h rv">
+      <div class="head" style="margin:0">
+        <span class="eyebrow">Related services</span>
+        <h2>Other Residential <br class="dtbr"><strong class="hl-amber">Roofing Services</strong></h2>
+      </div>
+      <p>Most replacements start as a question about something smaller. These are the services people usually ask about first. <a class="svRel-all" href="https://www.bigeasyroofingcompany.com/residential/">All 19 residential services <i>&rarr;</i></a></p>
+    </div>
+    <div class="svRels">
+      <a class="svRel rv d0" href="https://www.bigeasyroofingcompany.com/residential/repairs/">
+        <b>Roof Repairs</b>
+        <span>When the roof still has years in it</span>
+        <i aria-hidden="true">&rarr;</i>
+      </a>
+      <a class="svRel rv d1" href="https://www.bigeasyroofingcompany.com/residential/inspection/">
+        <b>Roof Inspection</b>
+        <span>Every slope photographed, free</span>
+        <i aria-hidden="true">&rarr;</i>
+      </a>
+      <a class="svRel rv d2" href="https://www.bigeasyroofingcompany.com/residential/roof-installation/">
+        <b>Roof Installation</b>
+        <span>New builds and additions</span>
+        <i aria-hidden="true">&rarr;</i>
+      </a>
+      <a class="svRel rv d3" href="https://www.bigeasyroofingcompany.com/residential/hail-damage-roof-repair/">
+        <b>Hail Damage Repair</b>
+        <span>Documented for your adjuster</span>
+        <i aria-hidden="true">&rarr;</i>
+      </a>
+      <a class="svRel rv d3" href="https://www.bigeasyroofingcompany.com/residential/emergency-roofing/">
+        <b>Emergency Roofing</b>
+        <span>Tarping around the clock</span>
+        <i aria-hidden="true">&rarr;</i>
+      </a>
+      <a class="svRel rv d3" href="https://www.bigeasyroofingcompany.com/residential/ventilation/">
+        <b>Ventilation</b>
+        <span>The attic side of a roof that lasts</span>
+        <i aria-hidden="true">&rarr;</i>
+      </a>
+      <a class="svRel rv d3" href="https://www.bigeasyroofingcompany.com/residential/flashing-repair/">
+        <b>Flashing Repair</b>
+        <span>Where most leaks begin</span>
+        <i aria-hidden="true">&rarr;</i>
+      </a>
+      <a class="svRel rv d3" href="https://www.bigeasyroofingcompany.com/residential/gutters-downspouts-installation/">
+        <b>Gutters and Downspouts</b>
+        <span>Water off the roof and away from the house</span>
+        <i aria-hidden="true">&rarr;</i>
+      </a>
     </div>
   </div>
 </section>
@@ -3220,6 +3666,106 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
       if(b) b.setAttribute('aria-expanded','false');
     });
   });
+})();
+</script>
+<script>
+/* ---- hub: explorer, work order, stat counters ---- */
+(function(){
+  var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------------------------------------------------------------- 1 ---- */
+  function carousel(root, tabSel, panelSel, ms, onShow){
+    if(!root) return;
+    var tabs = [].slice.call(root.querySelectorAll(tabSel));
+    var panels = [].slice.call(root.querySelectorAll(panelSel));
+    if(!tabs.length || tabs.length !== panels.length) return;
+    var i = 0, timer = null, running = false;
+
+    function show(n, restart){
+      i = (n + tabs.length) % tabs.length;
+      tabs.forEach(function(t, k){
+        t.classList.toggle('on', k === i);
+        t.setAttribute('aria-selected', k === i ? 'true' : 'false');
+      });
+      panels.forEach(function(p, k){
+        if(k === i){ p.hidden = false; p.classList.add('on'); }
+        else { p.hidden = true; p.classList.remove('on'); }
+      });
+      if(onShow) onShow(tabs, i);
+      if(restart) tick();
+    }
+    function tick(){
+      clearTimeout(timer);
+      if(still || !running) return;
+      var on = root.querySelector(tabSel + '.on');
+      if(on){
+        var bar = on.querySelector('.hxTab-bar i');
+        if(bar){ bar.style.transition = 'none'; bar.style.height = ''; bar.style.width = '';
+                 void bar.offsetWidth; bar.style.transition = ''; }
+      }
+      timer = setTimeout(function(){ show(i + 1, true); }, ms);
+    }
+    tabs.forEach(function(t, k){
+      t.addEventListener('click', function(){ show(k, true); });
+    });
+    root.addEventListener('mouseenter', function(){
+      running = false; clearTimeout(timer); root.classList.add('paused');
+    });
+    root.addEventListener('mouseleave', function(){
+      if(still) return;
+      running = true; root.classList.remove('paused'); tick();
+    });
+    root.addEventListener('focusin', function(){ running = false; clearTimeout(timer); });
+
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          if(e.isIntersecting){ if(!still){ running = true; tick(); } }
+          else { running = false; clearTimeout(timer); }
+        });
+      }, {threshold: .25}).observe(root);
+    } else if(!still){ running = true; tick(); }
+
+    show(0, false);
+  }
+
+  carousel(document.querySelector('.hxExp'), '.hxTab', '.hxPanel', 5600);
+
+  /* ---------------------------------------------------------------- 2 ----
+     the work order. Same driver, plus every line above the current one gets
+     stamped done, so the ticket reads as a job moving through it. */
+  carousel(document.querySelector('.hxJob'), '.hxLine', '.hxStep', 5200,
+    function(lines, i){
+      lines.forEach(function(l, k){ l.classList.toggle('done', k < i); });
+    });
+
+  /* ---------------------------------------------------------------- 3 ---- */
+  var stats = [].slice.call(document.querySelectorAll('.hxStat b[data-to]'));
+  if(stats.length){
+    function run(el){
+      var to = parseInt(el.getAttribute('data-to'), 10) || 0;
+      if(still || to <= 1){ el.textContent = to; return; }
+      // the markup already holds the real number, so a page with no JS shows
+      // the truth. Only zero it at the moment the count actually starts.
+      el.textContent = '0';
+      var t0 = null, ms = 900;
+      function frame(t){
+        if(t0 === null) t0 = t;
+        var k = Math.min(1, (t - t0) / ms);
+        el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3)));
+        if(k < 1) requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    }
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          if(e.isIntersecting){ run(e.target); io.unobserve(e.target); }
+        });
+      }, {threshold: .6});
+      stats.forEach(function(el){ io.observe(el); });
+    } else { stats.forEach(run); }
+  }
 })();
 </script>
 </body>
