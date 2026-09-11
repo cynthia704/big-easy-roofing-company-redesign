@@ -11,5 +11,7 @@ two-story home). All three show a readable house number. On a roofing
 company's page a real street address reads as a client's house, so none of
 them is used.
 
-The map on this page is drawn in SVG from approximate coordinates; it is not
-a photograph or a third-party map tile.
+The map on this page is areas-basemap.svg, drawn from U.S. Census Bureau
+TIGER/Line and cartographic boundary data (public domain; credited anyway in the
+caption) by _audit-scripts/make_areas_basemap.py. Raw data in _geo/, not
+published. No third-party map tiles, nothing loads from a map service at runtime.
