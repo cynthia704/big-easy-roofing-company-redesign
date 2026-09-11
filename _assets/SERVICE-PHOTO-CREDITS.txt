@@ -1,0 +1,16 @@
+Photography for the residential service pages (master: /residential/replacement/).
+Source: Pexels. Pexels License, free to use, commercial use allowed,
+no attribution required. Ids kept so any image can be traced back.
+Checked against every other credits file on this site before download.
+
+sv-attic-daylight.jpg   pexels.com/photo/31763539  exposed attic rafters, daylight through gaps in the roof boards
+sv-rotten-timber.jpg    pexels.com/photo/34811576  weathered, rotting roof timbers with lichen on the wood
+
+Rejected: pexels.com/photo/38293528, a TruRidge ridge vent box. A non-GAF
+brand under "Ridge Ventilation" would contradict the page, which promises GAF
+accessories for the WindProven warranty. That scope line uses sof-panel-vent.jpg
+instead, the soffit intake, which the copy also describes.
+
+Every other photograph on the page is reused from an existing, already credited
+or company-owned file: gal-*, card-underlayment, wide-shingle, ins-water,
+com-storm, sof-panel-vent, typ-*.
