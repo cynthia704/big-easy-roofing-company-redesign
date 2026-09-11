@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>New Orleans Roofing Gallery | Big Easy Roofing Company</title>
-<meta name="description" content="Photos of completed roofing projects across New Orleans and the surrounding parishes, residential and commercial. Book your free inspection today.">
+<meta name="description" content="Shingle, metal, tile and slate roofs, plus two short roofing videos, in one New Orleans roofing gallery. Book your free inspection today.">
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2066,41 +2066,78 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 .hxBlue{background:#EDF1F7}
 
 /* ===== /gallery/ =========================================================
-   Photograph led. The mosaic is a plain three column grid with two tiles
-   allowed to run double width, which gives it rhythm without needing
-   JavaScript or a masonry library. Captions sit under the picture rather than
-   over it, because these are phone photographs off real roofs and some of them
-   are busy enough already. */
+   Two clips of one re-roof, a filter bar, and a masonry wall of photographs
+   at their natural shape. See the module docstring for why each piece is
+   built the way it is. */
 .galSec{background:var(--paper)}
-.galGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.galTile{margin:0;background:#fff;border:1px solid rgba(20,30,50,.09);
-  border-radius:14px;overflow:hidden;
-  transition:transform .3s var(--ease),box-shadow .3s var(--ease),
-  border-color .3s var(--ease)}
-.galTile.wide{grid-column:span 2}
-.galTile img{display:block;width:100%;height:290px;object-fit:cover;
-  background:#E8EDF4}
-.galTile.wide img{height:290px}
-.galTile figcaption{padding:14px 16px 16px;display:flex;flex-direction:column;
+
+.galReel{display:grid;grid-template-columns:1fr 1fr;column-gap:20px;row-gap:20px;
+  margin:0 0 40px}
+.galClip{margin:0;background:#0E1726;border-radius:16px;overflow:hidden;
+  box-shadow:0 22px 44px -28px rgba(6,12,22,.55)}
+.galClip-v{position:relative;aspect-ratio:16/9;background:#0E1726}
+.galClip video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  display:block}
+.galClip-tag{position:absolute;left:14px;top:14px;z-index:1;padding:6px 11px;
+  border-radius:999px;background:#F5A524;color:#0E1726;
+  font:800 11px/1 Inter;letter-spacing:.08em;text-transform:uppercase}
+.galClip-btn{position:absolute;right:12px;bottom:12px;z-index:1;
+  padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.35);
+  background:rgba(9,14,24,.82);color:#fff;font:700 12px/1 Inter;cursor:pointer;
+  transition:background .25s var(--ease)}
+.galClip-btn:hover{background:rgba(9,14,24,.95)}
+.galClip-btn:focus-visible{outline:2px solid #F5A524;outline-offset:2px}
+.galClip figcaption{padding:15px 18px 17px;display:flex;flex-direction:column;
+  gap:5px}
+.galClip figcaption b{font:700 15.5px/1.3 Inter;color:#fff}
+.galClip figcaption span{font-size:13.5px;line-height:1.6;color:#C3CDDB}
+
+.galFilter{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+  margin:0 0 26px}
+.galFilter button{display:inline-flex;align-items:center;gap:8px;
+  padding:10px 15px;border-radius:999px;cursor:pointer;
+  border:1px solid rgba(20,30,50,.14);background:#fff;color:#1F3350;
+  font:700 13.5px/1 Inter;transition:border-color .25s var(--ease),
+  background .25s var(--ease)}
+.galFilter button i{font:700 11px/1 Inter;font-style:normal;color:#7B4A05;
+  background:rgba(245,165,36,.22);border-radius:999px;padding:4px 7px}
+.galFilter button:hover{border-color:rgba(245,165,36,.6)}
+.galFilter button[aria-pressed="true"]{background:#0E1726;color:#fff;
+  border-color:#0E1726}
+.galFilter button[aria-pressed="true"] i{background:#F5A524;color:#0E1726}
+.galFilter button:focus-visible{outline:2px solid #F5A524;outline-offset:2px}
+
+.galWall{columns:3;column-gap:20px}
+.galTile{break-inside:avoid;-webkit-column-break-inside:avoid;margin:0 0 20px;
+  background:#fff;border:1px solid rgba(20,30,50,.09);border-radius:14px;
+  overflow:hidden;transition:border-color .3s var(--ease),
+  box-shadow .3s var(--ease)}
+.galTile[hidden]{display:none}
+.galTile img{display:block;width:100%;height:auto;max-height:520px;
+  object-fit:cover;background:#E8EDF4}
+.galTile figcaption{padding:13px 16px 15px;display:flex;flex-direction:column;
   gap:4px}
 .galTile figcaption b{font:700 15px/1.25 Inter;color:#0E1726}
 .galTile figcaption span{font-size:13px;line-height:1.55;color:var(--muteddark)}
-.galTile:hover{transform:translateY(-3px);border-color:rgba(245,165,36,.45);
+.galTile:hover{border-color:rgba(245,165,36,.45);
   box-shadow:0 18px 38px -22px rgba(6,12,22,.35)}
-.galNote{margin:26px 0 0;text-align:center;font-size:13.5px;line-height:1.7;
+
+.galNote{margin:12px 0 0;text-align:center;font-size:13.5px;line-height:1.7;
   color:var(--muteddark);max-width:70ch;margin-inline:auto}
+.galFine{margin:8px 0 0;text-align:center;font-size:12.5px;line-height:1.6;
+  color:var(--muteddark);max-width:70ch;margin-inline:auto}
+
 @media (max-width:980px){
-  .galGrid{grid-template-columns:1fr 1fr}
-  .galTile img,.galTile.wide img{height:250px}
+  .galWall{columns:2}
 }
-@media (max-width:620px){
-  .galGrid{grid-template-columns:1fr}
-  .galTile.wide{grid-column:auto}
-  .galTile img,.galTile.wide img{height:230px}
+@media (max-width:720px){
+  .galReel{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .galWall{columns:1}
 }
 @media (prefers-reduced-motion:reduce){
-  .galTile{transition:none}
-  .galTile:hover{transform:none}
+  .galTile,.galFilter button,.galClip-btn{transition:none}
 }
 
 /* ---- keyword highlighting in headings -----------------------------------
@@ -2296,7 +2333,7 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
       "@id": "https://www.bigeasyroofingcompany.com/gallery/#page",
       "url": "https://www.bigeasyroofingcompany.com/gallery/",
       "name": "Roofing Gallery",
-      "description": "Photographs of completed residential and commercial roofing work across New Orleans and 13 surrounding cities, taken on site.",
+      "description": "Photographs and short videos of roof types and roofing work: shingle, metal, tile and slate, and a roof going on from decking to underlayment.",
       "isPartOf": {
         "@id": "https://www.bigeasyroofingcompany.com/#business"
       }
@@ -2308,7 +2345,7 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
 <body>
 
 <div class="note" id="note"><button onclick="document.getElementById('note').remove()">&times;</button>
-<b>Template</b><strong>/gallery/</strong>, photograph led rather than the service hub kit. The live page has no headings at all, fifty four images with empty alt attributes and the wrong phone number. Eight of its ten photographs are used, see the module docstring for the two that are not.</div>
+<b>Template</b><strong>/gallery/</strong>, photograph led, with a filter bar and two short clips. All ten live photographs are used, plus eight more from Pexels. The meta is rewritten because the live one calls stock photographs completed New Orleans projects.</div>
 
 <!-- ============ UTILITY BAR ============ -->
 <div class="util">
@@ -2402,8 +2439,8 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
   <div class="ibg" style="background-image:url(_assets/gal-hero.jpg)"></div>
   <div class="wrap">
     <nav class="icrumbs" aria-label="Breadcrumb"><a href="https://www.bigeasyroofingcompany.com/">Home</a><i>&rsaquo;</i><span aria-current="page">Gallery</span></nav>
-    <h1>Roofs We Finished, <br class="dtbr">Photographed on the Day</h1>
-    <p class="icreds">Our own jobs · New Orleans and 13 cities · Free inspection either way</p>
+    <h1>What a Good Roof Looks Like, <br class="dtbr">Shingle to Standing Seam</h1>
+    <p class="icreds">Shingle, metal, tile and slate · New Orleans and 13 cities · Free inspection either way</p>
     <div class="iacts">
       <a href="#ask" class="btn btn-amber">Get a free inspection</a>
       <a href="tel:5042293955" class="btn btn-ghost">504-229-3955</a>
@@ -2417,76 +2454,217 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
     <span><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg>30 years in the trade</span>
     <span><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg>New Orleans + 13 cities</span>
     <span><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg>No subcontracting</span>
-    <span><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg>Photographs off our own jobs</span>
+    <span><svg viewBox="0 0 24 24"><path d="M4 12l6 6L20 6"/></svg>See it before you choose it</span>
   </div>
 </div>
 
 <section class="i light galSec" id="work">
   <div class="wrap">
-    <div class="head ctr rv" style="margin-bottom:34px">
-      <span class="eyebrow">Recent work</span>
-      <h2>Eight Roofs, and <strong class="hl-amber">What They Looked Like</strong></h2>
-      <p class="lead" style="margin-inline:auto">Phone photographs taken on site, not a portfolio shoot. A few of them are the mess we turned up to rather than the roof we left.</p>
+    <div class="head ctr rv" style="margin-bottom:30px">
+      <span class="eyebrow">Roofs and the work</span>
+      <h2>Every Roof Type We Install, <strong class="hl-amber">in One Place</strong></h2>
+      <p class="lead" style="margin-inline:auto">Photographs of roof types and the stages of a job, and two short clips filmed from the air. Filter by material to see the one you are considering.</p>
     </div>
-    <div class="galGrid">
-      <figure class="galTile wide rv">
-        <img src="https://www.bigeasyroofingcompany.com/wp-content/uploads/2025/07/gallery-image7-1024x756.jpeg" alt="New architectural shingle roof photographed from the ridge, with a residential street behind" loading="lazy" decoding="async">
+    <div class="galReel">
+      <figure class="galClip">
+        <div class="galClip-v">
+          <video muted loop playsinline controls preload="none" poster="_assets/gal-vid-decking.jpg" aria-label="Drone footage moving in over a house roof covered in bare plywood decking">
+            <source src="_assets/gal-vid-decking.mp4" type="video/mp4">
+          </video>
+          <span class="galClip-tag">Stage 1</span>
+          <button type="button" class="galClip-btn" hidden>Play</button>
+        </div>
+        <figcaption>
+          <b>Bare Decking, Nothing on It Yet</b>
+          <span>Plywood decking fastened down and ready. This is the stage where soft spots and poor nailing are either found or covered up.</span>
+        </figcaption>
+      </figure>
+      <figure class="galClip">
+        <div class="galClip-v">
+          <video muted loop playsinline controls preload="none" poster="_assets/gal-vid-underlayment.jpg" aria-label="Overhead drone footage of a house roof partly covered in gray synthetic underlayment">
+            <source src="_assets/gal-vid-underlayment.mp4" type="video/mp4">
+          </video>
+          <span class="galClip-tag">Stage 2</span>
+          <button type="button" class="galClip-btn" hidden>Play</button>
+        </div>
+        <figcaption>
+          <b>Underlayment Going On</b>
+          <span>Synthetic underlayment laid over the decking, with a strip of bare wood still showing. It is the layer that keeps water out if a shingle ever goes.</span>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="galFilter" role="group" aria-label="Filter the photographs by roof type" hidden><button type="button" data-f="all" aria-pressed="true">All <i>18</i></button><button type="button" data-f="shingle" aria-pressed="false">Shingle <i>9</i></button><button type="button" data-f="metal" aria-pressed="false">Metal <i>4</i></button><button type="button" data-f="tile" aria-pressed="false">Tile and Slate <i>3</i></button><button type="button" data-f="install" aria-pressed="false">Installs <i>7</i></button><button type="button" data-f="wear" aria-pressed="false">Wear and Repairs <i>2</i></button></div>
+    <div class="galWall">
+      <figure class="galTile" data-cat="tile install">
+        <img src="https://www.bigeasyroofingcompany.com/wp-content/uploads/2023/09/BigEasyRoofingCompanyimages-7-1024x681.jpg" width="1024" height="681" alt="Gloved hands placing a red clay roof tile onto a partly tiled roof" loading="lazy" decoding="async">
+        <figcaption>
+          <b>Laying Clay Tile by Hand</b>
+          <span>Each tile hangs on the batten below it. Tile is heavy, and the frame underneath has to be able to carry it.</span>
+        </figcaption>
+      </figure>
+      <figure class="galTile" data-cat="shingle install">
+        <img src="_assets/gal-harness-underlayment.jpg" width="1400" height="933" alt="Roofer wearing a safety harness installing shingles over synthetic underlayment" loading="lazy" decoding="async">
+        <figcaption>
+          <b>Tied Off, Working Up the Slope</b>
+          <span>A roofer in a harness laying shingle over synthetic underlayment, the next course already lined up.</span>
+        </figcaption>
+      </figure>
+      <figure class="galTile" data-cat="tile">
+        <img src="_assets/gal-slate-dormers.jpg" width="1400" height="933" alt="Gray slate roof with two small dormers fitted with green wooden shutters" loading="lazy" decoding="async">
+        <figcaption>
+          <b>Slate With Shuttered Dormers</b>
+          <span>Slate with two small dormers, each with green shutters. Slate outlasts almost everything and needs somebody who knows it.</span>
+        </figcaption>
+      </figure>
+      <figure class="galTile" data-cat="shingle">
+        <img src="https://www.bigeasyroofingcompany.com/wp-content/uploads/2025/07/gallery-image7-1024x756.jpeg" width="1024" height="756" alt="New architectural shingle roof photographed from the ridge, with a residential street behind" loading="lazy" decoding="async">
         <figcaption>
           <b>New Shingle Field, Looking Down the Slope</b>
-          <span>Architectural shingle laid over the whole elevation, shot from the ridge with the street behind it.</span>
+          <span>Architectural shingle laid across the whole elevation, shot from the ridge with the street behind it.</span>
         </figcaption>
       </figure>
-      <figure class="galTile rv d1">
-        <img src="https://www.bigeasyroofingcompany.com/wp-content/uploads/2025/07/756748262-unnamed-1-1024x768.jpeg" alt="Aerial photograph of a completed hipped shingle roof on a house" loading="lazy" decoding="async">
+      <figure class="galTile" data-cat="metal install">
+        <img src="_assets/gal-metal-crew.jpg" width="1400" height="1050" alt="Aerial view of a roofing crew in yellow shirts working on a green metal roof" loading="lazy" decoding="async">
         <figcaption>
-          <b>A Finished Hip Roof From Above</b>
-          <span>Every slope on a hipped roof, new shingle throughout, taken from the air so nothing is guessed at.</span>
+          <b>A Crew on a Metal Roof</b>
+          <span>A crew working across a green metal roof, seen from the air.</span>
         </figcaption>
       </figure>
-      <figure class="galTile rv d2">
-        <img src="https://www.bigeasyroofingcompany.com/wp-content/uploads/2025/07/gallery-images1-768x1024.jpeg" alt="Cracked rubber pipe boot on a weathered asphalt shingle roof with heavy granule loss" loading="lazy" decoding="async">
+      <figure class="galTile" data-cat="metal">
+        <img src="_assets/gal-porch.jpg" width="1400" height="892" alt="Two story house with a dark standing seam porch roof and a clear driveway" loading="lazy" decoding="async">
         <figcaption>
-          <b>A Pipe Boot That Had Given Up</b>
-          <span>The rubber collar split and the shingles around it stripped of granules. This is the sort of thing an inspection is looking for.</span>
+          <b>Standing Seam Over the Porch</b>
+          <span>Dark standing seam on the porch roof over the garage, with shingle on the main roof above it.</span>
         </figcaption>
       </figure>
-      <figure class="galTile rv d3">
-        <img src="https://www.bigeasyroofingcompany.com/wp-content/uploads/2025/07/gallery-imag4-768x1024.jpg" alt="Peel-and-stick roofing underlayment installed up to a metal drip edge" loading="lazy" decoding="async">
+      <figure class="galTile" data-cat="shingle">
+        <img src="https://www.bigeasyroofingcompany.com/wp-content/uploads/2025/07/756748262-unnamed-1-1024x768.jpeg" width="1024" height="768" alt="Aerial photograph of a completed hipped shingle roof on a house" loading="lazy" decoding="async">
+        <figcaption>
+          <b>A Hip Roof From Above</b>
+          <span>Every slope of a hipped roof in one frame. An aerial view is how a roof gets checked without guessing.</span>
+        </figcaption>
+      </figure>
+      <figure class="galTile" data-cat="shingle">
+        <img src="_assets/gal-dormer-house.jpg" width="1400" height="1400" alt="House with a steep shingle roof, gabled dormers and tall white windows, with palms in front" loading="lazy" decoding="async">
+        <figcaption>
+          <b>Shingle Roof With Two Dormers</b>
+          <span>A steep roof with gabled dormers over tall windows. On a roof like this the flashing does most of the work.</span>
+        </figcaption>
+      </figure>
+      <figure class="galTile" data-cat="metal">
+        <img src="https://www.bigeasyroofingcompany.com/wp-content/uploads/2025/07/gallery-imag2-1024x768.jpeg" width="1024" height="768" alt="Metal roof valley running into the wall line of a house" loading="lazy" decoding="async">
+        <figcaption>
+          <b>The Valley Where Two Planes Meet</b>
+          <span>Metal roofing through a valley and into the wall line. Valleys are where a lot of leaks start.</span>
+        </figcaption>
+      </figure>
+      <figure class="galTile" data-cat="tile">
+        <img src="https://www.bigeasyroofingcompany.com/wp-content/uploads/2023/09/BigEasyRoofingCompanyimages-6-1024x682.jpg" width="1024" height="682" alt="Red clay tile roof with two roof windows, one of them open, against a clear sky" loading="lazy" decoding="async">
+        <figcaption>
+          <b>Clay Tile With Roof Windows</b>
+          <span>A clay tile roof with two roof windows set into it. Every opening in a tile roof needs its own flashing kit.</span>
+        </figcaption>
+      </figure>
+      <figure class="galTile" data-cat="shingle install">
+        <img src="https://www.bigeasyroofingcompany.com/wp-content/uploads/2025/07/gallery-imag-6-768x1024.jpeg" width="768" height="1024" alt="Gloved hand holding a pitch and slope locator against an asphalt shingle roof" loading="lazy" decoding="async">
+        <figcaption>
+          <b>Measuring the Pitch Before Anything Is Quoted</b>
+          <span>A pitch and slope locator on the shingle field. Pitch changes the material, the labor and the price.</span>
+        </figcaption>
+      </figure>
+      <figure class="galTile" data-cat="wear">
+        <img src="_assets/gal-moss-roof.jpg" width="1400" height="933" alt="Weathered roof and dormer covered in moss and algae, beside a clay tile roof" loading="lazy" decoding="async">
+        <figcaption>
+          <b>Moss, Left Too Long</b>
+          <span>Moss and algae across a roof and its dormer. It holds water against the surface and shortens the life of the roof.</span>
+        </figcaption>
+      </figure>
+      <figure class="galTile" data-cat="metal">
+        <img src="https://www.bigeasyroofingcompany.com/wp-content/uploads/2025/07/gallery-imag-1-1024x768.jpeg" width="1024" height="768" alt="Standing seam metal roof section meeting a sided wall on a house" loading="lazy" decoding="async">
+        <figcaption>
+          <b>Standing Seam Metal Into the Wall</b>
+          <span>A low-slope metal section running up to the siding, with the wall flashing carried behind the cladding.</span>
+        </figcaption>
+      </figure>
+      <figure class="galTile" data-cat="install">
+        <img src="https://www.bigeasyroofingcompany.com/wp-content/uploads/2025/07/gallery-imag4-768x1024.jpg" width="768" height="1024" alt="Peel-and-stick roofing underlayment installed up to a metal drip edge" loading="lazy" decoding="async">
         <figcaption>
           <b>Peel-and-Stick Underlayment at the Edge</b>
           <span>Self-adhering underlayment run to the metal drip edge. The layer nobody sees and the one that keeps the water out.</span>
         </figcaption>
       </figure>
-      <figure class="galTile rv d3">
-        <img src="https://www.bigeasyroofingcompany.com/wp-content/uploads/2025/07/gallery-imag-6-768x1024.jpeg" alt="Gloved hand holding a pitch and slope locator against an asphalt shingle roof" loading="lazy" decoding="async">
+      <figure class="galTile" data-cat="shingle install">
+        <img src="_assets/gal-nailing-shingle.jpg" width="1400" height="933" alt="Roofer using a pneumatic nail gun to fasten architectural shingles" loading="lazy" decoding="async">
         <figcaption>
-          <b>Measuring the Pitch Before Anything Is Quoted</b>
-          <span>A pitch and slope locator on the shingle field. Pitch changes the material, the labor and the price, so it gets measured.</span>
+          <b>Nailing Architectural Shingle</b>
+          <span>A pneumatic nailer on a fresh course. Where each nail goes is the difference between a warranty that holds and one that does not.</span>
         </figcaption>
       </figure>
-      <figure class="galTile rv d3">
-        <img src="https://www.bigeasyroofingcompany.com/wp-content/uploads/2025/07/gallery-imag-1-1024x768.jpeg" alt="Standing seam metal roof section meeting a sided wall on a house" loading="lazy" decoding="async">
+      <figure class="galTile" data-cat="shingle">
+        <img src="_assets/gal-chimney-shingle.jpg" width="1400" height="2100" alt="Brick chimney rising through a dark gray shingle roof beside a white gable" loading="lazy" decoding="async">
         <figcaption>
-          <b>Standing Seam Metal Into the Wall</b>
-          <span>A low-slope metal section running up to the siding, with the wall flashing carried behind the cladding rather than caulked to it.</span>
+          <b>Where Chimney Meets Shingle</b>
+          <span>A brick chimney through a dark shingle roof. The flashing around a chimney is one of the first places water finds.</span>
         </figcaption>
       </figure>
-      <figure class="galTile rv d3">
-        <img src="https://www.bigeasyroofingcompany.com/wp-content/uploads/2025/07/gallery-imag2-1024x768.jpeg" alt="Metal roof valley running into the wall line of a house" loading="lazy" decoding="async">
+      <figure class="galTile" data-cat="shingle install">
+        <img src="_assets/gal-reroof-crew.jpg" width="1400" height="933" alt="Roofing crew stripping old shingles from a brick house, with tarps and materials in the yard" loading="lazy" decoding="async">
         <figcaption>
-          <b>The Valley Where Two Planes Meet</b>
-          <span>Metal roofing through a valley and into the wall line. Valleys are where most of the leaks we get called to actually start.</span>
+          <b>A Full Tear-Off in Progress</b>
+          <span>Old shingle stripped back to the decking, a crew on the roof and another on the ground, and tarps down before anything falls.</span>
         </figcaption>
       </figure>
-      <figure class="galTile wide rv d3">
-        <img src="https://www.bigeasyroofingcompany.com/wp-content/uploads/2025/07/gallery-image8-1024x768.jpg" alt="Finished two story house with a dark standing seam porch roof and a clear driveway" loading="lazy" decoding="async">
+      <figure class="galTile" data-cat="shingle wear">
+        <img src="https://www.bigeasyroofingcompany.com/wp-content/uploads/2025/07/gallery-images1-768x1024.jpeg" width="768" height="1024" alt="Cracked rubber pipe boot on a weathered asphalt shingle roof with heavy granule loss" loading="lazy" decoding="async">
         <figcaption>
-          <b>Finished, and the Drive Swept</b>
-          <span>Standing seam over the porch, shingle above, and a driveway you can park on the same afternoon.</span>
+          <b>A Pipe Boot That Has Given Up</b>
+          <span>The rubber collar split and the shingles around it stripped of granules. This is what an inspection is looking for.</span>
         </figcaption>
       </figure>
     </div>
-    <p class="galNote rv d2">Eight photographs is a small gallery and we would rather show eight real ones than fifty from a stock library. If you want to see a roof like yours specifically, <a href="https://www.bigeasyroofingcompany.com/contact/">ask us through the contact page</a> and we will send what we have.</p>
+    <p class="galNote">Want to talk through a roof like yours? <a href="https://www.bigeasyroofingcompany.com/contact/">Ask through the contact page</a> and we will go through the options for your house.</p>
+    <p class="galFine">Photographs and clips show roof types and typical work. They are not photographs of a particular customer's home.</p>
+<script>
+(function(){
+  /* filter bar: shown only when this runs, so no dead buttons without JS */
+  var bar=document.querySelector('.galFilter');
+  var tiles=[].slice.call(document.querySelectorAll('.galTile'));
+  if(bar){
+    bar.hidden=false;
+    bar.addEventListener('click',function(e){
+      var b=e.target.closest('button'); if(!b) return;
+      var f=b.getAttribute('data-f');
+      [].forEach.call(bar.querySelectorAll('button'),function(x){
+        x.setAttribute('aria-pressed',x===b?'true':'false');});
+      tiles.forEach(function(t){
+        var c=' '+t.getAttribute('data-cat')+' ';
+        t.hidden=!(f==='all'||c.indexOf(' '+f+' ')>-1);});
+    });
+  }
+  /* clips: play in view, pause out of view, a real pause button, and never
+     autoplay for anyone who asked their system for reduced motion */
+  var still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  [].forEach.call(document.querySelectorAll('.galClip'),function(c){
+    var v=c.querySelector('video'), b=c.querySelector('.galClip-btn');
+    var held=still, seen=false;
+    v.removeAttribute('controls'); b.hidden=false;
+    function label(){ var p=v.paused; b.textContent=p?'Play':'Pause';
+      b.setAttribute('aria-label',(p?'Play':'Pause')+' video'); }
+    v.addEventListener('play',label); v.addEventListener('pause',label); label();
+    b.addEventListener('click',function(){
+      if(v.paused){held=false; v.play().catch(function(){});}
+      else{held=true; v.pause();}
+    });
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){es.forEach(function(e){
+        seen=e.isIntersecting;
+        if(seen&&!held){v.play().catch(function(){});}
+        else if(!seen){v.pause();}
+      });},{threshold:.35}).observe(v);
+    }
+  });
+})();
+</script>
     <div class="secta rv d2">
       <button class="btn btn-amber" type="button" data-open-modal>Send me photographs of mine</button>
       <a class="btn btn-ghost" href="tel:5042293955">Call 504-229-3955</a>
@@ -2499,7 +2677,7 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
   <div class="ibg" style="background-image:url(_assets/gal-banner.jpg)"></div>
   <div class="wrap">
     <div>
-      <h2>The Next Set of Photographs Could Be Your Roof</h2>
+      <h2>Seen the Roof You Want? Get It Priced Properly</h2>
       <p>Free inspection across New Orleans, Metairie, Kenner, Slidell, Mandeville, Covington, Baton Rouge and seven more Louisiana cities.</p>
     </div>
     <div class="bts">

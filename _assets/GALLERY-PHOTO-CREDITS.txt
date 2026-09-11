@@ -1,0 +1,33 @@
+Photography and video for /gallery/.
+Source: Pexels. Pexels License, free to use, commercial use allowed,
+no attribution required. Ids kept so any file can be traced back.
+
+Checked against every other credits file on this site before download, so no
+Pexels id appears on two pages. Every file was looked at before it was chosen:
+photographs on a contact sheet, clips frame by frame at four points.
+
+PHOTOGRAPHS, added September 11, 2026
+gal-reroof-crew.jpg           pexels.com/photo/33404981  crew stripping shingle from a brick house
+gal-nailing-shingle.jpg       pexels.com/photo/33404248  roofer nailing architectural shingle
+gal-harness-underlayment.jpg  pexels.com/photo/38028508  roofer in a harness laying shingle
+gal-dormer-house.jpg          pexels.com/photo/18098285  steep shingle roof with gabled dormers
+gal-chimney-shingle.jpg       pexels.com/photo/26612731  brick chimney through dark shingle
+gal-slate-dormers.jpg         pexels.com/photo/37771658  slate roof with shuttered dormers
+gal-metal-crew.jpg            pexels.com/photo/5264825   crew on a green metal roof, aerial
+gal-moss-roof.jpg             pexels.com/photo/17765345  moss and algae on a roof and dormer
+
+CLIPS, 960x540, 24fps
+gal-vid-decking.mp4           pexels.com/video/4198817   drone push-in over bare plywood decking, 24.1s, 4.9 MB
+gal-vid-underlayment.mp4      pexels.com/video/4198818   overhead drone, underlayment going on, 11.1s, 2.3 MB
+gal-vid-decking.jpg / gal-vid-underlayment.jpg are the Pexels poster frames.
+
+Pexels titles both clips as a house under construction, so the page does not
+call them a re-roof and does not say they show the same house.
+
+THE TEN PHOTOGRAPHS FROM THE LIVE GALLERY are not listed here. They are stock
+already in the client's WordPress media library and the page serves them from
+their existing URLs. Cynthia confirmed on September 11, 2026 that all ten are
+stock, not the company's own jobs.
+
+NOT RECORDED: where gal-hero.jpg and gal-banner.jpg came from. They predate
+this file and no note of their source was found. Worth tracing before launch.
