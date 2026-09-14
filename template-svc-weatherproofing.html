@@ -2152,6 +2152,13 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 /* full width of the table. Capped at 86ch it sat as a 495px block with the
    rest of the row empty beside it, and verify_gaps called it a hole. */
 .svCmp-note{margin:18px 0 0;font-size:13px;line-height:1.65;color:#8E9BB0}
+/* the button under the comparison, centered under the table */
+.svCmp-cta{margin:26px 0 0;text-align:center}
+
+/* the closing panel under the rows carries a button at its right edge */
+.hxSeal.hasCta{grid-template-columns:1fr auto;align-items:center}
+.hxSeal.hasCta:not(.nopic){grid-template-columns:auto 1fr auto}
+.hxSeal-cta{white-space:nowrap}
 
 /* ---- related services, on paper ---- */
 .svRel-h{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;
@@ -2187,6 +2194,10 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 }
 @media (max-width:620px){
   .svSigns,.svRels{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .hxSeal.hasCta,.hxSeal.hasCta:not(.nopic){grid-template-columns:1fr}
+  .hxSeal-cta{justify-self:start}
 }
 @media (prefers-reduced-motion:reduce){
   .svSign,.svSign-img img,.svHouse,.svRel,.svRel i{transition:none}
@@ -3108,13 +3119,14 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
         </div>
       </article>
     </div>
-    <div class="hxSeal nopic rv d2">
+    <div class="hxSeal nopic hasCta rv d2">
       
       <div>
         <h3>Weatherproofing Is Not a Spray</h3>
         <p>A coat of sealer sprayed over a roof does not fix a lifted flashing or a split boot. Each weak point is fixed on its own.</p>
 
       </div>
+      <button class="btn btn-amber hxSeal-cta" type="button" data-open-modal>Book a free inspection</button>
     </div>
 
   </div>
@@ -3219,6 +3231,7 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
       </div>
     </div>
     <p class="svCmp-note rv d2">Quote A is fictional, pieced together from shortcuts common in spray-on sealer sales. It is not a real quote, and no real company is described.</p>
+    <div class="svCmp-cta rv d2"><button class="btn btn-amber" type="button" data-open-modal>Book a free inspection</button></div>
   </div>
 </section>
 
