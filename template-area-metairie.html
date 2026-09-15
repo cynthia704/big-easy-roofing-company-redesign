@@ -2413,6 +2413,13 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
 .cyAsk{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:56px;align-items:start}
 .cyAsk-side{position:sticky;top:110px}
 .cyAsk-n{margin:14px 0 22px;font-size:15px;line-height:1.65;color:var(--muteddark)}
+.cyAsk-img{position:relative;margin:18px 0 0;overflow:hidden;border-radius:18px;aspect-ratio:3/2;
+  max-width:100%;box-shadow:0 26px 50px -36px rgba(14,23,38,.5)}
+.cyAsk-img img{display:block;width:100%;height:100%;object-fit:cover;
+  transition:transform .8s var(--ease)}
+.cyAsk-img:hover img{transform:scale(1.05)}
+.cyAsk-img figcaption{position:absolute;left:14px;bottom:14px;padding:8px 12px;border-radius:999px;
+  background:rgba(14,23,38,.86);color:#fff;font:600 13px/1.2 Inter}
 .cyChat{display:flex;flex-direction:column;gap:10px}
 .cyMsg{max-width:84%;padding:14px 18px;border-radius:18px}
 .cyMsg p{margin:0;font-size:15px;line-height:1.62}
@@ -2478,6 +2485,8 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
   .cyEnd-facts{grid-template-columns:repeat(3,minmax(0,1fr))}
   .cyEnd-facts li{flex-direction:column;gap:6px}
   .cyInsp-side,.cyAsk-side{position:static}
+  /* stacked, the side column has no empty space to fill */
+  .cyAsk-img{display:none}
   .cySeasons,.cySvcs{grid-template-columns:repeat(2,minmax(0,1fr))}
   .cyTiles{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:220px}
   .cyTile.t1{grid-row:span 1}
@@ -3365,6 +3374,7 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
       <h2>Straight Answers <br class="dtbr">for <strong class="hl-amber">Metairie Roofs</strong></h2>
       <p class="cyAsk-n">The questions Metairie homeowners ask first. Not sure whether your street counts as Metairie or Kenner? Call and ask. Both are covered at the same price.</p>
       <a class="hxCall lite" href="tel:5042293955"><span>Talk to a roofer</span><b>504-229-3955</b></a>
+      <figure class="cyAsk-img"><img src="_assets/sv-inspect-ladder.jpg" alt="Roofer in a harness climbing a ladder to a shingle roof edge" loading="lazy" width="1400" height="875"><figcaption>You talk to a roofer, not a call center</figcaption></figure>
     </div>
     <div class="cyChat">
       <div class="cyMsg ask rv"><p>Do you charge extra to come out to Metairie?</p></div>
