@@ -15,3 +15,28 @@ The map on this page is areas-basemap.svg, drawn from U.S. Census Bureau
 TIGER/Line and cartographic boundary data (public domain; credited anyway in the
 caption) by _audit-scripts/make_areas_basemap.py. Raw data in _geo/, not
 published. No third-party map tiles, nothing loads from a map service at runtime.
+
+
+City pages, /services-areas/<city>/
+-----------------------------------
+Added September 15, 2026 for the Metairie design sample. Searched through the
+in-app browser, opened and looked at before picking, checked against every
+credits file by id and the library by image hash (two hash near-matches were
+looked at side by side and are different photographs). Heroes cropped to
+1920x1080, cards to 1400x875.
+
+Only met-lake-sail.jpg is described by Pexels as Lake Pontchartrain. The house
+photographs are not of Metairie and no copy says they are. None shows a
+readable house number, and none claims to be the company's own work. The city
+page map reuses areas-basemap.svg, zoomed in.
+
+met-hero-ranch.jpg      pexels.com/photo/10854916  aerial view of a single-story ranch house with a brown hip roof, carport and palms
+met-lake-sail.jpg       pexels.com/photo/35805789  sailboat on Lake Pontchartrain at dusk, the Causeway on the horizon
+met-ranch-white.jpg     pexels.com/photo/8031875   white brick single-story ranch house with black shutters
+met-ranch-street.jpg    pexels.com/photo/19309671  residential street of low mid-century single-story homes
+met-ranch-navy.jpg      pexels.com/photo/5785100   single-story house with dark siding, a gray shingle roof and a two-car garage
+
+Passed over: 8894802 (snow on the lawn, wrong for Louisiana), 6835077 (new
+build in bare woods), 29350636 (not a ranch house), 12901965 (Madisonville
+side of the lake, wrong shore for Metairie), 25713572 (pier of uncertain
+location) and 5151773 (levee road of uncertain location).
