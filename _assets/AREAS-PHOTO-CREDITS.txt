@@ -40,3 +40,37 @@ Passed over: 8894802 (snow on the lawn, wrong for Louisiana), 6835077 (new
 build in bare woods), 29350636 (not a ranch house), 12901965 (Madisonville
 side of the lake, wrong shore for Metairie), 25713572 (pier of uncertain
 location) and 5151773 (levee road of uncertain location).
+
+
+Twelve more city pages, local heroes
+------------------------------------
+Added September 15, 2026. Same method: Pexels, searched through the in-app
+browser, looked at before picking, checked against every credits file by id and
+the library by image hash (sky-heavy near-matches looked at side by side, all
+different photographs). Heroes 1920x1080, cards 1400x875.
+
+Where Pexels names a place it is noted; otherwise no copy says the photo was
+taken in that city. None shows a readable house number; none claims to be the
+company's own work.
+
+br-hero-river-bridge.jpg   pexels.com/photo/34561871  Mississippi River bridge seen from downtown Baton Rouge (Pexels: Baton Rouge)
+br-oak-lane.jpg            pexels.com/photo/7020111   bike lane under a canopy of oak trees (Pexels: Baton Rouge)
+gre-hero-bridge.jpg        pexels.com/photo/39004136  Crescent City Connection bridge over the Mississippi River under clouds
+gre-skyline-river.jpg      pexels.com/photo/32744125  New Orleans skyline seen across the Mississippi River
+ken-hero-plane.jpg         pexels.com/photo/30756805  passenger airplane approaching a runway (airport not named)
+lap-hero-cypress.jpg       pexels.com/photo/14092370  cypress trees draped in Spanish moss standing in swamp water (Pexels: Louisiana swamp)
+sli-hero-cypress.jpg       pexels.com/photo/5034538   tall cypress trees in a swamp forest
+sli-cypress-knees.jpg      pexels.com/photo/28808139  cypress knees rising from still green swamp water
+cov-hero-pines.jpg         pexels.com/photo/17685499  low houses under tall pine trees and a cloudy sky
+man-hero-oaks.jpg          pexels.com/photo/9305055   Spanish moss hanging from live oak branches against the sky
+man-live-oak.jpg           pexels.com/photo/32267612  large Southern live oak with sprawling branches in a park
+mad-hero-river-sunset.jpg  pexels.com/photo/12901965  sunset over Lake Pontchartrain at Madisonville (Pexels: Madisonville, LA)
+mad-marsh-sunset.jpg       pexels.com/photo/12901911  aerial sunset over marshland (Pexels: near Madisonville, LA)
+ham-hero-white-house.jpg   pexels.com/photo/12841777  old white two-story wooden house with porches on a street corner
+ham-rail-yard.jpg          pexels.com/photo/16597282  locomotive on curved rail tracks beside trees (Pexels: Baton Rouge)
+rr-hero-oak-path.jpg       pexels.com/photo/9697593   path through an avenue of old oak trees (Pexels: Vacherie, LA)
+har-hero-barges.jpg        pexels.com/photo/39026399  barges on a wide river under a blue sky with green banks
+str-hero-river-port.jpg    pexels.com/photo/39026444  ships docked at an industrial river port under a blue sky
+
+Note: ham-rail-yard.jpg is described by Pexels as Baton Rouge; on the Hammond
+page it illustrates railroads generally and the alt text does not name a city.
