@@ -2100,15 +2100,24 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 .pgLegal-b .lead{margin:12px 0 0}
 .pgLegal-b .lead a,.pgContact a{color:#1F3350;font-weight:600;text-decoration:underline;
   text-decoration-color:rgba(245,165,36,.85);text-underline-offset:3px;text-decoration-thickness:2px}
-.pgSlot{margin:28px 0 0;padding:24px 26px;border-radius:16px;background:#FFFBF2;
-  border:2px dashed rgba(245,165,36,.6)}
-.pgSlot-k{display:inline-block;margin:0 0 10px;padding:5px 10px;border-radius:999px;background:#F5A524;
-  color:#0E1726;font:700 11px/1 Inter;letter-spacing:.1em;text-transform:uppercase}
-.pgSlot-t{margin:0 0 12px;font-size:14.5px;line-height:1.65;color:#5B6B80}
-.pgSlot-l{margin:0;padding:0 0 0 20px;display:grid;gap:6px}
-.pgSlot-l li{font-size:14.5px;line-height:1.6;color:#2E4058}
+.pgDoc{margin:28px 0 0;padding:6px 0 0;border-top:1px solid rgba(20,30,50,.1)}
+.pgDoc h3{display:flex;align-items:baseline;gap:12px;margin:36px 0 12px;font-size:25px;line-height:1.2;
+  color:#0E1726}
+.pgNum{display:inline-grid;place-items:center;flex:0 0 auto;min-width:32px;height:32px;padding:0 6px;
+  border-radius:9px;background:#FFF1D6;color:#9A6108;font:800 14px/1 Inter}
+.pgDoc h4{margin:24px 0 8px;font:700 18px/1.3 Inter;color:#0E1726}
+.pgDoc p{margin:0 0 13px;font-size:15px;line-height:1.75;color:#3A4A60;overflow-wrap:anywhere}
+.pgDoc ul{display:grid;gap:7px;margin:0 0 15px;padding:0 0 0 22px}
+.pgDoc li{font-size:15px;line-height:1.65;color:#3A4A60;overflow-wrap:anywhere}
+.pgDoc a{color:#1F3350;font-weight:600;text-decoration:underline;
+  text-decoration-color:rgba(245,165,36,.85);text-underline-offset:3px}
+.pgDoc .pgUpdated{display:inline-block;margin:18px 0 6px;padding:7px 13px;border-radius:999px;
+  background:#F3F6FA;font:600 13px/1.2 Inter;color:#5B6B80}
+.pgDoc .pgTool{margin:18px 0 6px}
+.pgDoc .pgLabel{margin:20px 0 6px}
+.pgTool strong,.pgLabel strong{color:#0E1726}
 .pgContact{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 24px;
-  margin:24px 0 0;padding:20px 24px;border-radius:16px;background:#F3F6FA;border:1px solid rgba(20,30,50,.08)}
+  margin:30px 0 0;padding:20px 24px;border-radius:16px;background:#F3F6FA;border:1px solid rgba(20,30,50,.08)}
 .pgContact p{flex:1 1 280px;margin:0;font-size:15px;line-height:1.6;color:var(--muteddark)}
 
 /* ---- sitemap ---- */
@@ -2124,6 +2133,9 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   margin:10px 0 0;padding:20px 24px;border-radius:16px;background:#fff;border:1px solid rgba(20,30,50,.09)}
 .pgSite-go p{flex:1 1 280px;margin:0;font-size:15px;line-height:1.6;color:var(--muteddark)}
 
+@media (max-width:640px){
+  .pgDoc h3{font-size:21px}
+}
 @media (prefers-reduced-motion:reduce){
   .pgGroup a{transition:none}
 }
@@ -2313,7 +2325,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 <body>
 
 <div class="note" id="note"><button onclick="document.getElementById('note').remove()">&times;</button>
-<b>Template</b><strong>/terms-and-conditions/</strong>. The live page has no terms text. The wording comes from Brian; the slot on this page is a placeholder. Title rewritten from "Terms and Conditions - Big Easy Roofing Company" (dash, no city); the live page had no meta.</div>
+<b>Template</b><strong>/terms-and-conditions/</strong>. Terms from the sister site, as decided September 17: company details swapped, typos and formatting fixed. Title rewritten from "Terms and Conditions - Big Easy Roofing Company" (dash, no city); the live page had no meta.</div>
 
 <!-- ============ UTILITY BAR ============ -->
 <div class="util">
@@ -2408,7 +2420,7 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
   <div class="wrap">
     <nav class="icrumbs" aria-label="Breadcrumb"><a href="https://www.bigeasyroofingcompany.com/">Home</a><i>&rsaquo;</i><span aria-current="page">Terms and Conditions</span></nav>
     <h1><strong class="hl-amber">Terms</strong> and Conditions</h1>
-    <p class="icreds"><b>The terms for using this website.</b> The full text will be published here once it is ready.</p>
+    <p class="icreds"><b>The terms for using this website.</b> Last updated September 2026.</p>
     <div class="iacts">
       <a href="#ask" class="btn btn-amber">Get a free inspection</a>
       <a href="tel:5042293955" class="btn btn-ghost">504-229-3955</a>
@@ -2431,20 +2443,91 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
     <div class="pgLegal-b rv">
       <span class="eyebrow">Terms</span>
       <h2>The Terms for Using This Site</h2>
-      <p class="lead">This page will set out the terms for using the <a href="https://www.bigeasyroofingcompany.com/">Big Easy Roofing Company</a> website, including how an inspection or estimate request made through it is handled.</p>
-      <div class="pgSlot">
-        <span class="pgSlot-k">Text to come</span>
-        <p class="pgSlot-t"><em>[LEGAL TEXT FROM BRIAN. The live /terms-and-conditions/ page carries no terms. The wording comes from Brian or his lawyer and nothing on this page is drafted as terms. For whoever writes them, these are the things a visitor can do on the site:]</em></p>
-        <ul class="pgSlot-l">
-          <li>Request a free inspection or estimate through the form, the chat window or by phone</li>
-          <li>Upload photos or video of a roof with a request</li>
-          <li>Opt in to text message updates about a job</li>
-          <li>Read pages about services, roofing types, storm damage and the cities covered</li>
-          <li>Follow links to outside services, such as the forms and chat run on GoHighLevel</li>
-        </ul>
-      </div>
+      <p class="lead">The terms that apply to anyone using the <a href="https://www.bigeasyroofingcompany.com/">Big Easy Roofing Company</a> website, including its inspection request form.</p>
+      <div class="pgDoc">
+        <ul><li>Home &gt; Terms and Conditions</li></ul>
+        <p class="pgUpdated">Last Updated: September 2026</p>
+        <p>These Terms of Service and our privacy policy (together the “Terms”) govern all use of https://www.bigeasyroofingcompany.com/ and that site’s services (together the “Site” or “Services”). The Site is owned by Big Easy Roofing Company.</p>
+        <p>The owners and contributors to the Site will be referred to as “we,” “us,” or “our” in these Terms. By using the Site or its Services, and/or by clicking anywhere on this Site to agree to these Terms, you are deemed to be a “user” for purposes of the Terms. You and every other user (“you” or “User” as applicable) are bound by these Terms. You and each user also agree to the Terms by using the Services. If any User does not agree to the Terms or the Privacy Policy, such User may not access the Site or use the Services. In these Terms, the word “Site” includes the site referenced above, its owner(s), contributors, suppliers, licensors, and other related parties.</p>
+        <p>Please read the following information carefully to understand our practices regarding your use of the Site. The Company may change the Terms at any time. The Company may inform you of the changes to the Terms using the available means of communication. The Company recommends that you check the Site frequently to see the actual version of the Terms and their previous versions.</p>
+        <p>If you represent a legal entity, you certify that you are entitled by such a legal entity to conclude the Terms as the legal entity you represent.</p>
+        <h3><span class="pgNum">1</span> Privacy Policy</h3>
+        <p>Our Privacy Policy is available on a separate page. Our Privacy Policy explains to you how we process information about you. You shall understand that through your use of the Site you acknowledge the processing of this information shall be undertaken in accordance with the Privacy Policy.</p>
+        <h3><span class="pgNum">2</span> Your Account</h3>
+        <p>When using the Site, you shall be responsible for ensuring the confidentiality of your account, passwords, and other credentials and for secure access to your device. You shall not assign your account to anyone. The Company is not responsible for unauthorized access to your account that results from misappropriation or theft of your account. The Company may refuse or cancel service, terminate your account, and remove or edit content.</p>
+        <p>The Company does not knowingly collect personal data from persons under the age of 16 (sixteen). If you are under 16 (sixteen) years old, you may not use the Site and may not enter into the Terms under any circumstances.</p>
+        <h3><span class="pgNum">3</span> Services</h3>
+        <p>The Site allows you to use Services available on the Site. You shall not use the services for the illegal aims.</p>
+        <p>We may, at our sole discretion, set fees for using the Site for you. All prices are published separately on relevant pages on the Site. We may, at our sole discretion, at any time change any fees.</p>
+        <p>We may use certified payment systems which also may have their commissions. Such commissions may be implied on you when you choose a particular payment system. Detailed information about commissions of such payment systems may be found on their websites.</p>
+        <h3><span class="pgNum">4</span> Third-Party Services</h3>
+        <p>The Site may include links to other sites, applications, and platforms (hereinafter the “Linked Sites”).</p>
+        <p>The Company does not control the Linked Sites, and shall not be responsible for the content and other materials of the Linked Sites. The Company makes these links available to you for providing the functionality or services on the Site.</p>
+        <p>The Site may include or offer third-party products or services. The Site may also have other users or members who interact with each other, through the Site, elsewhere online, or in person. These third-party products and any linked sites have separate and independent terms of service and privacy policies. We have no control or responsibility for the content and activities of these linked sites, sellers, and third parties in general, regardless of whether you first were introduced or interacted with such businesses, services, products, and people through the Site, and therefore you agree that we are not liable for any of them. We do, however, welcome any feedback about these sites, sellers, other users or members, and third parties.</p>
+        <h3><span class="pgNum">5</span> Prohibited Uses and Intellectual Property</h3>
+        <p>The Company grants you a non-transferable, non-exclusive, revocable license to access and use the Site from one device in accordance with the Terms.</p>
+        <p>You shall not use the Site for unlawful or prohibited purposes. You may not use the Site in a way that may disable, damage, or interfere with the Site.</p>
+        <p>All content present on the Site includes text, code, graphics, logos, images, compilation, and software used on the Site (hereinafter and hereinbefore the “Content”). The Content is the property of the Company or its contractors and protected by intellectual property laws that protect such rights. You agree to use all copyright and other proprietary notices or restrictions contained in the Content and you are prohibited from changing the Content.</p>
+        <p>You may not publish, transmit, modify, reverse engineer, participate in the transfer, or create and sell derivative works, or in any way use any of the Content. Your enjoyment of the Site shall not entitle you to make any illegal and disallowed use of the Content, and in particular, you shall not change proprietary rights or notices in the Content. You shall use the Content only for your personal and non-commercial use. The Company does not grant you any license to the intellectual property of the Company.</p>
+        <p>This site and some delivery modes of our product are built on the WordPress platform. For information about intellectual property rights, including General Public License (“GPL”) terms under which the WordPress software is licensed, see here http://wordpress.org/about/gpl</p>
+        <p>The Site grants User a revocable, non-transferable, and non-exclusive license to use the Site solely in connection with the Site and the Services, under these Terms.</p>
+        <p>Copyright in all content and works of authorship included in the Site are the property of the Site or its licensors. Apart from links which lead to the Site, accurately attributed social media references, and de minimis text excerpts with links returning to the Site, no text, images, video or audio recording, or any other content from the Site shall be copied without explicit and detailed, written permission from the Site’s owner. Users shall not sublicense or otherwise transfer any rights or access to the Site or related Services to any other person.</p>
+        <p>The names and logos used by the Site, and all other trademarks, service marks, and trade names used in connection with the Services are owned by the Site or its licensors and may not be used by User without written consent of the rights owners. Use of the Site does not in itself give any user any license, consent, or permission, unless and then only to the extent granted explicitly in these Terms.</p>
+        <p>All rights not expressly granted in these Terms are reserved by the Site.</p>
+        <p class="pgLabel"><strong>User Prohibited From Illegal Uses</strong></p>
+        <p>User shall not use, and shall not allow any person to use, the Site or Services in any way that violates a federal, state, or local law, regulation, or ordinance, or for any disruptive, tortious, or illegal purposes, including but not limited to harassment, slander, defamation, data theft or inappropriate dissemination, or improper surveillance of any person.</p>
+        <h3><span class="pgNum">6</span> The Company Materials</h3>
+        <p>By posting, uploading, inputting, providing, or submitting your Content you are granting the Company to use your Content in connection with the operation of the Company’s business including, but not limited to, the rights to transmit, publicly display, distribute, publicly perform, copy, reproduce, and translate your Content; and to publish your name in connection with your Content.</p>
+        <p>No compensation shall be paid with regard to the use of your Content. The Company shall have no obligation to publish or enjoy any Content you may send us and may remove your Content at any time.</p>
+        <p>By posting, uploading, inputting, providing, or submitting your Content you warrant and represent that you own all of the rights to your Content.</p>
+        <h3><span class="pgNum">7</span> Disclaimer of Certain Liabilities</h3>
+        <p>The information available via the Site may include typographical errors or inaccuracies. The Company shall not be liable for these inaccuracies and errors.</p>
+        <p>The Company makes no representations about the availability, accuracy, reliability, suitability, and timeliness of the Content contained on and services available on the Site. To the maximum extent allowed by the applicable law, all such Content and services are provided on the “as is” basis. The Company disclaims all warranties and conditions regarding this Content and services, including warranties and provisions of merchantability, and fitness for a certain purpose.</p>
+        <p>To the maximum extent permitted by applicable law, in no event shall the Company be liable for any direct, indirect, incidental, consequential, special, punitive damages including, but not limited to, damages for loss of enjoyment, data, or profits, in connection with the enjoyment or execution of the Site in the context of the inability or delay to enjoy the Site or its services, or for any Content of the Site, or otherwise arising out of the enjoyment of the Site, based on contract and non-contract liability or other reason.</p>
+        <p>If the exclusion or limitation of liability for damages, whether consequential or incidental, are prohibited in a particular case, the exclusion or limitation of liability shall not apply to you.</p>
+        <p class="pgLabel"><strong>Liability Is Limited</strong></p>
+        <p>THE SITE SHALL NOT BE LIABLE FOR INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES OF ANY KIND, INCLUDING BUT NOT LIMITED TO LOST PROFITS (REGARDLESS OF WHETHER WE HAVE BEEN NOTIFIED THAT SUCH LOSS MAY OCCUR) OR EXPOSURE TO ANY THIRD PARTY CLAIMS BY REASON OF ANY ACT OR OMISSION. THE SITE SHALL NOT BE LIABLE FOR ANY ACT OR OMISSION OF ANY THIRD PARTY INVOLVED WITH THE SERVICES, SITE OFFERS, OR ANY ACT BY SITE USERS. THE SITE SHALL NOT BE LIABLE FOR ANY DAMAGES THAT RESULT FROM ANY SERVICE PROVIDED BY, OR PRODUCT OR DEVICE MANUFACTURED BY THIRD PARTIES.</p>
+        <p>NOTWITHSTANDING ANY DAMAGES THAT THE USER MAY SUFFER FOR ANY REASON, THE ENTIRE LIABILITY OF THE SITE IN CONNECTION WITH THE SITE OR SERVICES, AND ANY PARTY’S EXCLUSIVE REMEDY, SHALL BE LIMITED TO THE AMOUNT, IF ANY, ACTUALLY PAID BY THE USER TO THE SITE OWNER DURING THE 12 MONTHS PRIOR TO THE EVENT THAT USER CLAIMS CAUSED THE DAMAGES.</p>
+        <p>The Site shall not be liable for any damages incurred as a result of any loss, disclosure, or third-party use of information, regardless of whether such disclosure or use is with or without User’s knowledge or consent. The Site shall have no liability for any damages related to: User’s actions or failures to act, the acts or omissions of any third party, including but not limited to any telecommunications service provider, or events or causes beyond the Site’s reasonable control. The Site has no obligations whatever and shall have no liability to any third party who is not a User bound by these Terms. Limitations, exclusions, and disclaimers in these Terms shall apply to the maximum extent permitted by applicable law, even if any remedy fails its essential purpose.</p>
+        <h3><span class="pgNum">8</span> Indemnification</h3>
+        <p>You agree to indemnify, defend and hold harmless the Company, its managers, directors, employees, agents, and third parties, for any costs, losses, expenses (including attorneys’ fees), liabilities regarding or arising out of your enjoyment of or inability to enjoy the Site or its services and Company’s services and products, your violation of the Terms or your violation of any rights of third parties, or your violation of the applicable law. The Company may assume the exclusive defense and you shall cooperate with the Company in asserting any available defenses.</p>
+        <p>If your activity or any activity on your behalf creates potential or actual liability for us, or for any of our users, partners, or contributors, you agree to indemnify and hold us and any such user, partner, contributor, or any agent harmless from and against all claims, costs of defense and judgment, liabilities, legal fees, damages, losses, and other expenses in relation to any claims or actions arising out of or relating to your use of the Site, or any breach by you of these Terms of Use.</p>
+        <h3><span class="pgNum">9</span> Termination and Access Restriction</h3>
+        <p>The Company may terminate your access and account to the Site and its related services or any part at any time, without notice, in case of your violation of the Terms.</p>
+        <h3><span class="pgNum">10</span> Miscellaneous</h3>
+        <p>The governing law of the Terms shall be the substantive laws of the country where the Company is set up, except the conflict of laws rules. You shall not use the Site in jurisdictions that do not give effect to all provisions of the Terms.</p>
+        <p>No joint venture, partnership, employment, or agency relationship shall be implied between you and the Company as a result of the Terms or use of the Site.</p>
+        <p>Nothing in the Terms shall be a derogation of the Company’s right to comply with governmental, court, police, and law enforcement requests or requirements regarding your enjoyment of the Site.</p>
+        <p>If any part of the Terms is determined to be void or unenforceable in accordance with applicable law then the void or unenforceable clauses will be deemed superseded by valid and enforceable clauses shall be similar to the original version of the Terms and other parts and sections of the Terms shall be applicable to you and the Company.</p>
+        <p>The Terms constitute the entire agreement between you and the Company regarding the enjoyment of the Site and the Terms supersede all prior communications and offers, whether electronic, oral, or written, between you and the Company.</p>
+        <p>The Company and its affiliates shall not be liable for any failure or delay to fulfill its obligations where the failure or delay results from any cause beyond the Company’s reasonable control, including technical failures, natural disasters, blockages, embargoes, riots, acts, regulations, legislation, or orders of government, terrorist acts, war, or any other force outside of Company’s control.</p>
+        <p>In case of controversies, demands, claims, disputes, or causes of action between the Company and you relating to the Site or other related issues, or the Terms, you and the Company agree to attempt to resolve such controversies, demands, claims, disputes, or causes of action by good faith negotiation, and in case of failure of such negotiation, exclusively through the courts of the country where the Company is set up.</p>
+        <p class="pgLabel"><strong>User Represents and Warrants That:</strong></p>
+        <ul><li>User will use the Services only as provided in these Terms;</li><li>User is at least 18 years old and has all right, authority, and capacity to agree to these Terms;</li><li>User will provide accurate, complete, and current information to the Site and its owner(s);</li><li>User will notify the Site and its owner(s) regarding any material change to information User provides, either by updating and correcting the information, or by alerting the Site and its owner(s) via the functions of the Site or the contact details provided below.</li></ul>
+        <p class="pgLabel"><strong>Privacy</strong></p>
+        <p>Any information that you provide to the Site is subject to the Site’s Privacy Policy, which governs our collection and use of User information. User understands that through his or her use of the Site and its Services, User consents to the collection and use (as set forth in the Privacy Policy) of the information, including the transfer of this information to the United States and/or other countries for storage, processing and use by the Site. The Site may make certain communications to some or all Users, such as service announcements and administrative messages. These communications are considered part of the Services and a User’s account with the Site, Users are not able to opt-out of all of them.</p>
+        <p class="pgLabel"><strong>Usernames, Passwords, and Profiles</strong></p>
+        <p>If prompted, Users must provide a valid email address to the Site, at which email address the User can receive messages. User must also update the Site if that email address changes. The Site reserves the right to terminate any User account and/or User access to the Site if a valid email is requested but is not provided by the User.</p>
+        <p>If the Site prompts or allows a User to create a username or profile, Users agree not to pick a username or provide any profile information that would impersonate someone else or that is likely to cause confusion with any other person or entity. The Site reserves the right to cancel a User account or to change a username or profile data at any time. Similarly, if the Site allows comments or user input, or prompts or allows a User to create an avatar or upload a picture, the User agrees not to use any image that impersonates some other person or entity, or that is otherwise likely to cause confusion.</p>
+        <p>You are responsible for protecting your username and password for the Site, and you agree not to disclose it to any third party. We recommend that you use a password that is more than eight characters long. You are responsible for all activity on your account, whether or not you authorized it. You agree to inform us of unauthorized use of your account. You acknowledge that if you wish to protect your interactions with the Site, it is your responsibility to use a secure encrypted connection, virtual private network, or other appropriate measures. The Site’s own security measures are reasonable in terms of their level of protection, but are not helpful if the interactions of you or any other User with the Site are not secure or private.</p>
+        <p class="pgLabel"><strong>Disputes</strong></p>
+        <p>We are based in New Orleans, Louisiana and you are contracting to use our Site. These Terms and all matters arising from your use of the Site are governed by and will be construed according to the laws of New Orleans, Louisiana, without regard to any choice of laws rules of any jurisdiction. The federal courts and state courts that have geographical jurisdiction over disputes arising at our office location in New Orleans, Louisiana will be the only permissible venues for any and all disputes arising out of or in connection with these Terms or the Site and Service.</p>
+        <p class="pgLabel"><strong>General</strong></p>
+        <p>These Terms, including the incorporated Privacy Policy, supersede all oral or written communications and understandings between User and the Site.</p>
+        <p>Any cause of action User may have relating to the Site or the Services must be commenced within one (1) year after the claim or cause of action arises.</p>
+        <p>Both parties waive the right to a jury trial in any dispute relating to the Terms, the Site, or the Services.</p>
+        <p>If for any reason a court of competent jurisdiction finds any aspect of the Terms to be unenforceable, the Terms shall be enforced to the maximum extent permissible, to give effect to the intent of the Terms, and the remainder of the Terms shall continue in full force and effect.</p>
+        <p>User may not assign his or her rights or delegate his or her responsibilities under these Terms or otherwise relating to the Site or its Services.</p>
+        <p>There shall be no third-party beneficiaries under these Terms, except for the Site’s affiliates, suppliers, and licensors, or as required by law.</p>
+        <p>Use of the Site and its Services is unauthorized in any jurisdiction that does not give effect to all provisions of these Terms, including without limitation this paragraph.</p>
+        <p>The failure of the Site to exercise or enforce any right or provision of these Terms shall not constitute a waiver of that right or provision.</p>
+        <h3><span class="pgNum">11</span> Complaints</h3>
+        <p>We are committed to resolving any complaints about our collection or use of your personal data. If you would like to make a complaint regarding these Terms or our practices in relation to your personal data, please contact us. We will reply to your complaint as soon as we can and in any event, within 30 days. We hope to resolve any complaint brought to our attention however if you feel that your complaint has not been adequately resolved, you reserve the right to contact your local data protection supervisory authority</p>
+        <h3><span class="pgNum">12</span> Contact Information</h3>
+        <p>We welcome your comments or questions about these Terms. You may contact us at 504-229-3955 or through our <a href="https://www.bigeasyroofingcompany.com/contact/">contact page</a>.</p>
+      </div><!-- /pgDoc -->
       <div class="pgContact" id="ask">
-        <p>Want to know something about these terms before they are posted? Call <a href="tel:5042293955">504-229-3955</a> or send a note through the <a href="https://www.bigeasyroofingcompany.com/contact/">contact page</a>.</p>
+        <p>Want to ask about these terms? Call <a href="tel:5042293955">504-229-3955</a> or send a note through the <a href="https://www.bigeasyroofingcompany.com/contact/">contact page</a>.</p>
         <button class="btn btn-amber" type="button" data-open-modal>Book a free inspection</button>
       </div>
     </div>
