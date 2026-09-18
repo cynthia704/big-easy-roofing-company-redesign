@@ -2089,6 +2089,25 @@ section.i{padding:clamp(54px,6.5vw,86px) 0;position:relative}
 .blGuide-b p{margin:0;font-size:14.5px;line-height:1.6;color:var(--muteddark);flex:1}
 .blGuide-go{font-weight:700;font-size:14px;color:#9A6108}
 
+/* the latest post: one wide card, photo left */
+.blLatest{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);border-radius:20px;overflow:hidden;
+  background:#0E1726;text-decoration:none;box-shadow:0 30px 60px -40px rgba(14,23,38,.8);
+  transition:transform .3s,box-shadow .3s}
+.blLatest:hover,.blLatest:focus-visible{transform:translateY(-4px);box-shadow:0 0 0 2px #F5A524,0 30px 60px -40px rgba(14,23,38,.8)}
+.blLatest-img{display:block;min-height:320px;overflow:hidden}
+.blLatest-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.blLatest:hover .blLatest-img img{transform:scale(1.04)}
+.blLatest-b{display:flex;flex-direction:column;justify-content:center;gap:12px;padding:34px 36px}
+.blLatest-cat{align-self:flex-start;padding:6px 12px;border-radius:999px;background:#F5A524;color:#20160A;
+  font:700 11px/1 Inter;letter-spacing:.16em;text-transform:uppercase}
+.blLatest h3{margin:0;font-size:clamp(26px,2.6vw,34px);line-height:1.1;color:#fff}
+.blLatest p{margin:0;font-size:16px;line-height:1.65;color:#C9D4E3}
+.blLatest-meta{font:600 13.5px/1.4 Inter;color:#AFBCCE}
+.blLatest-go{font:700 15px/1 Inter;color:#F5A524}
+/* the site amber is under 4.5:1 on these light sections; the darker amber passes */
+#latest .eyebrow,#guides .eyebrow,#topics .eyebrow{color:#8A5606}
+@media (max-width:860px){.blLatest{grid-template-columns:1fr}.blLatest-img{min-height:0;aspect-ratio:16/10}.blLatest-b{padding:24px 22px}}
+@media (prefers-reduced-motion:reduce){.blLatest,.blLatest-img img{transition:none}}
 .blPosts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .blPost{display:flex;flex-direction:column;gap:10px;padding:24px 22px;border-radius:16px;
   background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.22)}
@@ -2314,6 +2333,11 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
       "@id": "https://www.bigeasyroofingcompany.com/blog/#page",
       "url": "https://www.bigeasyroofingcompany.com/blog/",
       "name": "New Orleans Roofing Blog",
+      "hasPart": [
+        {
+          "@id": "https://www.bigeasyroofingcompany.com/blog/what-to-photograph-after-a-storm/#post"
+        }
+      ],
       "description": "Roofing guidance for New Orleans property owners, with links to the guide pages that already answer common questions.",
       "isPartOf": {
         "@id": "https://www.bigeasyroofingcompany.com/#business"
@@ -2326,7 +2350,7 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
 <body>
 
 <div class="note" id="note"><button onclick="document.getElementById('note').remove()">&times;</button>
-<b>Template</b><strong>/blog/</strong>, rebuilt for a blog with zero published posts. It leads with guide pages that already exist. The article ideas are labelled as unpublished, with no links or dates.</div>
+<b>Template</b><strong>/blog/</strong>. Leads with the first published post (September 18, 2026), then the guide pages that already exist. The five article ideas are labelled as unpublished, with no links or dates.</div>
 
 <!-- ============ UTILITY BAR ============ -->
 <div class="util">
@@ -2421,7 +2445,7 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
   <div class="wrap">
     <nav class="icrumbs" aria-label="Breadcrumb"><a href="https://www.bigeasyroofingcompany.com/">Home</a><i>&rsaquo;</i><span aria-current="page">Blog</span></nav>
     <h1>New Orleans <strong class="hl-amber">Roofing Blog</strong></h1>
-    <p class="icreds">Straight talk for people who own a roof on the Gulf Coast. The first articles are being written now.</p>
+    <p class="icreds">Straight talk for people who own a roof on the Gulf Coast. The first article is up, and more are being written.</p>
     <div class="iacts">
       <a href="#ask" class="btn btn-amber">Get a free inspection</a>
       <a href="tel:5042293955" class="btn btn-ghost">504-229-3955</a>
@@ -2439,13 +2463,29 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
   </div>
 </div>
 
+<section class="i light" id="latest">
+  <div class="wrap">
+    <div class="head rv" style="margin-bottom:26px"><span class="eyebrow">Latest post</span><h2>The <strong class="hl-amber">Newest Article</strong> <br class="dtbr">on the Blog</h2></div>
+    <a class="blLatest rv d1" href="https://www.bigeasyroofingcompany.com/blog/what-to-photograph-after-a-storm/">
+      <span class="blLatest-img"><img src="_assets/stm-aerial-cottages.jpg" alt="Aerial view of houses with damaged roofs and downed trees" loading="lazy"></span>
+      <span class="blLatest-b">
+        <span class="blLatest-cat">Storm season</span>
+        <h3>What to Photograph Before You Call Anyone After a Storm</h3>
+        <p>Six photographs, all taken from the ground in about ten minutes, that make every call after a storm easier: to the roofer, the insurer and the adjuster.</p>
+        <span class="blLatest-meta">September 18, 2026 &middot; By Big Easy Roofing Company &middot; 7 minute read</span>
+        <span class="blLatest-go">Read the post &rarr;</span>
+      </span>
+    </a>
+  </div>
+</section>
+
 <section class="i light hxpaper" id="guides">
   <span class="hxWeave" aria-hidden="true"></span>
   <div class="wrap">
     <div class="head rv" style="margin-bottom:34px">
       <span class="eyebrow">Read now</span>
       <h2><strong class="hl-amber">Answers Already</strong> <br class="dtbr">on the Site</h2>
-      <p class="lead">The blog is new, and its first posts are still being written. Until they are published, these pages already answer what people most often ask <a href="https://www.bigeasyroofingcompany.com/">Big Easy Roofing Company</a>.</p>
+      <p class="lead">The blog is new, and more posts are on the way. Until they are up, these pages already answer what people most often ask <a href="https://www.bigeasyroofingcompany.com/">Big Easy Roofing Company</a>.</p>
     </div>
     <div class="blGuides">
       <a class="blGuide rv d0" href="https://www.bigeasyroofingcompany.com/roof-insurance-claims/">
@@ -2514,43 +2554,37 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
     </div>
     <div class="blPosts">
       <article class="blPost rv d0">
-        <span class="blPost-cat">Storm season</span>
-        <h3>What to Photograph Before You Call Anyone After a Storm</h3>
-        <p>Six photographs from the ground, about ten minutes, that help an adjuster price the claim.</p>
-        <span class="blPost-status">Not yet published</span>
-      </article>
-      <article class="blPost rv d1">
         <span class="blPost-cat">Materials</span>
         <h3>Why a Roof in New Orleans Ages Faster Than the Same Roof in Denver</h3>
         <p>Heat, humidity and an attic that cannot breathe, and the inexpensive fixes that buy years back.</p>
         <span class="blPost-status">Not yet published</span>
       </article>
-      <article class="blPost rv d2">
+      <article class="blPost rv d1">
         <span class="blPost-cat">Insurance</span>
         <h3>Replacement Cost or Actual Cash Value: Which One Is on Your Policy</h3>
         <p>Who pays the gap on an older roof, and where to find the answer on your declarations page.</p>
         <span class="blPost-status">Not yet published</span>
       </article>
-      <article class="blPost rv d0">
+      <article class="blPost rv d2">
         <span class="blPost-cat">Storm season</span>
         <h3>Wind Damage or Ordinary Wear: How to Tell the Difference</h3>
         <p>Creased shingles, lifted edges, and the signs that point to age rather than a storm.</p>
         <span class="blPost-status">Not yet published</span>
       </article>
-      <article class="blPost rv d1">
+      <article class="blPost rv d0">
         <span class="blPost-cat">Materials</span>
         <h3>Is a Metal Roof Worth It on a New Orleans House?</h3>
         <p>When the higher price pays back, and when a well-installed shingle roof is the better call.</p>
         <span class="blPost-status">Not yet published</span>
       </article>
-      <article class="blPost rv d2">
+      <article class="blPost rv d1">
         <span class="blPost-cat">Inspections</span>
         <h3>What a Roof Inspection Report Should Include</h3>
         <p>Photos, a roof plan and priorities in plain terms, and the shortcuts worth watching for.</p>
         <span class="blPost-status">Not yet published</span>
       </article>
     </div>
-    <p class="blNote"><em>[PLACEHOLDER POSTS. The blog has zero published articles. These six are titles and summaries only, with no links and no dates. Write and publish them before this section goes live, or replace it with the published posts.]</em></p>
+    <p class="blNote"><em>[PLACEHOLDER POSTS. One article is published (above). These five are titles and summaries only, with no links and no dates. Write and publish them, or take each one out as it goes up.]</em></p>
   </div>
 </section>
 
