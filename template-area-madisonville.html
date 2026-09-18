@@ -2525,6 +2525,69 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
   .cyRail-band{transition:none;transform:none}
 }
 
+/* ---- about the city: the live page's location accordion, rebuilt ---- */
+.cyAb{background:#0B1220}
+.cyAb .head{margin:0 0 28px}
+.cyAb-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:28px;align-items:stretch}
+.cyAb-side{display:flex;flex-direction:column;gap:14px;min-width:0}
+.cyAb-stage{position:relative;flex:1;min-height:420px;border-radius:20px;overflow:hidden;background:#141D2C;
+  box-shadow:0 40px 70px -40px rgba(0,0,0,.9)}
+.cyAb-fig{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .6s ease}
+.cyAb-fig.on{opacity:1}
+.cyAb-fig img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.04);transition:transform 6s ease}
+.cyAb-fig.on img{transform:scale(1)}
+.cyAb-fig figcaption{position:absolute;left:14px;bottom:14px;right:14px;padding:9px 13px;border-radius:10px;
+  background:rgba(11,18,32,.78);backdrop-filter:blur(6px);font:600 13px/1.4 Inter;color:#DDE6F2}
+.cyAb-facts{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.cyAb-facts li{padding:12px 14px;border-radius:12px;background:#141D2C;border:1px solid var(--line)}
+.cyAb-facts span{display:block;margin:0 0 5px;font:700 10.5px/1 Inter;letter-spacing:.16em;text-transform:uppercase;color:var(--amber)}
+.cyAb-facts b{font:600 14.5px/1.35 Inter;color:#fff}
+.cyAb-list{display:flex;flex-direction:column;gap:12px;min-width:0}
+.cyAb-q{border-radius:18px;background:#fff;overflow:hidden;transition:box-shadow .3s}
+.cyAb-q[open]{box-shadow:0 0 0 2px var(--amber)}
+.cyAb-q summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:19px 22px;
+  cursor:pointer;list-style:none}
+.cyAb-q summary::-webkit-details-marker{display:none}
+.cyAb-q summary h3{margin:0;font:600 18px/1.3 Inter;letter-spacing:0;color:#0E1726}
+.cyAb-q summary i{position:relative;flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:#F1F4F8;
+  border:1px solid #DCE3EE}
+.cyAb-q summary i::before,.cyAb-q summary i::after{content:"";position:absolute;left:10px;right:10px;top:15px;height:2px;
+  background:#0E1726;transition:transform .25s}
+.cyAb-q summary i::after{transform:rotate(90deg)}
+.cyAb-q[open] summary i{background:#FFF1D6;border-color:var(--amber)}
+.cyAb-q[open] summary i::after{transform:rotate(0)}
+.cyAb-a{padding:0 22px 20px;color:#3A4A60;font-size:15.5px;line-height:1.7}
+.cyAb-a p{margin:0 0 10px}
+.cyAb-a ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.cyAb-a li{position:relative;padding-left:24px}
+.cyAb-a li::before{content:"";position:absolute;left:3px;top:.62em;width:9px;height:9px;border-radius:2px;
+  background:var(--amber);transform:rotate(45deg)}
+.cyAb-a b{color:#0E1726}
+.cyAb-a a{color:#1F3350;font-weight:600;text-decoration:underline;text-decoration-color:var(--amber);text-underline-offset:3px}
+.cyAb-a .cyAb-chips{display:flex;flex-wrap:wrap;gap:8px}
+.cyAb-a .cyAb-chips li{padding:0}
+.cyAb-a .cyAb-chips li::before{display:none}
+.cyAb-chips a,.cyAb-chips span{display:inline-block;padding:8px 14px;border-radius:999px;font:600 14px/1 Inter;
+  border:1px solid #DCE3EE;background:#F5F7FA;color:#1F3350;text-decoration:none}
+.cyAb-a .cyAb-chips a{border-color:rgba(245,165,36,.7);background:#FFF6E4;text-decoration:none}
+.cyAb-a .cyAb-chips a:hover,.cyAb-a .cyAb-chips a:focus-visible{background:var(--amber);color:#20160A}
+.cyAb-note{margin:12px 0 0;font-size:13.5px;color:#5B6B80}
+.cyAb-go{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin:6px 0 0}
+.cyAb-map{font:700 14.5px/1.3 Inter;color:#fff;text-decoration:underline;text-decoration-color:var(--amber);
+  text-underline-offset:4px}
+@media (max-width:900px){
+  .cyAb-grid{grid-template-columns:1fr}
+  .cyAb-stage{flex:none;min-height:0;aspect-ratio:16/11}
+}
+@media (max-width:640px){
+  .cyAb-q summary{padding:16px 18px}
+  .cyAb-q summary h3{font-size:16.5px}
+  .cyAb-a{padding:0 18px 18px}
+}
+@media (prefers-reduced-motion:reduce){
+  .cyAb-fig,.cyAb-fig img,.cyAb-q summary i::after{transition:none}
+}
+
 </style>
 <!-- JSON-LD built to 05-schema-nap-spec.md. No street address, ZIP, geo,
      priceRange or aggregateRating: none of those are confirmed, and the
@@ -3396,6 +3459,49 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
     </div>
   </div>
 </section>
+
+<section class="i cyAb" id="about-madisonville">
+  <div class="wrap">
+    <div class="head rv"><span class="eyebrow">Know the area</span><h2>All About Madisonville</h2><p class="lead">A short guide to the river town, its old shipyards and the people born here.</p></div>
+    <div class="cyAb-grid">
+      <div class="cyAb-side rv">
+        <div class="cyAb-stage">
+          <figure class="cyAb-fig on" data-ph="0"><img src="_assets/mad-loc-wreck.jpg" alt="Rusted wreck of a tugboat sitting in open water beside old pilings, under tall clouds" loading="lazy" width="1200" height="1200"><figcaption>An old tugboat wreck near Madisonville</figcaption></figure>
+          <figure class="cyAb-fig" data-ph="1"><img src="_assets/mad-loc-marina.jpg" alt="Rows of sailboats and motor yachts tied up in a calm marina" loading="lazy" width="1200" height="1200"><figcaption>Sailboats tied up in a marina</figcaption></figure>
+          <figure class="cyAb-fig" data-ph="2"><img src="_assets/mad-loc-crawfish.jpg" alt="Close view of a metal bowl piled high with bright red boiled crawfish" loading="lazy" width="1200" height="1200"><figcaption>A bowl of boiled crawfish</figcaption></figure>
+          <figure class="cyAb-fig" data-ph="3"><img src="_assets/mad-loc-dock.jpg" alt="Wooden dock and a small boat on still water at twilight" loading="lazy" width="1200" height="1200"><figcaption>A boat by a wooden dock at dusk</figcaption></figure>
+          <figure class="cyAb-fig" data-ph="4"><img src="_assets/mad-loc-bridge.jpg" alt="A movable road bridge raised open at night beside a lit street lamp" loading="lazy" width="1200" height="1200"><figcaption>A movable bridge opened at night</figcaption></figure>
+        </div>
+        <ul class="cyAb-facts"><li><span>Parish</span><b>St. Tammany</b></li><li><span>Population</span><b>850 (2020 census)</b></li><li><span>Area</span><b>2.51 square miles</b></li><li><span>River</span><b>Tchefuncte</b></li></ul>
+      </div>
+      <div class="cyAb-list rv d1">
+        <details class="cyAb-q" name="cyab-madisonville" data-ph="0" open><summary><h3>About Madisonville</h3><i aria-hidden="true"></i></summary><div class="cyAb-a"><p>Madisonville is a small town in St. Tammany Parish on the Tchefuncte River, close to where the river empties into Lake Pontchartrain. The 2020 census counted 850 residents.</p><p>Jean Baptiste Baham founded it in 1800 as Coquille, for the shells found all over the site, where a Native American village had stood. Around 1811 the town took the name of President James Madison. The Causeway later drew it into the orbit of <a href="https://www.bigeasyroofingcompany.com/">New Orleans</a>.</p></div></details>
+        <details class="cyAb-q" name="cyab-madisonville" data-ph="1"><summary><h3>Things to Do in Madisonville</h3><i aria-hidden="true"></i></summary><div class="cyAb-a"><ul><li><b>Fairview-Riverside State Park:</b> 99 acres on the Tchefuncte about 2 miles east of town, with 100 campsites, a nature trail, a boardwalk and the 1885 Otis House Museum.</li><li><b>Maritime Museum Louisiana:</b> in town, and the host of the Wooden Boat Festival each fall.</li><li><b>Tchefuncte River Lighthouse:</b> on the National Register of Historic Places since 1986. You can only reach it by boat, but it is visible from the town boat launch.</li></ul></div></details>
+        <details class="cyAb-q" name="cyab-madisonville" data-ph="2"><summary><h3>Notable Residents of Madisonville</h3><i aria-hidden="true"></i></summary><div class="cyAb-a"><ul><li><b>Leah Chase:</b> the chef known as the Queen of Creole Cuisine, of Dooky Chase in New Orleans, was born in Madisonville in 1923. Her father caulked ships at the Jahncke Shipyard.</li><li><b>Cag Cagnolatti:</b> the jazz trumpeter was born in Madisonville in 1911 and later played with Papa Celestin.</li></ul></div></details>
+        <details class="cyAb-q" name="cyab-madisonville" data-ph="3"><summary><h3>Fun Facts About Madisonville</h3><i aria-hidden="true"></i></summary><div class="cyAb-a"><ul><li><b>A War of 1812 shipyard:</b> the Navy had a blockship with 32 heavy cannons built here. It was still unfinished when the Battle of New Orleans began.</li><li><b>A brick port:</b> before the Civil War, Madisonville shipped bricks and other goods from the Tchefuncte towns across the lake to New Orleans.</li><li><b>World War I ships:</b> the Jahncke shipyard built wooden ships for the Navy. The last one was burned across the river, and part of its hull still shows at low tide.</li><li><b>A swing bridge:</b> Highway 22 crosses the Tchefuncte on a manned swing bridge.</li></ul></div></details>
+        <details class="cyAb-q" name="cyab-madisonville" data-ph="4"><summary><h3>Getting Around Madisonville</h3><i aria-hidden="true"></i></summary><div class="cyAb-a"><ul><li><b>Highway 22:</b> crosses the river and runs east past Fairview-Riverside State Park to Mandeville, where it meets US 190 and the road to the Causeway.</li><li><b>Highway 21:</b> starts in Madisonville and runs north across Interstate 12 to Covington.</li><li><b>Interstate 12:</b> the Highway 1077 and Highway 21 exits both serve the town.</li><li><b>By water:</b> the Tchefuncte reaches Lake Pontchartrain about 2 miles south of town, and marinas line the river.</li></ul></div></details>
+        <div class="cyAb-go">
+          <button class="btn btn-amber" type="button" data-open-modal>Get a free Madisonville inspection</button>
+          <a class="cyAb-map" href="https://www.google.com/maps/place/Madisonville,+LA" target="_blank" rel="noopener">Open Madisonville in Google Maps &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var sec=document.getElementById('about-madisonville'); if(!sec) return;
+  var qs=[].slice.call(sec.querySelectorAll('.cyAb-q')),
+      figs=[].slice.call(sec.querySelectorAll('.cyAb-fig'));
+  qs.forEach(function(d){d.addEventListener('toggle',function(){
+    if(!d.open) return;
+    /* one open at a time, also where the name attribute is not supported */
+    qs.forEach(function(o){if(o!==d&&o.open) o.open=false});
+    var n=d.getAttribute('data-ph');
+    figs.forEach(function(f){f.classList.toggle('on',f.getAttribute('data-ph')===n)});
+  })});
+})();
+</script>
 
 <section class="i light hxpaper" id="services">
   <div class="wrap">

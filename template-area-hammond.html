@@ -2525,6 +2525,69 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
   .cyRail-band{transition:none;transform:none}
 }
 
+/* ---- about the city: the live page's location accordion, rebuilt ---- */
+.cyAb{background:#0B1220}
+.cyAb .head{margin:0 0 28px}
+.cyAb-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:28px;align-items:stretch}
+.cyAb-side{display:flex;flex-direction:column;gap:14px;min-width:0}
+.cyAb-stage{position:relative;flex:1;min-height:420px;border-radius:20px;overflow:hidden;background:#141D2C;
+  box-shadow:0 40px 70px -40px rgba(0,0,0,.9)}
+.cyAb-fig{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .6s ease}
+.cyAb-fig.on{opacity:1}
+.cyAb-fig img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.04);transition:transform 6s ease}
+.cyAb-fig.on img{transform:scale(1)}
+.cyAb-fig figcaption{position:absolute;left:14px;bottom:14px;right:14px;padding:9px 13px;border-radius:10px;
+  background:rgba(11,18,32,.78);backdrop-filter:blur(6px);font:600 13px/1.4 Inter;color:#DDE6F2}
+.cyAb-facts{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.cyAb-facts li{padding:12px 14px;border-radius:12px;background:#141D2C;border:1px solid var(--line)}
+.cyAb-facts span{display:block;margin:0 0 5px;font:700 10.5px/1 Inter;letter-spacing:.16em;text-transform:uppercase;color:var(--amber)}
+.cyAb-facts b{font:600 14.5px/1.35 Inter;color:#fff}
+.cyAb-list{display:flex;flex-direction:column;gap:12px;min-width:0}
+.cyAb-q{border-radius:18px;background:#fff;overflow:hidden;transition:box-shadow .3s}
+.cyAb-q[open]{box-shadow:0 0 0 2px var(--amber)}
+.cyAb-q summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:19px 22px;
+  cursor:pointer;list-style:none}
+.cyAb-q summary::-webkit-details-marker{display:none}
+.cyAb-q summary h3{margin:0;font:600 18px/1.3 Inter;letter-spacing:0;color:#0E1726}
+.cyAb-q summary i{position:relative;flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:#F1F4F8;
+  border:1px solid #DCE3EE}
+.cyAb-q summary i::before,.cyAb-q summary i::after{content:"";position:absolute;left:10px;right:10px;top:15px;height:2px;
+  background:#0E1726;transition:transform .25s}
+.cyAb-q summary i::after{transform:rotate(90deg)}
+.cyAb-q[open] summary i{background:#FFF1D6;border-color:var(--amber)}
+.cyAb-q[open] summary i::after{transform:rotate(0)}
+.cyAb-a{padding:0 22px 20px;color:#3A4A60;font-size:15.5px;line-height:1.7}
+.cyAb-a p{margin:0 0 10px}
+.cyAb-a ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.cyAb-a li{position:relative;padding-left:24px}
+.cyAb-a li::before{content:"";position:absolute;left:3px;top:.62em;width:9px;height:9px;border-radius:2px;
+  background:var(--amber);transform:rotate(45deg)}
+.cyAb-a b{color:#0E1726}
+.cyAb-a a{color:#1F3350;font-weight:600;text-decoration:underline;text-decoration-color:var(--amber);text-underline-offset:3px}
+.cyAb-a .cyAb-chips{display:flex;flex-wrap:wrap;gap:8px}
+.cyAb-a .cyAb-chips li{padding:0}
+.cyAb-a .cyAb-chips li::before{display:none}
+.cyAb-chips a,.cyAb-chips span{display:inline-block;padding:8px 14px;border-radius:999px;font:600 14px/1 Inter;
+  border:1px solid #DCE3EE;background:#F5F7FA;color:#1F3350;text-decoration:none}
+.cyAb-a .cyAb-chips a{border-color:rgba(245,165,36,.7);background:#FFF6E4;text-decoration:none}
+.cyAb-a .cyAb-chips a:hover,.cyAb-a .cyAb-chips a:focus-visible{background:var(--amber);color:#20160A}
+.cyAb-note{margin:12px 0 0;font-size:13.5px;color:#5B6B80}
+.cyAb-go{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin:6px 0 0}
+.cyAb-map{font:700 14.5px/1.3 Inter;color:#fff;text-decoration:underline;text-decoration-color:var(--amber);
+  text-underline-offset:4px}
+@media (max-width:900px){
+  .cyAb-grid{grid-template-columns:1fr}
+  .cyAb-stage{flex:none;min-height:0;aspect-ratio:16/11}
+}
+@media (max-width:640px){
+  .cyAb-q summary{padding:16px 18px}
+  .cyAb-q summary h3{font-size:16.5px}
+  .cyAb-a{padding:0 18px 18px}
+}
+@media (prefers-reduced-motion:reduce){
+  .cyAb-fig,.cyAb-fig img,.cyAb-q summary i::after{transition:none}
+}
+
 </style>
 <!-- JSON-LD built to 05-schema-nap-spec.md. No street address, ZIP, geo,
      priceRange or aggregateRating: none of those are confirmed, and the
@@ -3397,6 +3460,49 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
     </div>
   </div>
 </section>
+
+<section class="i cyAb" id="about-hammond">
+  <div class="wrap">
+    <div class="head rv"><span class="eyebrow">Know the area</span><h2>All About Hammond</h2><p class="lead">Some background on the university town where Interstates 12 and 55 cross.</p></div>
+    <div class="cyAb-grid">
+      <div class="cyAb-side rv">
+        <div class="cyAb-stage">
+          <figure class="cyAb-fig on" data-ph="0"><img src="_assets/ham-loc-campus.jpg" alt="Aerial view of a stone university hall with slate turrets among trees and lawns" loading="lazy" width="1200" height="1200"><figcaption>A university campus from above</figcaption></figure>
+          <figure class="cyAb-fig" data-ph="1"><img src="_assets/ham-loc-walk.jpg" alt="Wide paved walk under live oaks hung with Spanish moss, with a fountain at the far end" loading="lazy" width="1200" height="1200"><figcaption>A shaded walk under live oaks</figcaption></figure>
+          <figure class="cyAb-fig" data-ph="2"><img src="_assets/ham-loc-floodlight.jpg" alt="A bank of stadium floodlights on a steel pole against an orange evening sky" loading="lazy" width="1200" height="1200"><figcaption>Stadium lights at dusk</figcaption></figure>
+          <figure class="cyAb-fig" data-ph="3"><img src="_assets/ham-loc-strawberries.jpg" alt="A ripe red strawberry and a pale unripe one on the plant" loading="lazy" width="1200" height="1200"><figcaption>Strawberries ripening on the plant</figcaption></figure>
+          <figure class="cyAb-fig" data-ph="4"><img src="_assets/ham-loc-traffic.jpg" alt="Car light trails on a four-lane highway through trees at dusk" loading="lazy" width="1200" height="1200"><figcaption>Highway traffic after sunset</figcaption></figure>
+        </div>
+        <ul class="cyAb-facts"><li><span>Parish</span><b>Tangipahoa</b></li><li><span>Population</span><b>19,584 (2020 census)</b></li><li><span>Land area</span><b>12.8 square miles</b></li><li><span>Interstates</span><b>I-12 and I-55</b></li></ul>
+      </div>
+      <div class="cyAb-list rv d1">
+        <details class="cyAb-q" name="cyab-hammond" data-ph="0" open><summary><h3>About Hammond</h3><i aria-hidden="true"></i></summary><div class="cyAb-a"><p>Hammond is the largest city in Tangipahoa Parish, home to 19,584 people at the 2020 census. It sits about 45 miles east of Baton Rouge and 45 miles northwest of <a href="https://www.bigeasyroofingcompany.com/">New Orleans</a>.</p><p>Southeastern Louisiana University started here in 1925 as Hammond Junior College and is now the third-largest university in the state. Hammond is the main city of a metro area that covers all of Tangipahoa Parish, grouped with Baton Rouge in one combined statistical area.</p></div></details>
+        <details class="cyAb-q" name="cyab-hammond" data-ph="1"><summary><h3>Things to Do in Hammond</h3><i aria-hidden="true"></i></summary><div class="cyAb-a"><ul><li><b>Downtown:</b> the Hammond Historic District includes the Columbia Theatre, a 1928 movie house that Southeastern renovated in the 1990s as a downtown arts venue.</li><li><b>Parks:</b> Cate Square Park, Zemurray Park with its public pool, and Chappapeela Sports Park, which hosts everything from baseball to lacrosse.</li><li><b>History:</b> the Tangipahoa African American Heritage Museum is a stop on the Louisiana African American Heritage Trail.</li><li><b>College sports:</b> the Southeastern Lions play NCAA Division I games at venues around town.</li></ul></div></details>
+        <details class="cyAb-q" name="cyab-hammond" data-ph="2"><summary><h3>Notable Residents of Hammond</h3><i aria-hidden="true"></i></summary><div class="cyAb-a"><ul><li><b>Robert Alford:</b> born in Hammond, he played at Hammond High and Southeastern, then spent nine seasons as an NFL cornerback.</li><li><b>Kayla Ard:</b> born in Hammond, she coached at Hammond High early on and was later head coach of the Utah State women’s basketball team from 2020 to 2024.</li><li><b>George S. Bowman Jr.:</b> born in Hammond in 1911, he rose to major general in the Marine Corps and served in World War II, Korea and Vietnam.</li><li><b>Josh Brooks:</b> born in Hammond in 1980, he became athletic director at the University of Georgia in 2021.</li></ul></div></details>
+        <details class="cyAb-q" name="cyab-hammond" data-ph="3"><summary><h3>Fun Facts About Hammond</h3><i aria-hidden="true"></i></summary><div class="cyAb-a"><ul><li><b>The name:</b> Peter Hammond, a Swedish sailor who arrived around 1818, was the first European settler. The name was anglicized from Peter av Hammerdal.</li><li><b>Shoes for the Confederacy:</b> during the Civil War the town was a shoemaking center for the Confederate army, an industry built by Charles Emery Cate. Cate Street is named for him.</li><li><b>Strawberries:</b> Hammond grew into a shipping point for strawberries, and a state historical plaque downtown calls it the “Strawberry Capital of America.”</li><li><b>On TV:</b> the first season of <i>In the Heat of the Night</i>, in 1988, was produced out of Hammond.</li><li><b>A spare runway:</b> the airport’s long runway is a backup landing site for Louis Armstrong New Orleans International Airport.</li></ul></div></details>
+        <details class="cyAb-q" name="cyab-hammond" data-ph="4"><summary><h3>Getting Around Hammond</h3><i aria-hidden="true"></i></summary><div class="cyAb-a"><ul><li><b>Interstates:</b> Interstates 12 and 55 cross at Hammond, and U.S. 51 and U.S. 190 run through town.</li><li><b>Trains:</b> Amtrak’s City of New Orleans stops at Hammond daily in both directions.</li><li><b>Airport:</b> Hammond Northshore Regional Airport is a city-owned general aviation field, also used by the Louisiana National Guard.</li><li><b>Port Manchac:</b> about 15 miles south on the railroad and I-55, with a route through Lake Pontchartrain to the Gulf.</li></ul></div></details>
+        <div class="cyAb-go">
+          <button class="btn btn-amber" type="button" data-open-modal>Get a free Hammond inspection</button>
+          <a class="cyAb-map" href="https://www.google.com/maps/place/Hammond,+LA" target="_blank" rel="noopener">Open Hammond in Google Maps &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var sec=document.getElementById('about-hammond'); if(!sec) return;
+  var qs=[].slice.call(sec.querySelectorAll('.cyAb-q')),
+      figs=[].slice.call(sec.querySelectorAll('.cyAb-fig'));
+  qs.forEach(function(d){d.addEventListener('toggle',function(){
+    if(!d.open) return;
+    /* one open at a time, also where the name attribute is not supported */
+    qs.forEach(function(o){if(o!==d&&o.open) o.open=false});
+    var n=d.getAttribute('data-ph');
+    figs.forEach(function(f){f.classList.toggle('on',f.getAttribute('data-ph')===n)});
+  })});
+})();
+</script>
 
 <section class="i light hxpaper" id="services">
   <div class="wrap">

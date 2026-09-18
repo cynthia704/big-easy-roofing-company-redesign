@@ -90,3 +90,75 @@ met-loc-skyline.jpg     pexels.com/photo/22430898  downtown New Orleans skyline 
 met-loc-highway.jpg     pexels.com/photo/111094    empty highway bridge with streetlights beside open water
 met-loc-stage.jpg       pexels.com/photo/12092846  microphone on a stand on a theater stage, lit balconies behind
                         (added September 18: Cynthia asked that no two accordion items share a photo)
+
+
+City pages, "All About <city>" section, the other 12 cities (September 18, 2026)
+--------------------------------------------------------------------------------
+Picked from four disjoint Pexels candidate pools (every id already on the site excluded),
+looked at on contact sheets and as final crops, 1200x1200, re-encoded with no metadata.
+A caption names a place only where Pexels names it. Two first picks were replaced after
+review: a Hammond graduation (many recognizable faces) and European-looking electrified
+rail tracks for Slidell.
+
+ken-loc-skyline.jpg        pexels.com/photo/39004104  Downtown New Orleans skyline across the Mississippi River at sunset
+ken-loc-marina.jpg         pexels.com/photo/31793872  Sailboats moored at wooden docks in a marina
+ken-loc-sax.jpg            pexels.com/photo/3857365   Musician's hands playing a saxophone
+ken-loc-streetcar.jpg      pexels.com/photo/33355593  Red streetcar on a palm-lined street in downtown New Orleans
+ken-loc-runway.jpg         pexels.com/photo/30756546  Airliner taxiing on a runway, seen head-on
+rr-loc-river.jpg           pexels.com/photo/39004108  Mississippi River with a steel bridge and city in the distance
+rr-loc-cyclists.jpg        pexels.com/photo/35487613  Two cyclists on a tree-shaded paved path
+rr-loc-lights.jpg          pexels.com/photo/5581853   Stadium floodlights against a blue sky
+rr-loc-baseball.jpg        pexels.com/photo/9193790   Overhead drone view of a baseball infield during a game
+rr-loc-highway.jpg         pexels.com/photo/1677237   Divided highway at dusk with light trails
+har-loc-ships.jpg          pexels.com/photo/39026421  Two large ships docked at a riverbank at sunset
+har-loc-oaks.jpg           pexels.com/photo/32649541  Brick path under live oaks with Spanish moss
+har-loc-table.jpg          pexels.com/photo/1872889   Restaurant table set with wine glasses and napkins
+har-loc-ferry.jpg          pexels.com/photo/28986671  Car ferry crossing a river
+har-loc-bridge.jpg         pexels.com/photo/39001318  Two parallel steel truss bridges over a river at sunset
+gre-loc-courthouse.jpg     pexels.com/photo/29536257  domed historic courthouse behind oak trees (Pexels says Houston, TX)
+gre-loc-stage.jpg          pexels.com/photo/13230484  crowd facing an outdoor concert stage with blue lights
+gre-loc-sax.jpg            pexels.com/photo/9418650   hand on the keys of a brass saxophone
+gre-loc-rails.jpg          pexels.com/photo/33379416  railroad track curving through green trees
+gre-loc-bridge.jpg         pexels.com/photo/39026428  truss bridge over the Mississippi River at sunset
+str-loc-marsh.jpg          pexels.com/photo/437610    marsh grass in still water at sunset
+str-loc-fishing.jpg        pexels.com/photo/33646306  fishing rods on a waterfront railing, man by the water
+str-loc-floodlight.jpg     pexels.com/photo/18162375  stadium floodlight tower against an orange sky
+str-loc-oak.jpg            pexels.com/photo/11577011  live oak draped in Spanish moss over a garden path
+str-loc-highway.jpg        pexels.com/photo/68629     car light trails on a flat highway at sunset
+lap-loc-marsh.jpg          pexels.com/photo/16565840  sun setting over a marsh (Pexels says Savannah, GA)
+lap-loc-tents.jpg          pexels.com/photo/30391784  canopy tents and booths on a grassy lawn
+lap-loc-trumpet.jpg        pexels.com/photo/17239882  hands on the valves of a brass trumpet
+lap-loc-skiff.jpg          pexels.com/photo/9204694   weathered wooden skiff in still swamp water
+lap-loc-highway.jpg        pexels.com/photo/10622746  highway light trails under a dark evening sky
+man-loc-boardwalk.jpg      pexels.com/photo/30431914  black and white boardwalk into a calm lake, Spanish moss
+man-loc-cypress.jpg        pexels.com/photo/16245005  cypress trunks standing in still swamp water
+man-loc-sax.jpg            pexels.com/photo/9002889   saxophone played under warm stage lights, no face
+man-loc-pier.jpg           pexels.com/photo/32074719  weathered wooden pier with railing and lamp post
+man-loc-traffic.jpg        pexels.com/photo/15807675  car light trails on a curving highway at dusk
+cov-loc-steeple.jpg        pexels.com/photo/31564837  brick street corner with a white church steeple
+cov-loc-trail.jpg          pexels.com/photo/23928779  cyclists and walkers on a tree-lined paved path
+cov-loc-oaks.jpg           pexels.com/photo/6761002   live oaks with Spanish moss in front of pines
+cov-loc-floodlight.jpg     pexels.com/photo/32471032  stadium floodlights against a dusk sky
+cov-loc-kayak.jpg          pexels.com/photo/33775059  kayak bow and paddle on a calm tree-lined river
+cov-loc-interchange.jpg    pexels.com/photo/9687802   aerial view of a multi-lane highway at sunset
+mad-loc-wreck.jpg          pexels.com/photo/12901910  tugboat wreck in open water near Madisonville, LA (per Pexels)
+mad-loc-marina.jpg         pexels.com/photo/2961943   sailboats and yachts in a calm marina
+mad-loc-crawfish.jpg       pexels.com/photo/2410606   bowl of boiled crawfish
+mad-loc-dock.jpg           pexels.com/photo/6294063   small boat by a wooden dock at twilight
+mad-loc-bridge.jpg         pexels.com/photo/4627302   movable bridge raised open at night
+sli-loc-canoe.jpg          pexels.com/photo/17484230  bow of a canoe on green water between tall cypress trees
+sli-loc-trumpet.jpg        pexels.com/photo/8107231   a musician's hands on the valves of a brass trumpet
+sli-loc-watertower.jpg     pexels.com/photo/18124221  drone view down on a round water tower among trees (Pexels: Slidell, Louisiana)
+sli-loc-highway.jpg        pexels.com/photo/4609613   car light trails on a divided highway at dusk
+ham-loc-walk.jpg           pexels.com/photo/37588187  paved walk under moss-hung live oaks with a fountain at the far end
+ham-loc-floodlight.jpg     pexels.com/photo/32471031  stadium floodlight bank on a steel pole against an orange sky
+ham-loc-strawberries.jpg   pexels.com/photo/36454531  a ripe and an unripe strawberry on the plant
+ham-loc-traffic.jpg        pexels.com/photo/27976555  car light trails on a four-lane highway through trees at dusk
+br-loc-cityhall.jpg        pexels.com/photo/18559565  aerial view of a tall concrete government building and plaza at twilight (Pexels: Baton Rouge City Hall)
+br-loc-oldcapitol.jpg      pexels.com/photo/33599637  white Gothic Revival building with twin crenellated towers (Pexels: Old State Capitol, Baton Rouge)
+br-loc-moss.jpg            pexels.com/photo/14998495  moss-draped trees and a wooden fence at the edge of calm water
+br-loc-library.jpg         pexels.com/photo/18559568  modern library building with slanted glass panels at dusk (Pexels: River Center Branch Library, Baton Rouge)
+br-loc-stadium.jpg         pexels.com/photo/776805    two banks of stadium lights above empty blue seats
+br-loc-airplane.jpg        pexels.com/photo/18090300  parked airliners on an apron seen through an airplane window
+ham-loc-campus.jpg         pexels.com/photo/396304    aerial view of a stone university hall with turrets among trees (Pexels: Manhattan, Kansas; caption names no place)
+sli-loc-marsh.jpg          pexels.com/photo/5151773   aerial view of a road on a strip of land between marsh and open water
