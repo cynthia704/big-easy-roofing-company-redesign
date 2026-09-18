@@ -2525,6 +2525,69 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
   .cyRail-band{transition:none;transform:none}
 }
 
+/* ---- about the city: the live page's location accordion, rebuilt ---- */
+.cyAb{background:#0B1220}
+.cyAb .head{margin:0 0 28px}
+.cyAb-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:28px;align-items:stretch}
+.cyAb-side{display:flex;flex-direction:column;gap:14px;min-width:0}
+.cyAb-stage{position:relative;flex:1;min-height:420px;border-radius:20px;overflow:hidden;background:#141D2C;
+  box-shadow:0 40px 70px -40px rgba(0,0,0,.9)}
+.cyAb-fig{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .6s ease}
+.cyAb-fig.on{opacity:1}
+.cyAb-fig img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.04);transition:transform 6s ease}
+.cyAb-fig.on img{transform:scale(1)}
+.cyAb-fig figcaption{position:absolute;left:14px;bottom:14px;right:14px;padding:9px 13px;border-radius:10px;
+  background:rgba(11,18,32,.78);backdrop-filter:blur(6px);font:600 13px/1.4 Inter;color:#DDE6F2}
+.cyAb-facts{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.cyAb-facts li{padding:12px 14px;border-radius:12px;background:#141D2C;border:1px solid var(--line)}
+.cyAb-facts span{display:block;margin:0 0 5px;font:700 10.5px/1 Inter;letter-spacing:.16em;text-transform:uppercase;color:var(--amber)}
+.cyAb-facts b{font:600 14.5px/1.35 Inter;color:#fff}
+.cyAb-list{display:flex;flex-direction:column;gap:12px;min-width:0}
+.cyAb-q{border-radius:18px;background:#fff;overflow:hidden;transition:box-shadow .3s}
+.cyAb-q[open]{box-shadow:0 0 0 2px var(--amber)}
+.cyAb-q summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:19px 22px;
+  cursor:pointer;list-style:none}
+.cyAb-q summary::-webkit-details-marker{display:none}
+.cyAb-q summary h3{margin:0;font:600 18px/1.3 Inter;letter-spacing:0;color:#0E1726}
+.cyAb-q summary i{position:relative;flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:#F1F4F8;
+  border:1px solid #DCE3EE}
+.cyAb-q summary i::before,.cyAb-q summary i::after{content:"";position:absolute;left:10px;right:10px;top:15px;height:2px;
+  background:#0E1726;transition:transform .25s}
+.cyAb-q summary i::after{transform:rotate(90deg)}
+.cyAb-q[open] summary i{background:#FFF1D6;border-color:var(--amber)}
+.cyAb-q[open] summary i::after{transform:rotate(0)}
+.cyAb-a{padding:0 22px 20px;color:#3A4A60;font-size:15.5px;line-height:1.7}
+.cyAb-a p{margin:0 0 10px}
+.cyAb-a ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.cyAb-a li{position:relative;padding-left:24px}
+.cyAb-a li::before{content:"";position:absolute;left:3px;top:.62em;width:9px;height:9px;border-radius:2px;
+  background:var(--amber);transform:rotate(45deg)}
+.cyAb-a b{color:#0E1726}
+.cyAb-a a{color:#1F3350;font-weight:600;text-decoration:underline;text-decoration-color:var(--amber);text-underline-offset:3px}
+.cyAb-a .cyAb-chips{display:flex;flex-wrap:wrap;gap:8px}
+.cyAb-a .cyAb-chips li{padding:0}
+.cyAb-a .cyAb-chips li::before{display:none}
+.cyAb-chips a,.cyAb-chips span{display:inline-block;padding:8px 14px;border-radius:999px;font:600 14px/1 Inter;
+  border:1px solid #DCE3EE;background:#F5F7FA;color:#1F3350;text-decoration:none}
+.cyAb-a .cyAb-chips a{border-color:rgba(245,165,36,.7);background:#FFF6E4;text-decoration:none}
+.cyAb-a .cyAb-chips a:hover,.cyAb-a .cyAb-chips a:focus-visible{background:var(--amber);color:#20160A}
+.cyAb-note{margin:12px 0 0;font-size:13.5px;color:#5B6B80}
+.cyAb-go{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin:6px 0 0}
+.cyAb-map{font:700 14.5px/1.3 Inter;color:#fff;text-decoration:underline;text-decoration-color:var(--amber);
+  text-underline-offset:4px}
+@media (max-width:900px){
+  .cyAb-grid{grid-template-columns:1fr}
+  .cyAb-stage{flex:none;min-height:0;aspect-ratio:16/11}
+}
+@media (max-width:640px){
+  .cyAb-q summary{padding:16px 18px}
+  .cyAb-q summary h3{font-size:16.5px}
+  .cyAb-a{padding:0 18px 18px}
+}
+@media (prefers-reduced-motion:reduce){
+  .cyAb-fig,.cyAb-fig img,.cyAb-q summary i::after{transition:none}
+}
+
 </style>
 <!-- JSON-LD built to 05-schema-nap-spec.md. No street address, ZIP, geo,
      priceRange or aggregateRating: none of those are confirmed, and the
@@ -3398,6 +3461,50 @@ h1 .hl-amber, h2 .hl-amber, h3 .hl-amber{font-weight:inherit}
     </div>
   </div>
 </section>
+
+<section class="i cyAb" id="about-metairie">
+  <div class="wrap">
+    <div class="head rv"><span class="eyebrow">Know the area</span><h2>All About Metairie</h2><p class="lead">A few things worth knowing about the place, whether you have lived here for years or just moved in.</p></div>
+    <div class="cyAb-grid">
+      <div class="cyAb-side rv">
+        <div class="cyAb-stage">
+          <figure class="cyAb-fig on" data-ph="0"><img src="_assets/met-loc-lakeside.jpg" alt="Ducks on a pond at the edge of a park lined with willows" loading="lazy" width="1200" height="1200"><figcaption>A lakeside park on a sunny afternoon</figcaption></figure>
+          <figure class="cyAb-fig" data-ph="1"><img src="_assets/met-loc-carousel.jpg" alt="Close view of a painted carousel with striped canopy and brass poles" loading="lazy" width="1200" height="1200"><figcaption>A painted carousel, like the one in Lafreniere Park</figcaption></figure>
+          <figure class="cyAb-fig" data-ph="2"><img src="_assets/met-loc-bridge.jpg" alt="Aerial view of a long low bridge running across open water under clouds" loading="lazy" width="1200" height="1200"><figcaption>A long bridge over open water</figcaption></figure>
+          <figure class="cyAb-fig" data-ph="3"><img src="_assets/met-loc-skyline.jpg" alt="Aerial view of the downtown New Orleans skyline on the Mississippi River" loading="lazy" width="1200" height="1200"><figcaption>Downtown New Orleans, Metairie’s neighbor to the east</figcaption></figure>
+          <figure class="cyAb-fig" data-ph="4"><img src="_assets/met-loc-highway.jpg" alt="Empty highway bridge with streetlights beside open water" loading="lazy" width="1200" height="1200"><figcaption>Highway lanes above the water</figcaption></figure>
+        </div>
+        <ul class="cyAb-facts"><li><span>Parish</span><b>Jefferson</b></li><li><span>Population</span><b>143,507 (2020 census)</b></li><li><span>Land area</span><b>23.2 square miles</b></li><li><span>Northern edge</span><b>Lake Pontchartrain</b></li></ul>
+      </div>
+      <div class="cyAb-list rv d1">
+        <details class="cyAb-q" name="cyab-metairie" data-ph="0" open><summary><h3>About Metairie</h3><i aria-hidden="true"></i></summary><div class="cyAb-a"><p>Metairie is the largest community in Jefferson Parish, home to 143,507 people at the 2020 census. It has never incorporated, so it is not officially a city. If it were, it would rank as the fourth-largest in Louisiana.</p><p>It sits between <a href="https://www.bigeasyroofingcompany.com/">New Orleans</a> to the east and Kenner to the west, with Lake Pontchartrain along its northern edge. Much of it is built on Metairie Ridge, a natural rise left by an old branch of the Mississippi.</p></div></details>
+        <details class="cyAb-q" name="cyab-metairie" data-ph="1"><summary><h3>Things to Do in Metairie</h3><i aria-hidden="true"></i></summary><div class="cyAb-a"><ul><li><b>Lafreniere Park:</b> a lagoon with three islands, a carousel, a two-mile walking track and a 5-acre dog park.</li><li><b>Lakeside Shopping Center:</b> on Veterans Memorial Boulevard, open since 1960 and the first regional mall in the New Orleans area.</li><li><b>Old Metairie:</b> the 1920s neighborhoods along Metairie Road, which follows the ridge and is the oldest road in the New Orleans area.</li></ul></div></details>
+        <details class="cyAb-q" name="cyab-metairie" data-ph="0"><summary><h3>Notable Residents of Metairie</h3><i aria-hidden="true"></i></summary><div class="cyAb-a"><ul><li><b>Ellen DeGeneres:</b> the comedian and talk show host was born and raised in Metairie.</li><li><b>Ashley Scott:</b> the actress, known for <i>Jericho</i> and <i>The Last of Us</i>, was born in Metairie and grew up in Charleston, South Carolina.</li></ul></div></details>
+        <details class="cyAb-q" name="cyab-metairie" data-ph="2"><summary><h3>Fun Facts About Metairie</h3><i aria-hidden="true"></i></summary><div class="cyAb-a"><ul><li><b>The name:</b> <i>métairie</i> is French for a small tenant farm that paid its rent with a share of the crop.</li><li><b>The Causeway:</b> the Lake Pontchartrain Causeway starts in Metairie and runs 23.83 miles to Mandeville. Guinness lists it as the longest continuous bridge over water.</li><li><b>The park was a racetrack:</b> Lafreniere Park stands where the Jefferson Downs track ran until Hurricane Betsy wrecked it in 1965.</li><li><b>The 1947 storm:</b> a hurricane that year left much of Metairie under 6 feet of water.</li></ul></div></details>
+        <details class="cyAb-q" name="cyab-metairie" data-ph="3"><summary><h3>Suburbs Around Metairie</h3><i aria-hidden="true"></i></summary><div class="cyAb-a"><p>Kenner lies to the west. South of the railroad tracks are River Ridge, Harahan, Elmwood and Jefferson.</p><ul class="cyAb-chips"><li><a href="https://www.bigeasyroofingcompany.com/">New Orleans</a></li><li><a href="https://www.bigeasyroofingcompany.com/services-areas/kenner/">Kenner</a></li><li><a href="https://www.bigeasyroofingcompany.com/services-areas/river-ridge/">River Ridge</a></li><li><a href="https://www.bigeasyroofingcompany.com/services-areas/harahan/">Harahan</a></li><li><span>Elmwood</span></li><li><span>Jefferson</span></li></ul><p class="cyAb-note">Linked towns have their own page on this site.</p></div></details>
+        <details class="cyAb-q" name="cyab-metairie" data-ph="4"><summary><h3>Getting Around Metairie</h3><i aria-hidden="true"></i></summary><div class="cyAb-a"><ul><li><b>Buses:</b> Jefferson Parish Transit runs local routes and commuter service into downtown New Orleans.</li><li><b>Main roads:</b> Interstate 10, Veterans Memorial Boulevard and the Earhart Expressway.</li><li><b>The Northshore:</b> the Causeway’s southern end is in Metairie, one bridge from Mandeville.</li><li><b>Flying:</b> Louis Armstrong New Orleans International Airport is next door in Kenner.</li></ul></div></details>
+        <div class="cyAb-go">
+          <button class="btn btn-amber" type="button" data-open-modal>Get a free Metairie inspection</button>
+          <a class="cyAb-map" href="https://www.google.com/maps/place/Metairie,+LA" target="_blank" rel="noopener">Open Metairie in Google Maps &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  var sec=document.getElementById('about-metairie'); if(!sec) return;
+  var qs=[].slice.call(sec.querySelectorAll('.cyAb-q')),
+      figs=[].slice.call(sec.querySelectorAll('.cyAb-fig'));
+  qs.forEach(function(d){d.addEventListener('toggle',function(){
+    if(!d.open) return;
+    /* one open at a time, also where the name attribute is not supported */
+    qs.forEach(function(o){if(o!==d&&o.open) o.open=false});
+    var n=d.getAttribute('data-ph');
+    figs.forEach(function(f){f.classList.toggle('on',f.getAttribute('data-ph')===n)});
+  })});
+})();
+</script>
 
 <section class="i light hxpaper" id="services">
   <div class="wrap">

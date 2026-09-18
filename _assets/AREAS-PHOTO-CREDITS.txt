@@ -74,3 +74,17 @@ str-hero-river-port.jpg    pexels.com/photo/39026444  ships docked at an industr
 
 Note: ham-rail-yard.jpg is described by Pexels as Baton Rouge; on the Hammond
 page it illustrates railroads generally and the alt text does not name a city.
+
+
+City pages, "All About <city>" section (September 18, 2026)
+-----------------------------------------------------------
+The live city pages' location accordion, rebuilt. Pexels stand-ins, picked from a
+contact sheet by what is in the frame, ids checked against every credits file
+(235 in use, no collisions). Cropped 1200x1200, re-encoded with no metadata.
+None of these shows Metairie itself and no caption says it does.
+
+met-loc-lakeside.jpg    pexels.com/photo/19334315  ducks on a pond at the edge of a park lined with willows
+met-loc-carousel.jpg    pexels.com/photo/3989437   painted carousel, striped canopy and brass poles, close
+met-loc-bridge.jpg      pexels.com/photo/2077517   long low bridge across open water, aerial, cloudy sky
+met-loc-skyline.jpg     pexels.com/photo/22430898  downtown New Orleans skyline on the Mississippi (Pexels: New Orleans)
+met-loc-highway.jpg     pexels.com/photo/111094    empty highway bridge with streetlights beside open water
