@@ -88,3 +88,5 @@ met-loc-carousel.jpg    pexels.com/photo/3989437   painted carousel, striped can
 met-loc-bridge.jpg      pexels.com/photo/2077517   long low bridge across open water, aerial, cloudy sky
 met-loc-skyline.jpg     pexels.com/photo/22430898  downtown New Orleans skyline on the Mississippi (Pexels: New Orleans)
 met-loc-highway.jpg     pexels.com/photo/111094    empty highway bridge with streetlights beside open water
+met-loc-stage.jpg       pexels.com/photo/12092846  microphone on a stand on a theater stage, lit balconies behind
+                        (added September 18: Cynthia asked that no two accordion items share a photo)
